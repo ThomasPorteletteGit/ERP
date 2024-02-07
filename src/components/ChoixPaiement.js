@@ -1,15 +1,11 @@
 import React from 'react';
 import logo from '../assets/img/logo.png';
 
-const Test = () => {
+const ChoixPaiement = () => {
     return (
         <>
             <div className='choixPaiement'>
-                <div className='header'>
-                    <img id="logo" src={logo} alt="logo" />
-                    <h1>Choix du paiement</h1>
-                    <button id="backBtn">Retour</button>
-                </div>
+                <h1 className='view-title'>Choix du paiement</h1>
 
                 <div className='paymentChoice'>
                     <button id="especeBtn">Espèces</button>
@@ -20,4 +16,4 @@ const Test = () => {
     );
 }
 
-export default Test; 
+export default ChoixPaiement; 
