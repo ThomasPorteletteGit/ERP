@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import ChoixPaiement from './components/ChoixPaiement';
 import MontantAPayer from './components/MontantAPayer';
@@ -12,12 +12,13 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <Switch>
-          <Route path="/choix-paiement" component={ChoixPaiement} />
-          <Route path="/montant-a-payer" component={MontantAPayer} />
-          <Route path="/panier" component={Panier} />
-          <Route path="/dashboard" component={Dashboard} />
-        </Switch>
+        <Dashboard />
+        <Routes>
+          <Route path="/choix-paiement" element={<ChoixPaiement />} />
+          <Route path="/montant-a-payer" element={<MontantAPayer />} />
+          <Route path="/panier" element={<Panier />} />
+          <Route path="/dashboard" element={<Dashboard />} />
+        </Routes>
       </div>
     </Router>
   );

@@ -5,6 +5,14 @@ import { Link } from 'react-router-dom';
 const Dashboard = () => {
     const fonctionnalites = ["Choix Paiement", "Montant à payer", "Panier", "A venir", "A venir", "A venir"];
 
+    const normalizeString = (str) => {
+        return str
+            .toLowerCase()
+            .normalize("NFD")
+            .replace(/[\u0300-\u036f]/g, "")
+            .replace(/\s+/g, '-');
+    };
+
     return (
         <>
             <Header />
@@ -12,7 +20,7 @@ const Dashboard = () => {
                 <h1 className='view-title'>Dashboard 📊</h1>
                 <div className="dashboard-container">
                     {fonctionnalites.map((fonctionnalite, index) => (
-                        <Link key={index} to={`/${fonctionnalite.toLowerCase().replace(' ', '-')}`} className="dashboard-link">
+                        <Link key={index} to={`/${normalizeString(fonctionnalite)}`} className="dashboard-link">
                             <button className="dashboard-button">{fonctionnalite}</button>
                         </Link>
                     ))}
