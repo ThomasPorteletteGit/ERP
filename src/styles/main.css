@@ -206,26 +206,23 @@ panier
     }
 }
 
-.dashboard-button:nth-child(1) {
+/* couleurs btn gérées en JS pour le moment */
+
+/* .dashboard-button:nth-child(1) {
     background-color: #FEE4CB;
 }
-
 .dashboard-button:nth-child(2) {
     background-color: #E9E7FD;
 }
-
 .dashboard-button:nth-child(3) {
     background-color: #FFD3E2;
 }
-
 .dashboard-button:nth-child(4) {
     background-color: #DBF6FD;
 }
-
 .dashboard-button:nth-child(5) {
     background-color: #C8F7DC;
 }
-
 .dashboard-button:nth-child(6) {
     background-color: #D5DEFF;
-}
+} */
