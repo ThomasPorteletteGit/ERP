@@ -180,3 +180,52 @@ panier
 .shopping-cart-right .proceed-payment button:nth-child(2) {
     font-size: 35px !important
 }
+
+/* dashboard */
+
+
+.dashboard-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.dashboard-button {
+    width: 400px;
+    height: 220px;
+    margin: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+        background-color: white !important;
+    }
+}
+
+.dashboard-button:nth-child(1) {
+    background-color: #FEE4CB;
+}
+
+.dashboard-button:nth-child(2) {
+    background-color: #E9E7FD;
+}
+
+.dashboard-button:nth-child(3) {
+    background-color: #FFD3E2;
+}
+
+.dashboard-button:nth-child(4) {
+    background-color: #DBF6FD;
+}
+
+.dashboard-button:nth-child(5) {
+    background-color: #C8F7DC;
+}
+
+.dashboard-button:nth-child(6) {
+    background-color: #D5DEFF;
+}
