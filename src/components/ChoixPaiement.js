@@ -1,9 +1,10 @@
 import React from 'react';
-import logo from '../assets/img/logo.png';
+import Header from './Header';
 
 const ChoixPaiement = () => {
     return (
-        <>
+        <>  
+            <Header />
             <div className='choixPaiement'>
                 <h1 className='view-title'>Choix du paiement</h1>
 

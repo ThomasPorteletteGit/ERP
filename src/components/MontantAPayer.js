@@ -1,8 +1,10 @@
 import React from 'react';
+import Header from './Header';
 
 const MontantAPayer = () => {
     return (
         <>
+            <Header />
             <div className='montantAPayer'>
                 <h1 className='view-title'>Montant à payer</h1>
 

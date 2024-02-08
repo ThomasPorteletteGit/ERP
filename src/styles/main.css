@@ -9,7 +9,10 @@
 }
 
 html {
-    background-color: #F3FCF3;
+    /* background-color: #F3FCF3; */
+    background-color: #18332F;
+    color: white;
+    font-family: Didot !important;
 }
 
 /*
@@ -36,12 +39,14 @@ Vue choix paiement
 }
 
 #backBtn {
-    width: 20vh;
+    color: white;
     padding: 25px;
     margin: 10px;
-    background-color: #9EF09E;
-    border-radius: 10px;
-    font-size: 20px;
+    /* background-color: #9EF09E; */
+    background-color: #73907D;
+    border: 1px solid black;
+    border-radius: 12px;
+    font-size: 30px;
 }
 
 .paymentChoice {
@@ -80,3 +85,98 @@ Vue choix paiement
 /*
 fin choix paiement
 */
+
+
+/* 
+panier
+*/
+
+.panier {
+    background-color: #18332F;
+    height: 100vh;
+}
+
+.panier-conteneur {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.shopping-cart-left {
+    background-color: #73907D;
+    margin-left: 5%;
+    width: 55%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    overflow: auto;
+    padding: 1vh;
+    border: 1px solid black;
+    border-radius: 8px;
+}
+
+.shopping-cart-left .article {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 70%;
+    height: 15vh;
+}
+
+.shopping-cart-left .article .article-img img {
+    width: 60%;
+    height: auto;
+    display: block;
+}
+
+.panier .shopping-cart-left .article-quantity {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #B8C6BD;
+    padding: 0;
+    border: 1px solid black;
+    color: white;
+    margin-left: auto;
+}
+
+.panier .shopping-cart-left .article-quantity .qteBtn {
+    width: 4vw;
+    height: 4vh;
+    background-color: #B8C6BD;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.panier .shopping-cart-left .article-quantity p {
+    font-size: 20px;
+    width: 3vw;
+}
+
+.shopping-cart-right {
+    width: 25%;
+    margin-right: 5%;
+    margin-left: 10%;
+}
+
+.shopping-cart-right p {
+    font-size: 25px;
+}
+
+.shopping-cart-right button {
+    font-size: 25px;
+    color: white;
+    margin: 10%;
+    margin-top: 0 !important;
+    background-color: #73907D;
+    width: 80%;
+    padding: 6vh;
+    border: 1px solid black;
+    border-radius: 12px;
+}
+
+.shopping-cart-right .proceed-payment button:nth-child(2) {
+    font-size: 35px !important
+}
