@@ -12,8 +12,8 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <Dashboard />
         <Routes>
+          <Route path="/" element={<Dashboard />} />
           <Route path="/choix-paiement" element={<ChoixPaiement />} />
           <Route path="/montant-a-payer" element={<MontantAPayer />} />
           <Route path="/panier" element={<Panier />} />
