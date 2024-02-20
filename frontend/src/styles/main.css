@@ -9,8 +9,7 @@
 }
 
 html {
-    /* background-color: #F3FCF3; */
-    background-color: #18332F;
+    background-color:#f6f8ff;
     color: white;
     font-family: Didot !important;
 }
@@ -22,32 +21,30 @@ Vue choix paiement
 .header {
     display: flex;
     align-items: center;
-    justify-content: space-between;
 }
 
 .view-title {
-    margin-bottom: 10vh;
-    margin-top: -8vh;
     font-size: 60px;
 }
 
 #logo {
-    width: 20vh;
-    height: auto;
-    float: left;
-    margin: 10px;
+    width: 17vh;
+    height: 14.5vh;
+    padding: 0;
 }
 
-#backBtn {
-    color: white;
-    padding: 25px;
-    margin: 10px;
-    /* background-color: #9EF09E; */
-    background-color: #73907D;
-    border: 1px solid black;
-    border-radius: 12px;
-    font-size: 30px;
-    cursor: pointer;
+#profilePic
+{
+    clip-path:ellipse()
+}
+
+.dashboardImages
+{
+    background-color: #2B2D42;
+    padding:0.5%;
+    margin:0.5%;
+    border-radius: 7.5%;
+    width: 7%;
 }
 
 .paymentChoice {
@@ -93,7 +90,7 @@ panier
 */
 
 .panier {
-    background-color: #18332F;
+        background-color: #18332F;
     height: 100vh;
 }
 
