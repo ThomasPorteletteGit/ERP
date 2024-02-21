@@ -17,7 +17,7 @@ const Dashboard = () => {
     };
 
     useEffect(() => {
-        fetch(ipServer+"/").then(response => response.json()).then(data => setBackendData(data.message));
+        fetch(ipServer+"/api").then(response => response.json()).then(data => setBackendData(data.message));
     }, []);
 
     const buttonColors = ["#FEE4CB", "#E9E7FD", "#FFD3E2", "#DBF6FD", "#C8F7DC", "#D5DEFF"];

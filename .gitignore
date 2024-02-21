@@ -10,6 +10,8 @@ node_modules/
 
 # production
 /build
+frontend/build
+backend/public
 
 # misc
 .DS_Store
@@ -54,3 +56,5 @@ yarn-error.log*
 *.webp
 *.wmf
 *.zif
+
+*.env

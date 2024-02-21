@@ -4,11 +4,14 @@ const app = express();
 
 app.use(cors());
 app.use(express.json());
+app.use(express.static('public'));
 
-app.get('/', (req, res) => {
+app.get('/api', (req, res) => {
     res.json({ message: 'Jason Derulo' });
 });
 
-app.listen(5000, () => {
-    console.log('Server is running on port 5000');
+const PORT = process.env.PORT || 3000;
+
+app.listen(PORT, () => {
+    console.log(`Server running on port ${PORT}`);
 });
