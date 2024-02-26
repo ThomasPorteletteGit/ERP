@@ -9,7 +9,10 @@
 }
 
 html {
-    background-color:#f6f8ff;
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    background-color: #f6f8ff;
     color: white;
     font-family: Didot !important;
 }
@@ -17,11 +20,6 @@ html {
 /*
 Vue choix paiement
 */
-
-.header {
-    display: flex;
-    align-items: center;
-}
 
 .view-title {
     font-size: 60px;
@@ -33,16 +31,14 @@ Vue choix paiement
     padding: 0;
 }
 
-#profilePic
-{
-    clip-path:ellipse()
+#profilePic {
+    clip-path: ellipse()
 }
 
-.dashboardImages
-{
+.dashboardImages {
     background-color: #2B2D42;
-    padding:0.5%;
-    margin:0.5%;
+    padding: 0.5%;
+    margin: 0.5%;
     border-radius: 7.5%;
     width: 7%;
 }
@@ -90,7 +86,7 @@ panier
 */
 
 .panier {
-        background-color: #18332F;
+    background-color: #18332F;
     height: 100vh;
 }
 
@@ -181,8 +177,7 @@ panier
 }
 
 
-.clavier-numerique-panier td 
-{
+.clavier-numerique-panier td {
     width: 20%;
     height: 10vh;
     font-size: 30px;
@@ -198,11 +193,10 @@ panier
 
 /* dashboard */
 
-
 .dashboard-container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: flex-start;
 }
 
 .dashboard-button {
@@ -226,18 +220,62 @@ panier
 /* .dashboard-button:nth-child(1) {
     background-color: #FEE4CB;
 }
-.dashboard-button:nth-child(2) {
-    background-color: #E9E7FD;
+*/
+
+.dashboard-left,
+.dashboard-right {
+    /* 100vh - 19vh car 15 header et 2+2 margin */
+    height: 81vh;
+    margin: 2vh;
+    width: 40%;
+    background-color: #2b2d42;
 }
-.dashboard-button:nth-child(3) {
-    background-color: #FFD3E2;
+
+.dashboard-right {
+    background-color: rgb(213, 255, 213) !important;
+    width: 55% !important;
 }
-.dashboard-button:nth-child(4) {
-    background-color: #DBF6FD;
+
+
+
+
+/*
+cuves
+*/
+
+#etat-cuves {
+    width: 30%;
+    height: 30%;
+    background-color: #2b2d42;
 }
-.dashboard-button:nth-child(5) {
-    background-color: #C8F7DC;
+
+.etat-cuves-container {
+    display: flex;
+    align-items: center;
 }
-.dashboard-button:nth-child(6) {
-    background-color: #D5DEFF;
-} */
+
+.cuve-container {
+    width: 2vw;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 10px;
+}
+
+.cuve-container h2,
+p {
+    font-size: 6px;
+}
+
+.jauge {
+    background-color: #f0f0f0;
+    height: 10vh;
+    margin-top: 10px;
+    position: relative;
+}
+
+.progress-bar {
+    width: 100%;
+    background-color: #3498db;
+    position: absolute;
+    bottom: 0;
+}

@@ -1,12 +1,13 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Header from './components/Header';
 import ChoixPaiement from './components/ChoixPaiement';
 import MontantAPayer from './components/MontantAPayer';
 import Panier from './components/Panier';
 import Dashboard from './components/Dashboard';
 import './styles/App.css';
 import './styles/main.css';
+import './styles/index.css';
+import './styles/header.css';
 
 function App() {
   return (

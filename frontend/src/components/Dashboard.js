@@ -1,41 +1,60 @@
 import React from 'react';
 import Header from './Header';
-import { Link } from 'react-router-dom';
-import { useEffect, useState } from 'react';
-import ipServer from './config';
+// import { Link } from 'react-router-dom';
+// import { useEffect, useState } from 'react';
+// import ipServer from './config';
+import EtatCuves from './EtatCuves';
+import Caisse from './Caisse';
 
 const Dashboard = () => {
-    const fonctionnalites = ["Choix Paiement", "Montant à payer", "Panier", "A venir", "A venir", "A venir"];
+    // const fonctionnalites = ["Choix Paiement", "Montant à payer", "Panier", "A venir", "A venir", "A venir"];
 
-    const [backendData, setBackendData] = useState([{}]);
-    const normalizeString = (str) => {
-        return str
-            .toLowerCase()
-            .normalize("NFD")
-            .replace(/[\u0300-\u036f]/g, "")
-            .replace(/\s+/g, '-');
-    };
+    // const [backendData, setBackendData] = useState([{}]);
+    // const normalizeString = (str) => {
+    //     return str
+    //         .toLowerCase()
+    //         .normalize("NFD")
+    //         .replace(/[\u0300-\u036f]/g, "")
+    //         .replace(/\s+/g, '-');
+    // };
 
-    useEffect(() => {
-        fetch(ipServer+"/api").then(response => response.json()).then(data => setBackendData(data.message));
-    }, []);
+    // useEffect(() => {
+    //     fetch(ipServer + "/api").then(response => response.json()).then(data => setBackendData(data.message));
+    // }, []);
 
-    const buttonColors = ["#FEE4CB", "#E9E7FD", "#FFD3E2", "#DBF6FD", "#C8F7DC", "#D5DEFF"];
+    // const buttonColors = ["#FEE4CB", "#E9E7FD", "#FFD3E2", "#DBF6FD", "#C8F7DC", "#D5DEFF"];
 
     return (
         <>
             <Header />
             <div id='dashboard'>
-                <h1 className='view-title'>Dashboard 📊</h1>
+                {/* <h1 className='view-title'>Dashboard 📊</h1>
                 <div className="dashboard-container">
                     {fonctionnalites.map((fonctionnalite, index) => (
-                        <Link key={index} to={`/${normalizeString(fonctionnalite)}`} className="dashboard-link">
-                            {/* % pour ne pas dépasser la taille du tableau et répéter les couleurs */}
-                            <button className="dashboard-button" style={{ backgroundColor: buttonColors[index % buttonColors.length] }}>{fonctionnalite}</button>
+                        <Link key={index} to={`/${normalizeString(fonctionnalite)}`} className="dashboard-link"> */}
+                {/* % pour ne pas dépasser la taille du tableau et répéter les couleurs */}
+                {/* <button className="dashboard-button" style={{ backgroundColor: buttonColors[index % buttonColors.length] }}>{fonctionnalite}</button>
                         </Link>
                     ))}
+                </div> */}
+
+                <div className="dashboard-container">
+
+                    <div className="dashboard-left">
+                        <Caisse />
+
+                    </div>
+
+                    <div className="dashboard-right">
+
+                        <EtatCuves />
+                    </div>
+
                 </div>
+
+
             </div>
+
         </>
     );
 }
