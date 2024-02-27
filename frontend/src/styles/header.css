@@ -65,6 +65,77 @@
     background-color: #2b2d42;
 }
 
+/* 
 .container .cards>div {
     padding: 1vh;
+} */
+
+
+.dashboardImages {
+    background-color: #2B2D42;
+    padding: 0.5%;
+    margin: 0.5%;
+    border-radius: 7.5%;
+    width: 7%;
+}
+
+#exit {
+    height: 70%;
+    width: 50%;
+    padding: 10%;
+}
+
+.cartes-membres-energies h2 {
+    font-weight: 400;
+    font-size: 1rem;
+    border-bottom: 1px solid white;
+}
+
+
+.cartes-membres-energies .membres {
+    background-image: url(../assets/img/bgcartemembre.png);
+    background-size: 30%;
+    background-repeat: no-repeat;
+    margin-bottom: 1vh;
+    background-position: center;
+}
+
+.cartes-membres-energies .energies {
+    background-image: url(../assets/img/bgcarteenergie.png);
+    background-size: 60%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/* a revoir en mettant position relative pour la rotation */
+/* .cartes-membres-energies .membres::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(../assets/img/bgcartemembre.png);
+    background-size: 40%;
+    background-repeat: no-repeat;
+    background-position: center;
+    transform: rotate(45deg); 
+} */
+
+
+.cartes-membres-energies {
+    height: 14vh;
+    gap: 1vh;
+}
+
+.cartes-membres-energies .membres,
+.cartes-membres-energies .energies {
+    font-size: 0.5rem;
+    margin: 0.5vw;
+    border-radius: 4px;
+    color: black;
+    background-color: white;
+    padding: 1vh;
+
 }

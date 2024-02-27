@@ -4,6 +4,8 @@ import homeButton from '../assets/img/accueil.png'
 import backArrow from '../assets/img/en-arriere.png'
 import scaleButton from '../assets/img/agrandir.png'
 import tomdelacote from '../assets/img/tomdelacote.png'
+import exit from '../assets/img/exit.png'
+import StatutPompe from './StatutPompe';
 
 const Header = () => {
     return (
@@ -48,13 +50,13 @@ const Header = () => {
 
                     {/* pompes statut */}
                     <div className='pompes'>
-
+                        <StatutPompe numeroPompe={1} carburant="SP-95" quantite={80} prix={60} />
                     </div>
 
 
                     {/* img exit */}
                     <div className='exit'>
-
+                        <img id="exit" className='dashboardImages' src={exit} alt="bouton exit" />
                     </div>
 
 
