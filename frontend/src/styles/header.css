@@ -1,7 +1,7 @@
 #header {
     width: 100vw;
     height: 15vh;
-    background-color: brown;
+    /* background-color: brown; */
     overflow: hidden;
 }
 
@@ -18,12 +18,12 @@
 
 #header .container .logo {
     width: 10vw;
-    background-color: blue;
+    /* background-color: blue; */
 }
 
 #header .container .buttons-user {
     width: 18vw;
-    background-color: aquamarine;
+    /* background-color: aquamarine; */
 }
 
 #header .container .buttons-user .buttons {
@@ -46,17 +46,16 @@
 
 #header .container .cards {
     width: 12vw;
-    background-color: yellow;
+    /* background-color: yellow; */
 }
 
 #header .container .pompes {
     width: 50vw;
-    background-color: green;
 }
 
 #header .container .exit {
     width: 10vw;
-    background-color: pink !important;
+    /* background-color: pink !important; */
 }
 
 #header .container .cards .cartes-membres-energies {
@@ -138,4 +137,20 @@
     background-color: white;
     padding: 1vh;
 
+}
+
+
+.pompes-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 12vh;
+    margin: 1vh 1vw;
+    border-radius: 12px;
+    background-color: #2b2d42 !important;
+    overflow: auto;
+}
+
+.pompes:first-child {
+    margin-left: 200px !important;
 }
