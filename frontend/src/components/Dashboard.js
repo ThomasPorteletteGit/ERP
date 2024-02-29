@@ -1,12 +1,22 @@
 import React from 'react';
 import Header from './Header';
 // import { Link } from 'react-router-dom';
-// import { useEffect, useState } from 'react';
-// import ipServer from './config';
+import { useEffect, useState } from 'react';
+import ipServer from './config';
 import EtatCuves from './EtatCuves';
 import Caisse from './Caisse';
 
 const Dashboard = () => {
+
+    useEffect(() => {
+    fetch(ipServer + "/login",
+    {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ username: 'admin', password: 'admin' })
+    }).then(response => response.json()).then(data => console.log(data.message));
+    }
+    , []);
     // const fonctionnalites = ["Choix Paiement", "Montant à payer", "Panier", "A venir", "A venir", "A venir"];
 
     // const [backendData, setBackendData] = useState([{}]);
@@ -23,7 +33,7 @@ const Dashboard = () => {
     // }, []);
 
     // const buttonColors = ["#FEE4CB", "#E9E7FD", "#FFD3E2", "#DBF6FD", "#C8F7DC", "#D5DEFF"];
-
+    
     return (
         <>
             <Header />

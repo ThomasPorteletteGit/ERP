@@ -1,2 +1,2 @@
-const ipServer = "https://s401-erp-848d092821d6.herokuapp.com/";
+const ipServer = "http://localhost:3000";
 export default ipServer;
