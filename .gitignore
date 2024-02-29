@@ -56,5 +56,7 @@ yarn-error.log*
 *.webp
 *.wmf
 *.zif
+.idea
+.vscode
 
 *.env

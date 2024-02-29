@@ -226,6 +226,16 @@ panier
 .dashboard-right {
     background-color: rgb(213, 255, 213) !important;
     width: 55% !important;
+    display: flex;
+}
+
+.dashboard-right .etat-transac {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+    width: 30%;
+    background-color: pink;
 }
 
 
@@ -236,9 +246,9 @@ cuves
 */
 
 #etat-cuves {
-    width: 30%;
-    height: 30%;
+    border-radius: 20px;
     background-color: #2b2d42;
+    width: 100%;
 }
 
 .etat-cuves-container {
@@ -332,11 +342,11 @@ p {
 }
 
 .vert {
-    background-color: green;
+    background-color: #23d423;
 }
 
 .rouge {
-    background-color: red;
+    background-color: #ff0400;
 }
 
 .quantite-prix {
@@ -353,4 +363,273 @@ p {
 
 .quantite {
     margin-bottom: 0;
+}
+
+/* Service */
+
+#services {
+    width: 20%;
+    height: 25%;
+    margin: 5px;
+    border-radius: 20px;
+    background-color: #2B2D42;
+}
+
+#icon_container {
+    width: 12%;
+    padding: 5px 15px;
+}
+
+.top_container {
+    border-radius: 20px 20px 0px 0px;
+    background: #2B2D42;
+    display: flex;
+    padding-left: 5%;
+    border-bottom: 1px solid white;
+}
+
+.button_service_parking {
+    border: none;
+    padding-top: 10%;
+    padding-bottom: 10%;
+    width: 45%;
+}
+
+.button_service_parking::after {
+    background: url("../assets/img/parking.png") no-repeat;
+    background-size: cover;
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.button_service_parking {
+    background-color: white;
+    margin-top: 5px;
+    border-radius: 5px;
+}
+
+.button_service_voiture {
+    background: url("../assets/img/parking.png") no-repeat;
+    border: none;
+    padding-top: 10%;
+    padding-bottom: 10%;
+    width: 45%;
+}
+
+.button_service_livraison {
+    background: url("../assets/img/parking.png") no-repeat;
+    background-size: cover;
+    border: none;
+    padding-top: 10%;
+    padding-bottom: 10%;
+    width: 45%;
+}
+
+.button_service_autres {
+    background: url("../assets/img/parking.png") no-repeat;
+    background-size: cover;
+    border: none;
+    padding-top: 10%;
+    padding-bottom: 10%;
+    width: 45%;
+}
+
+.button_container {
+    padding: 5px;
+    display: table-row;
+}
+
+/*transaction*/
+
+#transaction {
+    border-radius: 20px;
+    background-color: #2B2D42;
+    width: 100%;
+    height: 100%;
+    margin-top: 5%;
+}
+
+.last-transaction p {
+    margin-left: 2%;
+    font-size: 12px;
+    color: white;
+    text-align: left !important;
+}
+
+.last-transaction {
+    margin: 5px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.transaction-details {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    background-color: white;
+    margin: 8px;
+    color: black;
+    overflow-y: auto;
+    max-height: 47vh;
+}
+
+.transaction-details table {
+    border-collapse: collapse;
+}
+
+/* .component-title { */
+/* border-bottom: 1px solid white; */
+/* } */
+
+.transaction-details thead {
+    border-bottom: 1px solid grey;
+}
+
+.transaction-details>table>thead>tr>th {
+    font-size: 10px;
+    color: grey;
+}
+
+.transaction-details th {
+    padding: 5px;
+}
+
+.transaction-details td {
+    padding: 5px;
+    border-bottom: 1px solid #aaaaaa;
+}
+
+.transaction-details>table>thead>tr>:nth-child(1) {
+    width: 20%;
+}
+
+.transaction-details>table>thead>tr>th:nth-child(2) {
+    width: 20%;
+}
+
+.transaction-details>table>thead>tr>th:nth-child(3) {
+    width: 20%;
+}
+
+.transaction-details>table>thead>tr>th:nth-child(4) {
+    width: 20%;
+}
+
+.transaction-details>table>thead>tr>th:nth-child(5) {
+    width: 20%;
+}
+
+.transaction-details>table>tbody>tr>td:nth-child(1) {
+    width: 20%;
+    font-weight: bold;
+}
+
+.transaction-details>table>tbody>tr>td {
+    font-size: 10px;
+    width: 25%;
+}
+
+.statut-transac {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin-right: 5px;
+}
+
+.red {
+    background-color: #ff0400;
+}
+
+.green {
+    background-color: #23d423;
+}
+
+.payment-type {
+    color: white;
+    border-radius: 6px;
+    font-weight: bold;
+}
+
+.cb-payment {
+    padding: 1px 9px;
+    background-color: #003399;
+}
+
+.esp-payment {
+    padding: 1px 6px;
+    background-color: #086608;
+}
+
+.hour-transac {
+    border-radius: 4px;
+    padding: 1px 5px;
+    background-color: #cdcdcd;
+}
+
+.hour-transac {
+    display: flex;
+}
+
+#lhorloge {
+    margin-top: 1.5px;
+    margin-right: 2px;
+    width: 10px;
+    height: 10px;
+}
+
+.fleche-container {
+    display: inline-flex;
+    align-items: center;
+    padding: 5px;
+}
+
+.fleche {
+    width: 8px;
+    height: 8px;
+    position: relative;
+    padding: 5px;
+    background-color: #2B2D42;
+    margin-right: 3px;
+    border-radius: 3px;
+}
+
+.fleche::before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-image: url('../assets/img/fleche.png');
+    background-size: cover;
+    transform: rotate(-135deg);
+}
+
+.loss .fleche::before {
+    transform: rotate(-45deg);
+}
+
+
+.prix-transac {
+    font-weight: bold;
+}
+
+.input-select-container {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.transaction-container .last-transaction input,
+select {
+    margin-left: 2%;
+    margin-right: 2%;
+    width: 40%;
+    background-color: white;
+    border-radius: 5px;
 }

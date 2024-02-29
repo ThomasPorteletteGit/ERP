@@ -5,6 +5,8 @@ import { useEffect, useState } from 'react';
 import ipServer from './config';
 import EtatCuves from './EtatCuves';
 import Caisse from './Caisse';
+import Services from "./services";
+import Transaction from './Transaction';
 
 const Dashboard = () => {
 
@@ -57,7 +59,12 @@ const Dashboard = () => {
 
                     <div className="dashboard-right">
 
-                        <EtatCuves />
+                        <div className="etat-transac">
+                            <EtatCuves />
+                            <Transaction />
+                        </div>
+
+                        <Services />
                     </div>
 
                 </div>
