@@ -5,6 +5,7 @@ import Header from './Header';
 // import ipServer from './config';
 import EtatCuves from './EtatCuves';
 import Caisse from './Caisse';
+import Services from "./services";
 
 const Dashboard = () => {
     // const fonctionnalites = ["Choix Paiement", "Montant à payer", "Panier", "A venir", "A venir", "A venir"];
@@ -48,6 +49,7 @@ const Dashboard = () => {
                     <div className="dashboard-right">
 
                         <EtatCuves />
+                        <Services />
                     </div>
 
                 </div>
