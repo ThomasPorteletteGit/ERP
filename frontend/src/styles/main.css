@@ -686,6 +686,8 @@ select {
 
 .heures {
     border-radius: 12px;
+    width: auto;
+    height: auto;
 
 }
 
