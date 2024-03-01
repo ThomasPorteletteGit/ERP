@@ -7,6 +7,7 @@ import EtatCuves from './EtatCuves';
 import Caisse from './Caisse';
 import Services from "./services";
 import Horaires from './Horaires';
+import Transaction from './Transaction';
 
 const Dashboard = () => {
     // const fonctionnalites = ["Choix Paiement", "Montant à payer", "Panier", "A venir", "A venir", "A venir"];
@@ -49,7 +50,11 @@ const Dashboard = () => {
 
                     <div className="dashboard-right">
 
-                        <EtatCuves />
+                        <div className="etat-transac">
+                            <EtatCuves />
+                            <Transaction />
+                        </div>
+
                         <Services />
                         <Horaires />
                     </div>
