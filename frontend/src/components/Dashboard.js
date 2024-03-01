@@ -6,6 +6,7 @@ import Header from './Header';
 import EtatCuves from './EtatCuves';
 import Caisse from './Caisse';
 import Services from "./services";
+import Horaires from './Horaires';
 
 const Dashboard = () => {
     // const fonctionnalites = ["Choix Paiement", "Montant à payer", "Panier", "A venir", "A venir", "A venir"];
@@ -50,6 +51,7 @@ const Dashboard = () => {
 
                         <EtatCuves />
                         <Services />
+                        <Horaires />
                     </div>
 
                 </div>
