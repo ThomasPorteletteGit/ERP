@@ -224,7 +224,7 @@ panier
 }
 
 .dashboard-right {
-    background-color: rgb(213, 255, 213) !important;
+    background-color: white !important;
     width: 55% !important;
     display: flex;
 }
@@ -235,7 +235,7 @@ panier
     flex-direction: column;
     height: 100%;
     width: 30%;
-    background-color: pink;
+    /* background-color: pink; */
 }
 
 
@@ -250,7 +250,7 @@ panier
 .dashboard-right .incidents-services {
     display: flex;
     height: 25%;
-    background-color: orange;
+    /* background-color: orange; */
     width: 100%;
 }
 
@@ -259,14 +259,14 @@ panier
     align-items: center;
     justify-content: center;
     height: 37.5%;
-    background-color: #7883ff;
+    /* background-color: #7883ff; */
     width: 100%;
 }
 
 .dashboard-right .horaires-releve-direction {
     display: flex;
     height: 37.5%;
-    background-color: #ff0000;
+    /* background-color: #ff0000; */
     width: 100%;
 }
 
@@ -279,7 +279,7 @@ panier
     gap: 5%;
     height: 100%;
     width: 50%;
-    background-color: purple;
+    /* background-color: purple; */
 }
 
 
