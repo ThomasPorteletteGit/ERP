@@ -239,6 +239,34 @@ panier
 }
 
 
+.container.right-to-right {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.dashboard-right .incidents-services {
+    height: 25%;
+    background-color: orange;
+    width: 100%;
+}
+
+.dashboard-right .stock-container {
+    height: 37.5%;
+    background-color: #7883ff;
+    width: 100%;
+}
+
+.dashboard-right .horaires-releve-direction {
+    height: 37.5%;
+    background-color: #ff0000;
+    width: 100%;
+}
+
+
+
 
 
 /*

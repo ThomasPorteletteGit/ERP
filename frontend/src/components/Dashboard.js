@@ -55,8 +55,23 @@ const Dashboard = () => {
                             <Transaction />
                         </div>
 
-                        <Services />
-                        <Horaires />
+                        <div className='container right-to-right'>
+
+                            <div className="incidents-services">
+
+
+                                <Services />
+                            </div>
+
+                            <div className='stock-container'>
+                            </div>
+
+                            <div className="horaires-releve-direction">
+                                <Horaires />
+                            </div>
+
+                        </div>
+
                     </div>
 
                 </div>

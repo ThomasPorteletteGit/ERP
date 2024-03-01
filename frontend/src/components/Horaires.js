@@ -1,8 +1,6 @@
-import React, { useState } from 'react';
 import clock from '../assets/img/clock.png';
 
 const Horaires = () => {
-    const [heure, setHeure] = useState('00:00');
     return (
         <section id="horaires">
             <div className="horaires-container">
