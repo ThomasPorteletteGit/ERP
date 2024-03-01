@@ -400,17 +400,16 @@ p {
 /* Service */
 
 #services {
-    width: 20%;
-    height: 25%;
-    margin: 5px;
+    width: 40%;
+    height: 100%;
     border-radius: 20px;
     background-color: #2B2D42;
 }
 
-#icon_container {
+/* #icon_container {
     width: 12%;
     padding: 5px 15px;
-}
+} */
 
 .top_container {
     border-radius: 20px 20px 0px 0px;
@@ -420,57 +419,42 @@ p {
     border-bottom: 1px solid white;
 }
 
-.button_service_parking {
+.services-container {
+    height: 100%;
+}
+
+.button_container {
+    padding: 10px 5px;
+    margin-bottom: 12px;
+    height: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.button_container button {
+    background-size: cover;
+    background-color: white;
     border: none;
-    padding-top: 10%;
-    padding-bottom: 10%;
     width: 45%;
+    height: 35%;
+    border-radius: 8px;
 }
 
 .button_service_parking::after {
     background: url("../assets/img/parking.png") no-repeat;
-    background-size: cover;
-    content: "";
-    display: block;
-    width: 100%;
-    height: 100%;
-}
-
-.button_service_parking {
-    background-color: white;
-    margin-top: 5px;
-    border-radius: 5px;
 }
 
 .button_service_voiture {
     background: url("../assets/img/parking.png") no-repeat;
-    border: none;
-    padding-top: 10%;
-    padding-bottom: 10%;
-    width: 45%;
 }
 
 .button_service_livraison {
     background: url("../assets/img/parking.png") no-repeat;
-    background-size: cover;
-    border: none;
-    padding-top: 10%;
-    padding-bottom: 10%;
-    width: 45%;
 }
 
 .button_service_autres {
     background: url("../assets/img/parking.png") no-repeat;
-    background-size: cover;
-    border: none;
-    padding-top: 10%;
-    padding-bottom: 10%;
-    width: 45%;
-}
-
-.button_container {
-    padding: 5px;
-    display: table-row;
 }
 
 /*transaction*/
@@ -669,18 +653,29 @@ select {
 
 /*Horaires*/
 #horaires {
-    width: 30%;
-    height: 36%;
+    margin-left: 1%;
+    width: 45%;
+    height: 100%;
     background-color: #2b2d42;
     border-radius: 12px;
     margin-bottom: 20px;
 }
 
+#horaires h2{
+    text-align: left;
+}
+
+.horaires-container {
+    height: 100%;
+}
+
 .horaires-content {
+    padding-top: 25px;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    height: 100%;
+    height: 60%;
+    overflow-x: auto;
 }
 
 .horaires-content p {
@@ -789,6 +784,6 @@ select {
     font-size: 12px;
 }
 
-.incident-desc{
+.incident-desc {
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
 }

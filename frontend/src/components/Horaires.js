@@ -1,20 +1,16 @@
-import clock from '../assets/img/clock.png';
 
 const Horaires = () => {
     return (
         <section id="horaires">
             <div className="horaires-container">
                 <div className="top_container">
-                    <img src={clock} alt="horaires" id="icon_container_clock" />
                     <div>
-                        <h2>Horaires</h2>
+                        <h2>🕐Horaires</h2>
                         <div className='horaire-header'>
                             <h6>Ce sont les horaires d’ouverture et fermeture de votre boutique</h6>
                         </div>
                     </div>
                 </div>
-
-                <hr />
                 <div className='horaires-content'>
                     <table>
                         <thead>

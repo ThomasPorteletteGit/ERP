@@ -5,7 +5,7 @@ import Header from './Header';
 // import ipServer from './config';
 import EtatCuves from './EtatCuves';
 import Caisse from './Caisse';
-import Services from "./services";
+import Services from "./Services";
 import Horaires from './Horaires';
 import Transaction from './Transaction';
 import Stocks from './Stocks';
