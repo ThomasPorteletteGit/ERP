@@ -8,6 +8,8 @@ import Caisse from './Caisse';
 import Services from "./services";
 import Horaires from './Horaires';
 import Transaction from './Transaction';
+import Stocks from './Stocks';
+import Incidents from './Incidents';
 
 const Dashboard = () => {
     // const fonctionnalites = ["Choix Paiement", "Montant à payer", "Panier", "A venir", "A venir", "A venir"];
@@ -59,11 +61,12 @@ const Dashboard = () => {
 
                             <div className="incidents-services">
 
-
+                                <Incidents />
                                 <Services />
                             </div>
 
                             <div className='stock-container'>
+                                <Stocks />
                             </div>
 
                             <div className="horaires-releve-direction">

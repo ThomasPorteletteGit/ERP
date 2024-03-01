@@ -4,7 +4,9 @@ import Cuve from './Cuve';
 const EtatCuves = () => {
     return (
         <section id="etat-cuves">
-            <h2 className='component-title'>Etat des cuves</h2>
+            <div className="top_container">
+                <h2 className='component-title'>🛢️ Etat des cuves</h2>
+            </div>
             <div className="etat-cuves-container">
                 <Cuve carburant="SP-95" niveau={80} />
                 <Cuve carburant="SP-98" niveau={60} />
