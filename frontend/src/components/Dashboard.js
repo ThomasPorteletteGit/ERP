@@ -10,6 +10,8 @@ import Horaires from './Horaires';
 import Transaction from './Transaction';
 import Stocks from './Stocks';
 import Incidents from './Incidents';
+import Releve from './Releve';
+import Direction from './Direction';
 
 const Dashboard = () => {
     // const fonctionnalites = ["Choix Paiement", "Montant à payer", "Panier", "A venir", "A venir", "A venir"];
@@ -71,6 +73,11 @@ const Dashboard = () => {
 
                             <div className="horaires-releve-direction">
                                 <Horaires />
+
+                                <div className='releve-direction'>
+                                    <Releve />
+                                    <Direction />
+                                </div>
                             </div>
 
                         </div>
