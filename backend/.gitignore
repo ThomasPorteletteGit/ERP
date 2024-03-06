@@ -5,6 +5,8 @@ node_modules/
 /.pnp
 .pnp.js
 
+*.sql
+
 # testing
 /coverage
 
@@ -21,36 +23,3 @@ node_modules/
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-
-*.png
-*.jpg
-*.jpeg
-*.gif
-*.bmp
-*.svg
-*.ico
-*.tif
-*.tiff
-*.webp
-*.avif
-*.jfif
-*.heif
-*.bat
-*.bpg
-*.brk
-*.ecw
-*.fits
-*.hdr
-*.indd
-*.jp2
-*.jxr
-*.pdf
-*.ppm
-*.psb
-*.rgb
-*.rgba
-*.tga
-*.wbmp
-*.webp
-*.wmf
-*.zif
