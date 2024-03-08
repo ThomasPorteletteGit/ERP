@@ -31,15 +31,6 @@ const Dashboard = () => {
             <Header />
             < ComponentsAnimation />
             <div id='dashboard'>
-                {/* <h1 className='view-title'>Dashboard 📊</h1>
-                <div className="dashboard-container">
-                    {fonctionnalites.map((fonctionnalite, index) => (
-                        <Link key={index} to={`/${normalizeString(fonctionnalite)}`} className="dashboard-link"> */}
-                {/* % pour ne pas dépasser la taille du tableau et répéter les couleurs */}
-                {/* <button className="dashboard-button" style={{ backgroundColor: buttonColors[index % buttonColors.length] }}>{fonctionnalite}</button>
-                        </Link>
-                    ))}
-                </div> */}
 
                 <div className="dashboard-container">
 
