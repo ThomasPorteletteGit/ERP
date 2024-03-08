@@ -70,14 +70,6 @@ const Transaction = () => {
                                             {transaction.id}
                                         </span>
                                     </td>
-
-
-                                    <td id="horloge-hour">
-                                        <span className='hour-transac'>
-                                            <img id="lhorloge" src={horloge} alt="clock" />
-                                            {transaction.heure}
-                                        </span>
-                                    </td>
                                     <td className='prix-transac'>{transaction.total}</td>
                                     <td>
                                         <span className={`payment-type ${getPaymentTypeClass(transaction.type)}`}>

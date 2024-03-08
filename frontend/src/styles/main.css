@@ -826,3 +826,190 @@ select {
     border-radius: 8px;
     background-color: white;
 }
+
+/* Caisse */
+
+
+
+#caisse {
+    border-radius: 20px;
+    background-color: #2B2D42;
+    width: 100%;
+    height: 100%;
+    margin-top: 2%;
+}
+
+.caisse-details {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    background-color: white;
+    margin: 8px;
+    color: black;
+    overflow-y: auto;
+    height: 100%;
+    margin: 3%;
+}
+
+.caisse-container{
+    height: 40%;
+}
+
+.caisse-details table {
+    width: 100%;
+    height: 40%;
+    border-collapse: collapse;
+}
+
+.caisse-details thead {
+    border-bottom: 1px solid grey;
+}
+
+.caisse-details>table>thead>tr>th {
+    font-size: 10px;
+    color: grey;
+}
+
+.caisse-details th {
+    padding: 5px;
+}
+
+.caisse-details td {
+    padding: 5px;
+    border-bottom: 1px solid #aaaaaa;
+}
+
+.caisse-details>table>thead>tr>:nth-child(1) {
+    width: 20%;
+}
+
+.caisse-details>table>thead>tr>th:nth-child(2) {
+    width: 20%;
+}
+
+.caisse-details>table>thead>tr>th:nth-child(3) {
+    width: 20%;
+}
+
+.caisse-details>table>thead>tr>th:nth-child(4) {
+    width: 20%;
+}
+
+.caisse-details>table>thead>tr>th:nth-child(5) {
+    width: 20%;
+}
+
+.caisse-details>table>tbody>tr>td:nth-child(1) {
+    width: 20%;
+    font-weight: bold;
+}
+
+.caisse-details>table>tbody>tr>td {
+    font-size: 10px;
+    width: 25%;
+}
+
+.caisse-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.caisse-details {
+    margin-bottom: 20px;
+}
+
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+.numeric-buttons {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    border: 1px solid #ccc;
+    align-items: center;
+    padding: 20px;
+    border-radius: 8px;
+    width: 400px;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+}
+
+.calculator {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.input-display {
+    text-align: center;
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.numeric-buttons {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    border: 1px solid #ccc;
+    align-items: center;
+    padding: 20px;
+    border-radius: 8px;
+    width: 70%;
+    justify-content: center; 
+    margin: 0 auto; 
+}
+
+button {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+.separator {
+    border: 1px solid #ccc;
+    margin: 10px 0;
+}
+
+.total {
+    display: inline-block;
+    background-color: white;
+    border-radius: 10px;
+    padding: 5px 10px;
+    margin: 10px;
+    text-align: right;
+}
+
+.total p {
+    color: black;
+    font-size: 18px;
+    margin: 0;
+}
+
+.search-bar input {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    width: 40%;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    box-sizing: border-box;
+}
+
+
