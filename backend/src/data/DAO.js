@@ -29,7 +29,10 @@ class DAO
 
     select(attributes, table, condition, callback)
     {
-        let selectQuery = "SELECT " + attributes + " FROM " + table + " WHERE " + condition;
+        let selectQuery = "SELECT " + attributes + " FROM " + table;
+        if (condition != "") {
+            selectQuery += " WHERE " + condition;
+        }
         this.dbConnection.query(selectQuery, (err, result) => {
             if (err) throw err;
             callback(result);
