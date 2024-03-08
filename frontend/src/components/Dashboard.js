@@ -9,6 +9,7 @@ import Stocks from './Stocks';
 import Incidents from './Incidents';
 import Releve from './Releve';
 import Direction from './Direction';
+import ComponentsAnimation from "./ComponentsAnimation";
 
 const Dashboard = () => {
 
@@ -24,10 +25,11 @@ const Dashboard = () => {
 
 
     // const buttonColors = ["#FEE4CB", "#E9E7FD", "#FFD3E2", "#DBF6FD", "#C8F7DC", "#D5DEFF"];
-    
+
     return (
         <>
             <Header />
+            < ComponentsAnimation />
             <div id='dashboard'>
                 {/* <h1 className='view-title'>Dashboard 📊</h1>
                 <div className="dashboard-container">

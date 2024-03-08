@@ -52,7 +52,7 @@ const Header = () => {
                     <div className='pompes'>
                         <div className='pompes-content'>
                             <StatutPompe numeroPompe={1} carburant="SP-95" quantite={80} prix={60} />
-                            <StatutPompe numeroPompe={2} carburant="SP-96" quantite={80} prix={60} />
+                            <StatutPompe numeroPompe={2} carburant="SP-96" quantite={50} prix={60} />
                             <StatutPompe numeroPompe={3} carburant="SP-97" quantite={80} prix={60} />
                             <StatutPompe numeroPompe={4} carburant="Gazole" quantite={80} prix={60} />
                             {/* <StatutPompe numeroPompe={1} carburant="SP-95" quantite={80} prix={60} /> */}
