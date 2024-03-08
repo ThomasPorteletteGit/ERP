@@ -9,12 +9,27 @@ import Stocks from './Stocks';
 import Incidents from './Incidents';
 import Releve from './Releve';
 import Direction from './Direction';
+import ComponentsAnimation from "./ComponentsAnimation";
 
 const Dashboard = () => {
+
+    // const fonctionnalites = ["Choix Paiement", "Montant à payer", "Panier", "A venir", "A venir", "A venir"];
+
+    // const normalizeString = (str) => {
+    //     return str
+    //         .toLowerCase()
+    //         .normalize("NFD")
+    //         .replace(/[\u0300-\u036f]/g, "")
+    //         .replace(/\s+/g, '-');
+    // };
+
+
+    // const buttonColors = ["#FEE4CB", "#E9E7FD", "#FFD3E2", "#DBF6FD", "#C8F7DC", "#D5DEFF"];
 
     return (
         <>
             <Header />
+            < ComponentsAnimation />
             <div id='dashboard'>
 
                 <div className="dashboard-container">

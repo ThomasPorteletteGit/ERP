@@ -1,4 +1,5 @@
 import React from 'react';
+import ComponentsAnimation from "./ComponentsAnimation";
 
 const ChoixPaiement = () => {
     return (
