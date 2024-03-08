@@ -3,33 +3,36 @@ const postgres = require('pg');
 
 class DAO
 {
-    dbIp = "localhost"; // TODO : mettre IP heroku
-    dbPort = "27017"; // TODO : pareil mais pb vu que c'est un port dynamique
-    dbName = "s401_ERP";
-    dbUser = "matthieu griffonnet"; // Je crois ?
-    dbPassword = "mdp"; // non
+    dbIp = process.env.DATABASE_URL;
 
     constructor() 
     {
-        this.dbConnection = mysql.createConnection({
-            host: this.dbIp,
-            user: this.dbUser,
-            password: this.dbPassword
+        const { Client } = require('pg');
+        this.dbConnection = new Client({
+            connectionString: this.dbIp,
+            ssl: {
+                rejectUnauthorized: false,
+            }
         });
-
-        this.dbConnection.connect((err) => {
-            if (err) throw err;
-            console.log("Connected to MySQL");
-        });
+        this.dbConnection.connect();
+        console.log("Connected to the database");
     }
 
+
     /**
-     * @param {*} selectQuery La requête SQL à exécuter sous la forme "SELECT * FROM table WHERE ..."
-     * @param {*} callback  La fonction à appeler une fois la requête exécutée
+     * 
+     * @param {*} attributes Les attributs à sélectionner sous la forme "attribut1, attribut2, ..."
+     * @param {*} table La table à sélectionner
+     * @param {*} condition La condition de sélection sous la forme "attribut1 = valeur1 AND attribut2 = valeur2 ..."
+     * @param {*} callback La fonction à appeler une fois la requête exécutée
      */
 
-    select(selectQuery, callback)
+    select(attributes, table, condition, callback)
     {
+        let selectQuery = "SELECT " + attributes + " FROM " + table;
+        if (condition != "") {
+            selectQuery += " WHERE " + condition;
+        }
         this.dbConnection.query(selectQuery, (err, result) => {
             if (err) throw err;
             callback(result);
@@ -37,44 +40,57 @@ class DAO
     }
 
     /**
-     * @param {*} insertQuery La requête SQL à exécuter sous la forme "INSERT INTO table VALUES ..."
-     * @param {*} callback  La fonction à appeler une fois la requête exécutée
+     * @param {*} table La table dans laquelle insérer les valeurs
+     * @param {*} values Les valeurs à insérer sous la forme "valeur1, valeur2, ..."
+     * @param {*} callback La fonction à appeler une fois la requête exécutée
      */
-
-    insert(insertQuery, callback)
+    insert(table, values,callback)
     {
+        let insertQuery = "INSERT INTO " + table + " VALUES (" + values + ")";
         this.dbConnection.query(insertQuery, (err, result) => {
             if (err) throw err;
             callback(result);
         });
     }
 
-    /**
-     * @param {*} updateQuery  La requête SQL à exécuter sous la forme "UPDATE table SET ... WHERE ..."
-     * @param {*} callback  La fonction à appeler une fois la requête exécutée
+    /** 
+     * @param {*} attributes Les attributs à mettre à jour sous la forme "attribut1 = valeur1, attribut2 = valeur2, ..."
+     * @param {*} table La table à mettre à jour
+     * @param {*} condition La condition de mise à jour sous la forme "attribut1 = valeur1 AND attribut2 = valeur2 ..."
+     * @param {*} callback La fonction à appeler une fois la requête exécutée
+     * 
      */
 
-    update(updateQuery, callback)
+    update(attributes, table, condition, callback)
     {
+        let updateQuery = "UPDATE " + table + " SET " + attributes + " WHERE " + condition;
         this.dbConnection.query(updateQuery, (err, result) => {
             if (err) throw err;
             callback(result);
         });
     }
 
+
     /**
-     * @param {*} deleteQuery La requête SQL à exécuter sous la forme "DELETE FROM table WHERE ..."
-     * @param {*} callback  La fonction à appeler une fois la requête exécutée
+     * 
+     * @param {*} table La table à supprimer
+     * @param {*} condition La condition de suppression sous la forme "attribut1 = valeur1 AND attribut2 = valeur2 ..."
+     * @param {*} callback La fonction à appeler une fois la requête exécutée
      */
 
-    delete(deleteQuery, callback)
+    delete(table, condition, callback)
     {
+        let deleteQuery = "DELETE FROM " + table + " WHERE " + condition;
         this.dbConnection.query(deleteQuery, (err, result) => {
             if (err) throw err;
             callback(result);
         });
     }
 
+    /**
+     * Ferme la connexion à la base de données
+     */
+    
     close()
     {
         this.dbConnection.end();
