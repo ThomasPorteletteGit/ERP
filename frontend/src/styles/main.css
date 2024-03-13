@@ -215,6 +215,8 @@ panier
 */
 
 .dashboard-left,
+
+
 .dashboard-right {
     /* 100vh - 19vh car 15 header et 2+2 margin */
     height: 81vh;
@@ -939,7 +941,7 @@ th {
     align-items: center;
     padding: 20px;
     border-radius: 8px;
-    width: 400px;
+    width: 70%;
 }
 
 .button-container {
@@ -974,6 +976,26 @@ th {
     margin: 0 auto; 
 }
 
+.numeric-buttons button{
+    padding: 8px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 1700px) {
+    .numeric-buttons button{
+        padding: 6px !important;
+    }
+}
+
+@media screen and (max-width: 1400px) {
+    .numeric-buttons button{
+        padding: 4px !important;
+    }
+}
+
 .numeric-buttons > button:nth-child(3) {
     grid-column-end: span 2;
     width: 48%;
@@ -996,14 +1018,6 @@ th {
 
 .numeric-buttons > button:nth-child(19) {
     grid-column-end: span 2;
-}
-
-button {
-    padding: 10px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    background-color: #fff;
-    cursor: pointer;
 }
 
 .separator {
