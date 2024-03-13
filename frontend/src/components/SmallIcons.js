@@ -2,10 +2,10 @@ import React from "react";
 import PropTypes from "prop-types";
 import direction from "./Direction";
 
-const SmallIcons = ({iconClicked}) => {
-    const componentsCliked = iconClicked;
-    console.log(componentsCliked);
-    const components = ['etat-cuves', 'direction', 'incidents', 'transaction', 'stocks', 'services', 'horaires',  'releve'];
+const SmallIcons = ({ iconClicked }) => {
+    const componentsClicked = iconClicked;
+    console.log(componentsClicked);
+    const components = ['etat-cuves', 'direction', 'incidents', 'transaction', 'stocks', 'services', 'horaires', 'releve'];
 
     const emojis = {
         'etat-cuves': '🛢️',
@@ -18,17 +18,23 @@ const SmallIcons = ({iconClicked}) => {
         'releve': '📋'
     };
 
+    let divs = [];
 
     components.forEach(component => {
-        console.log(component + " " + iconClicked);
-        if (component != iconClicked) {
-            console.log(component + " : " + emojis[component]);
+        if (component !== iconClicked) {
+            divs.push(<div className="smallIcon" key={component}>{emojis[component]}</div>);
         }
     });
 
+    return (
+        <div className="smallIcons">
+            {divs}
+        </div>
+    );
 };
 
-SmallIcons.prototype = {
-    iconClicker : PropTypes.string.isRequired
-}
+SmallIcons.propTypes = {
+    iconClicked: PropTypes.string.isRequired
+};
+
 export default SmallIcons;
