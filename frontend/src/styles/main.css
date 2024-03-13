@@ -1013,3 +1013,33 @@ button {
 }
 
 
+/* Connexion */
+
+.connection {
+    color: black
+}
+
+.connection-bar input{
+    align-items: center;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    width: 20%;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    box-sizing: border-box;
+}
+
+.numericButtonsConnection {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    border: 1px solid #ccc;
+    align-items: center;
+    padding: 10px;
+    border-radius: 10px;
+    width: 20%;
+    justify-content: center; 
+    margin: 0 auto; 
+}
+
