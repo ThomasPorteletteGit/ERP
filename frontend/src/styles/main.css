@@ -215,6 +215,8 @@ panier
 */
 
 .dashboard-left,
+
+
 .dashboard-right {
     /* 100vh - 19vh car 15 header et 2+2 margin */
     height: 81vh;
@@ -428,7 +430,19 @@ p {
     display: flex;
     padding-left: 5%;
     border-bottom: 1px solid white;
+    display: flex;
+    align-items: center;
+
 }
+
+.top_container img {
+    margin-left: auto;
+    margin-right: 8px;
+    margin-top: 2px;
+    height: 20px;
+    width: 20px;
+}
+
 
 .services-container {
     height: 100%;
@@ -939,7 +953,7 @@ th {
     align-items: center;
     padding: 20px;
     border-radius: 8px;
-    width: 400px;
+    width: 70%;
 }
 
 .button-container {
@@ -963,23 +977,59 @@ th {
 
 .numeric-buttons {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(5, 1fr);
     gap: 10px;
     border: 1px solid #ccc;
     align-items: center;
     padding: 20px;
     border-radius: 8px;
-    width: 70%;
+    width: 75%;
     justify-content: center; 
     margin: 0 auto; 
 }
 
-button {
-    padding: 10px;
-    font-size: 16px;
+.numeric-buttons button{
+    padding: 8px;
+    font-size: 14px;
     border: 1px solid #ccc;
     background-color: #fff;
     cursor: pointer;
+}
+
+@media screen and (max-width: 1700px) {
+    .numeric-buttons button{
+        padding: 6px !important;
+    }
+}
+
+@media screen and (max-width: 1400px) {
+    .numeric-buttons button{
+        padding: 4px !important;
+    }
+}
+
+.numeric-buttons > button:nth-child(3) {
+    grid-column-end: span 2;
+    width: 48%;
+}
+
+.numeric-buttons > button:nth-child(7) {
+    grid-column-end: span 2;
+    width: 48%;
+}
+
+.numeric-buttons > button:nth-child(11) {
+    grid-column-end: span 2;
+    width: 48%;
+}
+
+.numeric-buttons > button:nth-child(15) {
+    grid-column-end: span 2;
+    width: 48%;
+}
+
+.numeric-buttons > button:nth-child(19) {
+    grid-column-end: span 2;
 }
 
 .separator {

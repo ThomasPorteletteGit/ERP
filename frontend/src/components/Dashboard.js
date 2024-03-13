@@ -29,7 +29,7 @@ const Dashboard = () => {
     return (
         <>
             <Header />
-            < ComponentsAnimation />
+            <ComponentsAnimation />
             <div id='dashboard'>
 
                 <div className="dashboard-container">

@@ -1,5 +1,6 @@
 import React from 'react';
 import horloge from '../assets/img/lhorloge.png';
+import agrandir from '../assets/img/agrandir.png';
 
 const Transaction = () => {
 
@@ -35,6 +36,7 @@ const Transaction = () => {
         <section id="transaction">
             <div className="top_container">
                 <h2 className='component-title'>💸 Transaction</h2>
+                <img src={agrandir} id="imgAgrandir" alt="agrandir" />
             </div>
             <div className='transaction-container'>
                 <div className='last-transaction'>

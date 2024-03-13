@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactDOMServer from 'react-dom/server'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import ChoixPaiement from './components/ChoixPaiement';
 import MontantAPayer from './components/MontantAPayer';
@@ -11,7 +12,7 @@ import './styles/App.css';
 import './styles/main.css';
 import './styles/index.css';
 import './styles/header.css';
-import './styles/smallicons.css'
+import './styles/icons.css'
 
 
 
