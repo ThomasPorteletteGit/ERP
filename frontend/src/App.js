@@ -8,6 +8,7 @@ import './styles/App.css';
 import './styles/main.css';
 import './styles/index.css';
 import './styles/header.css';
+import './styles/smallicons.css'
 
 
 function App() {

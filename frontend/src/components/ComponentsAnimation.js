@@ -1,14 +1,26 @@
-import React, { useEffect } from 'react';
-import Caisse from "./Caisse";
+import React, { useEffect, useState } from 'react';
+import SmallIcons from "./SmallIcons";
 import Cuve from "./Cuve";
-import Direction from "./Direction";
 
 const ComponentsAnimation = () => {
+    const [clickedComponent, setClickedComponent] = useState(null);
+
     useEffect(() => {
+        const components = ['etat-cuves', 'direction', 'incidents', 'transaction', 'stocks', 'services', 'horaires', 'releve'];
 
-        const components = ['etat-cuves', 'direction', 'incidents', 'transaction', 'stocks', 'services', 'horaires',  'releve'];
+        const handleClick = (componentId) => () => {
+            console.log('click ' + componentId);
+            setClickedComponent(componentId);
+            components.forEach((componentId) => {
+                const component = document.getElementById(componentId);
+                if (component) {
+                    component.style.display = 'none';
+                }
+            });
+        };
 
-        const boutonRetour = document.getElementById("backArrow");
+        const boutonRetour = document.getElementById("backArrow")
+
         boutonRetour.addEventListener("click", () => {
             components.forEach((componentId) => {
                 const component = document.getElementById(componentId);
@@ -18,17 +30,6 @@ const ComponentsAnimation = () => {
             });
         });
 
-
-        const handleClick = (componentId) => () => {
-            console.log('click ' + componentId);
-            components.forEach((componentId) => {
-                const component = document.getElementById(componentId);
-                if (component) {
-                    component.style.display = "none";
-                }
-            });
-        };
-
         components.forEach((componentId) => {
             const component = document.getElementById(componentId);
             if (component) {
@@ -36,17 +37,13 @@ const ComponentsAnimation = () => {
             }
         });
 
-        return () => {
-            components.forEach((componentId) => {
-                const component = document.getElementById(componentId);
-                if (component) {
-                    component.removeEventListener("click", handleClick);
-                }
-            });
-        };
     }, []);
 
-
+    return (
+        <>
+            <SmallIcons iconClicked={clickedComponent} />
+        </>
+    );
 };
 
 export default ComponentsAnimation;
