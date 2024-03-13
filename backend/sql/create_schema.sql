@@ -12,7 +12,7 @@ CREATE TABLE ProduitEnergie (
 
 -- Table Ticket
 CREATE TABLE Ticket (
-    id_ticket INT PRIMARY KEY,
+    id_ticket INT PRIMARY KEY AUTO_INCREMENT,
     prixTotal DECIMAL(10, 2),
     moyen_paiement VARCHAR(50),
     date DATE,
