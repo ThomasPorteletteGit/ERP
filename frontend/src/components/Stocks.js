@@ -1,4 +1,5 @@
 import React from 'react';
+import agrandir from '../assets/img/agrandir.png';
 
 // à récup dans la bd
 const stocks = [
@@ -14,6 +15,7 @@ const Stocks = () => {
         <section id="stocks">
             <div className="top_container">
                 <h2 className='component-title'>📦 Stocks</h2>
+                <img src={agrandir} id="imgAgrandir" alt="agrandir" />
             </div>
             <div className="stocks-container">
                 {/* on boucle sur tous les stocks */}

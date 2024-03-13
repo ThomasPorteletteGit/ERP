@@ -1,4 +1,5 @@
 import React from 'react';
+import agrandir from '../assets/img/agrandir.png';
 
 // relevés à récup dans la bd
 const releves = [
@@ -12,6 +13,7 @@ const Releve = () => {
         <section id="releve">
             <div className="top_container">
                 <h2 className='component-title'>💸 Releve</h2>
+                <img src={agrandir} id="imgAgrandir" alt="agrandir" />
             </div>
             <div className="releve-container">
                 {/* pour chaque releve */}

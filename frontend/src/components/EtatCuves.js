@@ -1,11 +1,13 @@
 import React from 'react';
 import Cuve from './Cuve';
+import agrandir from '../assets/img/agrandir.png';
 
 const EtatCuves = () => {
     return (
         <section id="etat-cuves">
             <div className="top_container">
                 <h2 className='component-title'>🛢️ Etat des cuves</h2>
+                <img src={agrandir} id="imgAgrandir" alt="agrandir" />
             </div>
             <div className="etat-cuves-container">
                 <Cuve carburant="SP-95" niveau={80} />

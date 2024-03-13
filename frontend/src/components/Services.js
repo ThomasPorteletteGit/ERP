@@ -1,4 +1,5 @@
 import React from 'react';
+import agrandir from '../assets/img/agrandir.png';
 
 const services = () => {
     return (
@@ -6,6 +7,7 @@ const services = () => {
             <div className="services-container">
                 <div className="top_container">
                     <h2>⚒️Services</h2>
+                    <img src={agrandir} id="imgAgrandir" alt="agrandir" />
                 </div>
                 <div className="button_container">
                     <button className="button_service_parking">Parking</button>
