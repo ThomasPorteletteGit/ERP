@@ -29,9 +29,15 @@ const ChoixPaiement = () => {
     const [inputValue, setInputValue] = useState('');
     const [previousValue, setPreviousValue] = useState('');
     const [operator, setOperator] = useState('');
+    const [resultDisplayed, setResultDisplayed] = useState(false);
 
     const handleButtonClick = (value) => {
-        setInputValue((prevValue) => prevValue + value);
+        if (resultDisplayed) {
+            setInputValue(value.toString());
+            setResultDisplayed(false);
+        } else {
+            setInputValue((prevValue) => prevValue + value);
+        }
     };
 
     const handleOperatorClick = (op) => {
@@ -55,6 +61,34 @@ const ChoixPaiement = () => {
         return transactions.reduce((acc, transaction) => acc + transaction.quantity, 0);
     };
 
+    const handleEqualsClick = () => {
+        if (inputValue !== '' && previousValue !== '') {
+            const inputNumber = parseFloat(inputValue);
+            const previousNumber = parseFloat(previousValue);
+            let result = 0;
+            switch (operator) {
+                case '+':
+                    result = previousNumber + inputNumber;
+                    break;
+                case '-':
+                    result = previousNumber - inputNumber;
+                    break;
+                case '*':
+                    result = previousNumber * inputNumber;
+                    break;
+                case '/':
+                    result = previousNumber / inputNumber;
+                    break;
+                default:
+                    break;
+            }
+            setInputValue(result.toString());
+            setPreviousValue('');
+            setOperator('');
+            setResultDisplayed(true); 
+        }
+    };
+
     return (
         <div className="caisse-container">
             <div id="caisse">
@@ -71,8 +105,8 @@ const ChoixPaiement = () => {
                             </tr>
                         </thead>
                         <tbody>
-                            {transactions.map((transaction) => (
-                                <tr key={transaction.id}>
+                            {transactions.map((transaction, index) => (
+                                <tr key={index}>
                                     <td>{transaction.nom}</td>
                                     <td>{transaction.quantity}</td>
                                     <td>{transaction.price}€</td>
@@ -85,7 +119,7 @@ const ChoixPaiement = () => {
                     </table>
                 </div>
                 <div className="total">
-                <p>Total: {calculateTotal()}€ | Nombre d'articles: {calculateTotalQuantity()}</p>
+                    <p>Total: {calculateTotal()}€ | Nombre d'articles: {calculateTotalQuantity()}</p>
                 </div>
                 <hr className="separator" />
                 <div className="search-bar">
@@ -97,17 +131,30 @@ const ChoixPaiement = () => {
                     />
                 </div>
                 <div className="numeric-buttons">
-                    {[1, 2, 3, 4, 5, 6, 7, 8, 9].map((number) => (
+                    {[1, 2, 3].map((number) => (
                         <button key={number} onClick={() => handleButtonClick(number)}>
                             {number}
                         </button>
                     ))}
+                    <button onClick={() => handleOperatorClick('+')}>+</button>
+                    {[4, 5, 6].map((number) => (
+                        <button key={number} onClick={() => handleButtonClick(number)}>
+                            {number}
+                        </button>
+                    ))}
+                    <button onClick={() => handleOperatorClick('-')}>-</button>
+                    {[7, 8, 9].map((number) => (
+                        <button key={number} onClick={() => handleButtonClick(number)}>
+                            {number}
+                        </button>
+                    ))}
+                    <button onClick={() => handleOperatorClick('*')}>x</button>
                     <button onClick={() => setInputValue('.')}>.</button>
                     <button key={0} onClick={() => handleButtonClick(0)}>
                         {0}
                     </button>
-                    <button onClick={() => setInputValue('')}>C</button>
-
+                    <button onClick={handleEqualsClick}>=</button>
+                    <button onClick={() => handleOperatorClick('/')}>/</button>
                 </div>
                 <div className="input-display">
                     <p>{inputValue}€</p>

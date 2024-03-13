@@ -963,15 +963,39 @@ th {
 
 .numeric-buttons {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(5, 1fr);
     gap: 10px;
     border: 1px solid #ccc;
     align-items: center;
     padding: 20px;
     border-radius: 8px;
-    width: 70%;
+    width: 75%;
     justify-content: center; 
     margin: 0 auto; 
+}
+
+.numeric-buttons > button:nth-child(3) {
+    grid-column-end: span 2;
+    width: 48%;
+}
+
+.numeric-buttons > button:nth-child(7) {
+    grid-column-end: span 2;
+    width: 48%;
+}
+
+.numeric-buttons > button:nth-child(11) {
+    grid-column-end: span 2;
+    width: 48%;
+}
+
+.numeric-buttons > button:nth-child(15) {
+    grid-column-end: span 2;
+    width: 48%;
+}
+
+.numeric-buttons > button:nth-child(19) {
+    grid-column-end: span 2;
 }
 
 button {
