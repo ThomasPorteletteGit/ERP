@@ -215,6 +215,8 @@ panier
 */
 
 .dashboard-left,
+
+
 .dashboard-right {
     /* 100vh - 19vh car 15 header et 2+2 margin */
     height: 81vh;
@@ -430,6 +432,7 @@ p {
     border-bottom: 1px solid white;
     display: flex;
     align-items: center;
+
 }
 
 .top_container img {
@@ -439,6 +442,7 @@ p {
     height: 20px;
     width: 20px;
 }
+
 
 .services-container {
     height: 100%;
@@ -862,7 +866,7 @@ select {
     margin: 3%;
 }
 
-.caisse-container {
+.caisse-container{
     height: 40%;
 }
 
@@ -931,8 +935,7 @@ select {
 }
 
 
-th,
-td {
+th, td {
     border: 1px solid #ddd;
     padding: 8px;
     text-align: left;
@@ -950,7 +953,7 @@ th {
     align-items: center;
     padding: 20px;
     border-radius: 8px;
-    width: 400px;
+    width: 70%;
 }
 
 .button-container {
@@ -981,40 +984,52 @@ th {
     padding: 20px;
     border-radius: 8px;
     width: 75%;
-    justify-content: center;
-    margin: 0 auto;
+    justify-content: center; 
+    margin: 0 auto; 
 }
 
-.numeric-buttons>button:nth-child(3) {
-    grid-column-end: span 2;
-    width: 48%;
-}
-
-.numeric-buttons>button:nth-child(7) {
-    grid-column-end: span 2;
-    width: 48%;
-}
-
-.numeric-buttons>button:nth-child(11) {
-    grid-column-end: span 2;
-    width: 48%;
-}
-
-.numeric-buttons>button:nth-child(15) {
-    grid-column-end: span 2;
-    width: 48%;
-}
-
-.numeric-buttons>button:nth-child(19) {
-    grid-column-end: span 2;
-}
-
-button {
-    padding: 10px;
-    font-size: 16px;
+.numeric-buttons button{
+    padding: 8px;
+    font-size: 14px;
     border: 1px solid #ccc;
     background-color: #fff;
     cursor: pointer;
+}
+
+@media screen and (max-width: 1700px) {
+    .numeric-buttons button{
+        padding: 6px !important;
+    }
+}
+
+@media screen and (max-width: 1400px) {
+    .numeric-buttons button{
+        padding: 4px !important;
+    }
+}
+
+.numeric-buttons > button:nth-child(3) {
+    grid-column-end: span 2;
+    width: 48%;
+}
+
+.numeric-buttons > button:nth-child(7) {
+    grid-column-end: span 2;
+    width: 48%;
+}
+
+.numeric-buttons > button:nth-child(11) {
+    grid-column-end: span 2;
+    width: 48%;
+}
+
+.numeric-buttons > button:nth-child(15) {
+    grid-column-end: span 2;
+    width: 48%;
+}
+
+.numeric-buttons > button:nth-child(19) {
+    grid-column-end: span 2;
 }
 
 .separator {
@@ -1046,6 +1061,39 @@ button {
     border-radius: 8px;
     box-sizing: border-box;
 }
+
+
+/* Connexion */
+
+.connection {
+    color: black
+}
+
+.connection-bar input{
+    align-items: center;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    width: 20%;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    box-sizing: border-box;
+}
+
+.numericButtonsConnection {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    border: 1px solid #ccc;
+    align-items: center;
+    padding: 10px;
+    border-radius: 10px;
+    width: 20%;
+    justify-content: center; 
+    margin: 0 auto; 
+}
+
+
 
 .disappear-animation {
     animation: disappear 0.5s ease-out;

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import ReactDOMServer from 'react-dom/server'
 import SmallIcons from "./SmallIcons";
 import EtatCuvesGrand from "./EtatCuvesGrand";
+import IncidentsGrand from './IncidentsGrand';
 
 const ComponentsAnimation = () => {
     const [clickedComponent, setClickedComponent] = useState(null);
@@ -9,7 +10,8 @@ const ComponentsAnimation = () => {
 
     useEffect(() => {
         const components = ['etat-cuves', 'direction', 'incidents', 'transaction', 'stocks', 'services', 'horaires', 'releve'];
-        const componentsGrand = [<EtatCuvesGrand />, "", "", "", "", "", "", ""];
+        const componentsGrand = [<EtatCuvesGrand />,"","","","","","",""];
+        const componentsIncidentGrand = ["","",<IncidentsGrand/>,"","","","",""];
 
         const handleClick = (componentId) => () => {
             console.log('click ' + componentId);
