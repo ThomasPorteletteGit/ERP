@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import ReactDOMServer from 'react-dom/server'
 import SmallIcons from "./SmallIcons";
 
@@ -21,12 +21,16 @@ const ComponentsAnimation = () => {
 
         boutonRetour.addEventListener("click", () => {
             const divGeneral = document.getElementsByClassName("dashboard-right")[0];
-            if(saveDiv != null){
+            if (saveDiv != null) {
                 divGeneral.innerHTML = saveDiv;
                 components.forEach((componentId) => {
                     const component = document.getElementById(componentId);
                     if (component) {
-                        component.addEventListener("click", handleClick(componentId));
+                        const img = component.querySelector('#imgAgrandir');
+                        if (img) {
+                            console.log('add event listener for ' + componentId);
+                            img.addEventListener("click", handleClick(componentId));
+                        }
                     }
                 });
             }
@@ -35,7 +39,11 @@ const ComponentsAnimation = () => {
         components.forEach((componentId) => {
             const component = document.getElementById(componentId);
             if (component) {
-                component.addEventListener("click", handleClick(componentId));
+                const img = component.querySelector('#imgAgrandir');
+                if (img) {
+                    console.log('add event listener for ' + componentId);
+                    img.addEventListener("click", handleClick(componentId));
+                }
             }
         });
     }, []);

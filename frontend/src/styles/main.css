@@ -428,6 +428,16 @@ p {
     display: flex;
     padding-left: 5%;
     border-bottom: 1px solid white;
+    display: flex;
+    align-items: center;
+}
+
+.top_container img {
+    margin-left: auto;
+    margin-right: 8px;
+    margin-top: 2px;
+    height: 20px;
+    width: 20px;
 }
 
 .services-container {
@@ -852,7 +862,7 @@ select {
     margin: 3%;
 }
 
-.caisse-container{
+.caisse-container {
     height: 40%;
 }
 
@@ -921,7 +931,8 @@ select {
 }
 
 
-th, td {
+th,
+td {
     border: 1px solid #ddd;
     padding: 8px;
     text-align: left;
@@ -970,31 +981,31 @@ th {
     padding: 20px;
     border-radius: 8px;
     width: 75%;
-    justify-content: center; 
-    margin: 0 auto; 
+    justify-content: center;
+    margin: 0 auto;
 }
 
-.numeric-buttons > button:nth-child(3) {
+.numeric-buttons>button:nth-child(3) {
     grid-column-end: span 2;
     width: 48%;
 }
 
-.numeric-buttons > button:nth-child(7) {
+.numeric-buttons>button:nth-child(7) {
     grid-column-end: span 2;
     width: 48%;
 }
 
-.numeric-buttons > button:nth-child(11) {
+.numeric-buttons>button:nth-child(11) {
     grid-column-end: span 2;
     width: 48%;
 }
 
-.numeric-buttons > button:nth-child(15) {
+.numeric-buttons>button:nth-child(15) {
     grid-column-end: span 2;
     width: 48%;
 }
 
-.numeric-buttons > button:nth-child(19) {
+.numeric-buttons>button:nth-child(19) {
     grid-column-end: span 2;
 }
 
@@ -1035,5 +1046,3 @@ button {
     border-radius: 8px;
     box-sizing: border-box;
 }
-
-

@@ -1,3 +1,4 @@
+import agrandir from '../assets/img/agrandir.png';
 
 const Horaires = () => {
     return (
@@ -10,6 +11,7 @@ const Horaires = () => {
                             <h6>Ce sont les horaires d’ouverture et fermeture de votre boutique</h6>
                         </div>
                     </div>
+                    <img src={agrandir} id="imgAgrandir" alt="agrandir" />
                 </div>
                 <div className='horaires-content'>
                     <table>
