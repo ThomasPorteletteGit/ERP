@@ -5,11 +5,15 @@ import ChoixPaiement from './components/ChoixPaiement';
 import MontantAPayer from './components/MontantAPayer';
 import Panier from './components/Panier';
 import Dashboard from './components/Dashboard';
+import ConnexionId from './components/ConnexionId';
+import ConnexionPassword from './components/ConnexionPassword';
+
 import './styles/App.css';
 import './styles/main.css';
 import './styles/index.css';
 import './styles/header.css';
 import './styles/icons.css'
+
 
 
 function App() {
@@ -22,6 +26,8 @@ function App() {
           <Route path="/montant-a-payer" element={<MontantAPayer />} />
           <Route path="/panier" element={<Panier />} />
           <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/connexion" element={<ConnexionId />} />
+          <Route path="/connexionPassword" element={<ConnexionPassword />} />
         </Routes>
       </div>
     </Router>
