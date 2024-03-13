@@ -9,22 +9,41 @@ const ComponentsAnimation = () => {
 
     useEffect(() => {
         const components = ['etat-cuves', 'direction', 'incidents', 'transaction', 'stocks', 'services', 'horaires', 'releve'];
-        const componentsGrand = [<EtatCuvesGrand />,"","","","","","",""];
+        const componentsGrand = [<EtatCuvesGrand />, "", "", "", "", "", "", ""];
 
         const handleClick = (componentId) => () => {
             console.log('click ' + componentId);
             setClickedComponent(componentId)
             const divGeneral = document.getElementsByClassName("dashboard-right")[0];
             saveDiv = divGeneral.innerHTML;
-            divGeneral.innerHTML =  ReactDOMServer.renderToString(<SmallIcons iconClicked={componentId}/>) + ReactDOMServer.renderToString(componentsGrand[components.indexOf(componentId)]);
-            divGeneral.style.display = "block";
+            // divGeneral.innerHTML =  ReactDOMServer.renderToString(<SmallIcons iconClicked={componentId}/>) + ReactDOMServer.renderToString(componentsGrand[components.indexOf(componentId)]);
+            // divGeneral.style.display = "block";
+
+            components.forEach((compId) => {
+                const comp = document.getElementById(compId);
+                if (comp) {
+                    comp.classList.add("disappear-animation");
+                }
+            });
+
+            setTimeout(() => {
+                divGeneral.innerHTML = ReactDOMServer.renderToString(<SmallIcons iconClicked={componentId} />) + ReactDOMServer.renderToString(componentsGrand[components.indexOf(componentId)]);
+                divGeneral.style.display = "block";
+                components.forEach((compId) => {
+                    const comp = document.getElementById(compId);
+                    if (comp) {
+                        comp.classList.remove("disappear-animation");
+                        comp.style.display = "none";
+                    }
+                });
+            }, 500);
         };
 
         const boutonRetour = document.getElementById("backArrow")
 
         boutonRetour.addEventListener("click", () => {
             const divGeneral = document.getElementsByClassName("dashboard-right")[0];
-            if(saveDiv != null){
+            if (saveDiv != null) {
                 divGeneral.style.display = "flex";
                 divGeneral.innerHTML = saveDiv;
                 components.forEach((componentId) => {
