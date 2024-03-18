@@ -1125,3 +1125,40 @@ th {
         transform: translateY(-100%);
     }
 }
+
+/* Incident en grand */
+
+.right-container {
+    position: absolute;
+    right: 0;
+    width: 50%;
+    padding: 0 20px; 
+    box-sizing: border-box; 
+}
+
+.right-container h3 {
+    margin-top: 0; 
+}
+
+.right-container form {
+    display: flex;
+    flex-direction: column;
+}
+
+.right-container form div {
+    margin-bottom: 10px; 
+}
+
+.right-container form label {
+    margin-bottom: 5px; 
+}
+
+.right-container form textarea {
+    height: 100px; 
+    resize: vertical; 
+}
+
+.right-container form button {
+    right: 0;
+    width: 50%; 
+}
