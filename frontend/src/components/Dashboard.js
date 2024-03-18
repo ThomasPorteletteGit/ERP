@@ -44,6 +44,7 @@ const Dashboard = () => {
                         <div className="etat-transac">
                             <EtatCuves />
                             <Transaction />
+                            <Transaction />
                         </div>
 
                         <div className='container right-to-right'>
