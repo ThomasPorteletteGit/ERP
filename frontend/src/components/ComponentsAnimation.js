@@ -29,17 +29,20 @@ const ComponentsAnimation = () => {
             });
 
             setTimeout(() => {
-                divGeneral.innerHTML = ReactDOMServer.renderToString(<SmallIcons iconClicked={componentId} />) + ReactDOMServer.renderToString(componentsGrand[components.indexOf(componentId)]);
+                divGeneral.innerHTML = ReactDOMServer.renderToString(<SmallIcons iconClicked={componentId} />) + ReactDOMServer.renderToString(componentsGrand[components.indexOf(componentId)] || componentsIncidentGrand[components.indexOf(componentId)]);
                 divGeneral.style.display = "block";
+        
                 components.forEach((compId) => {
                     const comp = document.getElementById(compId);
                     if (comp) {
                         comp.classList.remove("disappear-animation");
-                        comp.style.display = "none";
+                        comp.style.display = compId === componentId ? "block" : "none";
                     }
                 });
             }, 500);
+        
         };
+        
 
         const boutonRetour = document.getElementById("backArrow")
 
