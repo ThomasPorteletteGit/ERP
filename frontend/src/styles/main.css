@@ -1123,36 +1123,62 @@ th {
 /* Incident en grand */
 
 .right-container {
-    position: absolute;
     right: 0;
     width: 50%;
-    padding: 0 20px; 
     box-sizing: border-box; 
 }
 
 .right-container h3 {
-    margin-top: 0; 
+    margin-bottom: 5%; 
+    margin-top: 3%;
+    font-size: 150%; 
 }
+
 
 .right-container form {
     display: flex;
     flex-direction: column;
+    margin-bottom: 5%; 
+    align-self: center;
 }
 
 .right-container form div {
-    margin-bottom: 10px; 
+    margin-bottom: 5%; 
+    flex-direction: column;
+    display: flex;
+}
+
+.right-container form select {
+    align-self: center;
 }
 
 .right-container form label {
-    margin-bottom: 5px; 
+    margin-bottom: 5%; 
+    font-size: 150%; 
+    position:static;
 }
 
 .right-container form textarea {
-    height: 100px; 
+    height: 160px; 
+    width: 60%;
+    margin-bottom: 5%; 
     resize: vertical; 
+    align-self: center;
 }
 
 .right-container form button {
-    right: 0;
     width: 50%; 
+    align-self: center;
+    font-size: 150%; 
+    padding: 10px 20px; 
+    border-radius: 5px; 
+    background-color: #edf4fc; 
+    color: #080707; 
+    cursor: pointer; 
+    transition: background-color 0.3s, color 0.3s; 
+}
+
+.right-container form label.texte-description {
+    align-self: flex-start;
+    margin-bottom: 5px;
 }
