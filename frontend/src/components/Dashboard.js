@@ -10,6 +10,7 @@ import Incidents from './Incidents';
 import Releve from './Releve';
 import Direction from './Direction';
 import ComponentsAnimation from "./ComponentsAnimation";
+import ChoixPaiement from './ChoixPaiement';
 
 const Dashboard = () => {
 
@@ -44,6 +45,7 @@ const Dashboard = () => {
                         <div className="etat-transac">
                             <EtatCuves />
                             <Transaction />
+                            <ChoixPaiement/>
                         </div>
 
                         <div className='container right-to-right'>
