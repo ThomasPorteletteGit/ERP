@@ -1,6 +1,8 @@
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import ReactDOMServer from 'react-dom/server'
 import SmallIcons from "./SmallIcons";
+import EtatCuvesGrand from "./EtatCuvesGrand";
+import IncidentsGrand from './IncidentsGrand';
 
 const ComponentsAnimation = () => {
     const [clickedComponent, setClickedComponent] = useState(null);
@@ -8,25 +10,52 @@ const ComponentsAnimation = () => {
 
     useEffect(() => {
         const components = ['etat-cuves', 'direction', 'incidents', 'transaction', 'stocks', 'services', 'horaires', 'releve'];
+        const componentsGrand = [<EtatCuvesGrand />,"","","","","","",""];
+        const componentsIncidentGrand = ["","",<IncidentsGrand/>,"","","","",""];
 
         const handleClick = (componentId) => () => {
             console.log('click ' + componentId);
             setClickedComponent(componentId)
             const divGeneral = document.getElementsByClassName("dashboard-right")[0];
             saveDiv = divGeneral.innerHTML;
-            divGeneral.innerHTML = ReactDOMServer.renderToString(<SmallIcons iconClicked={componentId} />);
+            // divGeneral.innerHTML =  ReactDOMServer.renderToString(<SmallIcons iconClicked={componentId}/>) + ReactDOMServer.renderToString(componentsGrand[components.indexOf(componentId)]);
+            // divGeneral.style.display = "block";
+
+            components.forEach((compId) => {
+                const comp = document.getElementById(compId);
+                if (comp) {
+                    comp.classList.add("disappear-animation");
+                }
+            });
+
+            setTimeout(() => {
+                divGeneral.innerHTML = ReactDOMServer.renderToString(<SmallIcons iconClicked={componentId} />) + ReactDOMServer.renderToString(componentsGrand[components.indexOf(componentId)]);
+                divGeneral.style.display = "block";
+                components.forEach((compId) => {
+                    const comp = document.getElementById(compId);
+                    if (comp) {
+                        comp.classList.remove("disappear-animation");
+                        comp.style.display = "none";
+                    }
+                });
+            }, 500);
         };
 
         const boutonRetour = document.getElementById("backArrow")
 
         boutonRetour.addEventListener("click", () => {
             const divGeneral = document.getElementsByClassName("dashboard-right")[0];
-            if(saveDiv != null){
+            if (saveDiv != null) {
+                divGeneral.style.display = "flex";
                 divGeneral.innerHTML = saveDiv;
                 components.forEach((componentId) => {
                     const component = document.getElementById(componentId);
                     if (component) {
-                        component.addEventListener("click", handleClick(componentId));
+                        const img = component.querySelector('#imgAgrandir');
+                        if (img) {
+                            console.log('add event listener for ' + componentId);
+                            img.addEventListener("click", handleClick(componentId));
+                        }
                     }
                 });
             }
@@ -35,7 +64,11 @@ const ComponentsAnimation = () => {
         components.forEach((componentId) => {
             const component = document.getElementById(componentId);
             if (component) {
-                component.addEventListener("click", handleClick(componentId));
+                const img = component.querySelector('#imgAgrandir');
+                if (img) {
+                    console.log('add event listener for ' + componentId);
+                    img.addEventListener("click", handleClick(componentId));
+                }
             }
         });
     }, []);
