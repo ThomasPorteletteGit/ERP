@@ -206,20 +206,25 @@ panier
 */
 
 .dashboard-left,
-
-
 .dashboard-right {
     /* 100vh - 19vh car 15 header et 2+2 margin */
-    height: 81vh;
-    margin: 2vh;
-    width: 40%;
+    height: 83vh;
+    margin: 1vh 0;
+    width: 42vw;
     background-color: #2b2d42;
+}
+
+.dashboard-left{
+    margin-right: 0.5vw;
+    margin-left: 0.5vh;
+    border-radius: 20px;
 }
 
 .dashboard-right {
     background-color: white !important;
-    width: 55% !important;
+    width: 56vw !important;
     display: flex;
+    margin-right: 0.5vw;
 }
 
 .dashboard-right .etat-transac {
@@ -483,7 +488,7 @@ p {
     border-radius: 20px;
     background-color: #2B2D42;
     width: 100%;
-    height: 100%;
+    height: 35%;
     margin-top: 5%;
 }
 
@@ -512,7 +517,7 @@ p {
     color: black;
     overflow-y: auto;
     overflow-x: auto;
-    max-height: 25vh;
+    max-height: 20vh;
 }
 
 .transaction-details table {
@@ -1113,4 +1118,67 @@ th {
         opacity: 0;
         transform: translateY(-100%);
     }
+}
+
+/* Incident en grand */
+
+.right-container {
+    right: 0;
+    width: 50%;
+    box-sizing: border-box; 
+}
+
+.right-container h3 {
+    margin-bottom: 5%; 
+    margin-top: 3%;
+    font-size: 150%; 
+}
+
+
+.right-container form {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 5%; 
+    align-self: center;
+}
+
+.right-container form div {
+    margin-bottom: 5%; 
+    flex-direction: column;
+    display: flex;
+}
+
+.right-container form select {
+    align-self: center;
+}
+
+.right-container form label {
+    margin-bottom: 5%; 
+    font-size: 150%; 
+    position:static;
+}
+
+.right-container form textarea {
+    height: 160px; 
+    width: 60%;
+    margin-bottom: 5%; 
+    resize: vertical; 
+    align-self: center;
+}
+
+.right-container form button {
+    width: 50%; 
+    align-self: center;
+    font-size: 150%; 
+    padding: 10px 20px; 
+    border-radius: 5px; 
+    background-color: #edf4fc; 
+    color: #080707; 
+    cursor: pointer; 
+    transition: background-color 0.3s, color 0.3s; 
+}
+
+.right-container form label.texte-description {
+    align-self: flex-start;
+    margin-bottom: 5px;
 }
