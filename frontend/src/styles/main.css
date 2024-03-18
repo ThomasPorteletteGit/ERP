@@ -17,14 +17,6 @@ html {
     font-family: Didot !important;
 }
 
-/*
-Vue choix paiement
-*/
-
-.view-title {
-    font-size: 60px;
-}
-
 #logo {
     width: 17vh;
     height: 14.5vh;
@@ -35,38 +27,37 @@ Vue choix paiement
     clip-path: ellipse()
 }
 
-.paymentChoice {
-    margin-top: 12vh;
-    justify-content: center;
-    display: flex;
-    align-items: center;
+/*
+Vue choix paiement
+*/
+#choix-paiement{
+    border-radius: 20px;
+    background-color: #2B2D42;
+    width: 100%;
+    height: 100%;
+    margin-top: 5%;
 }
 
-.choixPaiement {
-    width: 100vw;
-    height: 100vh;
+.paymentChoice{
+    padding: 10px 5px;
+    margin-bottom: 12px;
+    height: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
 }
 
 .paymentChoice button {
-    background-color: #9EF09E;
-    font-family: Didot;
+    background-size: cover;
+    background-color: white;
     border: none;
-    font-size: 40px;
-    cursor: pointer;
-    width: 25%;
-    height: 25vh;
-    border-radius: 6px;
+    width: 47%; /* Ajuster la largeur à 100% pour remplir l'espace disponible */
+    height: 95px; /* Ajuster la hauteur à la taille souhaitée */
+    border-radius: 8px;
+    margin-bottom: 10px; /* Espacement entre les boutons */
 }
 
-.paymentChoice #especeBtn {
-    padding: 20px 10px;
-    margin-right: 4%;
-}
 
-.paymentChoice #cbBtn {
-    padding: 20px 10px;
-    margin-left: 4%;
-}
 
 /*
 fin choix paiement
@@ -284,6 +275,10 @@ panier
     /* background-color: purple; */
 }
 
+
+.membre{
+    font-size: 20px;
+}
 
 
 /*
@@ -516,7 +511,8 @@ p {
     margin: 8px;
     color: black;
     overflow-y: auto;
-    max-height: 47vh;
+    overflow-x: auto;
+    max-height: 25vh;
 }
 
 .transaction-details table {
@@ -740,7 +736,6 @@ select {
     border-radius: 12px;
     width: auto;
     height: auto;
-
 }
 
 #icon_container_clock {
