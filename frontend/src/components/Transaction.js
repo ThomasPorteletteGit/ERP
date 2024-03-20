@@ -7,18 +7,18 @@ const Transaction = () => {
     const transactions = [
         { id: 1, heure: '12:30', total: '50,50€', type: 'CB', statut: 'Validé', isLoss: false },
         { id: 2, heure: '15:45', total: '20,05€', type: 'ESP', statut: 'En attente', isLoss: true },
-        { id: 1, heure: '12:30', total: '50,50€', type: 'CB', statut: 'Validé', isLoss: false },
-        { id: 2, heure: '15:45', total: '20,05€', type: 'ESP', statut: 'En attente', isLoss: true },
-        { id: 1, heure: '12:30', total: '50,50€', type: 'CB', statut: 'Validé', isLoss: false },
-        { id: 2, heure: '15:45', total: '20,05€', type: 'ESP', statut: 'En attente', isLoss: true },
-        { id: 2, heure: '15:45', total: '20,05€', type: 'ESP', statut: 'En attente', isLoss: true },
-        { id: 1, heure: '12:30', total: '50,50€', type: 'CB', statut: 'Validé', isLoss: false },
-        { id: 2, heure: '15:45', total: '20,05€', type: 'ESP', statut: 'En attente', isLoss: true },
-        { id: 1, heure: '12:30', total: '50,50€', type: 'CB', statut: 'Validé', isLoss: false },
-        { id: 2, heure: '15:45', total: '20,05€', type: 'ESP', statut: 'En attente', isLoss: true },
-        { id: 1, heure: '12:30', total: '50,50€', type: 'CB', statut: 'Validé', isLoss: false },
-        { id: 2, heure: '15:45', total: '20,05€', type: 'ESP', statut: 'En attente', isLoss: true },
-        { id: 1, heure: '12:30', total: '50,50€', type: 'CB', statut: 'Validé', isLoss: false },
+        { id: 3, heure: '12:30', total: '50,50€', type: 'CB', statut: 'Validé', isLoss: false },
+        { id: 4, heure: '15:45', total: '20,05€', type: 'ESP', statut: 'En attente', isLoss: true },
+        { id: 5, heure: '12:30', total: '50,50€', type: 'CB', statut: 'Validé', isLoss: false },
+        { id: 6, heure: '15:45', total: '20,05€', type: 'ESP', statut: 'En attente', isLoss: true },
+        { id: 7, heure: '15:45', total: '20,05€', type: 'ESP', statut: 'En attente', isLoss: true },
+        { id: 8, heure: '12:30', total: '50,50€', type: 'CB', statut: 'Validé', isLoss: false },
+        { id: 9, heure: '15:45', total: '20,05€', type: 'ESP', statut: 'En attente', isLoss: true },
+        { id: 10, heure: '12:30', total: '50,50€', type: 'CB', statut: 'Validé', isLoss: false },
+        { id: 11, heure: '15:45', total: '20,05€', type: 'ESP', statut: 'En attente', isLoss: true },
+        { id: 12, heure: '12:30', total: '50,50€', type: 'CB', statut: 'Validé', isLoss: false },
+        { id: 13, heure: '15:45', total: '20,05€', type: 'ESP', statut: 'En attente', isLoss: true },
+        { id: 14, heure: '12:30', total: '50,50€', type: 'CB', statut: 'Validé', isLoss: false },
     ];
 
 
@@ -78,7 +78,10 @@ const Transaction = () => {
                                             {transaction.type}
                                         </span>
                                     </td>
-                                    <td><span className={`statut-transac ${getStatusColor(transaction.statut)}`}></span>       </td>                     </tr>
+                                    <td>
+                                        <span className={`statut-transac ${getStatusColor(transaction.statut)}`}></span>
+                                    </td>
+                                </tr>
                             ))}
                         </tbody>
                     </table>

@@ -31,7 +31,7 @@ const ComponentsAnimation = () => {
             });
 
             setTimeout(() => {
-                divGeneral.innerHTML = ReactDOMServer.renderToString(<SmallIcons iconClicked={componentId} />) + ReactDOMServer.renderToString(componentsGrand[components.indexOf(componentId)] || componentsGrand[components.indexOf(componentId)] || componentsGrand[components.indexOf(componentId)] || componentsGrand[components.indexOf(componentId)] || componentsGrand[components.indexOf(componentId)]);
+                divGeneral.innerHTML = ReactDOMServer.renderToString(<SmallIcons iconClicked={componentId} />) + ReactDOMServer.renderToString(componentsGrand[components.indexOf(componentId)]);
                 divGeneral.style.display = "block";
 
                 components.forEach((compId) => {
@@ -71,7 +71,6 @@ const ComponentsAnimation = () => {
             if (component) {
                 const img = component.querySelector('#imgAgrandir');
                 if (img) {
-                    console.log('add event listener for ' + componentId);
                     img.addEventListener("click", handleClick(componentId));
                 }
             }

@@ -46,11 +46,8 @@ const ChoixduPaiementCompAnim = () => {
         };
 
         const cdpBoutons = document.querySelectorAll(".cdpbouton");
-        console.log(cdpBoutons);
 
         cdpBoutons.forEach((btn) => {
-            console.log('add event listener for ' + btn.id);
-
             btn.addEventListener("click", handleClick(btn.id));
         });
 
