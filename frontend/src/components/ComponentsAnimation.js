@@ -33,7 +33,7 @@ const ComponentsAnimation = () => {
             setTimeout(() => {
                 divGeneral.innerHTML = ReactDOMServer.renderToString(<SmallIcons iconClicked={componentId} />) + ReactDOMServer.renderToString(componentsGrand[components.indexOf(componentId)] || componentsGrand[components.indexOf(componentId)] || componentsGrand[components.indexOf(componentId)]) || componentsGrand[components.indexOf(componentId)] ;
                 divGeneral.style.display = "block";
-        
+
                 components.forEach((compId) => {
                     const comp = document.getElementById(compId);
                     if (comp) {
@@ -42,9 +42,9 @@ const ComponentsAnimation = () => {
                     }
                 });
             }, 500);
-        
+
         };
-        
+
 
         const boutonRetour = document.getElementById("backArrow")
 
@@ -76,6 +76,29 @@ const ComponentsAnimation = () => {
                 }
             }
         });
+
+        document.addEventListener("click", function (event) {
+            if (event.target.classList.contains("btnCuvesGrandClick")) {
+                const buttonText = event.target.textContent;
+                switch (buttonText) {
+                    case "Modifier le prix":
+                        console.log("Bouton 'Modifier le prix' cliqué");
+                        break;
+                    case "Demande de réapprovisionnement":
+                        console.log("Bouton 'Demande de réaprovisionnement' cliqué");
+                        break;
+                    default:
+                        console.log("Bouton inconnu cliqué" + buttonText);
+                        break;
+                }
+                event.preventDefault();
+
+            }
+        });
+
+
+
+
     }, []);
 
 };
