@@ -1,25 +1,22 @@
 const express = require('express');
-const DAO = require('../../data/DAO');
-const dao = new DAO();
 const router = express.Router();
 
-router.post('/getIdStockProduit', (req, res) => {
-    let name = req.body.name;
-    dao.select('id', 'ProduitEnergie', `nom='${name}'`, (result) => {
-        res.send(result.rows);
-    });
+const {getEnergieIds, getEnergieId, getEnergieStock, reapprovisionnerEnergie } = require('./stockEnergie');
+
+router.get('/getIds', (req, res) => {
+    getEnergieIds(req, res);
 });
 
-router.get('/getStockEnergie', (req, res) => {
-    dao.select('*', 'ProduitEnergie', "type='Produit'", (result) => {
-        res.send(result.rows);
-    });
+router.post('/getId', (req, res) => {
+    getEnergieId(req, res);
 });
 
-router.post('/reapprovisionnerStockProduit', (req, res) => {
-    let id = req.body.id;
-    let quantite = req.body.quantite;
-    dao.update('ProduitEnergie', `quantite = quantite + ${quantite}`, `id = ${id}`, (result) => {
-        res.send(result);
-    });
+router.get('/getStock', (req, res) => {
+    getEnergieStock(req, res);
 });
+
+router.post('/reapprovisionner', (req, res) => {
+    reapprovisionnerEnergie(req, res);
+});
+
+module.exports = router;
