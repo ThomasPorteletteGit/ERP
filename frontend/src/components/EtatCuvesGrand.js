@@ -1,7 +1,27 @@
 import React from "react";
 import Cuve from "./Cuve";
+import ReactDOMServer from 'react-dom/server'
+import EtatCuvesPrix from "./EtatCuvesPrix";
+import EtatCuvesReapro from "./EtatCuvesReapro";
 
 const EtatCuvesGrand = () => {
+    document.addEventListener("click", function (event) {
+        if (event.target.classList.contains("btnCuvesGrandClick")) {
+            const buttonText = event.target.textContent;
+            switch (buttonText) {
+                case "Modifier le prix":
+                    document.getElementById("cuvesGrand").innerHTML = ReactDOMServer.renderToString(<EtatCuvesPrix/>);
+                    break;
+                case "Demande de réapprovisionnement":
+                    document.getElementById("cuvesGrand").innerHTML = ReactDOMServer.renderToString(<EtatCuvesReapro/>);
+                    break;
+                default:
+                    console.log("Bouton inconnu cliqué" + buttonText);
+                    break;
+            }
+            event.preventDefault();
+        }
+    });
     return (
         <div className="composantGrand">
             <div className="Divflex">
@@ -15,10 +35,10 @@ const EtatCuvesGrand = () => {
             </div>
             <hr />
             <div id="cuvesGrand">
-                <Cuve carburant={"ESP-97"} niveau={69} />
-                <Cuve carburant={"GAZOLE"} niveau={69} />
-                <Cuve carburant={"DIESEL"} niveau={69} />
-                <Cuve carburant={"GPL"} niveau={69} />
+                <Cuve carburant={"ESP-97"} niveau={20} />
+                <Cuve carburant={"GAZOLE"} niveau={70} />
+                <Cuve carburant={"DIESEL"} niveau={50} />
+                <Cuve carburant={"GPL"} niveau={2} />
                 <div id="cuvesButtons" className="DivBlock">
                     <button className="btnCuvesGrandClick">Modifier le prix</button>
                     <button className="btnCuvesGrandClick">Demande de réapprovisionnement</button>
