@@ -1,6 +1,4 @@
 import agrandir from '../assets/img/agrandir.png';
-
-
 import React, { useState } from 'react'; 
 
 function SelectHeureMatin() {
@@ -29,7 +27,11 @@ function SelectHeureSoir() {
     );
 }
 
+
 const Horaires = () => {
+    const heureOuverture = "6h";
+    const heureFermeture = "22h";
+
     return (
         <section id="horaires">
             <div className="horaires-container">
