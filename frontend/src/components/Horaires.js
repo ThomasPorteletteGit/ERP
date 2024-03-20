@@ -29,6 +29,7 @@ function SelectHeureSoir() {
 
 
 const Horaires = () => {
+    //a modifier pour recuperer dans la bd
     const heureOuverture = "6h";
     const heureFermeture = "22h";
 

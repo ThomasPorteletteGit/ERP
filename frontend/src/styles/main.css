@@ -1311,6 +1311,7 @@ ul li {
     border: black;
 }
 
+/*Horaire Grand*/
 
 .composantGrand, #modifHoraires{
     background: #2B2D42;
@@ -1322,9 +1323,65 @@ ul li {
     height: 83%;
 }
 
-/*HoraireGrand*/
-.tableauHeure {
-    display: 'flex';
+#modifHoraire {
     margin-top: 20px;
+  }
+  
+
+  
+.component_title {
+    margin: 0;
+}
+
+.tableauHeure {
+    margin: 20px;
+}
+
+.tableauHeure table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.tableauHeure th,
+.tableauHeure td {
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+.tableauHeure th {
+    background-color: #f2f2f2;
+}
+
+.buttonAnnuler,
+.buttonValider {
+    padding: 10px 20px;
+    margin: 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.buttonAnnuler {
+    background-color: #f0f0f0;
+    color: black;
+}
+
+.buttonValider {
+    background-color: #f0f0f0;
+    color: black;
+}
+
+.buttonAnnuler:hover,
+.buttonValider:hover {
+    opacity: 0.8;
+}
+
+.heures{
+    border-radius: 12px;
+    width: auto;
+    height: auto;
+    align-items: center;
     justify-content: center;
 }
+  
