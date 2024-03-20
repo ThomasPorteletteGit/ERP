@@ -1,5 +1,34 @@
 import agrandir from '../assets/img/agrandir.png';
 
+
+import React, { useState } from 'react'; 
+
+function SelectHeureMatin() {
+    const [heureMatin, setHeureMatin] = useState("6h");
+    const handleChange = (e)=> {
+        setHeureMatin(e.target.value);
+    }
+
+    return (
+        <div>
+            <span className="rond-blanc">{heureMatin}</span> 
+        </div>
+    );
+}
+
+function SelectHeureSoir() {
+    const [heureSoir, setHeureSoir] = useState("22h");
+    const handleChange = (e)=> {
+        setHeureSoir(e.target.value);
+    }
+
+    return (
+        <div>
+            <span className="rond-blanc">{heureSoir}</span> 
+        </div>
+    );
+}
+
 const Horaires = () => {
     return (
         <section id="horaires">
@@ -25,42 +54,38 @@ const Horaires = () => {
                         <tbody>
                             <tr>
                                 <td>Lundi</td>
-                                <td>
-                                    {selectHeure()}
-                                </td>
-                                <td>
-                                    {selectHeure()}
-                                </td>
+                                <td>{SelectHeureMatin()}</td>
+                                <td>{SelectHeureSoir()}</td>
                             </tr>
                             <tr>
                                 <td>Mardi</td>
-                                <td>{selectHeure()}</td>
-                                <td>{selectHeure()}</td>
+                                <td>{SelectHeureMatin()}</td>
+                                <td>{SelectHeureSoir()}</td>
                             </tr>
                             <tr>
                                 <td>Mercredi</td>
-                                <td>{selectHeure()}</td>
-                                <td>{selectHeure()}</td>
+                                <td>{SelectHeureMatin()}</td>
+                                <td>{SelectHeureSoir()}</td>
                             </tr>
                             <tr>
                                 <td>Jeudi</td>
-                                <td>{selectHeure()}</td>
-                                <td>{selectHeure()}</td>
+                                <td>{SelectHeureMatin()}</td>
+                                <td>{SelectHeureSoir()}</td>
                             </tr>
                             <tr>
                                 <td>Vendredi</td>
-                                <td>{selectHeure()}</td>
-                                <td>{selectHeure()}</td>
+                                <td>{SelectHeureMatin()}</td>
+                                <td>{SelectHeureSoir()}</td>
                             </tr>
                             <tr>
                                 <td>Samedi</td>
-                                <td>{selectHeure()}</td>
-                                <td>{selectHeure()}</td>
+                                <td>{SelectHeureMatin()}</td>
+                                <td>{SelectHeureSoir()}</td>
                             </tr>
                             <tr>
                                 <td>Dimanche</td>
-                                <td>{selectHeure()}</td>
-                                <td>{selectHeure()}</td>
+                                <td>{SelectHeureMatin()}</td>
+                                <td>{SelectHeureSoir()}</td>
                             </tr>
                         </tbody>
                     </table>
@@ -70,16 +95,4 @@ const Horaires = () => {
     );
 };
 
-function selectHeure() {
-    return (
-        <select className='heures'>
-            {[...Array(24).keys()].map(i =>
-                [0, 30].map(j => {
-                    let heureFormat = (i < 10 ? '0' + i : i) + ':' + (j < 10 ? '0' + j : j);
-                    return <option value={heureFormat} key={heureFormat}>{heureFormat}</option>
-                })
-            )}
-        </select>
-    );
-}
 export default Horaires;
