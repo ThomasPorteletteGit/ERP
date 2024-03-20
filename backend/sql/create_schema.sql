@@ -1,19 +1,25 @@
+-- Table Employe
+CREATE TABLE Employe (
+    id_employe SERIAL PRIMARY KEY,
+    nom VARCHAR(255),
+    prenom VARCHAR(255),
+    type typeEmploye,
+    mot_de_passe VARCHAR(255)
+);
+
 -- Table Fournisseur
 CREATE TABLE Fournisseur (
-    id_fournisseur INT PRIMARY KEY,
+    id_fournisseur SERIAL PRIMARY KEY,
     nom VARCHAR(255)
 );
 
 -- Table Reapprovisionnement
 CREATE TABLE Reapprovisionnement (
-    id_reappro INT PRIMARY KEY,
+    id_reappro SERIAL PRIMARY KEY,
     id_fournisseur INT,
     date_reappro DATE,
     FOREIGN KEY (id_fournisseur) REFERENCES Fournisseur(id_fournisseur)
 );
-
--- Type ENUM
-CREATE TYPE type_produit_energie AS ENUM ('Produit', 'Energie');
 
 -- Table ProduitEnergie
 CREATE TABLE ProduitEnergie (
@@ -29,14 +35,14 @@ CREATE TABLE ProduitEnergie (
 
 -- Table TransactionJournaliere
 CREATE TABLE TransactionJournaliere (
-    id_transaction INT PRIMARY KEY,
+    id_transaction SERIAL PRIMARY KEY,
     date_validation DATE,
     montant_total DECIMAL(10, 2)
 );
 
 -- Table Ticket
 CREATE TABLE Ticket (
-    id_ticket INT PRIMARY KEY,
+    id_ticket SERIAL PRIMARY KEY,
     prixTotal DECIMAL(10, 2),
     moyen_paiement VARCHAR(50),
     date DATE,
@@ -56,7 +62,7 @@ CREATE TABLE TicketProduit (
 
 -- Table Incident
 CREATE TABLE Incident (
-    id_incident INT PRIMARY KEY,
+    id_incident SERIAL PRIMARY KEY,
     date DATE,
     description TEXT,
     niveau INT
@@ -64,24 +70,22 @@ CREATE TABLE Incident (
 
 -- Table Pompe
 CREATE TABLE Pompe (
-    id_pompe INT PRIMARY KEY,
+    id_pompe SERIAL PRIMARY KEY,
     est_active BOOLEAN,
     en_cours_utilisation BOOLEAN
 );
 
 -- Table Client
 CREATE TABLE Client (
-    id_client INT PRIMARY KEY,
+    id_client SERIAL PRIMARY KEY,
     nom VARCHAR(255),
     prenom VARCHAR(255),
     adresse_mail VARCHAR(255)
 );
 
-CREATE TYPE typeCarte AS ENUM ('Membre', 'Energie');
-
 -- Table Carte
 CREATE TABLE Carte (
-    id_carte INT PRIMARY KEY,
+    id_carte SERIAL PRIMARY KEY,
     Type typeCarte,
     credit DECIMAL(10, 2),
     id_client INT,
@@ -100,7 +104,7 @@ CREATE TABLE LignesReapprovisionnement (
 
 -- Table Livraison
 CREATE TABLE Livraison (
-    id_livraison INT PRIMARY KEY,
+    id_livraison SERIAL PRIMARY KEY,
     date_livraison DATE,
     id_reappro INT,
     FOREIGN KEY (id_reappro) REFERENCES Reapprovisionnement(id_reappro)
