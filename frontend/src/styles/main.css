@@ -1277,7 +1277,7 @@ ul li {
     width: 45%;
     height: 45%;
     border-radius: 8px;
-
+    cursor: pointer; 
     font-size: 25px;
 }
 
@@ -1290,4 +1290,23 @@ ul li {
     flex-wrap: wrap;
     justify-content: space-around;
     
+}
+
+/**********************************  Places de parking **********************************/
+.bouttonsParking {
+    display: flex;
+    justify-content: space-around;
+    align-items: horizontal;
+    /* resize: horizontal; */ 
+    margin-top: 5%;
+}
+
+.bouttonsParking button {
+    width: 20%;
+    height: 20%;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 25px;
+    background-color: white;
+    border: black;
 }
