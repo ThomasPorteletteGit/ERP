@@ -1,5 +1,4 @@
 import React from 'react';
-import Header from './Header';
 
 const ChoixPaiement = () => {
     return (
@@ -7,10 +6,10 @@ const ChoixPaiement = () => {
             <div className='choixPaiement'>
                 <h2 className='view-title'>Choix du paiement</h2>
                 <div className='paymentChoice'>
-                    <button id="esp">Espèces</button>
-                    <button id="cb">Carte bancaire</button>
-                    <button id="carteEnergie">Carte énergie</button>
-                    <button id="autre">Autres</button>
+                    <button id="esp" className='cdpbouton'>Espèces</button>
+                    <button id="cb" className='cdpbouton'>Carte bancaire</button>
+                    <button id="carteEnergie" className='cdpbouton'>Carte énergie</button>
+                    <button id="autre" className='cdpbouton'>Autres</button>
                 </div>
             </div >
         </section>

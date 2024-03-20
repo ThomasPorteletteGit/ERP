@@ -10,6 +10,7 @@ import Incidents from './Incidents';
 import Releve from './Releve';
 import Direction from './Direction';
 import ComponentsAnimation from "./ComponentsAnimation";
+import ChoixduPaiementCompAnim from './ChoixduPaiementCompAnim';
 import ChoixPaiement from './ChoixPaiement';
 
 const Dashboard = () => {
@@ -20,6 +21,7 @@ const Dashboard = () => {
         <>
             <Header />
             <ComponentsAnimation />
+            <ChoixduPaiementCompAnim />
             <div id='dashboard'>
                 <div className="dashboard-container">
                     <div className="dashboard-left">
