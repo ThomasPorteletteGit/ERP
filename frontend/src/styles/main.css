@@ -1277,7 +1277,7 @@ ul li {
     width: 45%;
     height: 45%;
     border-radius: 8px;
-
+    cursor: pointer; 
     font-size: 25px;
 }
 
@@ -1315,4 +1315,42 @@ ul li {
     margin-left: 10%;
     margin-right: 10%;
     font-size: 120%;
+}
+
+
+/**********************************  Places de parking **********************************/
+.bouttonsParking {
+    display: flex;
+    justify-content: space-around;
+    align-items: horizontal;
+    /* resize: horizontal; */ 
+    margin-top: 5%;
+}
+
+.bouttonsParking button {
+    width: 20%;
+    height: 20%;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 25px;
+    background-color: white;
+    border: black;
+}
+
+
+.composantGrand, #modifHoraires{
+    background: #2B2D42;
+    display: block;
+    flex-direction: column; 
+    align-items: center; 
+    border-radius: 20px;
+    width: 100%;
+    height: 83%;
+}
+
+/*HoraireGrand*/
+.tableauHeure {
+    display: 'flex';
+    margin-top: 20px;
+    justify-content: center;
 }

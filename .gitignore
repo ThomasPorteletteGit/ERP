@@ -37,7 +37,6 @@ yarn-error.log*
 *.avif
 *.jfif
 *.heif
-*.bat
 *.bpg
 *.brk
 *.ecw
