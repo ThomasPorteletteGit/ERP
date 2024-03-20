@@ -1,25 +1,24 @@
 import React from 'react';
-import horloge from '../assets/img/lhorloge.png';
 import agrandir from '../assets/img/agrandir.png';
 
 const Transaction = () => {
 
     // à récup dans la bd
     const transactions = [
-        { id: 1, heure: '12:30', total: '50,50', type: 'CB', statut: 'Validé', isLoss: false },
+        { id: 1, heure: '12:30', total: '50,50€', type: 'CB', statut: 'Validé', isLoss: false },
         { id: 2, heure: '15:45', total: '20,05€', type: 'ESP', statut: 'En attente', isLoss: true },
-        { id: 1, heure: '12:30', total: '50,50', type: 'CB', statut: 'Validé', isLoss: false },
+        { id: 1, heure: '12:30', total: '50,50€', type: 'CB', statut: 'Validé', isLoss: false },
         { id: 2, heure: '15:45', total: '20,05€', type: 'ESP', statut: 'En attente', isLoss: true },
-        { id: 1, heure: '12:30', total: '50,50', type: 'CB', statut: 'Validé', isLoss: false },
+        { id: 1, heure: '12:30', total: '50,50€', type: 'CB', statut: 'Validé', isLoss: false },
         { id: 2, heure: '15:45', total: '20,05€', type: 'ESP', statut: 'En attente', isLoss: true },
         { id: 2, heure: '15:45', total: '20,05€', type: 'ESP', statut: 'En attente', isLoss: true },
-        { id: 1, heure: '12:30', total: '50,50', type: 'CB', statut: 'Validé', isLoss: false },
+        { id: 1, heure: '12:30', total: '50,50€', type: 'CB', statut: 'Validé', isLoss: false },
         { id: 2, heure: '15:45', total: '20,05€', type: 'ESP', statut: 'En attente', isLoss: true },
-        { id: 1, heure: '12:30', total: '50,50', type: 'CB', statut: 'Validé', isLoss: false },
+        { id: 1, heure: '12:30', total: '50,50€', type: 'CB', statut: 'Validé', isLoss: false },
         { id: 2, heure: '15:45', total: '20,05€', type: 'ESP', statut: 'En attente', isLoss: true },
-        { id: 1, heure: '12:30', total: '50,50', type: 'CB', statut: 'Validé', isLoss: false },
+        { id: 1, heure: '12:30', total: '50,50€', type: 'CB', statut: 'Validé', isLoss: false },
         { id: 2, heure: '15:45', total: '20,05€', type: 'ESP', statut: 'En attente', isLoss: true },
-        { id: 1, heure: '12:30', total: '50,50', type: 'CB', statut: 'Validé', isLoss: false },
+        { id: 1, heure: '12:30', total: '50,50€', type: 'CB', statut: 'Validé', isLoss: false },
     ];
 
 
@@ -72,6 +71,7 @@ const Transaction = () => {
                                             {transaction.id}
                                         </span>
                                     </td>
+                                    <td className='heures'>{transaction.heure}</td>
                                     <td className='prix-transac'>{transaction.total}</td>
                                     <td>
                                         <span className={`payment-type ${getPaymentTypeClass(transaction.type)}`}>
