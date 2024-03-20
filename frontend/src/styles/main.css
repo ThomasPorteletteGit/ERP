@@ -51,13 +51,11 @@ Vue choix paiement
     background-size: cover;
     background-color: white;
     border: none;
-    width: 47%; /* Ajuster la largeur à 100% pour remplir l'espace disponible */
-    height: 95px; /* Ajuster la hauteur à la taille souhaitée */
+    width: 47%; 
+    height: 95px; 
     border-radius: 8px;
-    margin-bottom: 10px; /* Espacement entre les boutons */
+    margin-bottom: 10px; 
 }
-
-
 
 /*
 fin choix paiement
@@ -696,7 +694,7 @@ select {
 }
 
 .horaires-content {
-    padding-top: 25px;
+    padding-top: 85px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -712,6 +710,7 @@ select {
 
 .of {
     opacity: 80%;
+    color:#080707;
 }
 
 .horaire-header {
