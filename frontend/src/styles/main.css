@@ -17,14 +17,6 @@ html {
     font-family: Didot !important;
 }
 
-/*
-Vue choix paiement
-*/
-
-.view-title {
-    font-size: 60px;
-}
-
 #logo {
     width: 17vh;
     height: 14.5vh;
@@ -35,37 +27,34 @@ Vue choix paiement
     clip-path: ellipse()
 }
 
-.paymentChoice {
-    margin-top: 12vh;
-    justify-content: center;
-    display: flex;
-    align-items: center;
+/*
+Vue choix paiement
+*/
+#choix-paiement{
+    border-radius: 20px;
+    background-color: #2B2D42;
+    width: 100%;
+    height: 100%;
+    margin-top: 5%;
 }
 
-.choixPaiement {
-    width: 100vw;
-    height: 100vh;
+.paymentChoice{
+    padding: 10px 5px;
+    margin-bottom: 12px;
+    height: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
 }
 
 .paymentChoice button {
-    background-color: #9EF09E;
-    font-family: Didot;
+    background-size: cover;
+    background-color: white;
     border: none;
-    font-size: 40px;
-    cursor: pointer;
-    width: 25%;
-    height: 25vh;
-    border-radius: 6px;
-}
-
-.paymentChoice #especeBtn {
-    padding: 20px 10px;
-    margin-right: 4%;
-}
-
-.paymentChoice #cbBtn {
-    padding: 20px 10px;
-    margin-left: 4%;
+    width: 47%; 
+    height: 95px; 
+    border-radius: 8px;
+    margin-bottom: 10px; 
 }
 
 /*
@@ -289,6 +278,10 @@ panier
     /* background-color: purple; */
 }
 
+
+.membre{
+    font-size: 20px;
+}
 
 
 /*
@@ -701,7 +694,7 @@ select {
 }
 
 .horaires-content {
-    padding-top: 25px;
+    padding-top: 85px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -717,6 +710,7 @@ select {
 
 .of {
     opacity: 80%;
+    color:#080707;
 }
 
 .horaire-header {
@@ -746,7 +740,6 @@ select {
     border-radius: 12px;
     width: auto;
     height: auto;
-
 }
 
 #icon_container_clock {
@@ -1266,4 +1259,35 @@ ul li {
     border-left: 1px solid #ccc;
     border-right: 1px solid #ccc;
     margin: 10px 0;
+}
+
+
+
+/* -------------------------------- Services en grand --------------------------------  */
+
+/* .serviceParkingButton {
+    background: url("../assets/img/parking.png") ;
+        
+} */
+
+.button_container_grand_services button {
+    background-size: cover;
+    background-color: white;
+    border: none;
+    width: 45%;
+    height: 45%;
+    border-radius: 8px;
+
+    font-size: 25px;
+}
+
+.button_container_grand_services {
+  
+    padding: 10px 5px;
+    margin: 30px;
+    height: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    
 }

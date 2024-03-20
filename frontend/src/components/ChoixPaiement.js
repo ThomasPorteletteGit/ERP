@@ -3,17 +3,17 @@ import Header from './Header';
 
 const ChoixPaiement = () => {
     return (
-        <>  
-            <Header />
+        <section id="choix-paiement">
             <div className='choixPaiement'>
-                <h1 className='view-title'>Choix du paiement</h1>
-
+                <h2 className='view-title'>Choix du paiement</h2>
                 <div className='paymentChoice'>
-                    <button id="especeBtn">Espèces</button>
-                    <button id="cbBtn">Carte bancaire</button>
+                    <button id="esp">Espèces</button>
+                    <button id="cb">Carte bancaire</button>
+                    <button id="carteEnergie">Carte énergie</button>
+                    <button id="autre">Autres</button>
                 </div>
             </div >
-        </>
+        </section>
     );
 }
 
