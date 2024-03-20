@@ -11,9 +11,7 @@ const ComponentsAnimation = () => {
 
     useEffect(() => {
         const components = ['etat-cuves', 'direction', 'incidents', 'transaction', 'stocks', 'services', 'horaires', 'releve'];
-        const componentsGrand = [<EtatCuvesGrand />, "", "", "", "", "", "", ""];
-        const componentsIncidentGrand = ["", "", <IncidentsGrand />, "", "", "", "", ""];
-        const componentsServicesGrand = ["", "", "", "", "", <ServicesGrand />, "", ""];
+        const componentsGrand = [<EtatCuvesGrand />,"",<IncidentsGrand/>,"","",<ServicesGrand />,"",""];
 
         const handleClick = (componentId) => () => {
             console.log('click ' + componentId);
@@ -31,7 +29,7 @@ const ComponentsAnimation = () => {
             });
 
             setTimeout(() => {
-                divGeneral.innerHTML = ReactDOMServer.renderToString(<SmallIcons iconClicked={componentId} />) + ReactDOMServer.renderToString(componentsGrand[components.indexOf(componentId)] || componentsIncidentGrand[components.indexOf(componentId)] || componentsServicesGrand[components.indexOf(componentId)]);
+                divGeneral.innerHTML = ReactDOMServer.renderToString(<SmallIcons iconClicked={componentId} />) + ReactDOMServer.renderToString(componentsGrand[components.indexOf(componentId)]);
                 divGeneral.style.display = "block";
 
                 components.forEach((compId) => {
