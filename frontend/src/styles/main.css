@@ -17,14 +17,6 @@ html {
     font-family: Didot !important;
 }
 
-/*
-Vue choix paiement
-*/
-
-.view-title {
-    font-size: 60px;
-}
-
 #logo {
     width: 17vh;
     height: 14.5vh;
@@ -35,37 +27,34 @@ Vue choix paiement
     clip-path: ellipse()
 }
 
-.paymentChoice {
-    margin-top: 12vh;
-    justify-content: center;
-    display: flex;
-    align-items: center;
+/*
+Vue choix paiement
+*/
+#choix-paiement{
+    border-radius: 20px;
+    background-color: #2B2D42;
+    width: 100%;
+    height: 100%;
+    margin-top: 5%;
 }
 
-.choixPaiement {
-    width: 100vw;
-    height: 100vh;
+.paymentChoice{
+    padding: 10px 5px;
+    margin-bottom: 12px;
+    height: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
 }
 
 .paymentChoice button {
-    background-color: #9EF09E;
-    font-family: Didot;
+    background-size: cover;
+    background-color: white;
     border: none;
-    font-size: 40px;
-    cursor: pointer;
-    width: 25%;
-    height: 25vh;
-    border-radius: 6px;
-}
-
-.paymentChoice #especeBtn {
-    padding: 20px 10px;
-    margin-right: 4%;
-}
-
-.paymentChoice #cbBtn {
-    padding: 20px 10px;
-    margin-left: 4%;
+    width: 47%; 
+    height: 95px; 
+    border-radius: 8px;
+    margin-bottom: 10px; 
 }
 
 /*
@@ -289,6 +278,10 @@ panier
     /* background-color: purple; */
 }
 
+
+.membre{
+    font-size: 20px;
+}
 
 
 /*
@@ -701,7 +694,7 @@ select {
 }
 
 .horaires-content {
-    padding-top: 25px;
+    padding-top: 85px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -717,6 +710,7 @@ select {
 
 .of {
     opacity: 80%;
+    color:#080707;
 }
 
 .horaire-header {
@@ -746,7 +740,6 @@ select {
     border-radius: 12px;
     width: auto;
     height: auto;
-
 }
 
 #icon_container_clock {
@@ -1104,7 +1097,7 @@ th {
     padding: 10px;
     border-radius: 10px;
     width: 20%;
-    justify-content: center; 
+    justify-content:center; 
     margin: 0 auto; 
 }
 
@@ -1129,36 +1122,191 @@ th {
 /* Incident en grand */
 
 .right-container {
-    position: absolute;
     right: 0;
     width: 50%;
-    padding: 0 20px; 
     box-sizing: border-box; 
 }
 
 .right-container h3 {
-    margin-top: 0; 
+    margin-bottom: 5%; 
+    margin-top: 3%;
+    font-size: 150%; 
 }
+
 
 .right-container form {
     display: flex;
     flex-direction: column;
+    margin-bottom: 5%; 
+    align-self: center;
 }
 
 .right-container form div {
-    margin-bottom: 10px; 
+    margin-bottom: 5%; 
+    flex-direction: column;
+    display: flex;
+}
+
+.right-container form select {
+    align-self: center;
 }
 
 .right-container form label {
-    margin-bottom: 5px; 
+    margin-bottom: 5%; 
+    font-size: 150%; 
+    position:static;
 }
 
 .right-container form textarea {
-    height: 100px; 
+    height: 160px; 
+    width: 60%;
+    margin-bottom: 5%; 
     resize: vertical; 
+    align-self: center;
 }
 
 .right-container form button {
-    right: 0;
     width: 50%; 
+    align-self: center;
+    font-size: 150%; 
+    padding: 10px 20px; 
+    border-radius: 5px; 
+    background-color: #edf4fc; 
+    color: #080707; 
+    cursor: pointer; 
+    transition: background-color 0.3s, color 0.3s; 
+}
+
+.right-container form label.texte-description {
+    align-self: flex-start;
+    margin-bottom: 5px;
+    align-self: center;
+}
+
+.container-composantGrandIncident{
+    background-color: #2B2D42 ;
+    border-radius: 20px;
+    width: 100%;
+    height: 83%;
+}
+
+.container-composantGrandIncident h2 {
+    text-align: left;
+    margin-left: 5%;
+}
+
+.composantGrandIncident {
+    display: flex;
+    flex-direction:row;
+}
+
+.left-container,
+.right-container {
+    flex: 1;
+    padding: 10px;
+    margin: 5px;
+}
+
+
+.left-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.left-container h3 {
+    font-size: 170%;
+    align-self: center;
+    margin-bottom: 5%;
+    margin-top: 2%;
+}
+
+.incident-details {
+    background-color: #f0f0f0; 
+    color: #000; 
+    padding: 10px; 
+    border-radius: 5px; 
+    margin-bottom: 20px; 
+    max-height: 200px; 
+    overflow-y: auto; 
+}
+
+ul {
+    align-self: center;
+    list-style-type: none; 
+    padding: 0; 
+    margin: 0; 
+    max-height: 300px; 
+    overflow-y: auto;
+}
+
+ul li {
+    background-color: #f9f9f9; 
+    color: #000; 
+    padding: 3%; 
+    margin-bottom: 2%; 
+    border-radius: 5px; 
+    border-color: #000;
+}
+
+
+.right-container {
+    margin-left: 5px;
+    border-left: 5px solid #ccc;
+}
+
+.separatorColumn {
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    margin: 10px 0;
+}
+
+
+
+/* -------------------------------- Services en grand --------------------------------  */
+
+/* .serviceParkingButton {
+    background: url("../assets/img/parking.png") ;
+        
+} */
+
+.button_container_grand_services button {
+    background-size: cover;
+    background-color: white;
+    border: none;
+    width: 45%;
+    height: 45%;
+    border-radius: 8px;
+    cursor: pointer; 
+    font-size: 25px;
+}
+
+.button_container_grand_services {
+  
+    padding: 10px 5px;
+    margin: 30px;
+    height: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    
+}
+
+/**********************************  Places de parking **********************************/
+.bouttonsParking {
+    display: flex;
+    justify-content: space-around;
+    align-items: horizontal;
+    /* resize: horizontal; */ 
+    margin-top: 5%;
+}
+
+.bouttonsParking button {
+    width: 20%;
+    height: 20%;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 25px;
+    background-color: white;
+    border: black;
 }
