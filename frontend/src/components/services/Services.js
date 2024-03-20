@@ -1,5 +1,5 @@
 import React from 'react';
-import agrandir from '../assets/img/agrandir.png';
+import agrandir from '../../assets/img/agrandir.png';
 
 const services = () => {
     return (

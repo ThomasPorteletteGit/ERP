@@ -1,6 +1,6 @@
 import React from 'react';
 import Cuve from './Cuve';
-import agrandir from '../assets/img/agrandir.png';
+import agrandir from '../../assets/img/agrandir.png';
 
 const EtatCuves = () => {
     return (

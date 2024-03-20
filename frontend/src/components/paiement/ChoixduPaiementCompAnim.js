@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import ReactDOMServer from 'react-dom/server'
-import SmallIcons from "./SmallIcons";
-import Especes from './Especes';
+import SmallIcons from "../SmallIcons";
+import Especes from '../Especes';
 
 
 const ChoixduPaiementCompAnim = () => {
