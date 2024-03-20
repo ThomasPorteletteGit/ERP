@@ -1,6 +1,6 @@
 import React from "react";
 import services from "./Services";
-import searchIcon from '../assets/img/searchIcon.png';
+import searchIcon from '../../assets/img/searchIcon.png';
 
 const ServiceParking = () => {
      // à récup dans la bd
