@@ -110,3 +110,13 @@ CREATE TABLE Boutique (
     horaire_ouverture TIME,
     horaire_fermeture TIME
 );
+
+CREATE TYPE typeEmploye AS ENUM ('Gerant', 'Employe');
+
+CREATE TABLE Employe (
+    id_employe SERIAL INT PRIMARY KEY,
+    nom VARCHAR(255),
+    prenom VARCHAR(255),
+    type typeEmploye,
+    mot_de_passe VARCHAR(255)
+);
