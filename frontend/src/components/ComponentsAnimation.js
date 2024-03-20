@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import ReactDOMServer from 'react-dom/server'
 import SmallIcons from "./SmallIcons";
-import EtatCuvesGrand from "./EtatCuvesGrand";
-import IncidentsGrand from './IncidentsGrand';
-import ServicesGrand from './ServicesGrand';
-import DirectionGrand from './DirectionGrand';
-import HoraireGrand from './HoraireGrand';
+import EtatCuvesGrand from "./cuve/EtatCuvesGrand";
+import IncidentsGrand from './incidents/IncidentsGrand';
+import ServicesGrand from './services/ServicesGrand';
+import DirectionGrand from './direction/DirectionGrand';
+import HoraireGrand from './horaire/HoraireGrand';
 
 const ComponentsAnimation = () => {
     const [clickedComponent, setClickedComponent] = useState(null);

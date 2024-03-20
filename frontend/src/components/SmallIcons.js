@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import direction from "./Direction";
+import direction from "./direction/Direction";
 
 const SmallIcons = ({ iconClicked }) => {
     const componentsClicked = iconClicked;
