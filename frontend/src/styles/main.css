@@ -51,13 +51,11 @@ Vue choix paiement
     background-size: cover;
     background-color: white;
     border: none;
-    width: 47%; /* Ajuster la largeur à 100% pour remplir l'espace disponible */
-    height: 95px; /* Ajuster la hauteur à la taille souhaitée */
+    width: 47%; 
+    height: 95px; 
     border-radius: 8px;
-    margin-bottom: 10px; /* Espacement entre les boutons */
+    margin-bottom: 10px; 
 }
-
-
 
 /*
 fin choix paiement
@@ -696,7 +694,7 @@ select {
 }
 
 .horaires-content {
-    padding-top: 25px;
+    padding-top: 85px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -712,6 +710,7 @@ select {
 
 .of {
     opacity: 80%;
+    color:#080707;
 }
 
 .horaire-header {
@@ -1098,7 +1097,7 @@ th {
     padding: 10px;
     border-radius: 10px;
     width: 20%;
-    justify-content: center; 
+    justify-content:center; 
     margin: 0 auto; 
 }
 
@@ -1181,4 +1180,114 @@ th {
 .right-container form label.texte-description {
     align-self: flex-start;
     margin-bottom: 5px;
+    align-self: center;
+}
+
+.container-composantGrandIncident{
+    background-color: #2B2D42 ;
+    border-radius: 20px;
+    width: 100%;
+    height: 83%;
+}
+
+.container-composantGrandIncident h2 {
+    text-align: left;
+    margin-left: 5%;
+}
+
+.composantGrandIncident {
+    display: flex;
+    flex-direction:row;
+}
+
+.left-container,
+.right-container {
+    flex: 1;
+    padding: 10px;
+    margin: 5px;
+}
+
+
+.left-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.left-container h3 {
+    font-size: 170%;
+    align-self: center;
+    margin-bottom: 5%;
+    margin-top: 2%;
+}
+
+.incident-details {
+    background-color: #f0f0f0; 
+    color: #000; 
+    padding: 10px; 
+    border-radius: 5px; 
+    margin-bottom: 20px; 
+    max-height: 200px; 
+    overflow-y: auto; 
+}
+
+ul {
+    align-self: center;
+    list-style-type: none; 
+    padding: 0; 
+    margin: 0; 
+    max-height: 300px; 
+    overflow-y: auto;
+}
+
+ul li {
+    background-color: #f9f9f9; 
+    color: #000; 
+    padding: 3%; 
+    margin-bottom: 2%; 
+    border-radius: 5px; 
+    border-color: #000;
+}
+
+
+.right-container {
+    margin-left: 5px;
+    border-left: 5px solid #ccc;
+}
+
+.separatorColumn {
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    margin: 10px 0;
+}
+
+
+
+/* -------------------------------- Services en grand --------------------------------  */
+
+/* .serviceParkingButton {
+    background: url("../assets/img/parking.png") ;
+        
+} */
+
+.button_container_grand_services button {
+    background-size: cover;
+    background-color: white;
+    border: none;
+    width: 45%;
+    height: 45%;
+    border-radius: 8px;
+
+    font-size: 25px;
+}
+
+.button_container_grand_services {
+  
+    padding: 10px 5px;
+    margin: 30px;
+    height: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    
 }
