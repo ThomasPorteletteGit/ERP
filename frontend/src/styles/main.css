@@ -1181,3 +1181,34 @@ th {
     align-self: flex-start;
     margin-bottom: 5px;
 }
+
+
+
+/* -------------------------------- Services en grand --------------------------------  */
+
+/* .serviceParkingButton {
+    background: url("../assets/img/parking.png") ;
+        
+} */
+
+.button_container_grand_services button {
+    background-size: cover;
+    background-color: white;
+    border: none;
+    width: 45%;
+    height: 45%;
+    border-radius: 8px;
+
+    font-size: 25px;
+}
+
+.button_container_grand_services {
+  
+    padding: 10px 5px;
+    margin: 30px;
+    height: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    
+}
