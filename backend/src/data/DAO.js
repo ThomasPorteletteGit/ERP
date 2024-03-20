@@ -1,5 +1,4 @@
 const express = require('express');
-const postgres = require('pg');
 
 class DAO
 {
@@ -17,7 +16,6 @@ class DAO
         this.dbConnection.connect();
         console.log("Connected to the database");
     }
-
 
     /**
      * 

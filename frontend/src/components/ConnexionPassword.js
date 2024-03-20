@@ -1,10 +1,9 @@
 import React, { useState, useRef } from 'react';
-
+import { useHistory } from 'react-router-dom';
 const ConnexionPassword = () => {
     //pour stocker et mettre à jour les valeurs
     const [password, setPassword] = useState('');
- 
-     
+
     //pour effacer les données
     const handleClearButton = () => {
         setPassword('');
@@ -17,7 +16,26 @@ const ConnexionPassword = () => {
 
     //pour rediriger vers la page suivante
     const handleEnterButton = () => {
-        window.location.href = '/dashboard';
+        let id = document.cookie.split('=')[1];
+        //envoyer les données à la base de données
+        const data = {username: id, password: password};
+        const options = {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data)
+        }
+        fetch("/login", options).then((response) => {
+            if (response.status === 200) {
+                document.cookie = "type="+response.type;
+                history.push('/dashboard');
+            } else {
+                alert('Mot de passe incorrect');
+                setPassword('');
+            }
+        });
+        
     };
 
     return (
