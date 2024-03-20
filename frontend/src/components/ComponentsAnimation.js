@@ -5,6 +5,7 @@ import EtatCuvesGrand from "./EtatCuvesGrand";
 import IncidentsGrand from './IncidentsGrand';
 import ServicesGrand from './ServicesGrand';
 import DirectionGrand from './DirectionGrand';
+import HoraireGrand from './HoraireGrand';
 
 const ComponentsAnimation = () => {
     const [clickedComponent, setClickedComponent] = useState(null);
@@ -12,11 +13,7 @@ const ComponentsAnimation = () => {
 
     useEffect(() => {
         const components = ['etat-cuves', 'direction', 'incidents', 'transaction', 'stocks', 'services', 'horaires', 'releve'];
-        const componentsGrand = [<EtatCuvesGrand />,"","","","","","",""];
-        const componentsIncidentGrand = ["","",<IncidentsGrand/>,"","","","",""];
-        const componentsServicesGrand = ["","","","","",<ServicesGrand />,"",""];
-        const componentsGrandDirection = ["",<DirectionGrand/>,"","","","","",""];
-                
+        const componentsGrand = [<EtatCuvesGrand />,<DirectionGrand/>,<IncidentsGrand/>,"","",<ServicesGrand />,<HoraireGrand/>,""];
 
         const handleClick = (componentId) => () => {
             console.log('click ' + componentId);
@@ -34,7 +31,7 @@ const ComponentsAnimation = () => {
             });
 
             setTimeout(() => {
-                divGeneral.innerHTML = ReactDOMServer.renderToString(<SmallIcons iconClicked={componentId} />) + ReactDOMServer.renderToString(componentsGrand[components.indexOf(componentId)] || componentsGrandDirection[components.indexOf(componentId)] || componentsIncidentGrand[components.indexOf(componentId)] || componentsServicesGrand[components.indexOf(componentId)]);
+                divGeneral.innerHTML = ReactDOMServer.renderToString(<SmallIcons iconClicked={componentId} />) + ReactDOMServer.renderToString(componentsGrand[components.indexOf(componentId)] || componentsGrand[components.indexOf(componentId)] || componentsGrand[components.indexOf(componentId)] || componentsGrand[components.indexOf(componentId)] || componentsGrand[components.indexOf(componentId)]);
                 divGeneral.style.display = "block";
 
                 components.forEach((compId) => {
