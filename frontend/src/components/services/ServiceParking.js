@@ -21,6 +21,7 @@ const ServiceParking = () => {
     const getStatusColor = (est_libre) => {
         return est_libre ? 'green' : 'red';
     };
+
     
 
     // const getReserve = (statut) => {
@@ -44,8 +45,10 @@ const ServiceParking = () => {
                     </div>
 
                     <div className="bouttonsParking">
-                        <button id="bouttonReservationPlaceP"> Réserver </button>
-                        <button id="bouttonSupprimerPlaceP"> Annuler </button>
+                        
+                        <button id="bouttonReservationPlaceP" disabled={!element.est_libre} onClick={reserverPlaceParking(element.id_placeParking, element.est_libre)}> Réserver </button>
+                        <button id="bouttonSupprimerPlaceP" disabled={element.est_libre} > Annuler </button>
+                    
                     </div>
                 </div>
             </div>
@@ -78,5 +81,14 @@ const ServiceParking = () => {
 
     
 };
+
+function reserverPlaceParking (id_placeParking, est_libre) {
+    // TODO (Modifs avec la bd)
+    
+    if (est_libre) {
+        alert("Place de parking " + id_placeParking + " réservée");
+    }
+
+}
 
 export default ServiceParking;

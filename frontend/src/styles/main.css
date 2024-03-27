@@ -250,6 +250,10 @@ panier
     width: 100%;
 }
 
+.dashboard-right .incidents-services section {
+    width: 100% !important;
+}
+
 .dashboard-right .stock-container {
     display: flex;
     align-items: center;
@@ -277,6 +281,26 @@ panier
     width: 50%;
     /* background-color: purple; */
 }
+
+.dashboard-right .releve-direction section{
+    width: 40%;
+}
+
+.dashboard-right .services-employe{
+    margin-left: 2%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 5%;
+    height: 100%;
+    width: 50%;
+}
+
+.dashboard-right .services-employe section{
+    width: 100%;
+}
+
 
 
 .membre {
@@ -411,7 +435,6 @@ p {
 /* Service */
 
 #services {
-    width: 40%;
     height: 100%;
     border-radius: 20px;
     background-color: #2B2D42;
@@ -780,7 +803,6 @@ select {
 
 #incidents {
     margin: 0 10px;
-    width: 60%;
     height: 100%;
     background-color: #2b2d42;
     border-radius: 20px;
@@ -840,9 +862,55 @@ select {
     background-color: white;
 }
 
+
+.button-container button {
+    margin: 5px;
+    padding: 5px 10px;
+    background-color: #ebebeb;
+    color: rgb(24, 24, 24);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+.left-container-incident {
+    width: 50%; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.right-container {
+    width: 50%; 
+}
+
+
+.left-container-incident > div {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.left-container-incident .confirm-button,
+.left-container-incident .delete-button {
+    margin: 5px;
+    padding: 5px 10px;
+    background-color: #ebebeb;
+    color: rgb(24, 24, 24);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.left-container-incident .confirm-button:hover,
+.left-container-incident .delete-button:hover {
+    background-color: #c0c0c0; /* Change la couleur au survol */
+}
+
+
+
 /* Caisse */
-
-
 
 #caisse {
     border-radius: 20px;
@@ -1100,7 +1168,6 @@ th {
     width: 20%;
     justify-content: center;
     margin: 0 auto;
-
 }
 
 
@@ -1235,6 +1302,7 @@ th {
     flex: 1;
     padding: 10px;
     margin: 5px;
+    max-height: 150%;
 }
 
 
@@ -1340,6 +1408,13 @@ ul li {
 .composantGrand ul li h3{
     font-size: 120%;
 }
+
+.direction-details ul{
+    margin-left: 10%;
+    margin-right: 10%;
+    font-size: 120%;
+}
+    
 
 .direction-details ul{
     margin-left: 10%;
@@ -1533,4 +1608,3 @@ ul li {
     align-items: center;
     justify-content: center;
 }
-
