@@ -1,5 +1,5 @@
 import React from 'react';
-import pump from '../assets/img/gas-pump.png';
+import pump from '../../assets/img/gas-pump.png';
 
 const StatutPompe = ({ numeroPompe, carburant, quantite, prix }) => {
 

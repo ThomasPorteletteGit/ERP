@@ -86,6 +86,9 @@
 
 .DivBlock{
     display: block;
+}
+
+#cuvesButtons{
     max-width: 35%;
 }
 
@@ -97,3 +100,47 @@
     font-size: 26px;
 }
 
+#cuvesPrix{
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1vh;
+}
+
+#cuvesPrix h3{
+    font-size: 4vh;
+    margin-bottom: 2vh;
+}
+
+#cuvesPrix #divPrix{
+    width: 50%;
+    height: 100%;
+    justify-content: left;
+}
+
+#divPrix label {
+    margin-top: 10px;
+    display: block;
+    font-size: 3vh;
+}
+
+#divPrix input {
+    padding: 2vh;
+    font-size: 1rem;
+    margin-bottom: 5vh;
+    align-self: center;
+    align-content: center;
+}
+
+#divPrix .Divflex{
+    gap: 2%;
+}
+
+.DivBlock button{
+    margin: 5%;
+    width: 90%;
+    height: 45%;
+    text-align: center;
+    font-size: 26px;
+}
