@@ -219,7 +219,7 @@ panier
 
 .dashboard-right {
     background-color: white !important;
-    width: 56vw !important;
+    width: 56.7vw !important;
     display: flex;
     margin-right: 0.5vw;
 }
@@ -1625,15 +1625,17 @@ ul li {
     justify-content: center;
 }
 
-/* Transaction */
-
-.direction-details ul li {
-    margin-bottom: 10px;
+/*Carte membre / energie*/
+.composantGrand #carte{
+    background-color: #2B2D42;
+    border-radius: 20px;
+    width: 100%;
+    height: 83%;
 }
 
-.ul-transaction li strong {
+.ul-transaction li strong{
     text-align: left;
-    align-self: baseline;
+    align-self:baseline;
 }
 
 .separatorBlack {
@@ -1645,19 +1647,19 @@ ul li {
     list-style: none;
     padding: 0;
     width: 70%;
-    max-height: 300px;
-    /* Ajustez la hauteur maximale selon vos besoins */
-    overflow-y: auto;
-    /* Ajout de la barre de défilement si nécessaire */
+    max-height: 300px; /* Ajustez la hauteur maximale selon vos besoins */
+    overflow-y: auto; /* Ajout de la barre de défilement si nécessaire */
 }
 
 .ul-transaction li {
-    margin-bottom: 20px;
+    margin-bottom: 20px; 
     text-align: left;
 }
 
 .separatorBlack {
     width: 100%;
     height: 1px;
-    margin: 1px 0;
+    margin: 1px 0; 
 }
+
+

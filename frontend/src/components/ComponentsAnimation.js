@@ -1,12 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import ReactDOMServer from 'react-dom/server'
 import SmallIcons from "./SmallIcons";
-import EtatCuvesGrand from "./cuve/EtatCuvesGrand";
-import IncidentsGrand from './incidents/IncidentsGrand';
-import ServicesGrand from './services/ServicesGrand';
-import DirectionGrand from './direction/DirectionGrand';
-import HoraireGrand from './horaire/HoraireGrand';
-import TransactionGrand from './TransactionGrand';
 
 const ComponentsAnimation = () => {
     const [clickedComponent, setClickedComponent] = useState(null);
@@ -14,7 +8,6 @@ const ComponentsAnimation = () => {
 
     useEffect(() => {
         const components = ['etat-cuves', 'direction', 'incidents', 'transaction', 'stocks', 'services', 'horaires', 'releve'];
-        const componentsGrand = [<EtatCuvesGrand />,<DirectionGrand/>,<IncidentsGrand/>,<TransactionGrand/>,"",<ServicesGrand />,<HoraireGrand/>,""];
 
         const handleClick = (componentId) => () => {
             console.log('click ' + componentId);
@@ -32,7 +25,7 @@ const ComponentsAnimation = () => {
             });
 
             setTimeout(() => {
-                divGeneral.innerHTML = ReactDOMServer.renderToString(<SmallIcons iconClicked={componentId} />) + ReactDOMServer.renderToString(componentsGrand[components.indexOf(componentId)]);
+                divGeneral.innerHTML = ReactDOMServer.renderToString(<SmallIcons iconClicked={componentId} />);
                 divGeneral.style.display = "block";
 
                 components.forEach((compId) => {
