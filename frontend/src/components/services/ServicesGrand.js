@@ -7,7 +7,7 @@ import ServiceParking from "./ServiceParking";
 const ServicesGrand = () => {
     return (
         
-        <div className="composantGrand">
+        <div className="composantGrand DivBlock">
             <div className="Top_Component_Grand">
                 <h2 className="component_title"> ⚒️ Services</h2>
             </div>

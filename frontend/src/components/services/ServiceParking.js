@@ -21,6 +21,7 @@ const ServiceParking = () => {
     const getStatusColor = (est_libre) => {
         return est_libre ? 'green' : 'red';
     };
+
     
 
     // const getReserve = (statut) => {
@@ -44,13 +45,29 @@ const ServiceParking = () => {
                     </div>
 
                     <div className="bouttonsParking">
-                        <button id="bouttonReservationPlaceP"> Réserver </button>
-                        <button id="bouttonSupprimerPlaceP"> Annuler </button>
+                        
+                        <button id={element.id_placeParking} className="bouttonsParking" disabled={!element.est_libre} >Réserver</button>
+                        <button id={element.id_placeParking} className="bouttonsParking" disabled={element.est_libre} >Annuler</button>
+                    
                     </div>
                 </div>
             </div>
         ));
-    }
+    }    
+    document.addEventListener("click", function (event) {
+        placesParking.array.forEach(button => {
+            console.log(button.id_placeParking);
+            const buttona = document.getElementById(button.id_placeParking);
+            buttona.addEventListener("click", function() {
+                reserverPlaceParking(button.id_placeParking, button.est_libre);
+            });
+            // button.id_placeParking.addEventListener("click", function() {
+            //     reserverPlaceParking(button.id_placeParking, button.est_libre);
+    
+            // });
+            
+        });
+    });
 
     return (
 
@@ -76,7 +93,41 @@ const ServiceParking = () => {
         </div>
     );
 
-    
+
 };
+
+
+
+
+
+// document.addEventListener("click", function (event) {
+//     if (event.target.classList.contains("bouttonsParking")) {
+//         const buttonText = event.target.textContent;
+//         switch (buttonText) {
+//             case "Réserver":
+//                 console.log("Place de parking réservée");
+                
+                
+//                 break;
+//             case "Annuler":
+//                 console.log("Place supprimée");
+
+//                 document.getElementById("bouttonSupprimerPlaceP").setAttribute("disabled", true);
+//                 break;
+                
+//         }
+//         event.preventDefault();
+//     }
+// });
+
+
+function reserverPlaceParking (id_placeParking, est_libre) {
+    // TODO (Modifs avec la bd)
+    
+    if (est_libre) {
+        alert("Place de parking " + id_placeParking + " réservée");
+    }
+
+}
 
 export default ServiceParking;

@@ -1,29 +1,54 @@
-import React, { useEffect } from 'react';
+import React from "react";
 
 const CarteEnergie = () => {
 
-    return (
-        <div className="composantGrand">
-            <div className="esp">
-                <div className="Divflex">
-                    <div id="topComposant">
-                        <h2 className="component_title2"> 🔋Carte Energie</h2>
-                    </div>
+    //recup dans bd
+    const clients = [
+        { nom: "Jean Truc" },
+        { nom: "Jean Bidule" },
+        { nom: "Jean Machin" },
+        { nom: "Jean Chose" },
+        { nom: "Gertrude Truc" },
+        { nom: "Gertrude Bidule" },
+        { nom: "Gertrude Machin" }
+    ];
+
+    const afficherClients = () => {
+        return clients.map(element => (
+            <div key={element.nom} className="client">
+                <div className="infoClient">
+                    <h2>{element.nom}</h2>
                 </div>
-                <hr />
-                <div id="PayerCB">
-                    <h1>Paiement</h1>
-                    <div id="Produits" className="DivBlock">
-                        <p id="prixCB">Prix total : <span id="prixTotal"></span> €</p>
-                        <div id="ProduitsCB">
-                            <p id="waitingCB">En attente du Paiement</p>
-                            <div class='chargement'></div>
-                        </div>
-                    </div>
+                <div className="boutons">
+                    <button>Voir plus</button>
+                    <button>Supprimer</button>
                 </div>
             </div>
-        </div>
-    );
-}
+        ));
+    }
 
-export default CarteEnergie;
+    return (
+        <section id="carte">
+            <div className="composantGrand">
+                <div className="Top_Component_Grand">
+                    <h2 className="component_title">Carte Energie</h2>
+                    <hr></hr>
+                </div>
+                <button className="buttonCarte">Ajouter une carte</button>
+                <button className="buttonCarte">Voir la liste des utilisateurs</button>
+                <button className="buttonCarte">Avantage carte membre</button>
+
+
+                <div className="listClient">
+                    <div>
+                        <h2>{afficherClients()}</h2>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    );
+
+}
+export default CarteEnergie
