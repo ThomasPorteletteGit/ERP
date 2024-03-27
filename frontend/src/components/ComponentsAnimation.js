@@ -5,6 +5,7 @@ import EtatCuvesGrand from "./EtatCuvesGrand";
 import IncidentsGrand from './IncidentsGrand';
 import ServicesGrand from './ServicesGrand';
 import DirectionGrand from './DirectionGrand';
+import TransactionGrand from './TransactionGrand';
 
 const ComponentsAnimation = () => {
     const [clickedComponent, setClickedComponent] = useState(null);
@@ -16,6 +17,7 @@ const ComponentsAnimation = () => {
         const componentsIncidentGrand = ["","",<IncidentsGrand/>,"","","","",""];
         const componentsServicesGrand = ["","","","","",<ServicesGrand />,"",""];
         const componentsGrandDirection = ["",<DirectionGrand/>,"","","","","",""];
+        const componentsGrandTransaction = ["","","",<TransactionGrand/>,"","","",""];
                 
 
         const handleClick = (componentId) => () => {
@@ -34,7 +36,7 @@ const ComponentsAnimation = () => {
             });
 
             setTimeout(() => {
-                divGeneral.innerHTML = ReactDOMServer.renderToString(<SmallIcons iconClicked={componentId} />) + ReactDOMServer.renderToString(componentsGrand[components.indexOf(componentId)] || componentsGrandDirection[components.indexOf(componentId)] || componentsIncidentGrand[components.indexOf(componentId)] || componentsServicesGrand[components.indexOf(componentId)]);
+                divGeneral.innerHTML = ReactDOMServer.renderToString(<SmallIcons iconClicked={componentId} />) + ReactDOMServer.renderToString(componentsGrand[components.indexOf(componentId)] || componentsGrandDirection[components.indexOf(componentId)] || componentsIncidentGrand[components.indexOf(componentId)] || componentsServicesGrand[components.indexOf(componentId)] || componentsGrandTransaction[components.indexOf(componentId)]);
                 divGeneral.style.display = "block";
 
                 components.forEach((compId) => {
