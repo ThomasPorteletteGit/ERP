@@ -30,7 +30,7 @@ html {
 /*
 Vue choix paiement
 */
-#choix-paiement{
+#choix-paiement {
     border-radius: 20px;
     background-color: #2B2D42;
     width: 100%;
@@ -38,7 +38,7 @@ Vue choix paiement
     margin-top: 5%;
 }
 
-.paymentChoice{
+.paymentChoice {
     padding: 10px 5px;
     margin-bottom: 12px;
     height: 80%;
@@ -51,10 +51,10 @@ Vue choix paiement
     background-size: cover;
     background-color: white;
     border: none;
-    width: 47%; 
-    height: 95px; 
+    width: 47%;
+    height: 95px;
     border-radius: 8px;
-    margin-bottom: 10px; 
+    margin-bottom: 10px;
 }
 
 /*
@@ -212,7 +212,7 @@ panier
     background-color: #2b2d42;
 }
 
-.dashboard-left{
+.dashboard-left {
     margin-right: 0.5vw;
     margin-left: 0.5vh;
     border-radius: 20px;
@@ -250,6 +250,10 @@ panier
     width: 100%;
 }
 
+.dashboard-right .incidents-services section {
+    width: 100% !important;
+}
+
 .dashboard-right .stock-container {
     display: flex;
     align-items: center;
@@ -278,8 +282,28 @@ panier
     /* background-color: purple; */
 }
 
+.dashboard-right .releve-direction section{
+    width: 40%;
+}
 
-.membre{
+.dashboard-right .services-employe{
+    margin-left: 2%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 5%;
+    height: 100%;
+    width: 50%;
+}
+
+.dashboard-right .services-employe section{
+    width: 100%;
+}
+
+
+
+.membre {
     font-size: 20px;
 }
 
@@ -411,7 +435,6 @@ p {
 /* Service */
 
 #services {
-    width: 40%;
     height: 100%;
     border-radius: 20px;
     background-color: #2B2D42;
@@ -710,7 +733,7 @@ select {
 
 .of {
     opacity: 80%;
-    color:#080707;
+    color: #080707;
 }
 
 .horaire-header {
@@ -780,7 +803,6 @@ select {
 
 #incidents {
     margin: 0 10px;
-    width: 60%;
     height: 100%;
     background-color: #2b2d42;
     border-radius: 20px;
@@ -865,7 +887,7 @@ select {
     margin: 3%;
 }
 
-.caisse-container{
+.caisse-container {
     height: 40%;
 }
 
@@ -934,7 +956,8 @@ select {
 }
 
 
-th, td {
+th,
+td {
     border: 1px solid #ddd;
     padding: 8px;
     text-align: left;
@@ -944,7 +967,7 @@ th {
     background-color: #f2f2f2;
 }
 
-.search-bar>button{
+.search-bar>button {
     gap: 10px;
     border: 1px solid #ccc;
     padding: 1%;
@@ -992,11 +1015,11 @@ th {
     padding: 20px;
     border-radius: 8px;
     width: 75%;
-    justify-content: center; 
-    margin: 0 auto; 
+    justify-content: center;
+    margin: 0 auto;
 }
 
-.numeric-buttons button{
+.numeric-buttons button {
     padding: 8px;
     font-size: 14px;
     border: 1px solid #ccc;
@@ -1005,38 +1028,38 @@ th {
 }
 
 @media screen and (max-width: 1700px) {
-    .numeric-buttons button{
+    .numeric-buttons button {
         padding: 6px !important;
     }
 }
 
 @media screen and (max-width: 1400px) {
-    .numeric-buttons button{
+    .numeric-buttons button {
         padding: 4px !important;
     }
 }
 
-.numeric-buttons > button:nth-child(3) {
+.numeric-buttons>button:nth-child(3) {
     grid-column-end: span 2;
     width: 48%;
 }
 
-.numeric-buttons > button:nth-child(7) {
+.numeric-buttons>button:nth-child(7) {
     grid-column-end: span 2;
     width: 48%;
 }
 
-.numeric-buttons > button:nth-child(11) {
+.numeric-buttons>button:nth-child(11) {
     grid-column-end: span 2;
     width: 48%;
 }
 
-.numeric-buttons > button:nth-child(15) {
+.numeric-buttons>button:nth-child(15) {
     grid-column-end: span 2;
     width: 48%;
 }
 
-.numeric-buttons > button:nth-child(19) {
+.numeric-buttons>button:nth-child(19) {
     grid-column-end: span 2;
 }
 
@@ -1077,7 +1100,7 @@ th {
     color: black
 }
 
-.connection-bar input{
+.connection-bar input {
     align-items: center;
     padding: 10px;
     font-size: 16px;
@@ -1097,8 +1120,8 @@ th {
     padding: 10px;
     border-radius: 10px;
     width: 20%;
-    justify-content:center; 
-    margin: 0 auto; 
+    justify-content: center;
+    margin: 0 auto;
 }
 
 
@@ -1124,25 +1147,25 @@ th {
 .right-container {
     right: 0;
     width: 50%;
-    box-sizing: border-box; 
+    box-sizing: border-box;
 }
 
 .right-container h3 {
-    margin-bottom: 5%; 
+    margin-bottom: 5%;
     margin-top: 3%;
-    font-size: 150%; 
+    font-size: 150%;
 }
 
 
 .right-container form {
     display: flex;
     flex-direction: column;
-    margin-bottom: 5%; 
+    margin-bottom: 5%;
     align-self: center;
 }
 
 .right-container form div {
-    margin-bottom: 5%; 
+    margin-bottom: 5%;
     flex-direction: column;
     display: flex;
 }
@@ -1152,29 +1175,29 @@ th {
 }
 
 .right-container form label {
-    margin-bottom: 5%; 
-    font-size: 150%; 
-    position:static;
+    margin-bottom: 5%;
+    font-size: 150%;
+    position: static;
 }
 
 .right-container form textarea {
-    height: 160px; 
+    height: 160px;
     width: 60%;
-    margin-bottom: 5%; 
-    resize: vertical; 
+    margin-bottom: 5%;
+    resize: vertical;
     align-self: center;
 }
 
 .right-container form button {
-    width: 50%; 
+    width: 50%;
     align-self: center;
-    font-size: 150%; 
-    padding: 10px 20px; 
-    border-radius: 5px; 
-    background-color: #edf4fc; 
-    color: #080707; 
-    cursor: pointer; 
-    transition: background-color 0.3s, color 0.3s; 
+    font-size: 150%;
+    padding: 10px 20px;
+    border-radius: 5px;
+    background-color: #edf4fc;
+    color: #080707;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 .right-container form label.texte-description {
@@ -1183,8 +1206,8 @@ th {
     align-self: center;
 }
 
-.container-composantGrandIncident{
-    background-color: #2B2D42 ;
+.container-composantGrandIncident {
+    background-color: #2B2D42;
     border-radius: 20px;
     width: 100%;
     height: 83%;
@@ -1197,7 +1220,7 @@ th {
 
 .composantGrandIncident {
     display: flex;
-    flex-direction:row;
+    flex-direction: row;
 }
 
 .left-container,
@@ -1222,30 +1245,30 @@ th {
 }
 
 .incident-details {
-    background-color: #f0f0f0; 
-    color: #000; 
-    padding: 10px; 
-    border-radius: 5px; 
-    margin-bottom: 20px; 
-    max-height: 200px; 
-    overflow-y: auto; 
+    background-color: #f0f0f0;
+    color: #000;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    max-height: 200px;
+    overflow-y: auto;
 }
 
 ul {
     align-self: center;
-    list-style-type: none; 
-    padding: 0; 
-    margin: 0; 
-    max-height: 300px; 
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    max-height: 300px;
     overflow-y: auto;
 }
 
 ul li {
-    background-color: #f9f9f9; 
-    color: #000; 
-    padding: 3%; 
-    margin-bottom: 2%; 
-    border-radius: 5px; 
+    background-color: #f9f9f9;
+    color: #000;
+    padding: 3%;
+    margin-bottom: 2%;
+    border-radius: 5px;
     border-color: #000;
 }
 
@@ -1277,19 +1300,19 @@ ul li {
     width: 45%;
     height: 45%;
     border-radius: 8px;
-    cursor: pointer; 
+    cursor: pointer;
     font-size: 25px;
 }
 
 .button_container_grand_services {
-  
+
     padding: 10px 5px;
     margin: 30px;
     height: 80%;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    
+
 }
 
 /**********************************  Places de parking **********************************/
@@ -1297,7 +1320,7 @@ ul li {
     display: flex;
     justify-content: space-around;
     align-items: horizontal;
-    /* resize: horizontal; */ 
+    /* resize: horizontal; */
     margin-top: 5%;
 }
 
@@ -1313,11 +1336,12 @@ ul li {
 
 /*Horaire Grand*/
 
-.composantGrand, #modifHoraires{
+.composantGrand,
+#modifHoraires {
     background: #2B2D42;
     display: block;
-    flex-direction: column; 
-    align-items: center; 
+    flex-direction: column;
+    align-items: center;
     border-radius: 20px;
     width: 100%;
     height: 83%;
@@ -1325,10 +1349,10 @@ ul li {
 
 #modifHoraire {
     margin-top: 20px;
-  }
-  
+}
 
-  
+
+
 .component_title {
     margin: 0;
 }
@@ -1377,11 +1401,10 @@ ul li {
     opacity: 0.8;
 }
 
-.heures{
+.heures {
     border-radius: 12px;
     width: auto;
     height: auto;
     align-items: center;
     justify-content: center;
 }
-  
