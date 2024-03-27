@@ -6,10 +6,10 @@ import backArrow from '../assets/img/en-arriere.png'
 import scaleButton from '../assets/img/agrandir.png'
 import tomdelacote from '../assets/img/tomdelacote.png'
 import exit from '../assets/img/exit.png'
-import StatutPompe from './StatutPompe';
 import ReactDOMServer from 'react-dom/server';
 import CarteMembre from './CarteMembre';
 import CarteEnergie from './CarteEnergie';
+import StatutPompe from './pompe/StatutPompe';
 
 const Header = () => {
 

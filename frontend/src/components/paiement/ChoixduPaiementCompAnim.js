@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import ReactDOMServer from 'react-dom/server'
-import SmallIcons from "./SmallIcons";
-import Especes from './Especes';
+import SmallIcons from "../SmallIcons";
+import Especes from '../Especes';
 
 
 const ChoixduPaiementCompAnim = () => {
@@ -46,11 +46,8 @@ const ChoixduPaiementCompAnim = () => {
         };
 
         const cdpBoutons = document.querySelectorAll(".cdpbouton");
-        console.log(cdpBoutons);
 
         cdpBoutons.forEach((btn) => {
-            console.log('add event listener for ' + btn.id);
-
             btn.addEventListener("click", handleClick(btn.id));
         });
 
