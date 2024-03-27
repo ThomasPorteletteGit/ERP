@@ -12,23 +12,24 @@ import './styles/main.css';
 import './styles/index.css';
 import './styles/header.css';
 import './styles/icons.css'
+import './styles/choixdupaiement.css';
 
 
 
 function App() {
-  
+
   const [routing, setRouting] = useState(<ConnexionId />);
 
   useEffect(() => {
     let sessionCookie = document.cookie.split('=')[1] || "";
 
-    if(sessionCookie === "") {
+    if (sessionCookie === "") {
       setRouting(<ConnexionId />);
     }
     else {
       setRouting(<Dashboard />);
     }
-    }, []);
+  }, []);
 
   return (
     <Router>
