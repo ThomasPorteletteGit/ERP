@@ -34,8 +34,8 @@ Vue choix paiement
     border-radius: 20px;
     background-color: #2B2D42;
     width: 100%;
-    height: 100%;
-    margin-top: 5%;
+    height: 36.5%;
+    margin-top: 2%;
 }
 
 .paymentChoice {
@@ -52,7 +52,6 @@ Vue choix paiement
     background-color: white;
     border: none;
     width: 47%;
-    height: 95px;
     border-radius: 8px;
     margin-bottom: 10px;
 }
@@ -282,11 +281,11 @@ panier
     /* background-color: purple; */
 }
 
-.dashboard-right .releve-direction section{
+.dashboard-right .releve-direction section {
     width: 40%;
 }
 
-.dashboard-right .services-employe{
+.dashboard-right .services-employe {
     margin-left: 2%;
     display: flex;
     align-items: center;
@@ -297,7 +296,7 @@ panier
     width: 50%;
 }
 
-.dashboard-right .services-employe section{
+.dashboard-right .services-employe section {
     width: 100%;
 }
 
@@ -328,6 +327,7 @@ cuves
     border: 1px solid #ccc;
     padding: 10px;
     margin: 10px;
+    background-color: #777ca6;
 }
 
 .cuve-container h2,
@@ -339,11 +339,21 @@ p {
     background-color: #f0f0f0;
     height: 10vh;
     margin-top: 10px;
+    padding: 2px 2px !important;
     position: relative;
+    border-radius: 2px;
+}
+
+.jauge>div {
+    margin-bottom: 2px;
+    animation: fill 2s ease;
+    border-top-right-radius: 3px;
+    border-top-left-radius: 3px;
 }
 
 .progress-bar {
-    width: 100%;
+    /*calc sur le padding de la jauge*/
+    width: calc(100% - 4px);
     background-color: rgb(56, 141, 56);
     position: absolute;
     bottom: 0;
@@ -510,7 +520,7 @@ p {
     background-color: #2B2D42;
     width: 100%;
     height: 35%;
-    margin-top: 5%;
+    margin-top: 2%;
 }
 
 .last-transaction p {
@@ -534,7 +544,7 @@ p {
     border-bottom-right-radius: 20px;
     border-bottom-left-radius: 20px;
     background-color: white;
-    margin: 8px;
+    margin: 4px;
     color: black;
     overflow-y: auto;
     overflow-x: auto;
@@ -856,7 +866,7 @@ select {
 }
 
 .releve {
-    width: 90%;
+    width: 95%;
     margin-bottom: 5px;
     border-radius: 8px;
     background-color: white;
@@ -875,7 +885,7 @@ select {
 
 
 .left-container-incident {
-    width: 50%; 
+    width: 50%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -883,11 +893,11 @@ select {
 }
 
 .right-container {
-    width: 50%; 
+    width: 50%;
 }
 
 
-.left-container-incident > div {
+.left-container-incident>div {
     text-align: center;
     margin-bottom: 20px;
 }
@@ -905,7 +915,8 @@ select {
 
 .left-container-incident .confirm-button:hover,
 .left-container-incident .delete-button:hover {
-    background-color: #c0c0c0; /* Change la couleur au survol */
+    background-color: #c0c0c0;
+    /* Change la couleur au survol */
 }
 
 
@@ -1396,32 +1407,32 @@ ul li {
     margin-left: 5%;
 }
 
-.direction-details{
+.direction-details {
     margin-top: 4%;
 }
 
-.composantGrand h3{
+.composantGrand h3 {
     margin-bottom: 3%;
     font-size: 180%;
 }
 
-.composantGrand ul li h3{
+.composantGrand ul li h3 {
     font-size: 120%;
 }
 
-.direction-details ul{
+.direction-details ul {
     margin-left: 10%;
     margin-right: 10%;
     font-size: 120%;
 }
-    
 
-.direction-details ul{
+
+.direction-details ul {
     margin-left: 10%;
     margin-right: 10%;
     font-size: 120%;
 }
-    
+
 
 /**********************************  Places de parking **********************************/
 
@@ -1452,21 +1463,23 @@ ul li {
 }
 
 .titreComposantPP {
-    margin : 1.5%;
+    margin: 1.5%;
     padding: 10px;
     font-size: 170%;
     display: flex;
     justify-content: left;
 }
+
 .place_parking {
     border: solid #000;
     border-radius: 8px;
-    padding: 10px; 
+    padding: 10px;
     margin: 15px;
     background-color: #4d5b84;
-    
+
     box-shadow: 5px 6px 5px #101e49;
 }
+
 .formulaireRecherchePlaceP {
     display: flex;
     flex-direction: horizontal;
@@ -1479,13 +1492,13 @@ ul li {
 
 .container_placesP {
     max-height: 425px;
-    margin: 5px; 
-    overflow-y: auto; 
+    margin: 5px;
+    overflow-y: auto;
     border-radius: 5px;
     /* background-color: #424661; */
 }
 
-.search { 
+.search {
     width: 60%;
     padding: 12px 12px;
     margin: 8px 0;
@@ -1502,6 +1515,7 @@ ul li {
     margin-right: 5px;
     border-radius: 24px;
 }
+
 .submitSearchParking {
     width: 6%;
     padding: 8px;
@@ -1509,14 +1523,16 @@ ul li {
     box-sizing: border-box;
     border-radius: 30px;
     display: flex;
-    align-items: center; /* Centrer verticalement */
-    justify-content: center; /* Centrer horizontalement */
+    align-items: center;
+    /* Centrer verticalement */
+    justify-content: center;
+    /* Centrer horizontalement */
 }
 
 .searchIconImage {
     width: 16px;
     height: 16px;
-    
+
 }
 
 .statut-placeP {
@@ -1531,7 +1547,7 @@ ul li {
     display: flex;
     justify-content: space-around;
     align-items: horizontal;
-    
+
 }
 
 /************************************** Horaire Grand **************************************/
@@ -1615,9 +1631,9 @@ ul li {
     margin-bottom: 10px;
 }
 
-.ul-transaction li strong{
+.ul-transaction li strong {
     text-align: left;
-    align-self:baseline;
+    align-self: baseline;
 }
 
 .separatorBlack {
@@ -1629,19 +1645,19 @@ ul li {
     list-style: none;
     padding: 0;
     width: 70%;
-    max-height: 300px; /* Ajustez la hauteur maximale selon vos besoins */
-    overflow-y: auto; /* Ajout de la barre de défilement si nécessaire */
+    max-height: 300px;
+    /* Ajustez la hauteur maximale selon vos besoins */
+    overflow-y: auto;
+    /* Ajout de la barre de défilement si nécessaire */
 }
 
 .ul-transaction li {
-    margin-bottom: 20px; 
+    margin-bottom: 20px;
     text-align: left;
 }
 
 .separatorBlack {
     width: 100%;
     height: 1px;
-    margin: 1px 0; 
+    margin: 1px 0;
 }
-
-
