@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import ReactDOMServer from 'react-dom/server'
 import SmallIcons from "./SmallIcons";
-import EtatCuvesGrand from "./EtatCuvesGrand";
-import IncidentsGrand from './IncidentsGrand';
-import ServicesGrand from './ServicesGrand';
-import HoraireGrand from './HoraireGrand';
+import EtatCuvesGrand from "./cuve/EtatCuvesGrand";
+import IncidentsGrand from './incidents/IncidentsGrand';
+import ServicesGrand from './services/ServicesGrand';
+import DirectionGrand from './direction/DirectionGrand';
+import HoraireGrand from './horaire/HoraireGrand';
 
 const ComponentsAnimation = () => {
     const [clickedComponent, setClickedComponent] = useState(null);
@@ -12,8 +13,7 @@ const ComponentsAnimation = () => {
 
     useEffect(() => {
         const components = ['etat-cuves', 'direction', 'incidents', 'transaction', 'stocks', 'services', 'horaires', 'releve'];
-        const componentsGrand = [<EtatCuvesGrand />,"",<IncidentsGrand/>,"","",<ServicesGrand />,<HoraireGrand />,""];
-                
+        const componentsGrand = [<EtatCuvesGrand />,<DirectionGrand/>,<IncidentsGrand/>,"","",<ServicesGrand />,<HoraireGrand/>,""];
 
         const handleClick = (componentId) => () => {
             console.log('click ' + componentId);
@@ -31,7 +31,7 @@ const ComponentsAnimation = () => {
             });
 
             setTimeout(() => {
-                divGeneral.innerHTML = ReactDOMServer.renderToString(<SmallIcons iconClicked={componentId} />) + ReactDOMServer.renderToString(componentsGrand[components.indexOf(componentId)] || componentsGrand[components.indexOf(componentId)] || componentsGrand[components.indexOf(componentId)]) || componentsGrand[components.indexOf(componentId)] ;
+                divGeneral.innerHTML = ReactDOMServer.renderToString(<SmallIcons iconClicked={componentId} />) + ReactDOMServer.renderToString(componentsGrand[components.indexOf(componentId)]);
                 divGeneral.style.display = "block";
 
                 components.forEach((compId) => {
@@ -71,30 +71,12 @@ const ComponentsAnimation = () => {
             if (component) {
                 const img = component.querySelector('#imgAgrandir');
                 if (img) {
-                    console.log('add event listener for ' + componentId);
                     img.addEventListener("click", handleClick(componentId));
                 }
             }
         });
 
-        document.addEventListener("click", function (event) {
-            if (event.target.classList.contains("btnCuvesGrandClick")) {
-                const buttonText = event.target.textContent;
-                switch (buttonText) {
-                    case "Modifier le prix":
-                        console.log("Bouton 'Modifier le prix' cliqué");
-                        break;
-                    case "Demande de réapprovisionnement":
-                        console.log("Bouton 'Demande de réaprovisionnement' cliqué");
-                        break;
-                    default:
-                        console.log("Bouton inconnu cliqué" + buttonText);
-                        break;
-                }
-                event.preventDefault();
 
-            }
-        });
 
 
 

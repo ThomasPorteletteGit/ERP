@@ -5,7 +5,7 @@ import backArrow from '../assets/img/en-arriere.png'
 import scaleButton from '../assets/img/agrandir.png'
 import tomdelacote from '../assets/img/tomdelacote.png'
 import exit from '../assets/img/exit.png'
-import StatutPompe from './StatutPompe';
+import StatutPompe from './pompe/StatutPompe';
 
 const Header = () => {
     return (

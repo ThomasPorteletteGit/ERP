@@ -1,16 +1,17 @@
 import React from 'react';
 import Header from './Header';
-import EtatCuves from './EtatCuves';
+import EtatCuves from './cuve/EtatCuves';
 import Caisse from './Caisse';
-import Services from "./Services";
-import Horaires from './Horaires';
+import Services from "./services/Services";
+import Horaires from './horaire/Horaires';
 import Transaction from './Transaction';
 import Stocks from './Stocks';
-import Incidents from './Incidents';
+import Incidents from './incidents/Incidents';
 import Releve from './Releve';
-import Direction from './Direction';
+import Direction from './direction/Direction';
 import ComponentsAnimation from "./ComponentsAnimation";
-import ChoixPaiement from './ChoixPaiement';
+import ChoixduPaiementCompAnim from './paiement/ChoixduPaiementCompAnim';
+import ChoixPaiement from './paiement/ChoixPaiement';
 
 const Dashboard = ( {userType }) => {
     // const cookie = document.cookie.split('=')[1];
@@ -21,6 +22,7 @@ const Dashboard = ( {userType }) => {
         <>
             <Header />
             <ComponentsAnimation />
+            <ChoixduPaiementCompAnim />
             <div id='dashboard'>
                 <div className="dashboard-container">
                     <div className="dashboard-left">
