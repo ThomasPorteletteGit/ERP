@@ -220,7 +220,7 @@ panier
 
 .dashboard-right {
     background-color: white !important;
-    width: 56vw !important;
+    width: 56.7vw !important;
     display: flex;
     margin-right: 0.5vw;
 }
@@ -1624,7 +1624,7 @@ ul li {
     list-style: none;
     padding: 0;
     width: 70%;
-    max-height: 30%; /* Ajustez la hauteur maximale selon vos besoins */
+    max-height: 28%; /* Ajustez la hauteur maximale selon vos besoins */
     overflow-y: auto; /* Ajout de la barre de défilement si nécessaire */
 }
 
@@ -1633,10 +1633,57 @@ ul li {
     text-align: left;
 }
 
-.separatorBlack {
+.confirm-button,
+.delete-button,
+.confirm-button-desactivate {
+    margin: 5px;
+    padding: 3px 8px; /* Réduire la taille des boutons */
+    background-color: #ebebeb;
+    color: rgb(24, 24, 24);
+    border: none;
+    border-radius: 3px; /* Réduire le rayon du bord */
+    cursor: pointer;
+}
+
+.confirm-button, .delete-button {
+    flex: 0 0 auto; /* Ne pas agrandir ou réduire les boutons */
+}
+
+.listClient  {
+    max-height: 425px;
+    margin: 5px; 
+    overflow-y: auto; 
+    border-radius: 5px;
+}
+
+
+/*Carte membre / energie*/
+.composantGrand #carte{
+    background-color: #2B2D42;
+    border-radius: 20px;
     width: 100%;
-    height: 1px;
-    margin: 1px 0; 
+    height: 83%;
+}
+
+.buttonCarte{
+    background-color: #f0f0f0;
+    color: black;
+    padding: 10px 20px;
+    margin: 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.client {
+    display:flex;
+    border: solid #000;
+    border-radius: 8px;
+    padding: 10px; 
+    margin: 15px;
+    background-color: #4d5b84;
+    box-shadow: 5px 6px 5px #101e49;
 }
 
 
@@ -1651,19 +1698,7 @@ ul li {
 }
 
 .transaction-item {
-    margin-bottom: 20px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
 }
-
-
-.transaction-item .confirm-button,
-.transaction-item .delete-button,
-.transaction-item .confirm-button-desactivate {
-    margin: 5px;
-    padding: 5px 10px;
-    background-color: #ebebeb;
-    color: rgb(24, 24, 24);
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-

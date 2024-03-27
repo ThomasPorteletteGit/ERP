@@ -1,8 +1,8 @@
 .smallIcons{
     display: flex;
-    gap: 20px;
+    gap: 11px;
     width: 100%;
-    height: 15%;
+    height: 14.5%;
     justify-content: center;
     justify-items: center;
 }
@@ -14,6 +14,7 @@
     background: #2B2D42;
     font-size: 4vw;
     height: 11vh;
+    width: 11vw;
     border-radius: 20px;
     background-size: cover;
 }
@@ -90,12 +91,13 @@
 
 #cuvesButtons{
     max-width: 35%;
+    height: 105.2%;
 }
 
 #cuvesButtons button{
-    margin: 5%;
+    margin: 10px;
     width: 90%;
-    height: 45%;
+    height: 46.2%;
     text-align: center;
     font-size: 26px;
 }
@@ -143,4 +145,26 @@
     height: 45%;
     text-align: center;
     font-size: 26px;
+}
+
+#cuvesGrands{
+    height: 70.9vh;
+    width: 56.8vw;
+    border-radius: 20px;
+}
+
+#cuvesGrand{
+    height: 60vh;
+}
+
+#cuvesGrand .cuve-container{
+    height: 58.3vh;
+}
+
+#cuvesGrand .cuve-container .jauge{
+    height: 50vh;
+}
+
+#cuvesButtons #thefirst{
+    margin-top: 1vw !important;
 }

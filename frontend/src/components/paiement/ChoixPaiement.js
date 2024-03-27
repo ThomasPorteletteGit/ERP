@@ -9,7 +9,7 @@ const ChoixPaiement = () => {
                     <button id="esp" className='cdpbouton'>Espèces</button>
                     <button id="cb" className='cdpbouton'>Carte bancaire</button>
                     <button id="carteEnergie" className='cdpbouton'>Carte énergie</button>
-                    <button id="autre" className='cdpbouton'>Autres</button>
+                    {/* <button id="autre" className='cdpbouton'>Autres</button> */}
                 </div>
             </div >
         </section>
