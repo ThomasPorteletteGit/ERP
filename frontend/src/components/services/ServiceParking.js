@@ -1,6 +1,10 @@
-import React from "react";
+import React , { useEffect } from "react";
 import services from "./Services";
+
+import ReactDOMServer from 'react-dom/server'
 import searchIcon from '../../assets/img/searchIcon.png';
+import ReservationPlaceP from "./ReservationPlaceP";
+import { useHistory } from 'react-router-dom';
 
 const ServiceParking = () => {
      // à récup dans la bd
@@ -22,12 +26,6 @@ const ServiceParking = () => {
         return est_libre ? 'green' : 'red';
     };
 
-    
-
-    // const getReserve = (statut) => {
-    //     return type === 'CB' ? 'cb-payment' : type === 'ESP' ? 'esp-payment' : '';
-    // };
-
     const afficherPlacesParking = () => {
         return placesParking.map(element => (
             <div key={element.id_placeParking} className="places_parking">
@@ -46,29 +44,42 @@ const ServiceParking = () => {
 
                     <div className="bouttonsParking">
                         
-                        <button id={element.id_placeParking} className="bouttonsParking" disabled={!element.est_libre} >Réserver</button>
-                        <button id={element.id_placeParking} className="bouttonsParking" disabled={element.est_libre} >Annuler</button>
+                        <button id={"buttonReserverPlace"+element.id_placeParking} className="bouttonsParking" disabled={!element.est_libre} >Réserver</button>
+                        <button id={"buttonSupprimerPlace"+element.id_placeParking} className="bouttonsParking" disabled={element.est_libre} >Annuler</button>
                     
                     </div>
                 </div>
             </div>
         ));
     }    
-    document.addEventListener("click", function (event) {
-        placesParking.array.forEach(button => {
-            console.log(button.id_placeParking);
-            const buttona = document.getElementById(button.id_placeParking);
-            buttona.addEventListener("click", function() {
-                reserverPlaceParking(button.id_placeParking, button.est_libre);
-            });
-            // button.id_placeParking.addEventListener("click", function() {
-            //     reserverPlaceParking(button.id_placeParking, button.est_libre);
-    
-            // });
-            
-        });
-    });
+    document.addEventListener('click', function (event) {
+        placesParking.map(element => {
+            const buttonReserver = document.getElementById("buttonReserverPlace"+element.id_placeParking);
+            const buttonSupprimer = document.getElementById("buttonSupprimerPlace"+element.id_placeParking);
 
+            if (buttonReserver === null || buttonSupprimer === null) {
+                return;
+            }
+
+            buttonReserver.addEventListener("click", function() {
+                console.log(" ## RESERVATION PLACE " + element.id_placeParking + " ## ");
+               reserverPlaceParking(element.id_placeParking)
+                
+            });
+            event.preventDefault();
+    
+            buttonSupprimer.addEventListener("click", function() {
+                // Ajoutez votre logique pour le bouton Supprimer ici
+                console.log(" ## SUPPRESSION RESERVATION " + element.id_placeParking + " ##");
+
+            });
+            event.preventDefault();
+        });
+        event.preventDefault();
+    });
+    
+    
+    
     return (
 
         <div className="composantPlaceP">
@@ -96,38 +107,12 @@ const ServiceParking = () => {
 
 };
 
-
-
-
-
-// document.addEventListener("click", function (event) {
-//     if (event.target.classList.contains("bouttonsParking")) {
-//         const buttonText = event.target.textContent;
-//         switch (buttonText) {
-//             case "Réserver":
-//                 console.log("Place de parking réservée");
-                
-                
-//                 break;
-//             case "Annuler":
-//                 console.log("Place supprimée");
-
-//                 document.getElementById("bouttonSupprimerPlaceP").setAttribute("disabled", true);
-//                 break;
-                
-//         }
-//         event.preventDefault();
-//     }
-// });
-
-
-function reserverPlaceParking (id_placeParking, est_libre) {
-    // TODO (Modifs avec la bd)
+function reserverPlaceParking(id_placeP) {
+    const divGeneral = document.getElementsByClassName("dashboard-right")[0];
+    console.log("Reserver la place de parking");
     
-    if (est_libre) {
-        alert("Place de parking " + id_placeParking + " réservée");
-    }
-
+    divGeneral.innerHTML = ReactDOMServer.renderToString(<ReservationPlaceP id_placeP={id_placeP}/>);
+    divGeneral.style.display = "block";
 }
 
 export default ServiceParking;

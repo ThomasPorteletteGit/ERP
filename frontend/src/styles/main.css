@@ -1645,3 +1645,26 @@ ul li {
     overflow-y: auto; 
     border-radius: 5px;
 }
+
+/**********************************  Reservation d'une place de parking (ReservationPlaceP) **********************************/
+.formulaire_reservation_placeP {
+    display: flex;
+    flex-direction: horizontal;
+    align-items: center;
+    margin: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+.formulaireEntree{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-left: 5%;
+    border-radius: 8px;
+    box-sizing: border-box;
+    margin: 5%;
+}
