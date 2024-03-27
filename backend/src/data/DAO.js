@@ -95,4 +95,5 @@ class DAO
     }
 
 }
-module.exports = DAO;
+const dao = new DAO();
+module.exports = dao;

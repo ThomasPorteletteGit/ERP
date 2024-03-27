@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-const {getProduitIds, getProduitId, getProduitStock, reapprovisionnerProduit } = require('./stockProduits');
+const {getProduitIds, getProduitId, getProduitStock, reapprovisionnerProduit } = require('./stockFunctions');
 
 router.get('/getIds', (req, res) => {
     getProduitIds(req, res);

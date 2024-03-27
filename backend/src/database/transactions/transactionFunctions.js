@@ -1,5 +1,4 @@
-const DAO = require('../../data/DAO');
-const dao = new DAO();
+const dao = require('../../data/DAO');
 
 function getAllTransactions(req, res) {
     dao.select('*', 'Transaction', "", (result) => {

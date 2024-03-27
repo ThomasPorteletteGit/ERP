@@ -1,5 +1,4 @@
-const DAO = require('../../data/DAO');
-const dao = new DAO();
+const dao = require('../../data/DAO');
 
 // Fonctions pour les energies
 function getEnergieIds(req, res) {
