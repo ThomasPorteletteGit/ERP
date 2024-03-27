@@ -3,7 +3,7 @@ import ReactDOMServer from 'react-dom/server'
 import SmallIcons from "../SmallIcons";
 import Especes from '../Especes';
 import CarteBancaire from '../CarteBancaire';
-import CarteEnergie from '../CarteEnergie';
+import ChoixPaiementCarteEnergie from '../ChoixPaiementCarteEnergie';
 
 const ChoixduPaiementCompAnim = () => {
     const [clickedComponent, setClickedComponent] = useState(null);
@@ -14,7 +14,7 @@ const ChoixduPaiementCompAnim = () => {
         const divGeneral = document.getElementsByClassName("dashboard-right")[0];
         saveDiv = divGeneral.innerHTML;
         const cpdboutton = ['esp', 'cb', 'carteEnergie', 'autre']
-        const componentsGrand = [<Especes />, <CarteBancaire />, <CarteEnergie />, ""];
+        const componentsGrand = [<Especes />, <CarteBancaire />, <ChoixPaiementCarteEnergie />, ""];
         // const componentsIncidentGrand = ["", "", <IncidentsGrand />, "", "", "", "", ""];
 
         const handleClick = (componentId) => () => {

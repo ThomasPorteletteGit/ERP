@@ -26,4 +26,4 @@ const ChoixPaiementCarteEnergie = () => {
     );
 }
 
-export default CarteEnergie;
+export default ChoixPaiementCarteEnergie;
