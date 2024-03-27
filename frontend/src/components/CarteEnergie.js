@@ -3,14 +3,14 @@ import React from "react";
 const CarteEnergie = () => {
 
     //recup dans bd
-    const clients =[
-        {nom: "Jean Truc"},
-        {nom: "Jean Bidule"},
-        {nom: "Jean Machin"},
-        {nom: "Jean Chose"},
-        {nom: "Gertrude Truc"},
-        {nom: "Gertrude Bidule"},
-        {nom: "Gertrude Machin"}
+    const clients = [
+        { nom: "Jean Truc" },
+        { nom: "Jean Bidule" },
+        { nom: "Jean Machin" },
+        { nom: "Jean Chose" },
+        { nom: "Gertrude Truc" },
+        { nom: "Gertrude Bidule" },
+        { nom: "Gertrude Machin" }
     ];
 
     const afficherClients = () => {
@@ -47,7 +47,7 @@ const CarteEnergie = () => {
                 </div>
             </div>
         </section>
-            
+
     );
 
 }
