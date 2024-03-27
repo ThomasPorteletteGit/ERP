@@ -13,9 +13,10 @@ import ComponentsAnimation from "./ComponentsAnimation";
 import ChoixduPaiementCompAnim from './paiement/ChoixduPaiementCompAnim';
 import ChoixPaiement from './paiement/ChoixPaiement';
 
-const Dashboard = () => {
-    const cookie = document.cookie.split('=')[1];
-    const userType = cookie === 'gerant' ? 'gerant' : 'employe';
+const Dashboard = ( {userType }) => {
+    // const cookie = document.cookie.split('=')[1];
+    // // const userType = cookie === 'gerant' ? 'gerant' : 'employe';
+    // const userType = 'employe';
 
     return (
         <>
@@ -57,16 +58,14 @@ const Dashboard = () => {
                             <div className='container right-to-right'>
                                 <div className="incidents-services">
                                     <Incidents />
-                                    <Services />
                                 </div>
                                 <div className='stock-container'>
                                     <Stocks />
                                 </div>
                                 <div className="horaires-releve-direction">
                                     <Horaires />
-                                    <div className='releve-direction'>
-                                        <Releve />
-                                        <Direction />
+                                    <div className='services-employe'>
+                                        <Services />
                                     </div>
                                 </div>
                             </div>
