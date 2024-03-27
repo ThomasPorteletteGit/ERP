@@ -6,6 +6,7 @@ import IncidentsGrand from './incidents/IncidentsGrand';
 import ServicesGrand from './services/ServicesGrand';
 import DirectionGrand from './direction/DirectionGrand';
 import HoraireGrand from './horaire/HoraireGrand';
+import TransactionGrand from './TransactionGrand';
 
 const ComponentsAnimation = () => {
     const [clickedComponent, setClickedComponent] = useState(null);
@@ -13,7 +14,7 @@ const ComponentsAnimation = () => {
 
     useEffect(() => {
         const components = ['etat-cuves', 'direction', 'incidents', 'transaction', 'stocks', 'services', 'horaires', 'releve'];
-        const componentsGrand = [<EtatCuvesGrand />,<DirectionGrand/>,<IncidentsGrand/>,"","",<ServicesGrand />,<HoraireGrand/>,""];
+        const componentsGrand = [<EtatCuvesGrand />,<DirectionGrand/>,<IncidentsGrand/>,<TransactionGrand/>,"",<ServicesGrand />,<HoraireGrand/>,""];
 
         const handleClick = (componentId) => () => {
             console.log('click ' + componentId);
