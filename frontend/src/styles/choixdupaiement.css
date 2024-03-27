@@ -95,8 +95,18 @@
 }
 
 #Produits {
-    padding: 3%;
-    margin: 5%;
+    padding: 1%;
+    margin: 3%;
     background-color: #edf4fc;
     color: black;
+}
+
+#PayerEspeces {
+    background-color: #edf4fc;
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin: 5%;
+    border: 1px solid black;
 }

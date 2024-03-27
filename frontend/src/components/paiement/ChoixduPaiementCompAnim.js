@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import ReactDOMServer from 'react-dom/server'
 import SmallIcons from "../SmallIcons";
-import Especes from '../Especes';
-import CarteBancaire from '../CarteBancaire';
-import ChoixPaiementCarteEnergie from '../ChoixPaiementCarteEnergie';
+import Especes from '../paiement/Especes';
+import CarteBancaire from '../paiement/CarteBancaire';
+import ChoixPaiementCarteEnergie from '../paiement/ChoixPaiementCarteEnergie';
 
 const ChoixduPaiementCompAnim = () => {
     const [clickedComponent, setClickedComponent] = useState(null);

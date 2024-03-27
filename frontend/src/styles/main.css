@@ -282,11 +282,11 @@ panier
     /* background-color: purple; */
 }
 
-.dashboard-right .releve-direction section{
+.dashboard-right .releve-direction section {
     width: 40%;
 }
 
-.dashboard-right .services-employe{
+.dashboard-right .services-employe {
     margin-left: 2%;
     display: flex;
     align-items: center;
@@ -297,7 +297,7 @@ panier
     width: 50%;
 }
 
-.dashboard-right .services-employe section{
+.dashboard-right .services-employe section {
     width: 100%;
 }
 
@@ -875,7 +875,7 @@ select {
 
 
 .left-container-incident {
-    width: 50%; 
+    width: 50%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -883,11 +883,11 @@ select {
 }
 
 .right-container {
-    width: 50%; 
+    width: 50%;
 }
 
 
-.left-container-incident > div {
+.left-container-incident>div {
     text-align: center;
     margin-bottom: 20px;
 }
@@ -905,7 +905,8 @@ select {
 
 .left-container-incident .confirm-button:hover,
 .left-container-incident .delete-button:hover {
-    background-color: #c0c0c0; /* Change la couleur au survol */
+    background-color: #c0c0c0;
+    /* Change la couleur au survol */
 }
 
 
@@ -1252,16 +1253,6 @@ th {
     align-self: center;
 }
 
-#PayerEspeces {
-    background-color: #edf4fc;
-    color: black;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    margin: 5%;
-    border: 1px solid black;
-}
-
 #Produits {
     margin: 5%;
     background-color: #edf4fc;
@@ -1396,32 +1387,32 @@ ul li {
     margin-left: 5%;
 }
 
-.direction-details{
+.direction-details {
     margin-top: 4%;
 }
 
-.composantGrand h3{
+.composantGrand h3 {
     margin-bottom: 3%;
     font-size: 180%;
 }
 
-.composantGrand ul li h3{
+.composantGrand ul li h3 {
     font-size: 120%;
 }
 
-.direction-details ul{
+.direction-details ul {
     margin-left: 10%;
     margin-right: 10%;
     font-size: 120%;
 }
-    
 
-.direction-details ul{
+
+.direction-details ul {
     margin-left: 10%;
     margin-right: 10%;
     font-size: 120%;
 }
-    
+
 
 /**********************************  Places de parking **********************************/
 
@@ -1452,21 +1443,23 @@ ul li {
 }
 
 .titreComposantPP {
-    margin : 1.5%;
+    margin: 1.5%;
     padding: 10px;
     font-size: 170%;
     display: flex;
     justify-content: left;
 }
+
 .place_parking {
     border: solid #000;
     border-radius: 8px;
-    padding: 10px; 
+    padding: 10px;
     margin: 15px;
     background-color: #4d5b84;
-    
+
     box-shadow: 5px 6px 5px #101e49;
 }
+
 .formulaireRecherchePlaceP {
     display: flex;
     flex-direction: horizontal;
@@ -1479,13 +1472,13 @@ ul li {
 
 .container_placesP {
     max-height: 425px;
-    margin: 5px; 
-    overflow-y: auto; 
+    margin: 5px;
+    overflow-y: auto;
     border-radius: 5px;
     /* background-color: #424661; */
 }
 
-.search { 
+.search {
     width: 60%;
     padding: 12px 12px;
     margin: 8px 0;
@@ -1502,6 +1495,7 @@ ul li {
     margin-right: 5px;
     border-radius: 24px;
 }
+
 .submitSearchParking {
     width: 6%;
     padding: 8px;
@@ -1509,14 +1503,16 @@ ul li {
     box-sizing: border-box;
     border-radius: 30px;
     display: flex;
-    align-items: center; /* Centrer verticalement */
-    justify-content: center; /* Centrer horizontalement */
+    align-items: center;
+    /* Centrer verticalement */
+    justify-content: center;
+    /* Centrer horizontalement */
 }
 
 .searchIconImage {
     width: 16px;
     height: 16px;
-    
+
 }
 
 .statut-placeP {
@@ -1531,7 +1527,7 @@ ul li {
     display: flex;
     justify-content: space-around;
     align-items: horizontal;
-    
+
 }
 
 /************************************** Horaire Grand **************************************/
@@ -1610,14 +1606,14 @@ ul li {
 }
 
 /*Carte membre / energie*/
-.composantGrand #carte{
+.composantGrand #carte {
     background-color: #2B2D42;
     border-radius: 20px;
     width: 100%;
     height: 83%;
 }
 
-.buttonCarte{
+.buttonCarte {
     background-color: #f0f0f0;
     color: black;
     padding: 10px 20px;
@@ -1629,19 +1625,19 @@ ul li {
 }
 
 .client {
-    display:flex;
+    display: flex;
     border: solid #000;
     border-radius: 8px;
-    padding: 10px; 
+    padding: 10px;
     margin: 15px;
     background-color: #4d5b84;
     box-shadow: 5px 6px 5px #101e49;
 }
 
 
-.listClient  {
+.listClient {
     max-height: 425px;
-    margin: 5px; 
-    overflow-y: auto; 
+    margin: 5px;
+    overflow-y: auto;
     border-radius: 5px;
 }
