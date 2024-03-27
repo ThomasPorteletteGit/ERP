@@ -6,7 +6,7 @@ import IncidentsGrand from './incidents/IncidentsGrand';
 import ServicesGrand from './services/ServicesGrand';
 import DirectionGrand from './direction/DirectionGrand';
 import HoraireGrand from './horaire/HoraireGrand';
-import TransactionGrand from './TransactionGrand';
+import TransactionGrand from './transaction/TransactionGrand';
 
 const ComponentsAnimation = () => {
     const [clickedComponent, setClickedComponent] = useState(null);

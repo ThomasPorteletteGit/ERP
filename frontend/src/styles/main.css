@@ -873,43 +873,6 @@ select {
     cursor: pointer;
 }
 
-
-.left-container-incident {
-    width: 50%; 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-.right-container {
-    width: 50%; 
-}
-
-
-.left-container-incident > div {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.left-container-incident .confirm-button,
-.left-container-incident .delete-button {
-    margin: 5px;
-    padding: 5px 10px;
-    background-color: #ebebeb;
-    color: rgb(24, 24, 24);
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.left-container-incident .confirm-button:hover,
-.left-container-incident .delete-button:hover {
-    background-color: #c0c0c0; /* Change la couleur au survol */
-}
-
-
-
 /* Caisse */
 
 #caisse {
@@ -1359,6 +1322,40 @@ ul li {
     margin: 10px 0;
 }
 
+.left-container-incident {
+    width: 50%; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.right-container {
+    width: 50%; 
+    display : ruby;
+}
+
+
+.left-container-incident > div {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.left-container-incident .confirm-button,
+.left-container-incident .delete-button {
+    margin: 5px;
+    padding: 5px 10px;
+    background-color: #ebebeb;
+    color: rgb(24, 24, 24);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.left-container-incident .confirm-button:hover,
+.left-container-incident .delete-button:hover {
+    background-color: #c0c0c0; /* Change la couleur au survol */
+}
 
 
 /* -------------------------------- Services en grand --------------------------------  */
@@ -1551,8 +1548,6 @@ ul li {
     margin-top: 20px;
 }
 
-
-
 .component_title {
     margin: 0;
 }
@@ -1629,7 +1624,7 @@ ul li {
     list-style: none;
     padding: 0;
     width: 70%;
-    max-height: 300px; /* Ajustez la hauteur maximale selon vos besoins */
+    max-height: 30%; /* Ajustez la hauteur maximale selon vos besoins */
     overflow-y: auto; /* Ajout de la barre de défilement si nécessaire */
 }
 
@@ -1644,4 +1639,31 @@ ul li {
     margin: 1px 0; 
 }
 
+
+.ul-info-à-confirmer {
+    background-color: rgb(233, 233, 233);
+}
+
+
+.transaction-list-container {
+    background-color: #f0f0f0; 
+    padding: 20px; 
+}
+
+.transaction-item {
+    margin-bottom: 20px;
+}
+
+
+.transaction-item .confirm-button,
+.transaction-item .delete-button,
+.transaction-item .confirm-button-desactivate {
+    margin: 5px;
+    padding: 5px 10px;
+    background-color: #ebebeb;
+    color: rgb(24, 24, 24);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
 
