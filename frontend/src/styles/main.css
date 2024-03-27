@@ -1608,3 +1608,40 @@ ul li {
     align-items: center;
     justify-content: center;
 }
+
+/*Carte membre / energie*/
+.composantGrand #carte{
+    background-color: #2B2D42;
+    border-radius: 20px;
+    width: 100%;
+    height: 83%;
+}
+
+.buttonCarte{
+    background-color: #f0f0f0;
+    color: black;
+    padding: 10px 20px;
+    margin: 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.client {
+    display:flex;
+    border: solid #000;
+    border-radius: 8px;
+    padding: 10px; 
+    margin: 15px;
+    background-color: #4d5b84;
+    box-shadow: 5px 6px 5px #101e49;
+}
+
+
+.listClient  {
+    max-height: 425px;
+    margin: 5px; 
+    overflow-y: auto; 
+    border-radius: 5px;
+}
