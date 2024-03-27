@@ -1,11 +1,14 @@
 import agrandir from '../../assets/img/agrandir.png';
 import React, { useState } from 'react'; 
 
-function SelectHeureMatin() {
+function SelectHeureMatin(jour) {
     const [heureMatin, setHeureMatin] = useState("6h");
-    const handleChange = (e)=> {
-        setHeureMatin(e.target.value);
-    }
+
+    fetch('/horaires/get/'+jour)
+    .then(response => response.json())
+    .then(data => {
+        setHeureMatin(data.heure_ouverture);
+    });
 
     return (
         <div>
@@ -14,11 +17,14 @@ function SelectHeureMatin() {
     );
 }
 
-function SelectHeureSoir() {
+function SelectHeureSoir(jour) {
     const [heureSoir, setHeureSoir] = useState("22h");
-    const handleChange = (e)=> {
-        setHeureSoir(e.target.value);
-    }
+
+    fetch('/horaires/get/'+jour)
+    .then(response => response.json())
+    .then(data => {
+        setHeureSoir(data.heure_fermeture);
+    });
 
     return (
         <div>
@@ -29,9 +35,6 @@ function SelectHeureSoir() {
 
 
 const Horaires = () => {
-    //a modifier pour recuperer dans la bd
-    const heureOuverture = "6h";
-    const heureFermeture = "22h";
 
     return (
         <section id="horaires">
@@ -57,38 +60,38 @@ const Horaires = () => {
                         <tbody>
                             <tr>
                                 <td>Lundi</td>
-                                <td>{SelectHeureMatin()}</td>
-                                <td>{SelectHeureSoir()}</td>
+                                <td>{SelectHeureMatin("Lundi")}</td>
+                                <td>{SelectHeureSoir("Lundi")}</td>
                             </tr>
                             <tr>
                                 <td>Mardi</td>
-                                <td>{SelectHeureMatin()}</td>
-                                <td>{SelectHeureSoir()}</td>
+                                <td>{SelectHeureMatin("Mardi")}</td>
+                                <td>{SelectHeureSoir("Lundi")}</td>
                             </tr>
                             <tr>
                                 <td>Mercredi</td>
-                                <td>{SelectHeureMatin()}</td>
-                                <td>{SelectHeureSoir()}</td>
+                                <td>{SelectHeureMatin("Mercredi")}</td>
+                                <td>{SelectHeureSoir("Mercredi")}</td>
                             </tr>
                             <tr>
                                 <td>Jeudi</td>
-                                <td>{SelectHeureMatin()}</td>
-                                <td>{SelectHeureSoir()}</td>
+                                <td>{SelectHeureMatin("Jeudi")}</td>
+                                <td>{SelectHeureSoir("Jeudi")}</td>
                             </tr>
                             <tr>
                                 <td>Vendredi</td>
-                                <td>{SelectHeureMatin()}</td>
-                                <td>{SelectHeureSoir()}</td>
+                                <td>{SelectHeureMatin("Vendredi")}</td>
+                                <td>{SelectHeureSoir("Vendredi")}</td>
                             </tr>
                             <tr>
                                 <td>Samedi</td>
-                                <td>{SelectHeureMatin()}</td>
-                                <td>{SelectHeureSoir()}</td>
+                                <td>{SelectHeureMatin("Samedi")}</td>
+                                <td>{SelectHeureSoir("Samedi")}</td>
                             </tr>
                             <tr>
                                 <td>Dimanche</td>
-                                <td>{SelectHeureMatin()}</td>
-                                <td>{SelectHeureSoir()}</td>
+                                <td>{SelectHeureMatin("Dimanche")}</td>
+                                <td>{SelectHeureSoir("Dimanche")}</td>
                             </tr>
                         </tbody>
                     </table>
