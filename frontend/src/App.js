@@ -40,7 +40,7 @@ function App() {
           <Route path="/choix-paiement" element={<ChoixPaiement />} />
           <Route path="/montant-a-payer" element={<MontantAPayer />} />
           <Route path="/panier" element={<Panier />} />
-          <Route path="/dashboard" element={<Dashboard userType="employe" />} />
+          <Route path="/dashboard" element={<Dashboard userType="gerant" />} />
           <Route path="/connexion" element={<ConnexionId />} />
           <Route path="/connexionPassword" element={<ConnexionPassword />} />
         </Routes>
