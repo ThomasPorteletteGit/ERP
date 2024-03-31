@@ -8,9 +8,14 @@
     margin: 0;
 }
 
+a:hover,
+button:hover {
+    cursor: pointer;
+}
+
 html {
-    height: 100vh;
-    width: 100vw;
+    height: 100%;
+    width: 100%;
     position: fixed;
     background-color: #f6f8ff;
     color: white;
@@ -70,7 +75,7 @@ panier
 
 .panier {
     background-color: #18332F;
-    height: 100vh;
+    height: 100%;
 }
 
 .panier-conteneur {
@@ -210,19 +215,19 @@ panier
     /* 100vh - 19vh car 15 header et 2+2 margin */
     height: 83vh;
     margin: 1vh 0;
-    width: 42vw;
+    width: 42%;
     background-color: #2b2d42;
 }
 
 .dashboard-left {
-    margin-right: 0.5vw;
-    margin-left: 0.5vh;
+    margin-right: 0.5%;
+    margin-left: 0.5%;
     border-radius: 20px;
 }
 
 .dashboard-right {
     background-color: white !important;
-    width: 56.7vw !important;
+    width: 56% !important;
     display: flex;
     margin-right: 0.5vw;
 }
