@@ -1,22 +1,27 @@
 const express = require('express');
 const router = express.Router();
 
-const {getEnergieIds, getEnergieId, getEnergieStock, reapprovisionnerEnergie } = require('./stockFunctions');
+const { getProduitNames, getProduitIds, getProduitId, getProduitStock, reapprovisionnerProduit } = require('./stockFunctions');
+
+router.get('/names', (req, res) => {
+    getProduitNames(req, res);
+});
 
 router.get('/getIds', (req, res) => {
-    getEnergieIds(req, res);
+    getProduitIds(req, res);
 });
 
 router.post('/getId', (req, res) => {
-    getEnergieId(req, res);
+    getProduitId(req, res);
 });
 
 router.get('/getStock', (req, res) => {
-    getEnergieStock(req, res);
+    getProduitStock(req, res);
 });
 
 router.post('/reapprovisionner', (req, res) => {
-    reapprovisionnerEnergie(req, res);
+    reapprovisionnerProduit(req, res);
 });
+
 
 module.exports = router;

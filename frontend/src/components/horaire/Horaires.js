@@ -4,11 +4,6 @@ import React, { useState } from 'react';
 function SelectHeureMatin(jour) {
     const [heureMatin, setHeureMatin] = useState("6h");
 
-    fetch('/horaires/get/'+jour)
-    .then(response => response.json())
-    .then(data => {
-        setHeureMatin(data.heure_ouverture);
-    });
 
     return (
         <div>
@@ -20,11 +15,6 @@ function SelectHeureMatin(jour) {
 function SelectHeureSoir(jour) {
     const [heureSoir, setHeureSoir] = useState("22h");
 
-    fetch('/horaires/get/'+jour)
-    .then(response => response.json())
-    .then(data => {
-        setHeureSoir(data.heure_fermeture);
-    });
 
     return (
         <div>
