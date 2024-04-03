@@ -8,7 +8,7 @@ import tomdelacote from '../assets/img/tomdelacote.png'
 import exit from '../assets/img/exit.png'
 import ReactDOMServer from 'react-dom/server';
 import CarteMembre from './CarteMembre';
-import CarteEnergie from './CarteEnergie';
+import CarteEnergie from './carteEnergie/CarteEnergie';
 import StatutPompe from './pompe/StatutPompe';
 
 const Header = () => {
