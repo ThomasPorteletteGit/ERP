@@ -1,14 +1,16 @@
 import React from "react";
+import ReactDOMServer from 'react-dom/server'
 import PropTypes from "prop-types";
-import direction from "./direction/Direction";
-import ReactDOMServer from "react-dom/server";
-import EtatCuvesPrix from "./cuve/EtatCuvesPrix";
-import EtatCuvesReapro from "./cuve/EtatCuvesReapro";
+import EtatCuvesGrand from "./cuve/EtatCuvesGrand";
+import DirectionGrand from "./direction/DirectionGrand";
+import IncidentsGrand from "./incidents/IncidentsGrand";
+import ServicesGrand from "./services/ServicesGrand";
+import HoraireGrand from "./horaire/HoraireGrand";
 
 const SmallIcons = ({ iconClicked }) => {
-    const componentsClicked = iconClicked;
-    console.log(componentsClicked);
+    console.log(iconClicked);
     const components = ['etat-cuves', 'direction', 'incidents', 'transaction', 'stocks', 'services', 'horaires', 'releve'];
+    const componentsGrand = [<EtatCuvesGrand />,<DirectionGrand/>,<IncidentsGrand/>,"","",<ServicesGrand />,<HoraireGrand/>,""];
 
     const emojis = {
         'etat-cuves': '🛢️',
@@ -29,25 +31,35 @@ const SmallIcons = ({ iconClicked }) => {
         }
     });
 
+    let isListener = false;
+
+    const divGeneral = document.getElementsByClassName("dashboard-right")[0];
     document.addEventListener("click", function (event) {
-        if (event.target.classList.contains("smallIcon")) {
+        if (event.target.classList.contains("smallIcon") && !isListener){
+            isListener = true;
             const buttonText = event.target.textContent;
             switch (buttonText) {
                 default:
                     for (const key in emojis) {
                         if (emojis[key] === buttonText) {
-                            console.log(key);
+                            divGeneral.innerHTML = ReactDOMServer.renderToString(<SmallIcons iconClicked={key} />);
                         }
                     }
             }
+            event.stopPropagation();
             event.preventDefault();
         }
     });
 
     return (
+        <>
         <div className="smallIcons">
             {divs}
         </div>
+        <div className="DivBlock">
+            {(componentsGrand[components.indexOf(iconClicked)])}
+        </div>
+        </>
     );
 };
 

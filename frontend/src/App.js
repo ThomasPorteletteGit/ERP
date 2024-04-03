@@ -12,23 +12,25 @@ import './styles/main.css';
 import './styles/index.css';
 import './styles/header.css';
 import './styles/icons.css'
+import './styles/choixdupaiement.css';
 
 
 
 function App() {
-  
+
   const [routing, setRouting] = useState(<ConnexionId />);
 
   useEffect(() => {
     let sessionCookie = document.cookie.split('=')[1] || "";
 
-    if(sessionCookie === "") {
+    if (sessionCookie === "") {
       setRouting(<ConnexionId />);
     }
     else {
-      setRouting(<Dashboard />);
+      setRouting(<Dashboard userType="employe" />);
+      // setRouting(<Dashboard userType="gérant"/>);
     }
-    }, []);
+  }, []);
 
   return (
     <Router>
@@ -38,7 +40,7 @@ function App() {
           <Route path="/choix-paiement" element={<ChoixPaiement />} />
           <Route path="/montant-a-payer" element={<MontantAPayer />} />
           <Route path="/panier" element={<Panier />} />
-          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/dashboard" element={<Dashboard userType="gerant" />} />
           <Route path="/connexion" element={<ConnexionId />} />
           <Route path="/connexionPassword" element={<ConnexionPassword />} />
         </Routes>

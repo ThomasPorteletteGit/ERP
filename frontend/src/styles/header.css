@@ -22,25 +22,24 @@
 }
 
 #header .container .buttons-user {
-    width: 18vw;
+    width: 14.7vw;
+    margin-left: 10px;
     /* background-color: aquamarine; */
 }
 
 #header .container .buttons-user .buttons {
-    margin: 1vh 2vw 2vh 2vw;
     display: flex;
-    gap: 10%;
+    margin-top: 10px;
 }
 
 #header .container .buttons-user img {
-    width: 15%;
+    width: 5vh;
     padding: 10px;
+    margin-right: 10px;
 }
 
 #header .container .buttons-user .user {
     display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
 
@@ -50,17 +49,18 @@
 }
 
 #header .container .pompes {
-    width: 50vw;
+    width: 60vw;
 }
 
 #header .container .exit {
-    width: 10vw;
+    width: 8vw;
     /* background-color: pink !important; */
 }
 
 #header .container .cards .cartes-membres-energies {
-    margin: 3%;
+    margin-top: 10px;
     border-radius: 20px;
+    height: 14.1vh;
     background-color: #2b2d42;
 }
 
@@ -72,16 +72,15 @@
 
 .dashboardImages {
     background-color: #2B2D42;
-    padding: 0.5%;
-    margin: 0.5%;
-    border-radius: 7.5%;
+    border-radius: 20px;
     width: 7%;
 }
 
 #exit {
-    height: 70%;
+    height: 14.1vh;
     width: 50%;
     padding: 10%;
+    margin-top: 10px;
 }
 
 .cartes-membres-energies h2 {
@@ -91,18 +90,20 @@
 }
 
 
-.cartes-membres-energies .membres {
+.cartes-membres-energies #membre {
     background-image: url(../assets/img/bgcartemembre.png);
-    background-size: 30%;
+    background-size: 40%;
     background-repeat: no-repeat;
-    margin-bottom: 1vh;
+    margin-top: 5px;
+    
     background-position: center;
 }
 
-.cartes-membres-energies .energies {
+.cartes-membres-energies #energie {
     background-image: url(../assets/img/bgcarteenergie.png);
     background-size: 60%;
     background-repeat: no-repeat;
+    margin-top: 5px;
     background-position: center;
 }
 
@@ -122,21 +123,23 @@
     transform: rotate(45deg); 
 } */
 
-
 .cartes-membres-energies {
     height: 14vh;
     gap: 1vh;
 }
 
-.cartes-membres-energies .membres,
-.cartes-membres-energies .energies {
-    font-size: 0.5rem;
-    margin: 0.5vw;
+.cartes-membres-energies #membre,
+.cartes-membres-energies #energie {
+    display: block;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 35%;
+    font-size: 14px;
     border-radius: 4px;
     color: black;
     background-color: white;
-    padding: 1vh;
-
+    
 }
 
 
@@ -144,8 +147,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 12vh;
-    margin: 1vh 1vw;
+    height: 14.1vh;
+    margin-top: 10px;
     padding: 0 0.5vw;
     border-radius: 12px;
     background-color: #2b2d42 !important;

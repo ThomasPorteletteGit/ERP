@@ -1,13 +1,29 @@
 import React from 'react';
+import SmallIcons from "./SmallIcons";
 import logo from '../assets/img/logoBleu.png';
 import homeButton from '../assets/img/accueil.png'
 import backArrow from '../assets/img/en-arriere.png'
 import scaleButton from '../assets/img/agrandir.png'
 import tomdelacote from '../assets/img/tomdelacote.png'
 import exit from '../assets/img/exit.png'
+import ReactDOMServer from 'react-dom/server';
+import CarteMembre from './CarteMembre';
+import CarteEnergie from './carteEnergie/CarteEnergie';
 import StatutPompe from './pompe/StatutPompe';
 
 const Header = () => {
+
+    const handleClick = (componentId) => () => {
+        const divGeneral = document.getElementsByClassName("dashboard-right")[0];
+        const componentsGrand = {
+            membre: <CarteMembre />,
+            energie: <CarteEnergie />
+        };
+
+        divGeneral.innerHTML = ReactDOMServer.renderToString(<SmallIcons iconClicked={componentId} />) + ReactDOMServer.renderToString(componentsGrand[componentId]);
+        divGeneral.style.display = "block";
+    };
+
     return (
         <>
             <section id="header">
@@ -29,7 +45,6 @@ const Header = () => {
                         </div>
                         <div className='user'>
                             <img id="tomdelacote" className='dashboardImages' src={tomdelacote} alt="utilisateur connecté" />
-                            <p>Tom de la côte</p>
                         </div>
                     </div>
 
@@ -37,13 +52,8 @@ const Header = () => {
                     <div className='cards'>
                         <div className='cartes-membres-energies'>
                             <h2>Cartes</h2>
-                            <div className='membres'>
-                                <h3>Membres</h3>
-                            </div>
-
-                            <div className='energies'>
-                                <h3>Energies</h3>
-                            </div>
+                            <button id="membre" className='carte' onClick={handleClick('membre')}>Membre</button>
+                            <button id="energie" className='carte' onClick={handleClick('energie')}>Energie</button>
                         </div>
                     </div>
 
@@ -67,10 +77,6 @@ const Header = () => {
 
 
                 </div>
-
-
-
-
             </section>
         </>
     );

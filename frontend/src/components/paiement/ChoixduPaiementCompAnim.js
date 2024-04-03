@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import ReactDOMServer from 'react-dom/server'
 import SmallIcons from "../SmallIcons";
-import Especes from '../Especes';
-
+import Especes from '../paiement/Especes';
+import CarteBancaire from '../paiement/CarteBancaire';
+import ChoixPaiementCarteEnergie from '../paiement/ChoixPaiementCarteEnergie';
 
 const ChoixduPaiementCompAnim = () => {
     const [clickedComponent, setClickedComponent] = useState(null);
@@ -13,15 +14,13 @@ const ChoixduPaiementCompAnim = () => {
         const divGeneral = document.getElementsByClassName("dashboard-right")[0];
         saveDiv = divGeneral.innerHTML;
         const cpdboutton = ['esp', 'cb', 'carteEnergie', 'autre']
-        const componentsGrand = [<Especes />, "", "", "", "", "", "", ""];
+        const componentsGrand = [<Especes />, <CarteBancaire />, <ChoixPaiementCarteEnergie />, ""];
         // const componentsIncidentGrand = ["", "", <IncidentsGrand />, "", "", "", "", ""];
 
         const handleClick = (componentId) => () => {
             console.log('click ' + componentId);
             setClickedComponent(componentId)
             const divGeneral = document.getElementsByClassName("dashboard-right")[0];
-            // divGeneral.innerHTML =  ReactDOMServer.renderToString(<SmallIcons iconClicked={componentId}/>) + ReactDOMServer.renderToString(componentsGrand[components.indexOf(componentId)]);
-            // divGeneral.style.display = "block";
 
             cpdboutton.forEach((compId) => {
                 const comp = document.getElementById(compId);

@@ -85,14 +85,14 @@ const ChoixPaiement = () => {
             setInputValue(result.toString());
             setPreviousValue('');
             setOperator('');
-            setResultDisplayed(true); 
+            setResultDisplayed(true);
         }
     };
 
     return (
         <div className="caisse-container">
             <div id="caisse">
-                <h1>Caisse</h1>
+                <h1>🛒 Caisse</h1>
                 <hr className="separator" />
                 <div className="caisse-details">
                     <table>
