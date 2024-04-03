@@ -13,7 +13,7 @@ const ComponentsAnimation = () => {
     let saveDiv;
 
     useEffect(() => {
-        const components = ['etat-cuves', 'direction', 'incidents', 'transaction', 'stocks', 'services', 'horaires', 'releve'];
+        const components = ['etat-cuves', 'direction', 'incidents', 'transaction', 'stocks', 'services', 'horaires', 'releve', 'choixpaiement', 'esp', 'cb', 'carteEnergie'];
 
         const handleClick = (componentId) => () => {
             console.log('click ' + componentId);
@@ -57,10 +57,23 @@ const ComponentsAnimation = () => {
                     const component = document.getElementById(componentId);
                     if (component) {
                         const img = component.querySelector('#imgAgrandir');
+                        const btnesp = component.querySelector('#esp');
+                        const btncb = component.querySelector('#cb');
+                        const btnce = component.querySelector('#carteEnergie');
                         if (img) {
                             console.log('add event listener for ' + componentId);
                             img.addEventListener("click", handleClick(componentId));
                         }
+                        if (btnesp) {
+                            btnesp.addEventListener("click", handleClick(componentId));
+                        }
+                        if (btncb) {
+                            btncb.addEventListener("click", handleClick(componentId));
+                        }
+                        if (btnce) {
+                            btnce.addEventListener("click", handleClick(componentId));
+                        }
+
                     }
                 });
             }
@@ -70,8 +83,20 @@ const ComponentsAnimation = () => {
             const component = document.getElementById(componentId);
             if (component) {
                 const img = component.querySelector('#imgAgrandir');
+                const btnesp = component.querySelector('#esp');
+                const btncb = component.querySelector('#cb');
+                const btnce = component.querySelector('#carteEnergie');
                 if (img) {
                     img.addEventListener("click", handleClick(componentId));
+                }
+                if (btnesp) {
+                    btnesp.addEventListener("click", handleClick(componentId));
+                }
+                if (btncb) {
+                    btncb.addEventListener("click", handleClick(componentId));
+                }
+                if (btnce) {
+                    btnce.addEventListener("click", handleClick(componentId));
                 }
             }
         });
