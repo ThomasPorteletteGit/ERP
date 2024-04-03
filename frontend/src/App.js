@@ -27,7 +27,7 @@ function App() {
       setRouting(<ConnexionId />);
     }
     else {
-      setRouting(<Dashboard userType="employe" />);
+      setRouting(<Dashboard userType="gérant" />);
       // setRouting(<Dashboard userType="gérant"/>);
     }
   }, []);
