@@ -6,6 +6,24 @@ import ServiceParking from "./ServiceParking";
 const ReservationPlaceP = ({id_placeP}) => {
     const id = id_placeP;
     console.log("id_placeP : " + id_placeP); 
+    
+document.addEventListener("click", function (event) {
+    if (event.target.classList.contains("boutonConfirmerReservation")) {
+              
+        console.log("Place reservée");
+        // TODO: ENVOYER L'ID DE LA PLACE RESERVEE A LA BD
+        const divGeneral = document.getElementsByClassName("dashboard-right")[0];
+        let saveDiv = divGeneral.innerHTML;
+        console.log("Afficher les places de parking");
+        
+        divGeneral.innerHTML = ReactDOMServer.renderToString(<ServiceParking />);
+        divGeneral.style.display = "block";
+               
+        
+        event.preventDefault();
+    }});
+
+
     return (
         <div className="composantGrand DivBlock">
             <div className="Top_Component_Grand">
@@ -51,7 +69,7 @@ const ReservationPlaceP = ({id_placeP}) => {
                         <input className="inputReservationPP" type="number" id="duree" name="duree" required></input>
                     </div>
 
-                    <button type="submit" className="bouttonsServiceGrand">Réserver</button>
+                    <button type="submit" className="boutonConfirmerReservation">Réserver</button>
                 </form>
                   
              
@@ -59,8 +77,10 @@ const ReservationPlaceP = ({id_placeP}) => {
           
         </div>         
     );   
+   
     
 };
     
-
+ 
+        
 export default ReservationPlaceP;

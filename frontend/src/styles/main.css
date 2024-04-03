@@ -1844,3 +1844,133 @@ ul li {
     box-sizing: border-box;
     margin: 5%;
 }
+
+
+
+
+/****************************** Réservation d'un covoiturage ***********************************/
+
+.formulaireRechercheCov{
+    display: flex;
+    flex-direction: horizontal;
+    align-items: center;
+    margin: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.statut-propositionCov {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+
+}
+
+.bouttonsCov {
+    display: flex;
+    justify-content: space-around;
+    align-items: horizontal;
+    /* resize: horizontal; */
+    margin-top: 5%;
+}
+
+.bouttonsCov button {
+    width: 20%;
+    height: 20%;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 25px;
+    background-color: white;
+    border: black;
+    margin: 5px;
+}
+
+.titreComposantCov {
+    margin: 1.5%;
+    padding: 10px;
+    font-size: 170%;
+    display: flex;
+    justify-content: left;
+}
+
+.proposition_covoiturage {
+    border: solid #000;
+    border-radius: 8px;
+    padding: 10px;
+    margin: 15px;
+    background-color: #4d5b84;
+
+    box-shadow: 5px 6px 5px #101e49;
+}
+.container_proposition_Cov {
+    max-height: 425px;
+    margin: 5px;
+    overflow-y: auto;
+    border-radius: 5px;
+    /* background-color: #424661; */
+}
+.infoPropositionCov {
+    display: flex;
+    justify-content: space-around;
+    align-items: horizontal;
+
+}
+/****************************** Livraisons *************************************/
+
+.livraison {
+    border: solid #000;
+    border-radius: 8px;
+    padding: 10px;
+    margin: 15px;
+    background-color: #4d5b84;
+
+    box-shadow: 5px 6px 5px #101e49;
+}
+.container_livraison {
+    max-height: 100%;
+    margin: 5px;
+    overflow-y: auto;
+    border-radius: 5px;
+    /* background-color: #424661; */
+}
+.infoLivraison {
+    display: flex;
+    justify-content: space-around;
+    align-items: horizontal;
+}
+
+.statut-livraison {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+}
+
+.buttonsLivraison {
+    display: flex;
+    justify-content: space-around;
+    align-items: horizontal;
+    /* resize: horizontal; */
+    margin-top: 5%;
+}
+
+.buttonsLivraison button {
+    width: 20%;
+    height: 20%;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 25px;
+    background-color: white;
+    border: black;
+    margin: 5px;
+}
+
+.titreComposantLivraison {
+    margin: 1.5%;
+    padding: 10px;
+    font-size: 170%;
+    display: flex;
+    justify-content: left;
+}
