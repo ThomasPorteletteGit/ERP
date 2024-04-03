@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-const { getEnergieNames, getEnergieIds, getEnergieId, getEnergieStock, reapprovisionnerEnergie, modiferPrixEnergie } = require('./stockFunctions').energies;
+const { getEnergieNames, getEnergieNamesAndQuantities, getEnergieIds, getEnergieId, getEnergieStock, reapprovisionnerEnergie, modiferPrixEnergie } = require('./stockFunctions').energies;
 
 router.get('/', (req, res) => {
     testDb(req, res);
@@ -9,6 +9,10 @@ router.get('/', (req, res) => {
 
 router.get('/names', (req, res) => {
     getEnergieNames(req, res);
+});
+
+router.get("/namesAndQuantities", (req, res) => {
+    getEnergieNamesAndQuantities(req, res);
 });
 
 router.get('/getIds', (req, res) => {

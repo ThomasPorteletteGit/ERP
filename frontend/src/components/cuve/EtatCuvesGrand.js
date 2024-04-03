@@ -1,13 +1,36 @@
-import React from "react";
+import React, { Component } from "react";
 import Cuve from "./Cuve";
 import ReactDOMServer from 'react-dom/server'
 import EtatCuvesPrix from "./EtatCuvesPrix";
 import EtatCuvesReapro from "./EtatCuvesReapro";
 
 const EtatCuvesGrand = () => {
-    document.addEventListener("click", function (event) {
-        if (event.target.classList.contains("btnCuvesGrandClick")) {
+    // document.addEventListener("click", function (event) {
+    //     if (event.target.classList.contains("btnCuvesGrandClick")) {
+    //         const buttonText = event.target.textContent;
+    //         console.log(buttonText);
+    //         switch (buttonText) {
+    //             case "Modifier le prix":
+    //                 document.getElementById("cuvesGrand").innerHTML = ReactDOMServer.renderToString(<EtatCuvesPrix/>);
+    //                 break;
+    //             case "Demande de réapprovisionnement":
+    //                 document.getElementById("cuvesGrand").innerHTML = ReactDOMServer.renderToString(<EtatCuvesReapro/>);
+    //                 break;
+    //             default:
+    //                 console.log("Bouton inconnu cliqué" + buttonText);
+    //                 break;
+    //         }
+    //         event.preventDefault();
+    //     }
+    // });
+
+    function handleClick() {
+        console.log("click");
+        document.addEventListener("click", function (event) {
+            if (event.target.classList.contains("btnCuvesGrandClick")) {
+
             const buttonText = event.target.textContent;
+            console.log(buttonText);
             switch (buttonText) {
                 case "Modifier le prix":
                     document.getElementById("cuvesGrand").innerHTML = ReactDOMServer.renderToString(<EtatCuvesPrix/>);
@@ -19,9 +42,8 @@ const EtatCuvesGrand = () => {
                     console.log("Bouton inconnu cliqué" + buttonText);
                     break;
             }
-            event.preventDefault();
         }
-    });
+    }); }
     return (
         <div className="composantGrand"  id="cuvesGrands">
             <div className="Divflex">
@@ -40,7 +62,7 @@ const EtatCuvesGrand = () => {
                 <Cuve carburant={"DIESEL"} niveau={50} />
                 <Cuve carburant={"GPL"} niveau={2} />
                 <div id="cuvesButtons" className="DivBlock">
-                    <button className="btnCuvesGrandClick" id="thefirst">Modifier le prix</button>
+                    <button className="btnCuvesGrandClick" id="thefirst" onClick={handleClick}>Modifier le prix</button>
                     <button className="btnCuvesGrandClick">Demande de réapprovisionnement</button>
                 </div>
             </div>

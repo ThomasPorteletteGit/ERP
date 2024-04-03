@@ -7,6 +7,11 @@ function getEnergieNames(req, res) {
     });
 }
 
+function getEnergieNamesAndQuantities(req, res) {
+    dao.select('nom, quantite', 'ProduitEnergie', "type='Energie'", (result) => {
+        res.send(result.rows);
+    });
+}
 
 function getEnergieIds(req, res) {
     dao.select('id', 'ProduitEnergie', "type='Energie'", (result) => {
@@ -83,6 +88,7 @@ module.exports = {
     energies:
     {
         getEnergieNames,
+        getEnergieNamesAndQuantities,
         getEnergieIds,
         getEnergieId,
         getEnergieStock,
