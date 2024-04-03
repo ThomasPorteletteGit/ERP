@@ -21,7 +21,7 @@ const Header = () => {
         };
 
         divGeneral.innerHTML = ReactDOMServer.renderToString(<SmallIcons iconClicked={componentId} />) + ReactDOMServer.renderToString(componentsGrand[componentId]);
-        divGeneral.style.display = "block";       
+        divGeneral.style.display = "block";
     };
 
     return (
@@ -50,7 +50,7 @@ const Header = () => {
 
                     {/* cartes */}
                     <div className='cards'>
-                         <div className='cartes-membres-energies'>
+                        <div className='cartes-membres-energies'>
                             <h2>Cartes</h2>
                             <button id="membre" className='carte' onClick={handleClick('membre')}>Membre</button>
                             <button id="energie" className='carte' onClick={handleClick('energie')}>Energie</button>

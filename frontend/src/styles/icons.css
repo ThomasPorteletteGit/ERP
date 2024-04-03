@@ -26,14 +26,10 @@
 
 #cuvesGrand .cuve-container{
     background: #777CA6;
-    margin-top: 1vw;
+    margin-top: 10px;
     width: 8vw;
     height: 48vh;
     border-radius: 2vh;
-}
-
-#cuvesGrand .cuve-container .jauge{
-    height: calc(45vh - 20px);
 }
 
 #cuvesGrand .cuve-container h2{
@@ -91,7 +87,7 @@
 
 #cuvesButtons{
     max-width: 35%;
-    height: 105.2%;
+    height: 99%;
 }
 
 #cuvesButtons button{
@@ -154,15 +150,16 @@
 }
 
 #cuvesGrand{
-    height: 60vh;
+    height: 80%;
 }
 
 #cuvesGrand .cuve-container{
-    height: 58.3vh;
+    height: 93%;
 }
 
 #cuvesGrand .cuve-container .jauge{
-    height: 50vh;
+    height: 91%;
+    border-radius: 20px;
 }
 
 #cuvesButtons #thefirst{

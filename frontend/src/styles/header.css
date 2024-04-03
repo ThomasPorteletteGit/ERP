@@ -22,25 +22,24 @@
 }
 
 #header .container .buttons-user {
-    width: 18vw;
+    width: 14.7vw;
+    margin-left: 10px;
     /* background-color: aquamarine; */
 }
 
 #header .container .buttons-user .buttons {
-    margin: 1vh 2vw 2vh 2vw;
     display: flex;
-    gap: 10%;
+    margin-top: 10px;
 }
 
 #header .container .buttons-user img {
-    width: 15%;
+    width: 5vh;
     padding: 10px;
+    margin-right: 10px;
 }
 
 #header .container .buttons-user .user {
     display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
 
@@ -50,17 +49,18 @@
 }
 
 #header .container .pompes {
-    width: 50vw;
+    width: 60vw;
 }
 
 #header .container .exit {
-    width: 10vw;
+    width: 8vw;
     /* background-color: pink !important; */
 }
 
 #header .container .cards .cartes-membres-energies {
-    margin: 5px;
+    margin-top: 10px;
     border-radius: 20px;
+    height: 14.1vh;
     background-color: #2b2d42;
 }
 
@@ -72,16 +72,15 @@
 
 .dashboardImages {
     background-color: #2B2D42;
-    padding: 0.5%;
-    margin: 0.5%;
-    border-radius: 7.5%;
+    border-radius: 20px;
     width: 7%;
 }
 
 #exit {
-    height: 70%;
+    height: 14.1vh;
     width: 50%;
     padding: 10%;
+    margin-top: 10px;
 }
 
 .cartes-membres-energies h2 {
@@ -148,8 +147,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 12vh;
-    margin: 1vh 1vw;
+    height: 14.1vh;
+    margin-top: 10px;
     padding: 0 0.5vw;
     border-radius: 12px;
     background-color: #2b2d42 !important;
