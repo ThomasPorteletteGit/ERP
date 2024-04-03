@@ -159,7 +159,7 @@
 
 #cuvesGrand .cuve-container .jauge{
     height: 91%;
-    border-radius: 20px;
+    border-radius: 20px !important;
 }
 
 #cuvesButtons #thefirst{
