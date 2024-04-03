@@ -1772,10 +1772,31 @@ ul li {
     padding: 20px;
 }
 
+.client {
+    display:flex;
+    border-radius: 8px;
+    padding: 10px; 
+    background-color: #4d5b84;
+    box-shadow: 5px 6px 5px #101e49;
+    justify-content: space-between; 
+    align-items: center; 
+    margin: 15px;
+}
+
 .transaction-item {
     display: flex;
     justify-content: flex-end;
     align-items: center;
+}
+
+.client {
+    display:flex;
+    border: solid #000;
+    border-radius: 8px;
+    padding: 10px; 
+    margin: 15px;
+    background-color: #4d5b84;
+    box-shadow: 5px 6px 5px #101e49;
 }
 
 .listClient {
@@ -1786,6 +1807,23 @@ ul li {
 }
 
 
+.voirPlus{ 
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin: 10px;
+}
+
+.Supprimer{
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin: 10px;
+}
 /**********************************  Reservation d'une place de parking (ReservationPlaceP) **********************************/
 .formulaire_reservation_placeP {
     display: flex;
@@ -1796,8 +1834,6 @@ ul li {
     align-items: center;
     justify-content: center;
 }
-
-
 
 .formulaireEntree {
     display: flex;
