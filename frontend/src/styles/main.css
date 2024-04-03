@@ -41,8 +41,9 @@ Vue choix paiement
     border-radius: 20px;
     background-color: #2B2D42;
     width: 100%;
-    height: 36.5%;
+    height: 37.5%;
     margin-top: 2%;
+    margin-top: 14px;
 }
 
 .paymentChoice {
@@ -254,7 +255,8 @@ panier
     display: flex;
     height: 25%;
     /* background-color: orange; */
-    width: 100%;
+    width: 101%;
+    margin-left: 10px;
 }
 
 .dashboard-right .incidents-services section {
@@ -268,6 +270,8 @@ panier
     height: 37.5%;
     /* background-color: #7883ff; */
     width: 100%;
+    margin-left: 10px;
+    margin-top: 10px;
 }
 
 .dashboard-right .horaires-releve-direction {
@@ -275,6 +279,8 @@ panier
     height: 37.5%;
     /* background-color: #ff0000; */
     width: 100%;
+    margin-left: 10px;
+    margin-top: 10px;
 }
 
 .dashboard-right .releve-direction {
@@ -323,6 +329,7 @@ cuves
     border-radius: 20px;
     background-color: #2b2d42;
     width: 100%;
+    height: 24.2%;
 }
 
 .etat-cuves-container {
@@ -529,7 +536,7 @@ p {
     background-color: #2B2D42;
     width: 100%;
     height: 35%;
-    margin-top: 2%;
+    margin-top: 14px;
 }
 
 .last-transaction p {
@@ -857,8 +864,8 @@ select {
 
 #releve,
 #direction {
-    width: 95%;
-    height: 45%;
+    width: 100%;
+    height: 50%;
     background-color: #2b2d42;
     border-radius: 20px;
 }
