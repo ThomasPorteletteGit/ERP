@@ -85,6 +85,25 @@ const ServiceCoVoiturage = () => {
         ));
     }    
     
+    /*
+        <script>
+            document.addEventListener('DOMContentLoaded', function (event) {    
+                const boutonRetour = document.getElementById("backArrowServiceButton");
+                console.log("Bouton retour" + boutonRetour);
+                if (boutonRetour != null) {
+
+                    boutonRetour.addEventListener('click', () => {
+                        const divGeneral = document.getElementsByClassName("dashboard-right")[0];
+                        console.log("Reserver la place de parking");
+                        
+                        divGeneral.innerHTML = ReactDOMServer.renderToString(<ServicesGrand />);
+                        divGeneral.style.display = "block";
+                    
+                    });
+                }
+            });
+            </script>
+    */
     
     
     return (
@@ -100,23 +119,7 @@ const ServiceCoVoiturage = () => {
                     
                 <button id="backArrowServiceButton" className="backArrowService" > 
                     retour</button>
-<script>
-                document.addEventListener('DOMContentLoaded', function (event) {    
-                const boutonRetour = document.getElementById("backArrowServiceButton");
-                console.log("Bouton retour" + boutonRetour);
-                if (boutonRetour != null) {
-
-                    boutonRetour.addEventListener('click', () => {
-                        const divGeneral = document.getElementsByClassName("dashboard-right")[0];
-                        console.log("Reserver la place de parking");
-                        
-                        divGeneral.innerHTML = ReactDOMServer.renderToString(<ServicesGrand />);
-                        divGeneral.style.display = "block";
                     
-                    });
-                }
-                });
-</script>
                     
               
                 <input type="text" name="text" className="search" placeholder=" Entrez un numéro de place " />
