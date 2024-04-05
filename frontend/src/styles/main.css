@@ -46,6 +46,11 @@ Vue choix paiement
     margin-top: 14px;
 }
 
+.choixPaiement{
+    width: 100%;
+    height: 100%;
+}
+
 .paymentChoice {
     padding: 10px 5px;
     margin-bottom: 12px;
@@ -60,7 +65,7 @@ Vue choix paiement
     background-color: white;
     border: none;
     width: 47%;
-    height: 95px;
+    height: 50%;
     border-radius: 8px;
     margin-bottom: 10px;
 }
@@ -281,7 +286,6 @@ panier
     width: 100%;
     margin-left: 10px;
     margin-top: 10px;
-    padding-left: 3%;
 }
 
 .dashboard-right .releve-direction {
@@ -510,22 +514,34 @@ p {
     width: 45%;
     height: 35%;
     border-radius: 8px;
+    position: relative;
+    overflow: clip;
 }
 
-.button_service_parking::after {
-    background: url("../assets/img/parking.png") no-repeat;
+
+#image_parking {
+    transform: rotate(30deg);
+    width: 50%;
+    margin-top: -5%;
 }
 
-.button_service_voiture {
-    background: url("../assets/img/parking.png") no-repeat;
+#image_covoiturage{
+    transform: rotate(30deg);
+    width: 100%;
+    margin-top: -15%;
+    margin-right: 35%;
 }
 
-.button_service_livraison {
-    background: url("../assets/img/parking.png") no-repeat;
+#image_livraison{
+    transform: rotate(30deg);
+    width: 80%;
+    margin-top: -15%;
 }
 
-.button_service_autres {
-    background: url("../assets/img/parking.png") no-repeat;
+#image_autres{
+    transform: rotate(30deg);
+    width: 70%;
+    margin-top: -15%;
 }
 
 /*transaction*/
@@ -726,7 +742,7 @@ select {
 /*Horaires*/
 #horaires {
     margin-left: 1%;
-    width: 45%;
+    width: 50%;
     height: 100%;
     background-color: #2b2d42;
     border-radius: 12px;
@@ -1278,11 +1294,6 @@ th {
     align-self: center;
 }
 
-#Produits {
-    margin: 5%;
-    background-color: #edf4fc;
-    color: black;
-}
 
 #Prix,
 #Produit,
@@ -1771,13 +1782,13 @@ ul li {
 }
 
 .client {
-    display:flex;
+    display: flex;
     border-radius: 8px;
-    padding: 10px; 
+    padding: 10px;
     background-color: #4d5b84;
     box-shadow: 5px 6px 5px #101e49;
-    justify-content: space-between; 
-    align-items: center; 
+    justify-content: space-between;
+    align-items: center;
     margin: 15px;
 }
 
@@ -1788,10 +1799,10 @@ ul li {
 }
 
 .client {
-    display:flex;
+    display: flex;
     border: solid #000;
     border-radius: 8px;
-    padding: 10px; 
+    padding: 10px;
     margin: 15px;
     background-color: #4d5b84;
     box-shadow: 5px 6px 5px #101e49;
@@ -1805,7 +1816,7 @@ ul li {
 }
 
 
-.voirPlus{ 
+.voirPlus {
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
@@ -1814,7 +1825,7 @@ ul li {
     margin: 10px;
 }
 
-.Supprimer{
+.Supprimer {
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
@@ -1822,6 +1833,7 @@ ul li {
     font-size: 16px;
     margin: 10px;
 }
+
 /**********************************  Reservation d'une place de parking (ReservationPlaceP) **********************************/
 .formulaire_reservation_placeP {
     display: flex;
@@ -1843,12 +1855,38 @@ ul li {
     margin: 5%;
 }
 
+/*Stock*/
+
+.btnStockGrandClick {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    height: 46.2%;
+    border-radius: 5px;
+    display: block;
+    background-color: #ebebeb;
+    color: #111111;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/*Stock Produit*/
+
+.ajouterProduitbouton {
+    width: 10%;
+    padding: 10px;
+    border: none;
+    background-color: #ffffff;
+    padding: '10px 20px';
+    border-radius: '20px';
+    cursor: 'pointer';
+}
 
 
 
 /****************************** Réservation d'un covoiturage ***********************************/
 
-.formulaireRechercheCov{
+.formulaireRechercheCov {
     display: flex;
     flex-direction: horizontal;
     align-items: center;
@@ -1902,6 +1940,7 @@ ul li {
 
     box-shadow: 5px 6px 5px #101e49;
 }
+
 .container_proposition_Cov {
     max-height: 500px;
     margin: 5px;
@@ -1909,6 +1948,7 @@ ul li {
     border-radius: 5px;
     /* background-color: #424661; */
 }
+
 .infoPropositionCov {
     display: flex;
     justify-content: space-around;
@@ -1925,6 +1965,7 @@ ul li {
     color: rgba(0, 0, 0, 0);
 
 }
+
 /****************************** Livraisons *************************************/
 
 .livraison {
@@ -1936,6 +1977,7 @@ ul li {
 
     box-shadow: 5px 6px 5px #101e49;
 }
+
 .container_livraison {
     max-height: 100%;
     margin: 5px;
@@ -1943,6 +1985,7 @@ ul li {
     border-radius: 5px;
     /* background-color: #424661; */
 }
+
 .infoLivraison {
     display: flex;
     justify-content: space-around;

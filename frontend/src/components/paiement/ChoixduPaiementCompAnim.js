@@ -14,7 +14,7 @@ const ChoixduPaiementCompAnim = () => {
         const divGeneral = document.getElementsByClassName("dashboard-right")[0];
         saveDiv = divGeneral.innerHTML;
         const cpdboutton = ['esp', 'cb', 'carteEnergie', 'autre']
-        const componentsGrand = [<Especes />, <CarteBancaire />, <ChoixPaiementCarteEnergie />, ""];
+        const componentsGrand = [""];
         // const componentsIncidentGrand = ["", "", <IncidentsGrand />, "", "", "", "", ""];
 
         const handleClick = (componentId) => () => {
