@@ -30,12 +30,15 @@ const ComponentsAnimation = () => {
                         img.addEventListener("click", handleClick(componentId));
                     }
                     if (btnesp) {
+                        console.log('add event listener for ' + componentId);
                         btnesp.addEventListener("click", handleClick(componentId));
                     }
                     if (btncb) {
+                        console.log('add event listener for ' + componentId);
                         btncb.addEventListener("click", handleClick(componentId));
                     }
                     if (btnce) {
+                        console.log('add event listener for ' + componentId);
                         btnce.addEventListener("click", handleClick(componentId));
                     }
                 }
