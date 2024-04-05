@@ -46,6 +46,11 @@ Vue choix paiement
     margin-top: 14px;
 }
 
+.choixPaiement{
+    width: 100%;
+    height: 100%;
+}
+
 .paymentChoice {
     padding: 10px 5px;
     margin-bottom: 12px;
@@ -60,7 +65,7 @@ Vue choix paiement
     background-color: white;
     border: none;
     width: 47%;
-    height: 95px;
+    height: 50%;
     border-radius: 8px;
     margin-bottom: 10px;
 }
@@ -510,7 +515,7 @@ p {
     height: 35%;
     border-radius: 8px;
     position: relative;
-    overflow: hidden;
+    overflow: clip;
 }
 
 
@@ -520,20 +525,23 @@ p {
     margin-top: -5%;
 }
 
-.button_service_parking::after {
-    background: url("../assets/img/parking.png") no-repeat;
+#image_covoiturage{
+    transform: rotate(30deg);
+    width: 100%;
+    margin-top: -15%;
+    margin-right: 35%;
 }
 
-.button_service_voiture {
-    background: url("../assets/img/parking.png") no-repeat;
+#image_livraison{
+    transform: rotate(30deg);
+    width: 80%;
+    margin-top: -15%;
 }
 
-.button_service_livraison {
-    background: url("../assets/img/parking.png") no-repeat;
-}
-
-.button_service_autres {
-    background: url("../assets/img/parking.png") no-repeat;
+#image_autres{
+    transform: rotate(30deg);
+    width: 70%;
+    margin-top: -15%;
 }
 
 /*transaction*/
