@@ -1833,7 +1833,6 @@ ul li {
     font-size: 16px;
     margin: 10px;
 }
-
 .infoPoint{
     display:block;
     border: solid #000;
@@ -1848,7 +1847,6 @@ ul li {
 .avantage {
     text-align: center;
     font-size: 16px;
-
 }
 
 /**********************************  Reservation d'une place de parking (ReservationPlaceP) **********************************/
