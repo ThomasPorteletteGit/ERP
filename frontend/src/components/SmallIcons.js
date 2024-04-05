@@ -6,12 +6,14 @@ import DirectionGrand from "./direction/DirectionGrand";
 import IncidentsGrand from "./incidents/IncidentsGrand";
 import ServicesGrand from "./services/ServicesGrand";
 import HoraireGrand from "./horaire/HoraireGrand";
+import Especes from "./paiement/Especes";
+import CarteBancaire from "./paiement/CarteBancaire";
 import EtatStockGrand from "./stocks/EtatStocksGrand";
 
 const SmallIcons = ({ iconClicked }) => {
     console.log(iconClicked);
-    const components = ['etat-cuves', 'direction', 'incidents', 'transaction', 'stocks', 'services', 'horaires', 'releve'];
-    const componentsGrand = [<EtatCuvesGrand />,<DirectionGrand/>,<IncidentsGrand/>,"",<EtatStockGrand/>,<ServicesGrand />,<HoraireGrand/>,""];
+    const components = ['etat-cuves', 'direction', 'incidents', 'transaction', 'stocks', 'services', 'horaires', 'releve', 'esp', 'cb', 'carteEnergie'];
+    const componentsGrand = [<EtatCuvesGrand />, <DirectionGrand />, <IncidentsGrand />, "", <EtatStockGrand/>, <ServicesGrand />, <HoraireGrand />, "", <Especes />, <CarteBancaire />, <carteEnergie />];
 
     const emojis = {
         'etat-cuves': '🛢️',
@@ -21,7 +23,10 @@ const SmallIcons = ({ iconClicked }) => {
         'stocks': '📦',
         'services': '⚒️',
         'horaires': '🕐',
-        'releve': '📋'
+        'releve': '📋',
+        'esp': '💵',
+        'cb': '💳',
+        'carteEnergie': '🔋'
     };
 
     let divs = [];
@@ -36,7 +41,7 @@ const SmallIcons = ({ iconClicked }) => {
 
     const divGeneral = document.getElementsByClassName("dashboard-right")[0];
     document.addEventListener("click", function (event) {
-        if (event.target.classList.contains("smallIcon") && !isListener){
+        if (event.target.classList.contains("smallIcon") && !isListener) {
             isListener = true;
             const buttonText = event.target.textContent;
             switch (buttonText) {
@@ -54,12 +59,12 @@ const SmallIcons = ({ iconClicked }) => {
 
     return (
         <>
-        <div className="smallIcons">
-            {divs}
-        </div>
-        <div className="DivBlock">
-            {(componentsGrand[components.indexOf(iconClicked)])}
-        </div>
+            <div className="smallIcons">
+                {divs}
+            </div>
+            <div className="DivBlock">
+                {(componentsGrand[components.indexOf(iconClicked)])}
+            </div>
         </>
     );
 };

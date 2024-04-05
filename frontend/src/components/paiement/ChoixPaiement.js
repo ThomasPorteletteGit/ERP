@@ -2,7 +2,7 @@ import React from 'react';
 
 const ChoixPaiement = () => {
     return (
-        <section id="choix-paiement">
+        <section id="choixpaiement">
             <div className='choixPaiement'>
                 <h2 className='view-title'>Choix du paiement</h2>
                 <div className='paymentChoice'>
