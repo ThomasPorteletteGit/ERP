@@ -12,8 +12,35 @@ const ComponentsAnimation = () => {
     const [clickedComponent, setClickedComponent] = useState(null);
     let saveDiv;
 
+
+
     useEffect(() => {
         const components = ['etat-cuves', 'direction', 'incidents', 'transaction', 'stocks', 'services', 'horaires', 'releve', 'choixpaiement', 'esp', 'cb', 'carteEnergie'];
+
+        function attachEventListeners() {
+            components.forEach((componentId) => {
+                const component = document.getElementById(componentId);
+                if (component) {
+                    const img = component.querySelector('#imgAgrandir');
+                    const btnesp = component.querySelector('#esp');
+                    const btncb = component.querySelector('#cb');
+                    const btnce = component.querySelector('#carteEnergie');
+                    if (img) {
+                        console.log('add event listener for ' + componentId);
+                        img.addEventListener("click", handleClick(componentId));
+                    }
+                    if (btnesp) {
+                        btnesp.addEventListener("click", handleClick(componentId));
+                    }
+                    if (btncb) {
+                        btncb.addEventListener("click", handleClick(componentId));
+                    }
+                    if (btnce) {
+                        btnce.addEventListener("click", handleClick(componentId));
+                    }
+                }
+            });
+        }
 
         const handleClick = (componentId) => () => {
             console.log('click ' + componentId);
@@ -53,53 +80,11 @@ const ComponentsAnimation = () => {
             if (saveDiv != null) {
                 divGeneral.style.display = "flex";
                 divGeneral.innerHTML = saveDiv;
-                components.forEach((componentId) => {
-                    const component = document.getElementById(componentId);
-                    if (component) {
-                        const img = component.querySelector('#imgAgrandir');
-                        const btnesp = component.querySelector('#esp');
-                        const btncb = component.querySelector('#cb');
-                        const btnce = component.querySelector('#carteEnergie');
-                        if (img) {
-                            console.log('add event listener for ' + componentId);
-                            img.addEventListener("click", handleClick(componentId));
-                        }
-                        if (btnesp) {
-                            btnesp.addEventListener("click", handleClick(componentId));
-                        }
-                        if (btncb) {
-                            btncb.addEventListener("click", handleClick(componentId));
-                        }
-                        if (btnce) {
-                            btnce.addEventListener("click", handleClick(componentId));
-                        }
-
-                    }
-                });
+                attachEventListeners();
             }
         });
 
-        components.forEach((componentId) => {
-            const component = document.getElementById(componentId);
-            if (component) {
-                const img = component.querySelector('#imgAgrandir');
-                const btnesp = component.querySelector('#esp');
-                const btncb = component.querySelector('#cb');
-                const btnce = component.querySelector('#carteEnergie');
-                if (img) {
-                    img.addEventListener("click", handleClick(componentId));
-                }
-                if (btnesp) {
-                    btnesp.addEventListener("click", handleClick(componentId));
-                }
-                if (btncb) {
-                    btncb.addEventListener("click", handleClick(componentId));
-                }
-                if (btnce) {
-                    btnce.addEventListener("click", handleClick(componentId));
-                }
-            }
-        });
+        attachEventListeners();
 
 
 

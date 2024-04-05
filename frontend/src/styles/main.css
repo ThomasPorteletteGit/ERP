@@ -519,7 +519,7 @@ p {
 }
 
 
-#image_parking{
+#image_parking {
     transform: rotate(30deg);
     width: 50%;
     margin-top: -5%;
@@ -1294,11 +1294,6 @@ th {
     align-self: center;
 }
 
-#Produits {
-    margin: 5%;
-    background-color: #edf4fc;
-    color: black;
-}
 
 #Prix,
 #Produit,
@@ -1788,13 +1783,13 @@ ul li {
 }
 
 .client {
-    display:flex;
+    display: flex;
     border-radius: 8px;
-    padding: 10px; 
+    padding: 10px;
     background-color: #4d5b84;
     box-shadow: 5px 6px 5px #101e49;
-    justify-content: space-between; 
-    align-items: center; 
+    justify-content: space-between;
+    align-items: center;
     margin: 15px;
 }
 
@@ -1805,10 +1800,10 @@ ul li {
 }
 
 .client {
-    display:flex;
+    display: flex;
     border: solid #000;
     border-radius: 8px;
-    padding: 10px; 
+    padding: 10px;
     margin: 15px;
     background-color: #4d5b84;
     box-shadow: 5px 6px 5px #101e49;
@@ -1822,7 +1817,7 @@ ul li {
 }
 
 
-.voirPlus{ 
+.voirPlus {
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
@@ -1831,7 +1826,7 @@ ul li {
     margin: 10px;
 }
 
-.Supprimer{
+.Supprimer {
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
@@ -1839,6 +1834,7 @@ ul li {
     font-size: 16px;
     margin: 10px;
 }
+
 /**********************************  Reservation d'une place de parking (ReservationPlaceP) **********************************/
 .formulaire_reservation_placeP {
     display: flex;
@@ -1865,7 +1861,7 @@ ul li {
 
 /****************************** Réservation d'un covoiturage ***********************************/
 
-.formulaireRechercheCov{
+.formulaireRechercheCov {
     display: flex;
     flex-direction: horizontal;
     align-items: center;
@@ -1919,6 +1915,7 @@ ul li {
 
     box-shadow: 5px 6px 5px #101e49;
 }
+
 .container_proposition_Cov {
     max-height: 425px;
     margin: 5px;
@@ -1926,12 +1923,14 @@ ul li {
     border-radius: 5px;
     /* background-color: #424661; */
 }
+
 .infoPropositionCov {
     display: flex;
     justify-content: space-around;
     align-items: horizontal;
 
 }
+
 /****************************** Livraisons *************************************/
 
 .livraison {
@@ -1943,6 +1942,7 @@ ul li {
 
     box-shadow: 5px 6px 5px #101e49;
 }
+
 .container_livraison {
     max-height: 100%;
     margin: 5px;
@@ -1950,6 +1950,7 @@ ul li {
     border-radius: 5px;
     /* background-color: #424661; */
 }
+
 .infoLivraison {
     display: flex;
     justify-content: space-around;
