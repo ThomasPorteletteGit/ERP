@@ -10,7 +10,6 @@
 
 #ProduitsEspeces {
     margin: 5%;
-    background-color: #edf4fc;
     color: black;
 }
 
@@ -97,11 +96,15 @@
 #Produits {
     padding: 1%;
     margin: 3%;
-    background-color: #edf4fc;
     color: black;
 }
 
+.esp {
+    position: relative;
+}
+
 #PayerEspeces {
+    box-sizing: border-box;
     background-color: #edf4fc;
     color: black;
     border: none;

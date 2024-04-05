@@ -37,6 +37,7 @@ const Especes = () => {
                     </div>
                 </div>
                 <hr />
+
                 <div id="PayerEspeces">
                     <h1>Paiement</h1>
                     <div id="Produits" className="DivBlock">
@@ -47,6 +48,7 @@ const Especes = () => {
                         </div>
                     </div>
                 </div>
+
             </div>
         </div>
     );
