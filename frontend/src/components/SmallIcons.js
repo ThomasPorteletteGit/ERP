@@ -6,11 +6,12 @@ import DirectionGrand from "./direction/DirectionGrand";
 import IncidentsGrand from "./incidents/IncidentsGrand";
 import ServicesGrand from "./services/ServicesGrand";
 import HoraireGrand from "./horaire/HoraireGrand";
+import EtatStockGrand from "./stocks/EtatStocksGrand";
 
 const SmallIcons = ({ iconClicked }) => {
     console.log(iconClicked);
     const components = ['etat-cuves', 'direction', 'incidents', 'transaction', 'stocks', 'services', 'horaires', 'releve'];
-    const componentsGrand = [<EtatCuvesGrand />,<DirectionGrand/>,<IncidentsGrand/>,"","",<ServicesGrand />,<HoraireGrand/>,""];
+    const componentsGrand = [<EtatCuvesGrand />,<DirectionGrand/>,<IncidentsGrand/>,"",<EtatStockGrand/>,<ServicesGrand />,<HoraireGrand/>,""];
 
     const emojis = {
         'etat-cuves': '🛢️',

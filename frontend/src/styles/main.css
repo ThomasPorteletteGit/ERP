@@ -1837,3 +1837,30 @@ ul li {
     box-sizing: border-box;
     margin: 5%;
 }
+
+/*Stock*/
+
+.btnStockGrandClick {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    height: 46.2%;
+    border-radius: 5px;
+    display: block;
+    background-color: #ebebeb;
+    color: #111111;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/*Stock Produit*/
+
+.ajouterProduitbouton {
+    width: 10%;
+    padding: 10px;
+    border: none;
+    background-color: #ffffff;
+    padding: '10px 20px';
+    border-radius: '20px';
+    cursor: 'pointer';
+}
