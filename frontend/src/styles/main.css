@@ -37,12 +37,13 @@ html {
 /*
 Vue choix paiement
 */
-#choix-paiement {
+#choixpaiement {
     border-radius: 20px;
     background-color: #2B2D42;
     width: 100%;
-    height: 36.5%;
+    height: 37.5%;
     margin-top: 2%;
+    margin-top: 14px;
 }
 
 .paymentChoice {
@@ -254,7 +255,8 @@ panier
     display: flex;
     height: 25%;
     /* background-color: orange; */
-    width: 100%;
+    width: 101%;
+    margin-left: 10px;
 }
 
 .dashboard-right .incidents-services section {
@@ -268,6 +270,8 @@ panier
     height: 37.5%;
     /* background-color: #7883ff; */
     width: 100%;
+    margin-left: 10px;
+    margin-top: 10px;
 }
 
 .dashboard-right .horaires-releve-direction {
@@ -275,6 +279,8 @@ panier
     height: 37.5%;
     /* background-color: #ff0000; */
     width: 100%;
+    margin-left: 10px;
+    margin-top: 10px;
 }
 
 .dashboard-right .releve-direction {
@@ -323,6 +329,7 @@ cuves
     border-radius: 20px;
     background-color: #2b2d42;
     width: 100%;
+    height: 24.2%;
 }
 
 .etat-cuves-container {
@@ -355,8 +362,6 @@ p {
 .jauge>div {
     margin-bottom: 2px;
     animation: fill 2s ease;
-    border-top-right-radius: 3px;
-    border-top-left-radius: 3px;
 }
 
 .progress-bar {
@@ -365,7 +370,7 @@ p {
     background-color: rgb(56, 141, 56);
     position: absolute;
     bottom: 0;
-    border-radius: 20px;
+    border-radius: 5px;
 }
 
 
@@ -504,6 +509,15 @@ p {
     width: 45%;
     height: 35%;
     border-radius: 8px;
+    position: relative;
+    overflow: hidden;
+}
+
+
+#image_parking{
+    transform: rotate(30deg);
+    width: 50%;
+    margin-top: -5%;
 }
 
 .button_service_parking::after {
@@ -529,7 +543,7 @@ p {
     background-color: #2B2D42;
     width: 100%;
     height: 35%;
-    margin-top: 2%;
+    margin-top: 14px;
 }
 
 .last-transaction p {
@@ -720,7 +734,7 @@ select {
 /*Horaires*/
 #horaires {
     margin-left: 1%;
-    width: 45%;
+    width: 50%;
     height: 100%;
     background-color: #2b2d42;
     border-radius: 12px;
@@ -857,8 +871,8 @@ select {
 
 #releve,
 #direction {
-    width: 95%;
-    height: 45%;
+    width: 100%;
+    height: 50%;
     background-color: #2b2d42;
     border-radius: 20px;
 }
@@ -1836,4 +1850,134 @@ ul li {
     border-radius: 8px;
     box-sizing: border-box;
     margin: 5%;
+}
+
+
+
+
+/****************************** Réservation d'un covoiturage ***********************************/
+
+.formulaireRechercheCov{
+    display: flex;
+    flex-direction: horizontal;
+    align-items: center;
+    margin: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.statut-propositionCov {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+
+}
+
+.bouttonsCov {
+    display: flex;
+    justify-content: space-around;
+    align-items: horizontal;
+    /* resize: horizontal; */
+    margin-top: 5%;
+}
+
+.bouttonsCov button {
+    width: 20%;
+    height: 20%;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 25px;
+    background-color: white;
+    border: black;
+    margin: 5px;
+}
+
+.titreComposantCov {
+    margin: 1.5%;
+    padding: 10px;
+    font-size: 170%;
+    display: flex;
+    justify-content: left;
+}
+
+.proposition_covoiturage {
+    border: solid #000;
+    border-radius: 8px;
+    padding: 10px;
+    margin: 15px;
+    background-color: #4d5b84;
+
+    box-shadow: 5px 6px 5px #101e49;
+}
+.container_proposition_Cov {
+    max-height: 425px;
+    margin: 5px;
+    overflow-y: auto;
+    border-radius: 5px;
+    /* background-color: #424661; */
+}
+.infoPropositionCov {
+    display: flex;
+    justify-content: space-around;
+    align-items: horizontal;
+
+}
+/****************************** Livraisons *************************************/
+
+.livraison {
+    border: solid #000;
+    border-radius: 8px;
+    padding: 10px;
+    margin: 15px;
+    background-color: #4d5b84;
+
+    box-shadow: 5px 6px 5px #101e49;
+}
+.container_livraison {
+    max-height: 100%;
+    margin: 5px;
+    overflow-y: auto;
+    border-radius: 5px;
+    /* background-color: #424661; */
+}
+.infoLivraison {
+    display: flex;
+    justify-content: space-around;
+    align-items: horizontal;
+}
+
+.statut-livraison {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+}
+
+.buttonsLivraison {
+    display: flex;
+    justify-content: space-around;
+    align-items: horizontal;
+    /* resize: horizontal; */
+    margin-top: 5%;
+}
+
+.buttonsLivraison button {
+    width: 20%;
+    height: 20%;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 25px;
+    background-color: white;
+    border: black;
+    margin: 5px;
+}
+
+.titreComposantLivraison {
+    margin: 1.5%;
+    padding: 10px;
+    font-size: 170%;
+    display: flex;
+    justify-content: left;
 }

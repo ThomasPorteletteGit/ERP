@@ -1,8 +1,8 @@
 import React , { useEffect } from "react";
-import services from "./Services";
+import services from "../Services";
 
 import ReactDOMServer from 'react-dom/server'
-import searchIcon from '../../assets/img/searchIcon.png';
+import searchIcon from '../../../assets/img/searchIcon.png';
 import ReservationPlaceP from "./ReservationPlaceP";
 import { useHistory } from 'react-router-dom';
 
@@ -71,6 +71,8 @@ const ServiceParking = () => {
             buttonSupprimer.addEventListener("click", function() {
                 // Ajoutez votre logique pour le bouton Supprimer ici
                 console.log(" ## SUPPRESSION RESERVATION " + element.id_placeParking + " ##");
+                // TODO SUPPRIMER RESERVATION BD
+                
 
             });
             event.preventDefault();

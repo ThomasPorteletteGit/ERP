@@ -9,7 +9,7 @@ import HoraireGrand from "./horaire/HoraireGrand";
 
 const SmallIcons = ({ iconClicked }) => {
     console.log(iconClicked);
-    const components = ['etat-cuves', 'direction', 'incidents', 'transaction', 'stocks', 'services', 'horaires', 'releve'];
+    const components = ['etat-cuves', 'direction', 'incidents', 'transaction', 'stocks', 'services', 'horaires', 'releve','choixpaiement', 'esp', 'cb', 'carteEnergie'];
     const componentsGrand = [<EtatCuvesGrand />,<DirectionGrand/>,<IncidentsGrand/>,"","",<ServicesGrand />,<HoraireGrand/>,""];
 
     const emojis = {
