@@ -1519,7 +1519,6 @@ ul li {
 
     padding: 10px 5px;
     margin: 30px;
-    height: 80%;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
@@ -1930,6 +1929,32 @@ ul li {
     margin: 5%;
 }
 
+/*Stock*/
+
+.btnStockGrandClick {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    height: 46.2%;
+    border-radius: 5px;
+    display: block;
+    background-color: #ebebeb;
+    color: #111111;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/*Stock Produit*/
+
+.ajouterProduitbouton {
+    width: 10%;
+    padding: 10px;
+    border: none;
+    background-color: #ffffff;
+    padding: '10px 20px';
+    border-radius: '20px';
+    cursor: 'pointer';
+}
 
 
 
@@ -1991,7 +2016,7 @@ ul li {
 }
 
 .container_proposition_Cov {
-    max-height: 425px;
+    max-height: 500px;
     margin: 5px;
     overflow-y: auto;
     border-radius: 5px;
@@ -2002,6 +2027,16 @@ ul li {
     display: flex;
     justify-content: space-around;
     align-items: horizontal;
+
+}
+
+.backArrowServiceButton {
+    background: url("../assets/img/en-arriere.png") no-repeat;
+    background-size: cover;
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    color: rgba(0, 0, 0, 0);
 
 }
 

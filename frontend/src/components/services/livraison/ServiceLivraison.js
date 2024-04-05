@@ -5,6 +5,7 @@ import ReactDOMServer from 'react-dom/server';
 import ServiceParking from "../placeParking/ServiceParking";
 import ServiceCoVoiturage from "../coVoiturage/ServiceCoVoiturage";
 
+import ServicesGrand from "../ServicesGrand";
 import searchIcon from '../../../assets/img/searchIcon.png';
 
 const ServiceLivrasion = () => {
@@ -91,10 +92,15 @@ const ServiceLivrasion = () => {
             <hr />
 
             <form className="formulaireRechercheLivraison">
+
+                <button id="backArrowServiceButton" className="backArrowServiceButton" >Retour</button>
+                
                 <input type="text" name="text" className="search" placeholder=" Entrez un numéro de livraison " />
+                
                 <button type="submit" name="submit" className="submitSearchLivraison">
                     <img src={searchIcon} alt="Search" className="searchIconImage" />
                 </button>
+            
             </form>
 
             <div className="container_livraison">
@@ -108,6 +114,28 @@ const ServiceLivrasion = () => {
 
 
 };
+
+
+document.addEventListener("click", function (event) {
+    if (event.target.classList.contains("backArrowServiceButton")) {
+        const buttonText = event.target.textContent;
+        switch (buttonText) {
+            case "Retour":
+                console.log("Bouton Retour aux services grands");
+                // TODO: Ajouter code pour afficher les places de parking
+                const divGeneral = document.getElementsByClassName("dashboard-right")[0];
+                console.log("Reserver la place de parking");
+                
+                divGeneral.innerHTML = ReactDOMServer.renderToString(<ServicesGrand />);
+                divGeneral.style.display = "block";
+                break;
+            default:
+                console.log("Bouton inconnu cliqué" + buttonText);
+                break;
+        }
+        event.preventDefault();
+    }
+});
 
 function enregistrerLivraison (id_livraison) { // TODO mmodif -> covoiturage
     const divGeneral = document.getElementsByClassName("dashboard-right")[0];

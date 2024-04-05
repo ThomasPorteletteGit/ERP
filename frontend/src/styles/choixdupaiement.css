@@ -95,12 +95,23 @@
 
 #Produits {
     padding: 1%;
-    margin: 3%;
     color: black;
+}
+
+#PayerCB {
+    box-sizing: border-box;
+    background-color: #edf4fc;
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin: 5%;
+    border: 1px solid black;
 }
 
 .esp {
     position: relative;
+    border: 1px solid rgba(0, 0, 0, 0);
 }
 
 #PayerEspeces {
