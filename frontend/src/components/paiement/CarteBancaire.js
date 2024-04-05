@@ -18,7 +18,7 @@ const CarteBancaire = () => {
                         <div id="ProduitsCB">
                             <p id="waitingCB">Suivre les instructions du TPE </p>
                             <p id="waitingCB">En attente du Paiement</p>
-                            <div class='chargement'></div>
+                            <div className='chargement'></div>
                         </div>
                     </div>
                 </div>

@@ -17,7 +17,7 @@ const ChoixPaiementCarteEnergie = () => {
                         <p id="prixCB">Prix total : <span id="prixTotal"></span> €</p>
                         <div id="ProduitsCB">
                             <p id="waitingCB">En attente du Paiement</p>
-                            <div class='chargement'></div>
+                            <div className='chargement'></div>
                         </div>
                     </div>
                 </div>

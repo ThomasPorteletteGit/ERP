@@ -1,10 +1,12 @@
 import React , { useEffect } from "react";
-import services from "./Services";
+import services from "../Services";
 
 import ReactDOMServer from 'react-dom/server'
-import searchIcon from '../../assets/img/searchIcon.png';
+import searchIcon from '../../../assets/img/searchIcon.png';
 import ReservationPlaceP from "./ReservationPlaceP";
 import { useHistory } from 'react-router-dom';
+
+import ServicesGrand from "../ServicesGrand";
 
 const ServiceParking = () => {
     // à récup dans la bd
@@ -67,15 +69,20 @@ const ServiceParking = () => {
                 
             });
             event.preventDefault();
+            //event.stopPropagation();
     
             buttonSupprimer.addEventListener("click", function() {
                 // Ajoutez votre logique pour le bouton Supprimer ici
                 console.log(" ## SUPPRESSION RESERVATION " + element.id_placeParking + " ##");
+                // TODO SUPPRIMER RESERVATION BD
+                
 
             });
             event.preventDefault();
+            // event.stopPropagation();
         });
         event.preventDefault();
+        event.stopPropagation();
     });
     
     
@@ -89,7 +96,9 @@ const ServiceParking = () => {
 
             <hr />
 
+            
             <form className="formulaireRecherchePlaceP">
+                <button id="backArrowServiceButton" className="backArrowServiceButton" >Retour</button>
                 <input type="text" name="text" className="search" placeholder=" Entrez un numéro de place " />
                 <button type="submit" name="submit" className="submitSearchParking">
                     <img src={searchIcon} alt="Search" className="searchIconImage" />
@@ -107,6 +116,28 @@ const ServiceParking = () => {
 
 
 };
+
+
+document.addEventListener("click", function (event) {
+    if (event.target.classList.contains("backArrowServiceButton")) {
+        const buttonText = event.target.textContent;
+        switch (buttonText) {
+            case "Retour":
+                console.log("Bouton Retour aux services grands");
+                // TODO: Ajouter code pour afficher les places de parking
+                const divGeneral = document.getElementsByClassName("dashboard-right")[0];
+                console.log("Reserver la place de parking");
+                
+                divGeneral.innerHTML = ReactDOMServer.renderToString(<ServicesGrand />);
+                divGeneral.style.display = "block";
+                break;
+            default:
+                console.log("Bouton inconnu cliqué" + buttonText);
+                break;
+        }
+        event.preventDefault();
+    }
+});
 
 function reserverPlaceParking(id_placeP) {
     const divGeneral = document.getElementsByClassName("dashboard-right")[0];

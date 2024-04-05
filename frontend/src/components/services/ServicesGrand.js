@@ -1,8 +1,10 @@
 import React from "react";
 import services from "./Services";
 
-import ReactDOMServer from 'react-dom/server'
-import ServiceParking from "./ServiceParking";
+import ReactDOMServer from 'react-dom/server';
+import ServiceParking from "./placeParking/ServiceParking";
+import ServiceCoVoiturage from "./coVoiturage/ServiceCoVoiturage";
+import ServiceLivraison from "./livraison/ServiceLivraison";
 
 const ServicesGrand = () => {
     return (
@@ -36,9 +38,11 @@ document.addEventListener("click", function (event) {
                 break;
             case "Co-voiturage":
                 console.log("Bouton 'Co-voiturage' cliqué");
+                afficherVueCoVoiturage();
                 break;
             case "Livraison":
                 console.log("Bouton 'Livraison' cliqué");
+                afficherVueLivraison();
                 break;
             case "Autres":
                 console.log("Bouton 'Autres' cliqué");
@@ -48,6 +52,7 @@ document.addEventListener("click", function (event) {
                 break;
         }
         event.preventDefault();
+        event.stopPropagation();
     }
 
     function afficherPlacesParking() {
@@ -56,6 +61,26 @@ document.addEventListener("click", function (event) {
         console.log("Afficher les places de parking");
         
         divGeneral.innerHTML = ReactDOMServer.renderToString(<ServiceParking />);
+        divGeneral.style.display = "block";
+
+    }
+
+    function afficherVueCoVoiturage () {
+        const divGeneral = document.getElementsByClassName("dashboard-right")[0];
+        let saveDiv = divGeneral.innerHTML;
+        console.log("Afficher les propositions de co-voiturage");
+        
+        divGeneral.innerHTML = ReactDOMServer.renderToString(<ServiceCoVoiturage />);
+        divGeneral.style.display = "block";
+    }
+
+    function afficherVueLivraison () {
+
+        const divGeneral = document.getElementsByClassName("dashboard-right")[0];
+        let saveDiv = divGeneral.innerHTML;
+        console.log("Afficher les livraisons");
+        
+        divGeneral.innerHTML = ReactDOMServer.renderToString(<ServiceLivraison />);
         divGeneral.style.display = "block";
 
     }

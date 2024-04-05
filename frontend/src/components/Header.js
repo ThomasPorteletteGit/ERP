@@ -54,8 +54,10 @@ const Header = () => {
                     <div className='cards'>
                         <div className='cartes-membres-energies'>
                             <h2>Cartes</h2>
-                            <button id="membre" className='carte' onClick={handleClick('membre')}>Membre</button>
-                            <button id="energie" className='carte' onClick={handleClick('energie')}>Energie</button>
+                            <div className='cartes-content'>
+                                <button id="membre" className='carte' onClick={handleClick('membre')}>Membre</button>
+                                <button id="energie" className='carte' onClick={handleClick('energie')}>Energie</button>
+                            </div>
                         </div>
                     </div>
 
