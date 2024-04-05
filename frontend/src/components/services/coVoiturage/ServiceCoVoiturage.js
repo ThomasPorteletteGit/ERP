@@ -7,7 +7,7 @@ import searchIcon from '../../../assets/img/searchIcon.png';
 import backArrow from '../../../assets/img/en-arriere.png';
 import ReservationPlaceP from "../placeParking/ReservationPlaceP";
 import { useHistory } from 'react-router-dom';
-// import ModifierCov from './ModifierCov';
+import EnregistrerCovoiturage from './EnregistrerCovoiturage';
 import ServicesGrand from "../ServicesGrand";
 
 const ServiceCoVoiturage = () => {
@@ -55,7 +55,7 @@ const ServiceCoVoiturage = () => {
 
             buttonReserver.addEventListener("click", function() {
                 console.log(" ## RESERVATION PLACE " + element.id_cov + " ## ");
-            //    reserverPropositionCov(element.id_cov)
+                modifierCov(element.id_cov)
                 
             });
             event.preventDefault();
@@ -172,13 +172,13 @@ document.addEventListener("click", function (event) {
 //     }
 // });
 
-// function reserverPropositionCov(id_cov) { // TODO mmodif -> covoiturage
-//     const divGeneral = document.getElementsByClassName("dashboard-right")[0];
-//     console.log("Reserver la place de parking");
+function modifierCov(id_cov) { // TODO mmodif -> covoiturage
+    const divGeneral = document.getElementsByClassName("dashboard-right")[0];
+    console.log("Reserver la place de parking");
     
-//     divGeneral.innerHTML = ReactDOMServer.renderToString(<ModifierCov />);
-//     divGeneral.style.display = "block";
-// }
+    divGeneral.innerHTML = ReactDOMServer.renderToString(<EnregistrerCovoiturage />);
+    divGeneral.style.display = "block";
+}
 
 
 

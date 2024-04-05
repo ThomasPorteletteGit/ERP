@@ -6,8 +6,8 @@ import StockProduit from "./StockProduit";
 
 const EtatStockGrand = () => {
     document.addEventListener("click", function (event) {
-        if (event.target.classList.contains("btnStockGrandClick")) {
-            const buttonText = event.target.textContent;
+        
+ if (event.target.classList.contains("btnStockGrandClickTop" || "btnStockGrandClickBottom")) {           const buttonText = event.target.textContent;
             switch (buttonText) {
                 case "Voir le stock":
                     document.getElementById("stockGrand").innerHTML = ReactDOMServer.renderToString(<StockProduit/>);
@@ -35,11 +35,11 @@ const EtatStockGrand = () => {
             <hr />
             <div id="stockGrand">
                 <div className="Divflex">
-                    <button className="btnStockGrandClick" >Voir le stock</button>
+                    <button className="btnStockGrandClickTop" >Voir le stock</button>
                 </div>
                 <div className="Divflex">
-                    <button className="btnStockGrandClick" >Demande de réapprovisionnement</button>
-                    <button className="btnStockGrandClick" >Annuler un réapprovisionnement</button>
+                    <button className="btnStockGrandClickBottom" >Demande de réapprovisionnement</button>
+                    <button className="btnStockGrandClickBottom" >Annuler un réapprovisionnement</button>
                 </div>
             </div>
         </div>

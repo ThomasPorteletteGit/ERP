@@ -58,90 +58,16 @@ Vue choix paiement
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-
 }
 
 .paymentChoice button {
     background-size: cover;
-    background-color: #c3f3fb;
+    background-color: white;
     border: none;
     width: 47%;
     height: 50%;
     border-radius: 8px;
     margin-bottom: 10px;
-    position: relative;
-    overflow: clip;
-}
-
-#carteEnergie .carte_text {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: black;
-    font-size: 45px;
-    font-weight: 900;
-    text-align: center;
-    line-height: 1.5;
-    z-index: 1;
-}
-
-#emoji_energie {
-    width: 120%;
-    margin-left: 2%;
-    position: absolute;
-    transform: translate(-50%, -50%);
-    z-index: 0;
-}
-
-#emoji_cash{
-    width: 90%;
-}
-
-#cb .carte_text {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: black; /* Text color */
-    font-size: 45px; /* Adjust font size as needed */
-    font-weight: 900; /* Adjust font weight as needed */
-    text-align: center; /* Center the text horizontally */
-    line-height: 1.5; /* Adjust line height as needed */
-    z-index: 1; /* Ensure text is above the background image */
-}
-
-#emoji_cb {
-    width: 85%; /* Adjust width as needed */
-    transform: rotate(30deg);
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 0; /* Ensure image is below the text */
-}
-
-#esp .carte_text {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: black; /* Text color */
-    font-size: 35px; /* Adjust font size as needed */
-    font-weight: 900; /* Adjust font weight as needed */
-    text-align: center; /* Center the text horizontally */
-    line-height: 1.5; /* Adjust line height as needed */
-    z-index: 1; /* Ensure text is above the background image */
-}
-
-#emoji_cash {
-    width: 90%; /* Adjust width as needed */
-    transform: rotate(30deg);
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 0; /* Ensure image is below the text */
 }
 
 /*
@@ -1385,7 +1311,7 @@ th {
     background-color: #2B2D42;
     border-radius: 20px;
     width: 100%;
-    height: 73.8vh;
+    height: 83%;
 }
 
 .container-composantGrandIncident h2 {
@@ -1519,6 +1445,7 @@ ul li {
 
     padding: 10px 5px;
     margin: 30px;
+    height: 80%;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
@@ -1565,6 +1492,14 @@ ul li {
     border-radius: 20px;
     width: 100%;
     height: 98%;
+}
+
+.boutonsAnnulationReservation {
+    display: flex;
+    justify-content: space-around;
+    align-items: horizontal;
+    /* resize: horizontal; */
+    margin-top: 5%;
 }
 
 .bouttonsParking {
@@ -1684,7 +1619,11 @@ ul li {
     align-items: center;
     border-radius: 20px;
     width: 100%;
-    height: 73.8vh;
+    height: 83%;
+}
+
+#modifHoraire {
+    margin-top: 20px;
 }
 
 .component_title {
@@ -1803,7 +1742,7 @@ ul li {
 
 
 /*Carte membre / energie*/
-.composantGrandCarteEM {
+.composantGrand #carte {
     background-color: #2B2D42;
     border-radius: 20px;
     width: 100%;
@@ -1878,14 +1817,15 @@ ul li {
     box-shadow: 5px 6px 5px #101e49;
 }
 
-.energie {
+.listClient {
     max-height: 425px;
     margin: 5px;
     overflow-y: auto;
     border-radius: 5px;
 }
 
-#buttonCarteEM{
+
+.voirPlus {
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
@@ -1908,6 +1848,7 @@ ul li {
 .avantage {
     text-align: center;
     font-size: 16px;
+
 }
 
 /**********************************  Reservation d'une place de parking (ReservationPlaceP) **********************************/
@@ -1915,49 +1856,195 @@ ul li {
     display: flex;
     flex-direction: horizontal;
     align-items: center;
-    margin: 20px;
+    margin: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
+    font-size: 150%;
 }
 
 .formulaireEntree {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    margin-left: 5%;
+    
     border-radius: 8px;
     box-sizing: border-box;
     margin: 5%;
 }
 
-/*Stock*/
+/****************************************** Stock ******************************************/
 
-.btnStockGrandClick {
+.btnStockGrandClickTop {
     width: 100%;
-    padding: 10px;
+    padding: 10.5%;
     border: none;
-    height: 46.2%;
-    border-radius: 5px;
+    height: 100%;
+    border-radius: 20px;
+    margin: 2%;
     display: block;
-    background-color: #ebebeb;
+    background-color: #f1f1f1;
     color: #111111;
+    font-size: 200%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btnStockGrandClickBottom {
+    width: 46%;
+    padding: 8.4%;
+    border: none;
+    height: 1%;
+    border-radius: 20px;
+    margin: 2%;
+    display: block;
+    background-color: #f1f1f1;
+    color: #111111;
+    font-size: 200%;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
 
 /*Stock Produit*/
 
-.ajouterProduitbouton {
-    width: 10%;
-    padding: 10px;
-    border: none;
-    background-color: #ffffff;
-    padding: '10px 20px';
-    border-radius: '20px';
-    cursor: 'pointer';
+.StokProduitContainer {
+    display: flex;
+    flex-direction: column;
 }
 
+.ajouterProduitbouton {
+    width: 15%;
+    margin: 1%;
+    border: none;
+    border-radius: 50px;
+    background-color: #ffffff;
+    margin-left: 82%;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.barreProduit {
+    width: 50%;
+    margin: auto; 
+    margin-bottom: 2%;
+    border: none;
+    border-radius: 50px;
+    background-color: #ffffff;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.imagesContainer {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 colonnes */
+    gap: 20px; /* Espacement entre les images */
+}
+
+.imageItem {
+    width: 100%;
+    height: auto;
+}
+
+/* Stock Ajouter Produit */
+
+.StockProduitAjouter {
+    display: flex;
+    margin: 1%;
+    flex-direction: column;
+    align-items: center; 
+}
+
+.StockProduitAjouter h2{
+    font-size: 180%;
+}
+
+.StockProduitAjouter form {
+    width: 80%; 
+}
+
+.StockProduitAjouter div {
+    display: flex; /* Make divs flex containers */
+    align-items: center; /* Align items vertically */
+    margin-bottom: 2%; 
+}
+
+.StockProduitAjouter label {
+    margin-right: 2%;
+    min-width: 150px; 
+    font-size: 150%;
+}
+
+input[name="quantityProduit"] {
+    width: 40%; 
+    border-radius: 20px;
+    height: 40px;
+    margin: 1%;
+}
+
+input[name="priceProduit"] {
+    width: 40%; 
+    border-radius: 20px;
+    height: 40px;
+    margin: 1%;
+}
+
+
+.StockProduitAjouter textarea {
+    width: 100%; 
+    border-radius: 20px;
+    height: 140px;
+    margin: 1%;
+}
+
+input[name="nameProduit"] {
+    width: 100%; 
+    border-radius: 20px;
+    height: 40px;
+    margin: 1%;
+}
+
+
+.annulerProduitButton {
+    width: 15%;
+    border: none;
+    border-radius: 50px;
+    background-color: #ffffff;
+    margin-left: auto; /* Align to the right */
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.custom-file-upload {
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+    margin-left: 15%;
+}
+
+.custom-file-upload input[type="file"] {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.custom-file-upload label {
+    display: flex;
+    padding: 3px 50px;
+    background-color: #121646;
+    color: rgb(223, 223, 223);
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+
+.custom-file-upload label:hover {
+    background-color: #45a049;
+}
 
 
 /****************************** Réservation d'un covoiturage ***********************************/
@@ -2018,7 +2105,7 @@ ul li {
 }
 
 .container_proposition_Cov {
-    max-height: 500px;
+    max-height: 425px;
     margin: 5px;
     overflow-y: auto;
     border-radius: 5px;
@@ -2029,7 +2116,25 @@ ul li {
     display: flex;
     justify-content: space-around;
     align-items: horizontal;
+}
 
+.submit-container {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: -10%; 
+    margin-bottom: 0%;
+}
+
+.submit-container button {
+    margin-top: 0;
+    width: 20%;
+    height: 70%;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 25px;
+    background-color: white;
+    border: black;
+    margin: 5px;
 }
 
 .backArrowServiceButton {
@@ -2041,6 +2146,28 @@ ul li {
     color: rgba(0, 0, 0, 0);
 
 }
+/*$$$$$$$$$$$$$$$$$$$$$ Formulaire covoiturage $$$$$$$$$$$$$$$$$$$$$*/
+
+.formulaire_enregistrer_covoiturage {
+    display: flex;
+    flex-direction: horizontal;
+    align-items: center;
+    margin: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 150%;
+}
+
+.formulaireEntree {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-radius: 8px;
+    box-sizing: border-box;
+    margin: 5%;
+}
+
 
 /****************************** Livraisons *************************************/
 
@@ -2083,7 +2210,7 @@ ul li {
     margin-top: 5%;
 }
 
-.buttonsLivraison button {
+.buttonsLivraison {
     width: 20%;
     height: 20%;
     border-radius: 8px;
@@ -2101,3 +2228,4 @@ ul li {
     display: flex;
     justify-content: left;
 }
+
