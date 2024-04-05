@@ -1,10 +1,24 @@
 import React, { useState } from 'react';
+import ReactDOMServer from 'react-dom/server'
+import StockProduitAjouter from "./StockProduitAjouter";
 
 const StockProduit = ({ products }) => {
     const [searchTerm, setSearchTerm] = useState('');
     const [showAddProductForm, setShowAddProductForm] = useState(false);
     const [newProductName, setNewProductName] = useState('');
     const [newProductImage, setNewProductImage] = useState('');
+
+    document.addEventListener("click", function (event) {
+        
+    if (event.target.classList.contains("ajouterProduitbouton")) {           
+        const buttonText = event.target.textContent;
+            switch (buttonText) {
+                case "Ajouter un nouveau produit":
+                    document.getElementById("stockGrandProduit").innerHTML = ReactDOMServer.renderToString(<StockProduitAjouter/>);
+                    break;
+            }
+        }
+    });
 
     const handleChange = (event) => {
         setSearchTerm(event.target.value);
@@ -16,26 +30,25 @@ const StockProduit = ({ products }) => {
     };
 
     return (
-        <div>
-            <div>
-                <input
-                    type="text"
-                    placeholder="Rechercher un produit..."
-                    value={searchTerm}
-                    onChange={handleChange}
-                />
-                <button className = "ajouterProduitbouton" onClick={() => setShowAddProductForm(true)}>Ajouter un nouveau produit</button>
-            </div>
-            <div style={{ display: 'flex', flexWrap: 'wrap' }}>
+        <div className="StokProduitContainer" id='stockGrandProduit'>
+            <button className="ajouterProduitbouton">Ajouter un nouveau produit</button>
+            <input
+                className='barreProduit'
+                type="text"
+                placeholder="Rechercher un produit..."
+                value={searchTerm}
+                onChange={handleChange}
+            />
+            <div className="imagesContainer">
                 {products && products.length > 0 ? (
                     products.map((product, index) => (
-                        <div key={index} style={{ width: '25%', padding: '10px' }}>
+                        <div key={index} className="imageItem">
                             <img src={product.image} alt={product.name} style={{ width: '100%' }} />
                             <p>{product.name}</p>
                         </div>
                     ))
                 ) : (
-                    <p>Aucun produit disponible</p>
+                    <div className="noProductsMessage">Aucun produit disponible</div>
                 )}
             </div>
             {showAddProductForm && (
