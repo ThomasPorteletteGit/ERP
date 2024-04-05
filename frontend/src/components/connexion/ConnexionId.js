@@ -6,10 +6,10 @@ const ConnexionId = () => {
     //pour stocker et mettre à jour les valeurs
     const [id, setId] = useState('');
     const input = useRef(null);
-     
+
     //pour effacer les données
     const handleClearButton = () => {
-        setId(''); 
+        setId('');
     };
 
     //pour ajouter les données
@@ -25,7 +25,7 @@ const ConnexionId = () => {
 
     //pour supprimer un seul élément
     const handleClear2Button = () => {
-        setId((prevValue) => prevValue.slice(0, -1));      
+        setId((prevValue) => prevValue.slice(0, -1));
     };
 
     function writeIdCookie() {
@@ -36,33 +36,26 @@ const ConnexionId = () => {
 
     return (
         <>
-        <h1 className="connection">Connexion</h1>
-        <br />
-        {/*créer des composant pour insérer l'id*/}
-        <div className="connection-bar" id="id">
-            <input
-                id = "inputField"
-                type="text"
-                placeholder="Identifiant"
-                value={id}
-                onChange={(e) => setId(e.target.value)}
-            />
-        </div>
-
-        {/* créer le clavier numérique */}
-        <div className="numericButtonsConnection">
-            {[1, 2, 3, 4, 5, 6, 7, 8, 9].map((number) => (
-                <button key={number} onClick={() => handleButtonClick(number)}>
-                    {number}
-                </button>
-            ))}
-            <button onClick={() => handleClearButton()}>Effacer</button>
-            <button key={0} onClick={() => handleButtonClick(0)}>
-                0
-            </button>
-            <button onClick={() => handleEnterButton()}>Entrer</button>
-            
-        </div>
+            <div className="login-box">
+                <h2>Connexion</h2>
+                <form>
+                    <div className="user-box">
+                        <input type="text" name="" required="" />
+                            <label>Identifiant</label>
+                        </div>
+                    <div className="user-box">
+                        <input type="password" name="" required=""/>
+                            <label>Mot de passe</label>
+                    </div>
+                    <a href="#">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        Se connecter
+                    </a>
+                </form>
+            </div>
         </>
     );
 };
