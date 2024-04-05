@@ -52,6 +52,7 @@ document.addEventListener("click", function (event) {
                 break;
         }
         event.preventDefault();
+        event.stopPropagation();
     }
 
     function afficherPlacesParking() {
