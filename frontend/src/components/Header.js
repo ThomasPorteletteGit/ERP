@@ -7,7 +7,7 @@ import scaleButton from '../assets/img/agrandir.png'
 import tomdelacote from '../assets/img/tomdelacote.png'
 import exit from '../assets/img/exit.png'
 import ReactDOMServer from 'react-dom/server';
-import CarteMembre from './CarteMembre';
+import CarteMembre from './carteMembre/CarteMembre';
 import CarteEnergie from './carteEnergie/CarteEnergie';
 import StatutPompe from './pompe/StatutPompe';
 

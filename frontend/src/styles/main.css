@@ -1807,7 +1807,7 @@ ul li {
 
 
 /*Carte membre / energie*/
-.composantGrand #carte {
+.composantGrandCarteEM {
     background-color: #2B2D42;
     border-radius: 20px;
     width: 100%;
@@ -1882,15 +1882,14 @@ ul li {
     box-shadow: 5px 6px 5px #101e49;
 }
 
-.listClient {
+.energie {
     max-height: 425px;
     margin: 5px;
     overflow-y: auto;
     border-radius: 5px;
 }
 
-
-.voirPlus {
+#buttonCarteEM{
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
@@ -1899,13 +1898,13 @@ ul li {
     margin: 10px;
 }
 
-.Supprimer {
+.Supprimer{
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     font-size: 16px;
-    margin: 10px;
+
 }
 
 /**********************************  Reservation d'une place de parking (ReservationPlaceP) **********************************/

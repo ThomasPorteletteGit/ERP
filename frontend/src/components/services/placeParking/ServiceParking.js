@@ -69,6 +69,7 @@ const ServiceParking = () => {
                 
             });
             event.preventDefault();
+            //event.stopPropagation();
     
             buttonSupprimer.addEventListener("click", function() {
                 // Ajoutez votre logique pour le bouton Supprimer ici
@@ -78,8 +79,10 @@ const ServiceParking = () => {
 
             });
             event.preventDefault();
+            // event.stopPropagation();
         });
         event.preventDefault();
+        event.stopPropagation();
     });
     
     
