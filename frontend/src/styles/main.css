@@ -46,6 +46,11 @@ Vue choix paiement
     margin-top: 14px;
 }
 
+.choixPaiement{
+    width: 100%;
+    height: 100%;
+}
+
 .paymentChoice {
     padding: 10px 5px;
     margin-bottom: 12px;
@@ -60,7 +65,7 @@ Vue choix paiement
     background-color: white;
     border: none;
     width: 47%;
-    height: 95px;
+    height: 50%;
     border-radius: 8px;
     margin-bottom: 10px;
 }
@@ -510,7 +515,7 @@ p {
     height: 35%;
     border-radius: 8px;
     position: relative;
-    overflow: hidden;
+    overflow: clip;
 }
 
 
@@ -520,20 +525,23 @@ p {
     margin-top: -5%;
 }
 
-.button_service_parking::after {
-    background: url("../assets/img/parking.png") no-repeat;
+#image_covoiturage{
+    transform: rotate(30deg);
+    width: 100%;
+    margin-top: -15%;
+    margin-right: 35%;
 }
 
-.button_service_voiture {
-    background: url("../assets/img/parking.png") no-repeat;
+#image_livraison{
+    transform: rotate(30deg);
+    width: 80%;
+    margin-top: -15%;
 }
 
-.button_service_livraison {
-    background: url("../assets/img/parking.png") no-repeat;
-}
-
-.button_service_autres {
-    background: url("../assets/img/parking.png") no-repeat;
+#image_autres{
+    transform: rotate(30deg);
+    width: 70%;
+    margin-top: -15%;
 }
 
 /*transaction*/
@@ -1437,7 +1445,6 @@ ul li {
 
     padding: 10px 5px;
     margin: 30px;
-    height: 80%;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
@@ -1848,6 +1855,32 @@ ul li {
     margin: 5%;
 }
 
+/*Stock*/
+
+.btnStockGrandClick {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    height: 46.2%;
+    border-radius: 5px;
+    display: block;
+    background-color: #ebebeb;
+    color: #111111;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/*Stock Produit*/
+
+.ajouterProduitbouton {
+    width: 10%;
+    padding: 10px;
+    border: none;
+    background-color: #ffffff;
+    padding: '10px 20px';
+    border-radius: '20px';
+    cursor: 'pointer';
+}
 
 
 
@@ -1909,7 +1942,7 @@ ul li {
 }
 
 .container_proposition_Cov {
-    max-height: 425px;
+    max-height: 500px;
     margin: 5px;
     overflow-y: auto;
     border-radius: 5px;
@@ -1920,6 +1953,16 @@ ul li {
     display: flex;
     justify-content: space-around;
     align-items: horizontal;
+
+}
+
+.backArrowServiceButton {
+    background: url("../assets/img/en-arriere.png") no-repeat;
+    background-size: cover;
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    color: rgba(0, 0, 0, 0);
 
 }
 

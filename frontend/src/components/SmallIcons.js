@@ -9,11 +9,12 @@ import HoraireGrand from "./horaire/HoraireGrand";
 import Especes from "./paiement/Especes";
 import CarteBancaire from "./paiement/CarteBancaire";
 import ChoixPaiementCarteEnergie from "./paiement/ChoixPaiementCarteEnergie";
+import EtatStockGrand from "./stocks/EtatStocksGrand";
 
 const SmallIcons = ({ iconClicked }) => {
     console.log(iconClicked);
     const components = ['etat-cuves', 'direction', 'incidents', 'transaction', 'stocks', 'services', 'horaires', 'releve', 'esp', 'cb', 'carteEnergie'];
-    const componentsGrand = [<EtatCuvesGrand />, <DirectionGrand />, <IncidentsGrand />, "", "", <ServicesGrand />, <HoraireGrand />, "", <Especes />, <CarteBancaire />, <ChoixPaiementCarteEnergie />];
+    const componentsGrand = [<EtatCuvesGrand />, <DirectionGrand />, <IncidentsGrand />, "", <EtatStockGrand />, <ServicesGrand />, <HoraireGrand />, "", <Especes />, <CarteBancaire />, <ChoixPaiementCarteEnergie />];
 
     const emojis = {
         'etat-cuves': '🛢️',
