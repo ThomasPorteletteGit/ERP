@@ -5,7 +5,6 @@ import EtatCuvesPrix from "./EtatCuvesPrix";
 import EtatCuvesReapro from "./EtatCuvesReapro";
 
 const EtatCuvesGrand = () => {
-<<<<<<< HEAD
     // document.addEventListener("click", function (event) {
     //     if (event.target.classList.contains("btnCuvesGrandClick")) {
     //         const buttonText = event.target.textContent;
@@ -30,11 +29,6 @@ const EtatCuvesGrand = () => {
         document.addEventListener("click", function (event) {
             if (event.target.classList.contains("btnCuvesGrandClick")) {
 
-=======
-    document.addEventListener("click", function (event) {
-        if (event.target.classList.contains("btnCuvesGrandClick")) {
-            console.log("icicicicic" + event.target.textContent);
->>>>>>> main
             const buttonText = event.target.textContent;
             console.log(buttonText);
             switch (buttonText) {
