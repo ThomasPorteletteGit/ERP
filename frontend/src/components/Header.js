@@ -55,6 +55,10 @@ const Header = () => {
                         </div>
                         <div className='user'>
                             <img id="tomdelacote" className='dashboardImages' src={tomdelacote} alt="utilisateur connecté" />
+                            <div className="Divflex">
+                                <p id="user_name">TOM DE LA COTE</p>
+                                <p id="user_mail">tomDeLaCote@gmail.com</p>
+                            </div>
                         </div>
                     </div>
 

@@ -4,7 +4,7 @@ import EtatCuves from './cuve/EtatCuves';
 import Caisse from './caisse/Caisse';
 import Services from "./services/Services";
 import Horaires from './horaire/Horaires';
-import Transaction from './Transaction';
+import Transaction from './transaction/Transaction';
 import Stocks from './Stocks';
 import Incidents from './incidents/Incidents';
 import Releve from './Releve';

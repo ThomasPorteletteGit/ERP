@@ -7,6 +7,8 @@ import ServicesGrand from './services/ServicesGrand';
 import DirectionGrand from './direction/DirectionGrand';
 import HoraireGrand from './horaire/HoraireGrand';
 import TransactionGrand from './transaction/TransactionGrand';
+import reduire from '../assets/img/reduire.png';
+import agrandir from '../assets/img/agrandir.png';
 
 const ComponentsAnimation = () => {
     const [clickedComponent, setClickedComponent] = useState(null);
@@ -80,10 +82,37 @@ const ComponentsAnimation = () => {
                 divGeneral.style.display = "flex";
                 divGeneral.innerHTML = saveDiv;
                 attachEventListeners();
+                components.forEach((compId) => {
+                    const comp = document.getElementById(compId);
+                    if (comp) {
+                        comp.classList.remove("disappear-animation");
+
+                    }
+                });
             }
         });
 
         attachEventListeners();
+
+        const boutonf11 = document.getElementById("scaleButton");
+
+        boutonf11.addEventListener("click", () => {
+            if (!document.fullscreenElement) {
+                if (document.documentElement.requestFullscreen) {
+                    document.documentElement.requestFullscreen().catch(err => {
+                        console.error(`Error attempting to enable full-screen mode: ${err.message} (${err.name})`);
+                    });
+                    boutonf11.src = reduire;
+                } else {
+                    console.error('Full screen mode is not supported by this browser.');
+                }
+            } else {
+                if (document.exitFullscreen) {
+                    document.exitFullscreen();
+                    boutonf11.src = agrandir;
+                }
+            }
+        });
 
 
 

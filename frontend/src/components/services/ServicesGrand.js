@@ -6,6 +6,7 @@ import ServiceParking from "./placeParking/ServiceParking";
 import ServiceCoVoiturage from "./coVoiturage/ServiceCoVoiturage";
 import ServiceLivraison from "./livraison/ServiceLivraison";
 
+
 const ServicesGrand = () => {
     return (
         
@@ -16,10 +17,10 @@ const ServicesGrand = () => {
 
             <hr/>
             <div className="button_container_grand_services">
-                    <button className="bouttonsServiceGrand">Parking</button>
-                    <button className="bouttonsServiceGrand">Co-voiturage</button>
-                    <button className="bouttonsServiceGrand">Livraison</button>
-                    <button className="bouttonsServiceGrand">Autres</button>
+                    <button className="bouttonsServiceGrand" id="parkingButton">Parking</button>
+                    <button className="bouttonsServiceGrand" id="covoiturageButton">Co-voiturage</button>
+                    <button className="bouttonsServiceGrand" id="livraisonButton">Livraison</button>
+                    <button className="bouttonsServiceGrand" id="autresButton">Autres</button>
             </div>
           
         </div>         
