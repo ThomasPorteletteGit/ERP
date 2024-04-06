@@ -53,7 +53,6 @@ const SmallIcons = ({ iconClicked }) => {
                         }
                     }
             }
-            event.stopPropagation();
             event.preventDefault();
         }
     });
