@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
-import agrandir from '../assets/img/agrandir.png';
+import agrandir from '../../assets/img/agrandir.png';
 
 
 const Transaction = () => {

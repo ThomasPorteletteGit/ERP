@@ -45,10 +45,33 @@
 
 .user #tomdelacote{
     margin-top: 10px;
+    display: flex;
+}
+
+#user_mail{
+    color: black;
+    margin-top: 10px;
+    font-size: 15px;
+}
+
+.user .Divflex{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+
+#user_name{
+    color: black;
+    font-size: 20px;
+    margin-top: -8%;
+    font-weight: bolder;
 }
 
 #header .container .buttons-user .user {
     display: flex;
+    align-items: center;
 }
 
 
