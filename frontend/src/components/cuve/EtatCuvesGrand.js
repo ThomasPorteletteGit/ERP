@@ -4,22 +4,23 @@ import ReactDOMServer from 'react-dom/server'
 import EtatCuvesPrix from "./EtatCuvesPrix";
 import EtatCuvesReapro from "./EtatCuvesReapro";
 
-const EtatCuvesGrand = () => {
-
-    let energies = [];
+const EtatCuvesGrand = (energies) => {
+    const energiesObject = energies.energies.energies;
+    console.log(energiesObject);
+    const energiesAndQuantities = energiesObject.filter(energie => energie.quantite_stock !== undefined);
+    const energiesAndPrices = energiesObject.filter(energie => energie.prix !== undefined);
+    
     document.addEventListener("click", function (event) {
         if (event.target.classList.contains("btnCuvesGrandClick")) {
             const buttonText = event.target.textContent;
-            console.log(buttonText);
             switch (buttonText) {
                 case "Modifier le prix":
-                    document.getElementById("cuvesGrand").innerHTML = ReactDOMServer.renderToString(<EtatCuvesPrix />);
+                    document.getElementById("cuvesGrand").innerHTML = ReactDOMServer.renderToString(<EtatCuvesPrix energies={energiesAndPrices}/>);
                     break;
                 case "Demande de réapprovisionnement":
-                    document.getElementById("cuvesGrand").innerHTML = ReactDOMServer.renderToString(<EtatCuvesReapro />);
+                    document.getElementById("cuvesGrand").innerHTML = ReactDOMServer.renderToString(<EtatCuvesReapro energies={energiesAndQuantities}/>);
                     break;
                 default:
-                    console.log("Bouton inconnu cliqué" + buttonText);
                     break;
             }
         }
@@ -37,10 +38,12 @@ const EtatCuvesGrand = () => {
             </div>
             <hr />
             <div id="cuvesGrand">
-                <Cuve carburant={"ESP-97"} niveau={20} />
-                <Cuve carburant={"GAZOLE"} niveau={70} />
-                <Cuve carburant={"DIESEL"} niveau={50} />
-                <Cuve carburant={"GPL"} niveau={2} />
+                {
+                    energiesAndQuantities.map((energie) => {
+                        return <Cuve carburant={energie.nom} niveau={energie.quantite_stock*100/1000} />
+                    })
+                }
+
                 <div id="cuvesButtons" className="DivBlock">
                     <button className="btnCuvesGrandClick" id="thefirst">Modifier le prix</button>
                     <button className="btnCuvesGrandClick">Demande de réapprovisionnement</button>

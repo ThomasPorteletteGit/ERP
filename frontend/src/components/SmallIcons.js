@@ -12,10 +12,10 @@ import ChoixPaiementCarteEnergie from "./paiement/ChoixPaiementCarteEnergie";
 import EtatStockGrand from "./stocks/EtatStocksGrand";
 import TransactionGrand from "./transaction/TransactionGrand";
 
-const SmallIcons = ({ iconClicked }) => {
+const SmallIcons = ({ iconClicked, energies }) => {
     console.log(iconClicked);
     const components = ['etat-cuves', 'direction', 'incidents', 'transaction', 'stocks', 'services', 'horaires', 'esp', 'cb', 'carteEnergie'];
-    const componentsGrand = [<EtatCuvesGrand />, <DirectionGrand />, <IncidentsGrand />, <TransactionGrand />, <EtatStockGrand />, <ServicesGrand />, <HoraireGrand />, <Especes />, <CarteBancaire />, <ChoixPaiementCarteEnergie />];
+    const componentsGrand = [<EtatCuvesGrand energies={energies}/>, <DirectionGrand />, <IncidentsGrand />, <TransactionGrand />, <EtatStockGrand />, <ServicesGrand />, <HoraireGrand />, <Especes />, <CarteBancaire />, <ChoixPaiementCarteEnergie />];
 
     const emojis = {
         'etat-cuves': '🛢️',

@@ -13,6 +13,18 @@ import ComponentsAnimation from "./ComponentsAnimation";
 import ChoixduPaiementCompAnim from './paiement/ChoixduPaiementCompAnim';
 import ChoixPaiement from './paiement/ChoixPaiement';
 
+let energies;
+let energiesAndPrices;
+let energiesAndQuantities;
+
+await fetch('/stockEnergie/get')
+    .then(response => response.json())
+    .then(data => {
+        energies = data;
+    });
+
+
+
 const Dashboard = ({ userType }) => {
     // const cookie = document.cookie.split('=')[1];
     // // const userType = cookie === 'gerant' ? 'gerant' : 'employe';
@@ -21,7 +33,7 @@ const Dashboard = ({ userType }) => {
     return (
         <>
             <Header />
-            <ComponentsAnimation />
+            <ComponentsAnimation energies={energies} />
             <ChoixduPaiementCompAnim />
             <div id='dashboard'>
                 <div className="dashboard-container">
@@ -30,7 +42,7 @@ const Dashboard = ({ userType }) => {
                     </div>
                     <div className="dashboard-right">
                         <div className="etat-transac">
-                            <EtatCuves />
+                            <EtatCuves energies={energies}/>
                             <Transaction />
                             <ChoixPaiement />
                         </div>

@@ -1,6 +1,13 @@
 const dao = require('../../data/DAO');
 
 // Fonctions pour les energies
+
+function getAll(req, res) {
+    dao.select('*', 'ProduitEnergie', "type='Energie'", (result) => {
+        res.send(result.rows);
+    });
+}
+
 function getEnergieNames(req, res) {
     dao.select('nom', 'ProduitEnergie', "type='Energie'", (result) => {
         res.send(result.rows);
@@ -8,7 +15,13 @@ function getEnergieNames(req, res) {
 }
 
 function getEnergieNamesAndQuantities(req, res) {
-    dao.select('nom, quantite', 'ProduitEnergie', "type='Energie'", (result) => {
+    dao.select('nom, quantite_stock', 'ProduitEnergie', "type='Energie'", (result) => {
+        res.send(result.rows);
+    });
+}
+
+function getEnergieNamesAndPrices(req, res) {
+    dao.select('nom, prix', 'ProduitEnergie', "type='Energie'", (result) => {
         res.send(result.rows);
     });
 }
@@ -34,7 +47,7 @@ function getEnergieStock(req, res) {
 
 function reapprovisionnerEnergie(req, res) {
     req.body.forEach((energie) => {
-        dao.update('ProduitEnergie', `quantite = quantite + 1000`, `nom = '${energie}'`, (result) => {
+        dao.update('ProduitEnergie', `quantite_stock = quantite_stock + 1000`, `nom = '${energie}'`, (result) => {
             console.log(result);
         });
     });
@@ -87,8 +100,10 @@ function reapprovisionnerProduit(req, res) {
 module.exports = {
     energies:
     {
+        getAll,
         getEnergieNames,
         getEnergieNamesAndQuantities,
+        getEnergieNamesAndPrices,
         getEnergieIds,
         getEnergieId,
         getEnergieStock,

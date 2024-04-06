@@ -10,10 +10,9 @@ import TransactionGrand from './transaction/TransactionGrand';
 import reduire from '../assets/img/reduire.png';
 import agrandir from '../assets/img/agrandir.png';
 
-const ComponentsAnimation = () => {
+const ComponentsAnimation = (energies) => {
     const [clickedComponent, setClickedComponent] = useState(null);
     let saveDiv;
-
 
 
     useEffect(() => {
@@ -59,7 +58,7 @@ const ComponentsAnimation = () => {
             });
 
             setTimeout(() => {
-                divGeneral.innerHTML = ReactDOMServer.renderToString(<SmallIcons iconClicked={componentId} />);
+                divGeneral.innerHTML = ReactDOMServer.renderToString(<SmallIcons iconClicked={componentId} energies={energies} />);
                 divGeneral.style.display = "block";
 
                 components.forEach((compId) => {
