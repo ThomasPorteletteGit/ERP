@@ -54,15 +54,15 @@ const ServiceCoVoiturage = () => {
             }
 
             buttonReserver.addEventListener("click", function() {
-                console.log(" ## RESERVATION PLACE " + element.id_cov + " ## ");
-                modifierCov(element.id_cov)
+                
+                enregistrerCOV(element.id_cov)
                 
             });
             event.preventDefault();
     
             buttonSupprimer.addEventListener("click", function() {
                 // Ajoutez votre logique pour le bouton Supprimer ici
-                console.log(" ## SUPPRESSION RESERVATION " + element.id_cov + " ##");
+                console.log(" ## SUPPRESSION proposition cov " + element.id_cov + " ##");
                 // TODO SUPPRIMER RESERVATION BD
                 
 
@@ -120,6 +120,10 @@ const ServiceCoVoiturage = () => {
                 </button>
             </form>
 
+            <button className="button_ajout_propositionCOV">
+                <h2>Ajouter une proposition de covoiturage</h2>
+            </button>
+
             <div className="container_proposition_Cov">
                {afficherCov()}
             </div>
@@ -153,6 +157,14 @@ document.addEventListener("click", function (event) {
         event.preventDefault();
         event.stopPropagation();
     }
+
+    if (event.target.classList.contains("button_ajout_propositionCOV")) {
+        console.log("Ajouter une proposition de covoiturage");
+        const divGeneral = document.getElementsByClassName("dashboard-right")[0];
+        divGeneral.innerHTML = ReactDOMServer.renderToString(<EnregistrerCovoiturage />);
+        divGeneral.style.display = "block";
+        event.preventDefault();
+    }
 });
 
 
@@ -172,9 +184,9 @@ document.addEventListener("click", function (event) {
 //     }
 // });
 
-function modifierCov(id_cov) { // TODO mmodif -> covoiturage
+function enregistrerCOV(id_cov) { // TODO mmodif -> covoiturage
     const divGeneral = document.getElementsByClassName("dashboard-right")[0];
-    console.log("Reserver la place de parking");
+    console.log("Enregistrer une proposition de covoiturage");
     
     divGeneral.innerHTML = ReactDOMServer.renderToString(<EnregistrerCovoiturage />);
     divGeneral.style.display = "block";

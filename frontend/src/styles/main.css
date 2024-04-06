@@ -1550,6 +1550,32 @@ ul li {
         
 } */
 
+#parkingButton {
+    background: url("../assets/img/image-210.png") ; 
+    background-size: 100% 100%; 
+    background-repeat: no-repeat; 
+      
+}
+
+#covoiturageButton{
+    background: url("../assets/img/image-220.png") ; 
+    background-size: 100% 100%; 
+    background-repeat: no-repeat; 
+
+}
+
+#livraisonButton{
+    background: url("../assets/img/image-230.png") ; 
+    background-size: 100% 100%; 
+    background-repeat: no-repeat; 
+}
+
+#autresButton{
+    background: url("../assets/img/image-240.png") ; 
+    background-size: 100% 100%; 
+    background-repeat: no-repeat; 
+}
+
 .button_container_grand_services button {
     background-size: cover;
     background-color: white;
@@ -1558,7 +1584,8 @@ ul li {
     height: 45%;
     border-radius: 8px;
     cursor: pointer;
-    font-size: 25px;
+    font-size: 35px; 
+    font-weight: bold;
 }
 
 .button_container_grand_services {
@@ -1622,6 +1649,17 @@ ul li {
     margin-top: 5%;
 }
 
+.boutonsAnnulationReservation button {
+    width: 100%;
+    height: 20%;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 25px;
+    background-color: #4d5b84;
+    border: black;
+    margin: 5px;
+}
+
 .bouttonsParking {
     display: flex;
     justify-content: space-around;
@@ -1670,7 +1708,7 @@ ul li {
 }
 
 .container_placesP {
-    max-height: 425px;
+    max-height: 75%;
     margin: 5px;
     overflow-y: auto;
     border-radius: 5px;
@@ -2364,7 +2402,7 @@ input[name="nameProduit"] {
 }
 
 .container_proposition_Cov {
-    max-height: 425px;
+    max-height: 65%;
     margin: 5px;
     overflow-y: auto;
     border-radius: 5px;
@@ -2406,6 +2444,18 @@ input[name="nameProduit"] {
 
 }
 
+.button_ajout_propositionCOV {
+   
+        border: solid #000;
+        border-radius: 8px;
+        padding: 10px;
+        margin: 15px;
+        background-color: #4d5b84;
+        box-shadow: 5px 6px 5px #101e49;
+
+}
+
+
 /*$$$$$$$$$$$$$$$$$$$$$ Formulaire covoiturage $$$$$$$$$$$$$$$$$$$$$*/
 
 .formulaire_enregistrer_covoiturage {
@@ -2428,6 +2478,15 @@ input[name="nameProduit"] {
     margin: 5%;
 }
 
+.boutonsAnnulationConfirmationCOV {
+    display: flex;
+    justify-content: space-around;
+    align-items: horizontal;
+    /* resize: horizontal; */
+    margin-top: 5%;
+
+}
+
 
 /****************************** Livraisons *************************************/
 
@@ -2442,7 +2501,7 @@ input[name="nameProduit"] {
 }
 
 .container_livraison {
-    max-height: 100%;
+    max-height: 75%;
     margin: 5px;
     overflow-y: auto;
     border-radius: 5px;
