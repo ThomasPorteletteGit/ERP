@@ -88,6 +88,13 @@ const ComponentsAnimation = () => {
                 divGeneral.style.display = "flex";
                 divGeneral.innerHTML = saveDiv;
                 attachEventListeners();
+                components.forEach((compId) => {
+                    const comp = document.getElementById(compId);
+                    if (comp) {
+                        comp.classList.remove("disappear-animation");
+
+                    }
+                });
             }
         });
 
