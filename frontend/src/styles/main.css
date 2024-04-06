@@ -1207,9 +1207,9 @@ th {
 }
 
 
-
 .disappear-animation {
-    animation: disappear 0.5s ease-out;
+    animation: disappear 0.5s ease-out forwards;
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
 }
 
 @keyframes disappear {
@@ -1220,9 +1220,10 @@ th {
 
     100% {
         opacity: 0;
-        transform: translateY(-100%);
+        transform: translateY(-20px);
     }
 }
+
 
 /* Incident en grand */
 
