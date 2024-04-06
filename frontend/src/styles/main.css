@@ -639,7 +639,7 @@ p {
     display: flex;
     align-items: center;
     width: 100%;
-    height: 100%;
+    height: 10%;
 }
 
 .transaction-details {
@@ -652,7 +652,8 @@ p {
     color: black;
     overflow-y: auto;
     overflow-x: auto;
-    max-height: 20vh;
+    height: 92%;
+    scrollbar-width: none;
 }
 
 .transaction-details table {
@@ -809,6 +810,11 @@ select {
     width: 40%;
     background-color: white;
     border-radius: 5px;
+}
+
+.transaction-container{
+    height: 80%;
+
 }
 
 
