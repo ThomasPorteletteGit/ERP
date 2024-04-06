@@ -1,5 +1,3 @@
-import React, { useEffect } from 'react';
-
 const Especes = () => {
 
     document.addEventListener("click", function (event) {

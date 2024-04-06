@@ -222,17 +222,16 @@ panier
     height: 83vh;
     margin: 1vh 0;
     width: 42%;
-    background-color: #2b2d42;
 }
 
 .dashboard-left {
+    background-color: #2b2d42;
     margin-right: 0.5%;
     margin-left: 0.5%;
     border-radius: 20px;
 }
 
 .dashboard-right {
-    background-color: white !important;
     width: 56% !important;
     display: flex;
     margin-right: 0.5vw;
