@@ -3,6 +3,8 @@ import Cuve from './Cuve';
 import agrandir from '../../assets/img/agrandir.png';
 
 const EtatCuves = () => {
+    let energies = [];
+    fetch("/")
     return (
         <section id="etat-cuves">
             <div className="top_container">

@@ -5,9 +5,10 @@ import EtatCuvesPrix from "./EtatCuvesPrix";
 import EtatCuvesReapro from "./EtatCuvesReapro";
 
 const EtatCuvesGrand = () => {
+    let energies = [];
+    
     document.addEventListener("click", function (event) {
         if (event.target.classList.contains("btnCuvesGrandClick")) {
-            console.log("icicicicic" + event.target.textContent);
             const buttonText = event.target.textContent;
             switch (buttonText) {
                 case "Modifier le prix":
