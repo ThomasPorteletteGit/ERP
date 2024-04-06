@@ -5,30 +5,10 @@ import EtatCuvesPrix from "./EtatCuvesPrix";
 import EtatCuvesReapro from "./EtatCuvesReapro";
 
 const EtatCuvesGrand = () => {
-    // document.addEventListener("click", function (event) {
-    //     if (event.target.classList.contains("btnCuvesGrandClick")) {
-    //         const buttonText = event.target.textContent;
-    //         console.log(buttonText);
-    //         switch (buttonText) {
-    //             case "Modifier le prix":
-    //                 document.getElementById("cuvesGrand").innerHTML = ReactDOMServer.renderToString(<EtatCuvesPrix/>);
-    //                 break;
-    //             case "Demande de réapprovisionnement":
-    //                 document.getElementById("cuvesGrand").innerHTML = ReactDOMServer.renderToString(<EtatCuvesReapro/>);
-    //                 break;
-    //             default:
-    //                 console.log("Bouton inconnu cliqué" + buttonText);
-    //                 break;
-    //         }
-    //         event.preventDefault();
-    //     }
-    // });
 
-    function handleClick() {
-        console.log("click");
-        document.addEventListener("click", function (event) {
-            if (event.target.classList.contains("btnCuvesGrandClick")) {
-
+    let energies = [];
+    document.addEventListener("click", function (event) {
+        if (event.target.classList.contains("btnCuvesGrandClick")) {
             const buttonText = event.target.textContent;
             console.log(buttonText);
             switch (buttonText) {
