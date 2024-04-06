@@ -1,45 +1,23 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
-const jours = ["Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi", "Dimanche"];
+function SelectHeure({onChange, jour, horaire}) {
 
-function SelectHeure({ onChange, valeurInitiale, jour}) {
-    const [heure, setHeure] = useState(valeurInitiale);
 
     const handleChange = (e) => {
         const nouvelleHeure = e.target.value;
-        setHeure(nouvelleHeure);
         onChange(nouvelleHeure);
     };
-
-    const getHoraireOuverture = (jour) => {
-        fetch('/horaires/ouverture/get/'+jour)
-        .then(response => response.json())
-        .then(data => {
-            console.log(data.heure_ouverture);
-            return data.heure_ouverture;
-        })
-    };
     
-    const getHoraireFermeture = (jour) => {
-        fetch('/horaires/fermeture/get/'+jour)
-        .then(response => response.json())
-        .then(data => {
-            console.log(data.heure_fermeture);
-            return data.heure_fermeture;
-        })
-    };
 
-    const horaireOuverture = getHoraireOuverture(jour);
-    const horaireFermeture = getHoraireFermeture(jour);
-
-
+  
     return (
-        <select className='horaires' onChange={handleChange} value={heure}>
+        <select className='horaires' onChange={handleChange}>
             {
                 [...Array(24).keys()].map(i =>
                     [0, 30].map(j => {
                         let heureFormat = (i < 10 ? '0' + i : i) + ':' + (j < 10 ? '0' + j : j);
-                        if (heureFormat === horaireOuverture || heureFormat === horaireFermeture) {
+                        
+                        if (heureFormat === horaire || heureFormat === horaire) {
                             return <option value={heureFormat} key={heureFormat} selected>{heureFormat}</option>
                         }
                         else {
@@ -53,32 +31,18 @@ function SelectHeure({ onChange, valeurInitiale, jour}) {
 }
 
 const HoraireGrand = ({}) => {
-    const [heureOuverture, setHeureOuverture] = useState("06:00");
-    const [heureFermeture, setHeureFermeture] = useState("22:00");
-    
+    const jours = ["Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi", "Dimanche"];
     const handleHeureOuverture = () => {
-        console.log("jour : ");
-        const heures = document.querySelector('.horaires');
-        console.log(heures);
 
-    //     const nouvelleHeure = document.querySelector('.heures')
-    //     console.log(nouvelleHeure);
-    //     console.log("Nouvelle heure d'ouverture : " + nouvelleHeure);
-    //     setHeureOuverture(nouvelleHeure);
-    //     setHeureFermetureDb(nouvelleHeure);
+        
     };
     
+    
     const handleHeureFermeture = () => {
-        // console.log("jour : " + jour);
-        // const nouvelleHeure = document.querySelector('.heures')[jours.indexOf(jour)].value;
-        // console.log("Nouvelle heure de fermeture : " + nouvelleHeure);
-        // setHeureFermeture(nouvelleHeure);
-        // setHeureFermetureDb(nouvelleHeure);
+      
     };
 
     const handleValider = () => {
-        //pour enregistrer dans la bd
-        console.log("Nouvelles valeurs sauvegardées :", heureOuverture, heureFermeture);
 
     };
 
@@ -104,6 +68,28 @@ const HoraireGrand = ({}) => {
         //a remet comme avant les modifs
     };
 
+    const getHoraireOuverture = async (jour) => {
+        let horaire;
+        await fetch('/horaires/ouverture/get/'+jour)
+        .then(response => response.json())
+        .then(data => {
+            horaire = data.horaire_ouverture;
+        });
+        return horaire;
+
+    };
+ 
+    const getHoraireFermeture = async (jour) => {
+        let horaire;
+        await fetch('/horaires/fermeture/get/'+jour)
+        .then(response => response.json())
+        .then(data => {
+            horaire = data.horaire_fermeture;
+        });
+        return horaire;
+    }
+
+
     return (
         <section id="modifHoraire">
             <div className="composantGrand">
@@ -121,101 +107,23 @@ const HoraireGrand = ({}) => {
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>Lundi</td>
-                                <td><SelectHeure
-                                        onChange={handleHeureOuverture} 
-                                        valeurInitiale={heureOuverture} 
-                                        jour={"Lundi"}
-                                        />
-                                </td>
-                                <td><SelectHeure 
-                                        onChange={handleHeureFermeture} 
-                                        valeurInitiale={heureFermeture} 
-                                        jour={"Lundi"}
-                                        /></td>
-                            </tr>
-                            <tr>
-                                <td>Mardi</td>
-                                <td><SelectHeure 
-                                        onChange={handleHeureOuverture} 
-                                        valeurInitiale={heureOuverture}
-                                        jour={"Mardi"}
-                                    />
-                                </td>
-                                <td>
-                                    <SelectHeure 
-                                        onChange={handleHeureFermeture} 
-                                        valeurInitiale={heureFermeture} 
-                                        jour={"Mardi"}
-                                    />
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Mercredi</td>
-                                <td><SelectHeure 
-                                        onChange={handleHeureOuverture} 
-                                        valeurInitiale={heureOuverture} 
-                                        jour={"Mercredi"}
-                                        /></td>
-                                <td><SelectHeure 
-                                        onChange={handleHeureFermeture} 
-                                        valeurInitiale={heureFermeture}
-                                        jour={"Mercredi"}
-                                        /></td>
-                            </tr>
-                            <tr>
-                                <td>Jeudi</td>
-                                <td><SelectHeure 
-                                        onChange={handleHeureOuverture} 
-                                        valeurInitiale={heureOuverture} 
-                                        jour={"Jeudi"}
-                                        /></td>
-                                <td><SelectHeure 
-                                        onChange={handleHeureFermeture} 
-                                        valeurInitiale={heureFermeture} 
-                                        jour={"Jeudi"}
-                                        /></td>
-                            </tr>
-                            <tr>
-                                <td>Vendredi</td>
-                                <td><SelectHeure 
-                                        onChange={handleHeureOuverture} 
-                                        valeurInitiale={heureOuverture}
-                                        jour={"Vendredi"}
-                                        /></td>
-                                <td><SelectHeure 
-                                        onChange={handleHeureFermeture} 
-                                        valeurInitiale={heureFermeture} 
-                                        jour={"Vendredi"}
-                                        /></td>
-                            </tr>
-                            <tr>
-                                <td>Samedi</td>
-                                <td><SelectHeure 
-                                        onChange={handleHeureOuverture} 
-                                        valeurInitiale={heureOuverture} 
-                                        jour={"Samedi"}
-                                        /></td>
-                                <td><SelectHeure 
-                                        onChange={handleHeureFermeture} 
-                                        valeurInitiale={heureFermeture} 
-                                        jour={"Samedi"}
-                                        /></td>
-                            </tr>
-                            <tr>
-                                <td>Dimanche</td>
-                                <td><SelectHeure 
-                                        onChange={handleHeureOuverture} 
-                                        valeurInitiale={heureOuverture} 
-                                        jour={"Dimanche"}
-                                        /></td>
-                                <td><SelectHeure 
-                                        onChange={handleHeureFermeture} 
-                                        valeurInitiale={heureFermeture} 
-                                        jour={"Dimanche"}
-                                        /></td>
-                            </tr>
+                            {
+                                jours.map(async jour => {
+                                    const horaire_ouverture = await getHoraireOuverture(jour);
+                                    const horaire_fermeture = await getHoraireFermeture(jour);
+                                    return (
+                                        <tr>
+                                            <td>{jour}</td>
+                                            <td>
+                                                <SelectHeure onChange={setHeureOuvertureDb} jour={jour} horaire={horaire_ouverture}/>
+                                            </td>
+                                            <td>
+                                                <SelectHeure onChange={setHeureFermetureDb} jour={jour} horaire={horaire_fermeture}/>
+                                            </td>
+                                        </tr>
+                                    );
+                                })
+                            }
                         </tbody>
                     </table>
                     <button className='buttonAnnuler' onClick={handleAnnuler}>Annuler</button>

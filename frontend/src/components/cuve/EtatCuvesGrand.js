@@ -23,7 +23,7 @@ const EtatCuvesGrand = () => {
                     break;
             }
         }
-    }); }
+    }); 
     return (
         <div className="composantGrand" id="cuvesGrands">
             <div className="Divflex">
@@ -42,7 +42,7 @@ const EtatCuvesGrand = () => {
                 <Cuve carburant={"DIESEL"} niveau={50} />
                 <Cuve carburant={"GPL"} niveau={2} />
                 <div id="cuvesButtons" className="DivBlock">
-                    <button className="btnCuvesGrandClick" id="thefirst" onClick={handleClick}>Modifier le prix</button>
+                    <button className="btnCuvesGrandClick" id="thefirst">Modifier le prix</button>
                     <button className="btnCuvesGrandClick">Demande de réapprovisionnement</button>
                 </div>
             </div>

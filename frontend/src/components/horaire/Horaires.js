@@ -2,8 +2,8 @@ import agrandir from '../../assets/img/agrandir.png';
 import React, { useState } from 'react'; 
 
 function SelectHeureMatin(jour) {
+    
     const [heureMatin, setHeureMatin] = useState("6h");
-
 
     return (
         <div>
@@ -14,7 +14,6 @@ function SelectHeureMatin(jour) {
 
 function SelectHeureSoir(jour) {
     const [heureSoir, setHeureSoir] = useState("22h");
-
 
     return (
         <div>

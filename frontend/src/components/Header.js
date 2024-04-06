@@ -11,6 +11,14 @@ import CarteMembre from './carteMembre/CarteMembre';
 import CarteEnergie from './carteEnergie/CarteEnergie';
 import StatutPompe from './pompe/StatutPompe';
 
+let pompesStates;
+
+await fetch('/pompes/get')
+    .then(response => response.json())
+    .then(data => {
+        pompesStates = data;
+    });
+
 const Header = () => {
 
     const handleClick = (componentId) => () => {
@@ -62,13 +70,12 @@ const Header = () => {
                     </div>
 
 
-                    {/* pompes statut */}
                     <div className='pompes'>
                         <div className='pompes-content'>
-                            <StatutPompe numeroPompe={1} carburant="SP-95" quantite={80} prix={60} />
-                            <StatutPompe numeroPompe={2} carburant="SP-96" quantite={50} prix={60} />
-                            <StatutPompe numeroPompe={3} carburant="SP-97" quantite={80} prix={60} />
-                            <StatutPompe numeroPompe={4} carburant="Gazole" quantite={80} prix={60} />
+                            <StatutPompe numeroPompe={1} carburant="SP-95" quantite={80} prix={60} statut={pompesStates[0].est_active} />
+                            <StatutPompe numeroPompe={2} carburant="SP-96" quantite={50} prix={60} statut={pompesStates[1].est_active} />
+                            <StatutPompe numeroPompe={3} carburant="SP-97" quantite={80} prix={60} statut={pompesStates[2].est_active} />
+                            <StatutPompe numeroPompe={4} carburant="Gazole" quantite={80} prix={60} statut={pompesStates[3].est_active} />
                             {/* <StatutPompe numeroPompe={1} carburant="SP-95" quantite={80} prix={60} /> */}
                         </div>
                     </div>

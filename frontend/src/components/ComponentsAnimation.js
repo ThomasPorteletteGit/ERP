@@ -25,22 +25,16 @@ const ComponentsAnimation = () => {
                     const btnesp = document.querySelector('#esp');
                     const btncb = document.querySelector('#cb');
                     const btnce = document.querySelector('#carteEnergie');
-                    console.log(btncb);
-                    console.log(btnesp);
                     if (img) {
-                        console.log('add event listener for ' + componentId);
                         img.addEventListener("click", handleClick(componentId));
                     }
                     if (btnesp) {
-                        console.log('add event listener for ' + componentId);
                         btnesp.addEventListener("click", handleClick(componentId));
                     }
                     if (btncb) {
-                        console.log('add event listener for ' + componentId);
                         btncb.addEventListener("click", handleClick(componentId));
                     }
                     if (btnce) {
-                        console.log('add event listener for ' + componentId);
                         btnce.addEventListener("click", handleClick(componentId));
                     }
                 }
