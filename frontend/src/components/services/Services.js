@@ -15,15 +15,19 @@ const services = () => {
                 </div>
                 <div className="button_container">
                     <button className="button_service_parking">
+                        <p id="text_parking">Parking</p>
                         <img src={parkingImage} id="image_parking" alt="parking"/>
                     </button>
                     <button className="button_service_voiture">
+                        <p id="text_voiture">Covoiturage</p>
                         <img src={covoiturage} id="image_covoiturage" alt="covoiturage"/>
                     </button>
                     <button className="button_service_livraison">
+                        <p id="text_livraison">Livraison</p>
                         <img src={livraison} id="image_livraison" alt="livraison"/>
                     </button>
                     <button className="button_service_autres">
+                        <p id="text_autre">Autres</p>
                         <img src={autres} id="image_autres" alt="autres"/>
                     </button>
                 </div>
