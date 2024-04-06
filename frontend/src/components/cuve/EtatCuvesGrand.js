@@ -7,13 +7,14 @@ import EtatCuvesReapro from "./EtatCuvesReapro";
 const EtatCuvesGrand = () => {
     document.addEventListener("click", function (event) {
         if (event.target.classList.contains("btnCuvesGrandClick")) {
+            console.log("icicicicic" + event.target.textContent);
             const buttonText = event.target.textContent;
             switch (buttonText) {
                 case "Modifier le prix":
-                    document.getElementById("cuvesGrand").innerHTML = ReactDOMServer.renderToString(<EtatCuvesPrix/>);
+                    document.getElementById("cuvesGrand").innerHTML = ReactDOMServer.renderToString(<EtatCuvesPrix />);
                     break;
                 case "Demande de réapprovisionnement":
-                    document.getElementById("cuvesGrand").innerHTML = ReactDOMServer.renderToString(<EtatCuvesReapro/>);
+                    document.getElementById("cuvesGrand").innerHTML = ReactDOMServer.renderToString(<EtatCuvesReapro />);
                     break;
                 default:
                     console.log("Bouton inconnu cliqué" + buttonText);
@@ -23,7 +24,7 @@ const EtatCuvesGrand = () => {
         }
     });
     return (
-        <div className="composantGrand"  id="cuvesGrands">
+        <div className="composantGrand" id="cuvesGrands">
             <div className="Divflex">
                 <div id="topComposant">
                     <h2 className="component_title">🛢️ Etat des cuves</h2>
