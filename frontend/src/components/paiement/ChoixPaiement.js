@@ -11,11 +11,11 @@ const ChoixPaiement = () => {
                 <div className='paymentChoice'>
                     <button id="esp" className='cdpbouton'>
                         <p className="carte_text">CASH</p>
-                        <img src={cash} id="emoji_cash" alt="cash"/>
+                        <img src={cash} id="emoji_cash" alt="cash" />
                     </button>
                     <button id="cb" className='cdpbouton'>
                         <p className="carte_text">CB</p>
-                        <img src={creditCard} id="emoji_cb" alt="Cb"/>
+                        <img src={creditCard} id="emoji_cb" alt="Cb" />
                     </button>
                     <button id="carteEnergie" className='cdpbouton'>
                         <p className="carte_text">ENERGIE</p>

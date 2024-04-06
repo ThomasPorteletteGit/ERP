@@ -3,12 +3,20 @@ body {
     padding: 0;
 }
 
+#connexionId {
+    width: 100vw;
+    height: 100vh;
+    background: url('https://i.imgur.com/oEt8JSp.jpg');
+    background-size: cover;
+
+}
+
 .login-box {
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 400px;
-    padding: 40px;
+    width: 70%;
+    padding: 10%;
     transform: translate(-50%, -50%);
     background: rgba(0, 0, 0, .5);
     box-sizing: border-box;
@@ -16,6 +24,7 @@ body {
     border-radius: 10px;
     font-family: sans-serif;
     background: linear-gradient(#141e30, #243b55);
+    height: 80%;
 }
 
 .login-box h2 {
@@ -57,14 +66,13 @@ body {
     top: -20px;
     left: 0;
     color: #03e9f4;
-    font-size: 12px;
+    font-size: 15px;
 }
 
-.login-box form a {
+.login-box form button {
     position: relative;
     display: inline-block;
     padding: 10px 20px;
-    color: #03e9f4;
     font-size: 16px;
     text-decoration: none;
     text-transform: uppercase;
@@ -74,14 +82,14 @@ body {
     letter-spacing: 4px
 }
 
-.login-box a:hover {
+.login-box button:hover {
     background: #03e9f4;
     color: #fff;
     border-radius: 5px;
 
 }
 
-.login-box a span {
+.login-box button span {
     position: absolute;
     display: block;
 }
