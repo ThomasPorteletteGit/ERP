@@ -157,9 +157,7 @@ const ChoixPaiement = () => {
                     <button onClick={handleEqualsClick}>=</button>
                     <button onClick={() => handleOperatorClick('/')}>/</button>
                 </div>
-                <div className="input-display">
-                    <p>{inputValue}€</p>
-                </div>
+            
             </div>
         </div>
     );

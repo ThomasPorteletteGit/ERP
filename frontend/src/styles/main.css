@@ -571,7 +571,6 @@ p {
     border-bottom: 1px solid white;
     display: flex;
     align-items: center;
-
 }
 
 .top_container img {
@@ -598,7 +597,7 @@ p {
 
 .button_container button {
     background-size: cover;
-    background-color: white;
+    background-color: #c3f3fb;
     border: none;
     width: 45%;
     height: 35%;
@@ -609,28 +608,73 @@ p {
 
 
 #image_parking {
-    transform: rotate(30deg);
-    width: 50%;
-    margin-top: -5%;
-}
-
-#image_covoiturage {
-    transform: rotate(30deg);
-    width: 100%;
-    margin-top: -15%;
-    margin-right: 35%;
-}
-
-#image_livraison {
-    transform: rotate(30deg);
     width: 80%;
     margin-top: -15%;
 }
 
+#image_covoiturage {
+    width: 69%;
+    margin-top: -12%;
+    margin-right: 1%;
+}
+
+#image_livraison {
+    width: 80%;
+    margin-top: -18%;
+}
+
+#text_autre {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: black;
+    font-size: 24px;
+    font-weight: 900;
+    text-align: center;
+    z-index: 1;
+}
+
+#text_livraison{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: black;
+    font-size: 24px;
+    font-weight: 900;
+    text-align: center;
+    z-index: 1;
+}
+
+#text_voiture{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: black;
+    font-size: 24px;
+    font-weight: 900;
+    text-align: center;
+    z-index: 1;
+}
+
+#text_parking{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: black;
+    font-size: 24px;
+    font-weight: 900;
+    text-align: center;
+    z-index: 1;
+}
+
 #image_autres {
-    transform: rotate(30deg);
-    width: 70%;
-    margin-top: -15%;
+    width: 100%;
+    margin-top: -30%;
+    z-index: 0;
 }
 
 /*transaction*/
@@ -655,7 +699,7 @@ p {
     display: flex;
     align-items: center;
     width: 100%;
-    height: 100%;
+    height: 10%;
 }
 
 .transaction-details {
@@ -668,7 +712,8 @@ p {
     color: black;
     overflow-y: auto;
     overflow-x: auto;
-    max-height: 20vh;
+    height: 92%;
+    scrollbar-width: none;
 }
 
 .transaction-details table {
@@ -827,6 +872,11 @@ select {
     border-radius: 5px;
 }
 
+.transaction-container{
+    height: 80%;
+
+}
+
 
 /*Horaires*/
 #horaires {
@@ -922,6 +972,8 @@ select {
     padding: 8px;
 
 }
+
+
 
 /* incidents */
 
@@ -1395,7 +1447,7 @@ th {
     background-color: #2B2D42;
     border-radius: 20px;
     width: 100%;
-    height: 83%;
+    height: 73.8vh;
 }
 
 .container-composantGrandIncident h2 {
@@ -1514,6 +1566,32 @@ ul li {
         
 } */
 
+#parkingButton {
+    background: url("../assets/img/image-210.png") ; 
+    background-size: 100% 100%; 
+    background-repeat: no-repeat; 
+      
+}
+
+#covoiturageButton{
+    background: url("../assets/img/image-220.png") ; 
+    background-size: 100% 100%; 
+    background-repeat: no-repeat; 
+
+}
+
+#livraisonButton{
+    background: url("../assets/img/image-230.png") ; 
+    background-size: 100% 100%; 
+    background-repeat: no-repeat; 
+}
+
+#autresButton{
+    background: url("../assets/img/image-240.png") ; 
+    background-size: 100% 100%; 
+    background-repeat: no-repeat; 
+}
+
 .button_container_grand_services button {
     background-size: cover;
     background-color: white;
@@ -1522,7 +1600,8 @@ ul li {
     height: 45%;
     border-radius: 8px;
     cursor: pointer;
-    font-size: 25px;
+    font-size: 35px; 
+    font-weight: bold;
 }
 
 .button_container_grand_services {
@@ -1586,6 +1665,17 @@ ul li {
     margin-top: 5%;
 }
 
+.boutonsAnnulationReservation button {
+    width: 100%;
+    height: 20%;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 25px;
+    background-color: #4d5b84;
+    border: black;
+    margin: 5px;
+}
+
 .bouttonsParking {
     display: flex;
     justify-content: space-around;
@@ -1634,7 +1724,7 @@ ul li {
 }
 
 .container_placesP {
-    max-height: 425px;
+    max-height: 75%;
     margin: 5px;
     overflow-y: auto;
     border-radius: 5px;
@@ -1704,10 +1794,6 @@ ul li {
     border-radius: 20px;
     width: 100%;
     height: 83%;
-}
-
-#modifHoraire {
-    margin-top: 20px;
 }
 
 .component_title {
@@ -2135,6 +2221,144 @@ input[name="nameProduit"] {
     background-color: #45a049;
 }
 
+/* EtatStockReapro */
+
+.etat-stock h2 {
+    font-size: 24px; 
+    margin-top: 10px; 
+    margin-bottom: 10px; 
+}
+
+.etat-stock {
+    margin: 5%;
+    min-height: 20%;
+}
+
+.etat-stock table {
+    width: 100%;
+    border-collapse: collapse;
+    height: 10%;
+    margin-bottom: 15px;
+}
+
+.etat-stock th, .etat-stock td {
+    padding: 20px;
+    text-align: center;
+    border: 1px solid black; /* Ajout de la bordure noire */
+}
+
+.etat-stock th {
+    background-color: #2B2D42;
+    color: rgb(255, 255, 255);
+}
+
+.etat-stock td {
+    border-bottom: 1px solid #000000;
+    color: #000;
+    background-color: #dbdada; /* Couleur de fond blanche pour toutes les lignes */
+}
+
+.etat-stock .produit {
+    width: 40%;
+}
+
+.etat-stock .quantite, .etat-stock .prix, .etat-stock .action {
+    width: 20%;
+}
+
+.etat-stock .action button {
+    margin: 0 5px;
+    padding: 5px 10px;
+    border: none;
+    background-color: #EF233C;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.etat-stock .action button:hover {
+    background-color: #D90429;
+}
+
+.etat-stock .action button:active {
+    transform: translateY(1px);
+}
+
+.table-scroll {
+    overflow-y: auto;
+    max-height: 10%; 
+}
+
+.buttonRéapprovisionnement {
+    background-color: #dfdfdf;
+    color: rgb(0, 0, 0);
+    margin: 5%;
+    border: black;
+    font-size: 150%;
+    padding: 10px 20px;
+    border-radius: 20px;
+    padding: 2%;
+    cursor: pointer;
+    height: 30%;
+    width: 50%;
+}
+
+/* Annuler Réaprovisionnement */
+
+.container-AnnulerRéapro {
+    margin: 5%;
+}
+
+.AnnulerRéapro {
+    padding: 20px;
+    padding-bottom: 30%;
+    border-radius: 5px;
+    margin: 2%;
+    height: 80%;
+}
+
+.product-AnnulerRéapro {
+    background-color: rgb(253, 253, 253);
+    display: flex;
+    border-radius: 20px;
+    align-items: center;
+    color: #000;
+    font-size: 10%;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    margin: 2%;
+}
+
+.product-info {
+    flex-grow: 1;
+    text-align: left; /* Aligner le texte à gauche */
+}
+
+.product-info p {
+    font-size: 20px;
+    padding-right: 50%;
+    margin: 2%; /* Supprimer les marges pour éviter l'espacement supplémentaire */
+}
+
+
+.cancel-button-container {
+    margin-right: 10%;
+}
+
+.cancel-button {
+    border-radius: 20px;
+    padding: 25%;
+    border-color: #000;
+    color: white;
+    background-color: #393480;
+    width: 180%;
+
+}
+
+.AnnulerRéapro::-webkit-scrollbar {
+    width: 10px;
+}
+
 
 /****************************** Réservation d'un covoiturage ***********************************/
 
@@ -2194,7 +2418,7 @@ input[name="nameProduit"] {
 }
 
 .container_proposition_Cov {
-    max-height: 425px;
+    max-height: 65%;
     margin: 5px;
     overflow-y: auto;
     border-radius: 5px;
@@ -2236,6 +2460,18 @@ input[name="nameProduit"] {
 
 }
 
+.button_ajout_propositionCOV {
+   
+        border: solid #000;
+        border-radius: 8px;
+        padding: 10px;
+        margin: 15px;
+        background-color: #4d5b84;
+        box-shadow: 5px 6px 5px #101e49;
+
+}
+
+
 /*$$$$$$$$$$$$$$$$$$$$$ Formulaire covoiturage $$$$$$$$$$$$$$$$$$$$$*/
 
 .formulaire_enregistrer_covoiturage {
@@ -2258,6 +2494,15 @@ input[name="nameProduit"] {
     margin: 5%;
 }
 
+.boutonsAnnulationConfirmationCOV {
+    display: flex;
+    justify-content: space-around;
+    align-items: horizontal;
+    /* resize: horizontal; */
+    margin-top: 5%;
+
+}
+
 
 /****************************** Livraisons *************************************/
 
@@ -2272,7 +2517,7 @@ input[name="nameProduit"] {
 }
 
 .container_livraison {
-    max-height: 100%;
+    max-height: 75%;
     margin: 5px;
     overflow-y: auto;
     border-radius: 5px;
