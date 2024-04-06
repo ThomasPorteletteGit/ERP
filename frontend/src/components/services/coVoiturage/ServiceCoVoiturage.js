@@ -4,10 +4,10 @@ import services from "../Services";
 
 import ReactDOMServer from 'react-dom/server';
 import searchIcon from '../../../assets/img/searchIcon.png';
-import backArrow from '../../../assets/img/en-arriere.png'
+import backArrow from '../../../assets/img/en-arriere.png';
 import ReservationPlaceP from "../placeParking/ReservationPlaceP";
 import { useHistory } from 'react-router-dom';
-// import ModifierCov from './ModifierCov';
+import EnregistrerCovoiturage from './EnregistrerCovoiturage';
 import ServicesGrand from "../ServicesGrand";
 
 const ServiceCoVoiturage = () => {
@@ -24,6 +24,21 @@ const ServiceCoVoiturage = () => {
 
     ];
     
+    // useEffect(() => {
+    //     const boutonRetour = document.getElementById("backArrowServiceButton");
+    //     if (boutonRetour != null) {
+    //         boutonRetour.addEventListener('click', handleBackButtonClick);
+            
+    //     }
+    // }, []);
+
+    // const handleBackButtonClick = () => {
+    //     const divGeneral = document.getElementsByClassName("dashboard-right")[0];
+    //     console.log("Retour à la page ServicesGrand");
+    //     divGeneral.innerHTML = ReactDOMServer.renderToString(<ServicesGrand />);
+    //     divGeneral.style.display = "block";
+    // };
+
      // permet de récup la couleur en fonction du statut
      const getStatusColor = (statut) => {
         return statut ? 'green' : 'red';
@@ -40,7 +55,7 @@ const ServiceCoVoiturage = () => {
 
             buttonReserver.addEventListener("click", function() {
                 console.log(" ## RESERVATION PLACE " + element.id_cov + " ## ");
-            //    reserverPropositionCov(element.id_cov)
+                modifierCov(element.id_cov)
                 
             });
             event.preventDefault();
@@ -85,25 +100,6 @@ const ServiceCoVoiturage = () => {
         ));
     }    
     
-    /*
-        <script>
-            document.addEventListener('DOMContentLoaded', function (event) {    
-                const boutonRetour = document.getElementById("backArrowServiceButton");
-                console.log("Bouton retour" + boutonRetour);
-                if (boutonRetour != null) {
-
-                    boutonRetour.addEventListener('click', () => {
-                        const divGeneral = document.getElementsByClassName("dashboard-right")[0];
-                        console.log("Reserver la place de parking");
-                        
-                        divGeneral.innerHTML = ReactDOMServer.renderToString(<ServicesGrand />);
-                        divGeneral.style.display = "block";
-                    
-                    });
-                }
-            });
-            </script>
-    */
     
     
     return (
@@ -117,11 +113,7 @@ const ServiceCoVoiturage = () => {
             <form className="formulaireRechercheCoV">
 
                     
-                <button id="backArrowServiceButton" className="backArrowService" > 
-                    retour</button>
-                    
-                    
-              
+                <button id="backArrowServiceButton" className="backArrowServiceButton" >Retour</button>
                 <input type="text" name="text" className="search" placeholder=" Entrez un numéro de place " />
                 <button type="submit" name="submit" className="submitSearchCov">
                     <img src={searchIcon} alt="Search" className="searchIconImage" />
@@ -141,16 +133,52 @@ const ServiceCoVoiturage = () => {
 
 };
 
+document.addEventListener("click", function (event) {
+    if (event.target.classList.contains("backArrowServiceButton")) {
+        const buttonText = event.target.textContent;
+        switch (buttonText) {
+            case "Retour":
+                console.log("Bouton Retour aux services grands");
+                // TODO: Ajouter code pour afficher les places de parking
+                const divGeneral = document.getElementsByClassName("dashboard-right")[0];
+                console.log("Reserver la place de parking");
+                
+                divGeneral.innerHTML = ReactDOMServer.renderToString(<ServicesGrand />);
+                divGeneral.style.display = "block";
+                break;
+            default:
+                console.log("Bouton inconnu cliqué" + buttonText);
+                break;
+        }
+        event.preventDefault();
+        event.stopPropagation();
+    }
+});
 
 
+// document.addEventListener('DOMContentLoaded', function (event) {    
+//     const boutonRetour = document.querySelector("backArrowServiceButton");
+//     console.log("Bouton retour" + boutonRetour);
+//     if (boutonRetour != null) {
 
-// function reserverPropositionCov(id_cov) { // TODO mmodif -> covoiturage
-//     const divGeneral = document.getElementsByClassName("dashboard-right")[0];
-//     console.log("Reserver la place de parking");
+//         boutonRetour.addEventListener('click', () => {
+//             const divGeneral = document.getElementsByClassName("dashboard-right")[0];
+//             console.log("Reserver la place de parking");
+            
+//             divGeneral.innerHTML = ReactDOMServer.renderToString(<ServicesGrand />);
+//             divGeneral.style.display = "block";
+        
+//         });
+//     }
+// });
+
+function modifierCov(id_cov) { // TODO mmodif -> covoiturage
+    const divGeneral = document.getElementsByClassName("dashboard-right")[0];
+    console.log("Reserver la place de parking");
     
-//     divGeneral.innerHTML = ReactDOMServer.renderToString(<ModifierCov />);
-//     divGeneral.style.display = "block";
-// }
+    divGeneral.innerHTML = ReactDOMServer.renderToString(<EnregistrerCovoiturage />);
+    divGeneral.style.display = "block";
+}
 
 
 

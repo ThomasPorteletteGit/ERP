@@ -1,7 +1,13 @@
 import React from 'react';
+import { useState } from 'react';
 import agrandir from '../assets/img/agrandir.png';
 
+
 const Transaction = () => {
+
+    // sauvegarder les filtres
+    const [transactionType, setTransactionType] = useState(''); 
+    const [transactionDate, setTransactionDate] = useState(''); 
 
     // à récup dans la bd
     const transactions = [
@@ -20,9 +26,7 @@ const Transaction = () => {
         { id: 13, heure: '15:45', total: '20,05€', type: 'ESP', statut: 'En attente', isLoss: true },
         { id: 14, heure: '12:30', total: '50,50€', type: 'CB', statut: 'Validé', isLoss: false },
     ];
-
-
-    // permet de récup la couleur en fonction du statut
+    
     const getStatusColor = (statut) => {
         return statut === 'Validé' ? 'green' : 'red';
     };
@@ -30,6 +34,24 @@ const Transaction = () => {
     const getPaymentTypeClass = (type) => {
         return type === 'CB' ? 'cb-payment' : type === 'ESP' ? 'esp-payment' : '';
     };
+
+    const handleTransactionTypeChange = (e) => {
+        setTransactionType(e.target.value);
+    };
+
+    const handleTransactionDateChange = (e) => {
+        setTransactionDate(e.target.value);
+    };
+
+    const filteredTransactions = transactions.filter(transaction => {
+        if (transactionType && transaction.type !== transactionType) {
+            return false;
+        }
+        if (transactionDate && transaction.heure.split(' ')[0] !== transactionDate) {
+            return false;
+        }
+        return true;
+    });
 
     return (
         <section id="transaction">
@@ -42,14 +64,14 @@ const Transaction = () => {
                     <p>Dernière transaction</p>
 
                     <div className='input-select-container'>
-                        <input type="date" id="datePicker" name="datePicker" />
+                        <input type="date" id="datePicker" name="datePicker" onChange={handleTransactionDateChange} />
 
-                        <select id="typeTransaction" name="typeTransaction">
-                            <option value="cb">CB</option>
-                            <option value="espece">ESP</option>
+                        <select id="typeTransaction" name="typeTransaction" onChange={handleTransactionTypeChange}>
+                            <option value="">Tous</option>
+                            <option value="CB">CB</option>
+                            <option value="ESP">ESP</option>
                         </select>
                     </div>
-
                 </div>
                 <div className='transaction-details'>
                     <table>
@@ -63,7 +85,7 @@ const Transaction = () => {
                             </tr>
                         </thead>
                         <tbody>
-                            {transactions.map(transaction => (
+                            {filteredTransactions.map(transaction => (
                                 <tr key={transaction.id}>
                                     <td>
                                         <span className={`fleche-container ${transaction.isLoss ? 'loss' : 'no-loss'}`}>
@@ -90,5 +112,4 @@ const Transaction = () => {
         </section>
     );
 };
-
 export default Transaction;

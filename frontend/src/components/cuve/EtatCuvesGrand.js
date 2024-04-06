@@ -5,6 +5,7 @@ import EtatCuvesPrix from "./EtatCuvesPrix";
 import EtatCuvesReapro from "./EtatCuvesReapro";
 
 const EtatCuvesGrand = () => {
+<<<<<<< HEAD
     // document.addEventListener("click", function (event) {
     //     if (event.target.classList.contains("btnCuvesGrandClick")) {
     //         const buttonText = event.target.textContent;
@@ -29,14 +30,19 @@ const EtatCuvesGrand = () => {
         document.addEventListener("click", function (event) {
             if (event.target.classList.contains("btnCuvesGrandClick")) {
 
+=======
+    document.addEventListener("click", function (event) {
+        if (event.target.classList.contains("btnCuvesGrandClick")) {
+            console.log("icicicicic" + event.target.textContent);
+>>>>>>> main
             const buttonText = event.target.textContent;
             console.log(buttonText);
             switch (buttonText) {
                 case "Modifier le prix":
-                    document.getElementById("cuvesGrand").innerHTML = ReactDOMServer.renderToString(<EtatCuvesPrix/>);
+                    document.getElementById("cuvesGrand").innerHTML = ReactDOMServer.renderToString(<EtatCuvesPrix />);
                     break;
                 case "Demande de réapprovisionnement":
-                    document.getElementById("cuvesGrand").innerHTML = ReactDOMServer.renderToString(<EtatCuvesReapro/>);
+                    document.getElementById("cuvesGrand").innerHTML = ReactDOMServer.renderToString(<EtatCuvesReapro />);
                     break;
                 default:
                     console.log("Bouton inconnu cliqué" + buttonText);
@@ -45,7 +51,7 @@ const EtatCuvesGrand = () => {
         }
     }); }
     return (
-        <div className="composantGrand"  id="cuvesGrands">
+        <div className="composantGrand" id="cuvesGrands">
             <div className="Divflex">
                 <div id="topComposant">
                     <h2 className="component_title">🛢️ Etat des cuves</h2>

@@ -1,20 +1,20 @@
 import React from "react";
 import ReactDOMServer from 'react-dom/server'
-import ListeClient from "./ListeClient";
-import AjouterCarte from "./AjouterCarte";
-import AvantageCarte from "./AvantageCarte";
+import ListeClientM from "./ListeClientM";
+import AjouterCarteM from "./AjouterCarteM";
+import AvantageCarteM from "./AvantageCarteM";
 
-const CarteEnergie = () => {
+const CarteMembre = () => {
     return (
         <section id="carte">
             <div className="composantGrandCarteEM">
                 <div className="Top_Component_Grand">
-                    <h2 className="component_title">Carte Energie</h2>
+                    <h2 className="component_title">Carte Membre</h2>
                     <hr></hr>
                 </div>
                 <button id="buttonCarteEM" className="buttonCarte">Voir liste client</button>
                 <button id="buttonCarteEM" className="buttonCarte">Ajouter une carte</button>
-                <button id="buttonCarteEM" className="buttonCarte">Avantage carte énergie</button>
+                <button id="buttonCarteEM" className="buttonCarte">Avantage carte membre</button>
             </div>
         </section>
     );
@@ -32,7 +32,7 @@ document.addEventListener("click", function (event) {
                 console.log("Bouton ajouter carte cliqué");
                 ajouterCarte();
                 break;
-            case "Avantage carte énergie":
+            case "Avantage carte membre":
                 console.log("Bouton avantage cliqué");
                 voirAvantage();
                 break;
@@ -49,7 +49,7 @@ function afficherClients() {
     let saveDiv = divGeneral.innerHTML;
     console.log("Afficher les clients");
 
-    divGeneral.innerHTML = ReactDOMServer.renderToString(<ListeClient />);
+    divGeneral.innerHTML = ReactDOMServer.renderToString(<ListeClientM />);
     divGeneral.style.display = "block";
 }
 
@@ -58,7 +58,7 @@ function ajouterCarte() {
     let saveDiv = divGeneral.innerHTML;
     console.log("Afficher les clients");
 
-    divGeneral.innerHTML = ReactDOMServer.renderToString(<AjouterCarte />);
+    divGeneral.innerHTML = ReactDOMServer.renderToString(<AjouterCarteM />);
     divGeneral.style.display = "block";
 }
 
@@ -67,7 +67,7 @@ function voirAvantage(){
     let saveDiv = divGeneral.innerHTML;
     console.log("Afficher les clients");
 
-    divGeneral.innerHTML = ReactDOMServer.renderToString(<AvantageCarte />);
+    divGeneral.innerHTML = ReactDOMServer.renderToString(<AvantageCarteM />);
     divGeneral.style.display = "block";
 }
-export default CarteEnergie;
+export default CarteMembre;

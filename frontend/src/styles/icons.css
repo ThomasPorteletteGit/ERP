@@ -2,9 +2,10 @@
     display: flex;
     gap: 11px;
     width: 100%;
-    height: 14.5%;
+    height: 10%;
     justify-content: center;
     justify-items: center;
+    margin-bottom: 1%;
 }
 .component_title{
     align-self: center;
@@ -12,11 +13,14 @@
 
 .smallIcon{
     background: #2B2D42;
-    font-size: 4vw;
-    height: 11vh;
-    width: 11vw;
+    font-size: 350%;
+    height: 100%;
+    width: 10%;
     border-radius: 20px;
     background-size: cover;
+    align-self: center;
+    align-content: center;
+    align-items: center;
 }
 
 #cuvesGrand{
@@ -43,7 +47,7 @@
     display: block;
     border-radius: 20px;
     width: 100%;
-    height: 83%;
+    height: 73.8vh;
 }
 
 .component_title{
@@ -135,16 +139,16 @@
     gap: 2%;
 }
 
-.DivBlock button{
+/* .DivBlock button{
     margin: 5%;
     width: 90%;
     height: 45%;
     text-align: center;
     font-size: 26px;
-}
+} */
 
 #cuvesGrands{
-    height: 70.9vh;
+    height: 73.8vh;
     width: 56.8vw;
     border-radius: 20px;
 }
