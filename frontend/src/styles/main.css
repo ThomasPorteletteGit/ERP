@@ -957,6 +957,8 @@ select {
 
 }
 
+
+
 /* incidents */
 
 #incidents {
@@ -2163,6 +2165,144 @@ input[name="nameProduit"] {
 
 .custom-file-upload label:hover {
     background-color: #45a049;
+}
+
+/* EtatStockReapro */
+
+.etat-stock h2 {
+    font-size: 24px; 
+    margin-top: 10px; 
+    margin-bottom: 10px; 
+}
+
+.etat-stock {
+    margin: 5%;
+    min-height: 20%;
+}
+
+.etat-stock table {
+    width: 100%;
+    border-collapse: collapse;
+    height: 10%;
+    margin-bottom: 15px;
+}
+
+.etat-stock th, .etat-stock td {
+    padding: 20px;
+    text-align: center;
+    border: 1px solid black; /* Ajout de la bordure noire */
+}
+
+.etat-stock th {
+    background-color: #2B2D42;
+    color: rgb(255, 255, 255);
+}
+
+.etat-stock td {
+    border-bottom: 1px solid #000000;
+    color: #000;
+    background-color: #dbdada; /* Couleur de fond blanche pour toutes les lignes */
+}
+
+.etat-stock .produit {
+    width: 40%;
+}
+
+.etat-stock .quantite, .etat-stock .prix, .etat-stock .action {
+    width: 20%;
+}
+
+.etat-stock .action button {
+    margin: 0 5px;
+    padding: 5px 10px;
+    border: none;
+    background-color: #EF233C;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.etat-stock .action button:hover {
+    background-color: #D90429;
+}
+
+.etat-stock .action button:active {
+    transform: translateY(1px);
+}
+
+.table-scroll {
+    overflow-y: auto;
+    max-height: 10%; 
+}
+
+.buttonRéapprovisionnement {
+    background-color: #dfdfdf;
+    color: rgb(0, 0, 0);
+    margin: 5%;
+    border: black;
+    font-size: 150%;
+    padding: 10px 20px;
+    border-radius: 20px;
+    padding: 2%;
+    cursor: pointer;
+    height: 30%;
+    width: 50%;
+}
+
+/* Annuler Réaprovisionnement */
+
+.container-AnnulerRéapro {
+    margin: 5%;
+}
+
+.AnnulerRéapro {
+    padding: 20px;
+    padding-bottom: 30%;
+    border-radius: 5px;
+    margin: 2%;
+    height: 80%;
+}
+
+.product-AnnulerRéapro {
+    background-color: rgb(253, 253, 253);
+    display: flex;
+    border-radius: 20px;
+    align-items: center;
+    color: #000;
+    font-size: 10%;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    margin: 2%;
+}
+
+.product-info {
+    flex-grow: 1;
+    text-align: left; /* Aligner le texte à gauche */
+}
+
+.product-info p {
+    font-size: 20px;
+    padding-right: 50%;
+    margin: 2%; /* Supprimer les marges pour éviter l'espacement supplémentaire */
+}
+
+
+.cancel-button-container {
+    margin-right: 10%;
+}
+
+.cancel-button {
+    border-radius: 20px;
+    padding: 25%;
+    border-color: #000;
+    color: white;
+    background-color: #393480;
+    width: 180%;
+
+}
+
+.AnnulerRéapro::-webkit-scrollbar {
+    width: 10px;
 }
 
 

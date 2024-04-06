@@ -27,7 +27,7 @@
     /* background-color: aquamarine; */
 }
 
-.buttons .dashboardImages{
+.buttons .dashboardImages {
     width: 14% !important;
     height: 10% !important;
 }
@@ -38,23 +38,33 @@
 }
 
 #header .container .buttons-user img {
-    width: 5vh;
+    width: 4vh;
     padding: 10px;
-    margin-right: 10px;
+    margin-right: 4%;
 }
 
-.user #tomdelacote{
-    margin-top: 10px;
+.user #tomdelacote {
+    margin-left: 5%;
+    margin-top: 1%;
     display: flex;
 }
 
-#user_mail{
+
+
+#user_name {
     color: black;
-    margin-top: 10px;
+    margin-top: -2%;
+    font-size: 20px;
+    font-weight: bolder;
+}
+
+#user_mail {
+    color: black;
+    margin-top: 1%;
     font-size: 15px;
 }
 
-.user .Divflex{
+.user .Divflex {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -62,12 +72,7 @@
 }
 
 
-#user_name{
-    color: black;
-    font-size: 20px;
-    margin-top: -8%;
-    font-weight: bolder;
-}
+
 
 #header .container .buttons-user .user {
     display: flex;
@@ -191,7 +196,7 @@
     margin-left: 200px !important;
 }
 
-.cartes-content{
+.cartes-content {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -241,19 +246,20 @@
     left: -0.6em;
     top: 0.2em;
     background-color: rgb(68, 66, 66);
-    box-shadow: 0 6px 7px rgba(0,0,0,0.3);
+    box-shadow: 0 6px 7px rgba(0, 0, 0, 0.3);
     transition: .4s;
 }
 
-.slider:before, .slider:after {
+.slider:before,
+.slider:after {
     content: "";
     display: block;
 }
 
 .slider:after {
     background: linear-gradient(transparent 50%, rgba(255, 255, 255, 0.15) 0) 0 50% / 50% 100%,
-    repeating-linear-gradient(90deg,rgb(78, 78, 78) 0,rgb(141, 135, 135),rgb(97, 96, 96) 20%,rgb(97, 95, 95) 20%,rgb(99, 99, 99) 40%) 0 50% / 50% 100%,
-    radial-gradient(circle at 50% 50%,rgb(95, 94, 94) 25%, transparent 26%);
+        repeating-linear-gradient(90deg, rgb(78, 78, 78) 0, rgb(141, 135, 135), rgb(97, 96, 96) 20%, rgb(97, 95, 95) 20%, rgb(99, 99, 99) 40%) 0 50% / 50% 100%,
+        radial-gradient(circle at 50% 50%, rgb(95, 94, 94) 25%, transparent 26%);
     background-repeat: no-repeat;
     border: 0.25em solid transparent;
     border-left: 0.4em solid #464646;
@@ -269,18 +275,18 @@
     box-sizing: border-box;
 }
 
-.chk:checked + .slider {
+.chk:checked+.slider {
     background-color: limegreen;
 }
 
-.chk:focus + .slider {
+.chk:focus+.slider {
     box-shadow: 0 0 1px limegreen;
 }
 
-.chk:checked + .slider:before {
+.chk:checked+.slider:before {
     transform: translateY(2.3em);
 }
 
-.chk:checked + .slider:after {
+.chk:checked+.slider:after {
     transform: rotateZ(90deg) rotateY(180deg) translateY(0.45em) translateX(-1.4em);
 }
