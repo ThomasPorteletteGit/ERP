@@ -1,12 +1,13 @@
 import React from "react";
 
 import ReactDOMServer from 'react-dom/server';
+import ServiceCoVoiturage from "./ServiceCoVoiturage";
 
 
 const EnregistrerCovoiturage = () => {
     return (
         
-        <div className="composantGrand DivBlock">
+        <div className="composantGrandCOV DivBlock">
             <div className="Top_Component_Grand">
                 <h2 className="component_title"> Ajouter une proposition de co-voiturage </h2>
             </div>
@@ -45,9 +46,9 @@ const EnregistrerCovoiturage = () => {
                         <input className="inputEnregistrementCovoiturage" type="text" id="destination" name="destination" required></input>
                     </div>
 
-                    <div className="boutonsAnnulationReservation">
-                        <button type="submit" className="boutonAnnulerReservation">Annuler</button>
-                        <button type="submit" className="boutonConfirmerReservation">Réserver</button>
+                    <div className="boutonsAnnulationConfirmationCOV">
+                        <button type="submit" className="boutonAnnulerProposition">Annuler</button>
+                        <button type="submit" className="boutonConfirmerProposition">Réserver</button>
                     </div>
                 </form>
 
@@ -60,4 +61,33 @@ const EnregistrerCovoiturage = () => {
     );   
     
 };
+
+document.addEventListener("click", function (event) {
+
+   
+    if (event.target.classList.contains("boutonAnnulerProposition")) {
+
+        console.log(" ## ANNULATION PROPOSITION COVOITURAGE ## ");
+        const divGeneral = document.getElementsByClassName("dashboard-right")[0];                
+        divGeneral.innerHTML = ReactDOMServer.renderToString(<ServiceCoVoiturage />);
+        divGeneral.style.display = "block";
+        event.preventDefault();
+        event.stopPropagation();
+        
+    }
+    
+    if (event.target.classList.contains("boutonConfirmerProposition")) {
+        console.log(" ## CONFIRMATION PROPOSITION COVOITURAGE ## ");
+
+        // TODO : Ajouter code pour enregistrer la proposition de covoiturage (bd)
+
+
+        // const divGeneral = document.getElementsByClassName("dashboard-right")[0];
+        // divGeneral.innerHTML = ReactDOMServer.renderToString(<ServiceCoVoiturage />);
+        // divGeneral.style.display = "block";
+        event.preventDefault();
+        event.stopPropagation();
+    }
+    event.stopPropagation();
+});
 export default EnregistrerCovoiturage;

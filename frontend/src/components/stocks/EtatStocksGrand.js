@@ -7,7 +7,8 @@ import StockProduit from "./StockProduit";
 const EtatStockGrand = () => {
     document.addEventListener("click", function (event) {
         
- if (event.target.classList.contains("btnStockGrandClickTop" || "btnStockGrandClickBottom")) {           const buttonText = event.target.textContent;
+if (event.target.classList.contains("btnStockGrandClickTop") || event.target.classList.contains("btnStockGrandClickBottom")) {         
+    const buttonText = event.target.textContent;
             switch (buttonText) {
                 case "Voir le stock":
                     document.getElementById("stockGrand").innerHTML = ReactDOMServer.renderToString(<StockProduit/>);
