@@ -46,7 +46,7 @@ Vue choix paiement
     margin-top: 14px;
 }
 
-.choixPaiement{
+.choixPaiement {
     width: 100%;
     height: 100%;
 }
@@ -62,13 +62,87 @@ Vue choix paiement
 
 .paymentChoice button {
     background-size: cover;
-    background-color: white;
+    background-color: #c3f3fb;
     border: none;
     width: 47%;
     height: 50%;
     border-radius: 8px;
     margin-bottom: 10px;
+    position: relative;
+    overflow: clip;
 }
+
+#carteEnergie .carte_text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: black;
+    font-size: 45px;
+    font-weight: 900;
+    text-align: center;
+    line-height: 1.5;
+    z-index: 1;
+}
+
+#emoji_energie {
+    width: 120%;
+    margin-left: 2%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    z-index: 0;
+}
+
+#emoji_cash{
+    width: 90%;
+}
+
+#cb .carte_text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: black; /* Text color */
+    font-size: 45px; /* Adjust font size as needed */
+    font-weight: 900; /* Adjust font weight as needed */
+    text-align: center; /* Center the text horizontally */
+    line-height: 1.5; /* Adjust line height as needed */
+    z-index: 1; /* Ensure text is above the background image */
+}
+
+#emoji_cb {
+    width: 85%; /* Adjust width as needed */
+    transform: rotate(30deg);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 0; /* Ensure image is below the text */
+}
+
+#esp .carte_text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: black; /* Text color */
+    font-size: 35px; /* Adjust font size as needed */
+    font-weight: 900; /* Adjust font weight as needed */
+    text-align: center; /* Center the text horizontally */
+    line-height: 1.5; /* Adjust line height as needed */
+    z-index: 1; /* Ensure text is above the background image */
+}
+
+#emoji_cash {
+    width: 90%; /* Adjust width as needed */
+    transform: rotate(30deg);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 0; /* Ensure image is below the text */
+}
+
 
 /*
 fin choix paiement
@@ -222,17 +296,16 @@ panier
     height: 83vh;
     margin: 1vh 0;
     width: 42%;
-    background-color: #2b2d42;
 }
 
 .dashboard-left {
+    background-color: #2b2d42;
     margin-right: 0.5%;
     margin-left: 0.5%;
     border-radius: 20px;
 }
 
 .dashboard-right {
-    background-color: white !important;
     width: 56% !important;
     display: flex;
     margin-right: 0.5vw;
@@ -525,20 +598,20 @@ p {
     margin-top: -5%;
 }
 
-#image_covoiturage{
+#image_covoiturage {
     transform: rotate(30deg);
     width: 100%;
     margin-top: -15%;
     margin-right: 35%;
 }
 
-#image_livraison{
+#image_livraison {
     transform: rotate(30deg);
     width: 80%;
     margin-top: -15%;
 }
 
-#image_autres{
+#image_autres {
     transform: rotate(30deg);
     width: 70%;
     margin-top: -15%;
@@ -566,7 +639,7 @@ p {
     display: flex;
     align-items: center;
     width: 100%;
-    height: 100%;
+    height: 10%;
 }
 
 .transaction-details {
@@ -579,7 +652,8 @@ p {
     color: black;
     overflow-y: auto;
     overflow-x: auto;
-    max-height: 20vh;
+    height: 92%;
+    scrollbar-width: none;
 }
 
 .transaction-details table {
@@ -738,6 +812,11 @@ select {
     border-radius: 5px;
 }
 
+.transaction-container{
+    height: 80%;
+
+}
+
 
 /*Horaires*/
 #horaires {
@@ -798,12 +877,6 @@ select {
     padding-bottom: 2%;
     margin: 0;
 
-}
-
-.heures {
-    border-radius: 12px;
-    width: auto;
-    height: auto;
 }
 
 #icon_container_clock {
@@ -1215,9 +1288,9 @@ th {
 }
 
 
-
 .disappear-animation {
-    animation: disappear 0.5s ease-out;
+    animation: disappear 0.5s ease-out forwards;
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
 }
 
 @keyframes disappear {
@@ -1228,9 +1301,10 @@ th {
 
     100% {
         opacity: 0;
-        transform: translateY(-100%);
+        transform: translateY(-20px);
     }
 }
+
 
 /* Incident en grand */
 
@@ -1682,6 +1756,7 @@ ul li {
     height: auto;
     align-items: center;
     justify-content: center;
+    padding: 4px;
 }
 
 /* Transaction */
@@ -1835,15 +1910,16 @@ ul li {
     font-size: 16px;
     margin: 10px;
 }
-.infoPoint{
-    display:block;
+
+.infoPoint {
+    display: block;
     border: solid #000;
     border-radius: 8px;
-    padding: 10px; 
+    padding: 10px;
     margin: 15px;
     text-align: center;
     background-color: #4d5b84;
-    box-shadow: 5px 6px 5px #101e49;   
+    box-shadow: 5px 6px 5px #101e49;
 }
 
 .avantage {
@@ -1867,7 +1943,7 @@ ul li {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    
+
     border-radius: 8px;
     box-sizing: border-box;
     margin: 5%;
@@ -1925,7 +2001,7 @@ ul li {
 
 .barreProduit {
     width: 50%;
-    margin: auto; 
+    margin: auto;
     margin-bottom: 2%;
     border: none;
     border-radius: 50px;
@@ -1936,8 +2012,10 @@ ul li {
 
 .imagesContainer {
     display: grid;
-    grid-template-columns: repeat(4, 1fr); /* 4 colonnes */
-    gap: 20px; /* Espacement entre les images */
+    grid-template-columns: repeat(4, 1fr);
+    /* 4 colonnes */
+    gap: 20px;
+    /* Espacement entre les images */
 }
 
 .imageItem {
@@ -1951,38 +2029,40 @@ ul li {
     display: flex;
     margin: 1%;
     flex-direction: column;
-    align-items: center; 
+    align-items: center;
 }
 
-.StockProduitAjouter h2{
+.StockProduitAjouter h2 {
     font-size: 180%;
 }
 
 .StockProduitAjouter form {
-    width: 80%; 
+    width: 80%;
 }
 
 .StockProduitAjouter div {
-    display: flex; /* Make divs flex containers */
-    align-items: center; /* Align items vertically */
-    margin-bottom: 2%; 
+    display: flex;
+    /* Make divs flex containers */
+    align-items: center;
+    /* Align items vertically */
+    margin-bottom: 2%;
 }
 
 .StockProduitAjouter label {
     margin-right: 2%;
-    min-width: 150px; 
+    min-width: 150px;
     font-size: 150%;
 }
 
 input[name="quantityProduit"] {
-    width: 40%; 
+    width: 40%;
     border-radius: 20px;
     height: 40px;
     margin: 1%;
 }
 
 input[name="priceProduit"] {
-    width: 40%; 
+    width: 40%;
     border-radius: 20px;
     height: 40px;
     margin: 1%;
@@ -1990,14 +2070,14 @@ input[name="priceProduit"] {
 
 
 .StockProduitAjouter textarea {
-    width: 100%; 
+    width: 100%;
     border-radius: 20px;
     height: 140px;
     margin: 1%;
 }
 
 input[name="nameProduit"] {
-    width: 100%; 
+    width: 100%;
     border-radius: 20px;
     height: 40px;
     margin: 1%;
@@ -2009,7 +2089,8 @@ input[name="nameProduit"] {
     border: none;
     border-radius: 50px;
     background-color: #ffffff;
-    margin-left: auto; /* Align to the right */
+    margin-left: auto;
+    /* Align to the right */
     padding: 10px 20px;
     cursor: pointer;
 }
@@ -2259,7 +2340,7 @@ input[name="nameProduit"] {
 .submit-container {
     display: flex;
     justify-content: flex-end;
-    margin-top: -10%; 
+    margin-top: -10%;
     margin-bottom: 0%;
 }
 
@@ -2284,6 +2365,7 @@ input[name="nameProduit"] {
     color: rgba(0, 0, 0, 0);
 
 }
+
 /*$$$$$$$$$$$$$$$$$$$$$ Formulaire covoiturage $$$$$$$$$$$$$$$$$$$$$*/
 
 .formulaire_enregistrer_covoiturage {
@@ -2366,4 +2448,3 @@ input[name="nameProduit"] {
     display: flex;
     justify-content: left;
 }
-

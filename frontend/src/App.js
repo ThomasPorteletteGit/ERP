@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import ChoixPaiement from './components/paiement/ChoixPaiement';
 import MontantAPayer from './components/MontantAPayer';
-import Panier from './components/Panier';
+import Panier from './components/caisse/Panier';
 import Dashboard from './components/Dashboard';
 import ConnexionId from './components/connexion/ConnexionId';
 import ConnexionPassword from './components/connexion/ConnexionPassword';

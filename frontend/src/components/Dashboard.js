@@ -1,10 +1,10 @@
 import React from 'react';
 import Header from './Header';
 import EtatCuves from './cuve/EtatCuves';
-import Caisse from './Caisse';
+import Caisse from './caisse/Caisse';
 import Services from "./services/Services";
 import Horaires from './horaire/Horaires';
-import Transaction from './Transaction';
+import Transaction from './transaction/Transaction';
 import Stocks from './Stocks';
 import Incidents from './incidents/Incidents';
 import Releve from './Releve';
@@ -13,7 +13,7 @@ import ComponentsAnimation from "./ComponentsAnimation";
 import ChoixduPaiementCompAnim from './paiement/ChoixduPaiementCompAnim';
 import ChoixPaiement from './paiement/ChoixPaiement';
 
-const Dashboard = ( {userType }) => {
+const Dashboard = ({ userType }) => {
     // const cookie = document.cookie.split('=')[1];
     // // const userType = cookie === 'gerant' ? 'gerant' : 'employe';
     // const userType = 'employe';

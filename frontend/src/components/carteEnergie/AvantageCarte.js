@@ -6,7 +6,7 @@ import AjouterCarte from "./AjouterCarte";
 
 const AvantageCarte = () => {
     const avantagesCarte = () => {
-        return ( 
+        return (
             <div className="avantages">
                 <div className="infoAvantages">
                     <h3>Points de fidélité : </h3>
@@ -39,7 +39,7 @@ const AvantageCarte = () => {
                     {avantagesCarte()}
                 </div>
             </div>
-        </section> 
+        </section>
     );
 
 };

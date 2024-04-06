@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import ReactDOMServer from 'react-dom/server'
 import ListeClient from "./ListeClient";
 import AvantageCarte from "./AvantageCarte";
@@ -59,9 +59,9 @@ document.addEventListener("click", function (event) {
                 break;
             case "Enregistrer":
                 console.log("Bouton enregister cliqué");
-                
+
                 break;
-                case "Annuler":
+            case "Annuler":
                 console.log("Bouton annuler cliqué");
                 annuler();
                 break;
@@ -82,7 +82,7 @@ function afficherClients() {
     divGeneral.style.display = "block";
 }
 
-function voirAvantage(){
+function voirAvantage() {
     const divGeneral = document.getElementsByClassName("dashboard-right")[0];
     let saveDiv = divGeneral.innerHTML;
     console.log("Afficher les clients");
@@ -91,7 +91,7 @@ function voirAvantage(){
     divGeneral.style.display = "block";
 }
 
-function annuler(){
+function annuler() {
     const divGeneral = document.getElementsByClassName("dashboard-right")[0];
     let saveDiv = divGeneral.innerHTML;
     console.log("annuler");

@@ -11,4 +11,9 @@ router.post('/', (req, res) => {
     });
 });
 
+router.post('/getUserStatus', (req, res) => {
+    //id à récupérer
+    getUserStatus(req, res);
+});
+
 module.exports = router;

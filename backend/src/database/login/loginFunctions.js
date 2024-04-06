@@ -24,4 +24,11 @@ function login(username, password, callback) {
     });
 }
 
-module.exports = { login };
+function getUserStatus(id){
+    dao.select('type', 'id_employe='+id, (result) => {
+        return result[0].type;
+    }
+    );
+}
+
+module.exports = { login, getUserStatus};

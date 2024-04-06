@@ -62,7 +62,7 @@ function ajouterCarte() {
     divGeneral.style.display = "block";
 }
 
-function voirAvantage(){
+function voirAvantage() {
     const divGeneral = document.getElementsByClassName("dashboard-right")[0];
     let saveDiv = divGeneral.innerHTML;
     console.log("Afficher les clients");

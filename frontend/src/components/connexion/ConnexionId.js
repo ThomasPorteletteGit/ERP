@@ -1,61 +1,68 @@
-import React, { useState, useRef } from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 const ConnexionId = () => {
     const navigate = useNavigate();
-    //pour stocker et mettre à jour les valeurs
     const [id, setId] = useState('');
-    const input = useRef(null);
 
-    //pour effacer les données
-    const handleClearButton = () => {
-        setId('');
+    const handleEnterButton = (e) => {
+        e.preventDefault();
+        const status = getUserStatus(id);
+        if (status) {
+            writeStatusCookie(status);
+            navigate('/dashboard');
+        }
     };
 
-    //pour ajouter les données
-    const handleButtonClick = (value) => {
-        setId((prevValue) => prevValue + value);
+    const handleInputChange = (e) => {
+        setId(e.target.value);
     };
 
-    //pour rediriger vers la page suivante
-    const handleEnterButton = () => {
-        navigate('/connexionPassword');
-        writeIdCookie();
+    //requete pour récupérer le status de l'utilisateur
+    const getUserStatus = (id) => {
+        const data = { id: id };
+        const options = {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data)
+        }
+        fetch("/getUserStatus", options).then((response) => {
+            if (response.status === 200) {
+                return response.type;
+            } else {
+                setId('');
+                return null;
+            }
+        });
     };
 
-    //pour supprimer un seul élément
-    const handleClear2Button = () => {
-        setId((prevValue) => prevValue.slice(0, -1));
-    };
-
-    function writeIdCookie() {
+    //on écrit le cookie pour le récupérer sur le dashboard (modifier l'affichage en fonction de la valeur)
+    const writeStatusCookie = (status) => {
         let date = new Date();
         date.setTime(date.getTime() + (10 * 60 * 1000));
-        document.cookie = "id=" + id + "; expires=" + date.toUTCString() + "; path=/";
-    }
+        document.cookie = "status=" + status + "; expires=" + date.toUTCString() + "; path=/";
+    };
 
     return (
         <>
-            <div className="login-box">
-                <h2>Connexion</h2>
-                <form>
-                    <div className="user-box">
-                        <input type="text" name="" required="" />
+            <section id="connexionId">
+                <div className="login-box">
+                    <h2>Connexion</h2>
+                    <form onSubmit={handleEnterButton}>
+                        <div className="user-box">
+                            <input type="text" name="" value={id} onChange={handleInputChange} required />
                             <label>Identifiant</label>
                         </div>
-                    <div className="user-box">
-                        <input type="password" name="" required=""/>
+                        <div className="user-box">
+                            <input type="password" name="" required />
                             <label>Mot de passe</label>
-                    </div>
-                    <a href="#">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                        Se connecter
-                    </a>
-                </form>
-            </div>
+                        </div>
+                        <button type="submit">Se connecter</button>
+                    </form>
+                </div>
+            </section>
         </>
     );
 };
