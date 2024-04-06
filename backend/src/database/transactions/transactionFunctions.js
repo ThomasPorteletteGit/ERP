@@ -7,7 +7,7 @@ function getAllTransactions(req, res) {
 }
 
 function getToValidateTransactions(req, res) {
-    dao.select('*', 'Transaction', "WHERE date_validation IS NULL", (result) => {
+    dao.select('*', 'Transaction', "date_validation IS NULL", (result) => {
         res.send(result.rows);
     });
 }

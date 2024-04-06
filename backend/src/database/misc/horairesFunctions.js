@@ -1,29 +1,29 @@
 const dao = require('../../data/DAO');
 
 function getAllHoraires(req, res) {
-    dao.select('*', 'Horaire', "", (result) => {
+    dao.select('*', 'Boutique', "", (result) => {
         res.send(result.rows);
     });
 }
 
 function getHorairesByDay(req, res) {
     const jour = req.params.jour;
-    dao.select('heure_ouverture, heure_fermeture', 'Horaire', `WHERE jour = '${jour}'`, (result) => {
-        res.send(result.rows);
+    dao.select('horaire_ouverture, horaire_fermeture', 'Boutique', `jour = '${jour}'`, (result) => {
+        res.send(result.rows[0]);
     });
 }
 
 function getHorairesOuvertureByDay(req, res) {
     const jour = req.params.jour;
-    dao.select('heure_ouverture', 'Horaire', `WHERE jour = '${jour}'`, (result) => {
-        res.send(result.rows);
+    dao.select('horaire_ouverture', 'Boutique', `jour = '${jour}'`, (result) => {
+        res.send(result.rows[0]);
     });
 }
 
 function getHorairesFermetureByDay(req, res) {
     const jour = req.params.jour;
-    dao.select('heure_fermeture', 'Horaire', `WHERE jour = '${jour}'`, (result) => {
-        res.send(result.rows);
+    dao.select('horaire_fermeture', 'Boutique', `jour = '${jour}'`, (result) => {
+        res.send(result.rows[0]);
     });
 }
 
@@ -31,7 +31,7 @@ function getHorairesFermetureByDay(req, res) {
 function setHoraireOuverture(req, res) {
     const jour = req.params.jour;
     const heure = req.params.heure;
-    dao.update('Horaire', `heure_ouverture = '${heure}'`, `WHERE jour = '${jour}'`, (result) => {
+    dao.update('Boutique', `horaire_ouverture = '${heure}'`, `jour = '${jour}'`, (result) => {
         res.send(result.rows);
     });
 }
@@ -39,7 +39,7 @@ function setHoraireOuverture(req, res) {
 function setHoraireFermeture(req, res) {
     const jour = req.params.jour;
     const heure = req.params.heure;
-    dao.update('Horaire', `heure_fermeture = '${heure}'`, `WHERE jour = '${jour}'`, (result) => {
+    dao.update('Boutique', `horaire_fermeture = '${heure}'`, `jour = '${jour}'`, (result) => {
         res.send(result.rows);
     });
 }

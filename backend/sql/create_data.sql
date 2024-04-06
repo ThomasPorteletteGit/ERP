@@ -12,7 +12,13 @@ INSERT INTO Fournisseur(nom) VALUES ('Ekwateur');
 INSERT INTO Fournisseur(nom) VALUES ('Metro');
 INSERT INTO Fournisseur(nom) VALUES ('Carrefour');
 
-INSERT INTO Boutique VALUES ('08:00:00', '23:00:00');
+INSERT INTO Boutique VALUES ('Lundi', '08:00:00', '23:00:00');
+INSERT INTO Boutique VALUES ('Mardi', '08:00:00', '23:00:00');
+INSERT INTO Boutique VALUES ('Mercredi', '08:00:00', '23:00:00');
+INSERT INTO Boutique VALUES ('Jeudi', '08:00:00', '23:00:00');
+INSERT INTO Boutique VALUES ('Vendredi', '08:00:00', '23:00:00');
+INSERT INTO Boutique VALUES ('Samedi', '08:00:00', '23:00:00');
+INSERT INTO Boutique VALUES ('Dimanche', '08:00:00', '23:00:00');
  
 INSERT INTO Pompe(est_active, en_cours_utilisation) VALUES (TRUE, FALSE);
 INSERT INTO Pompe(est_active, en_cours_utilisation) VALUES (TRUE, FALSE);
@@ -25,18 +31,18 @@ INSERT INTO Reapprovisionnement(id_fournisseur,date_reappro) VALUES (3, '2024-03
 INSERT INTO Reapprovisionnement(id_fournisseur,date_reappro) VALUES (4, '2024-03-20');
 INSERT INTO Reapprovisionnement(id_fournisseur,date_reappro) VALUES (5, '2024-03-20');
  
-INSERT INTO ProduitEnergie(nom, prix, quantite_stock, description, type, id_reappro) VALUES ('SP95', 1.5, 'Essence sans plomb 95', 'Energie', 1);
-INSERT INTO ProduitEnergie(nom, prix, quantite_stock, description, type, id_reappro) VALUES ('SP98', 1.6, 'Essence sans plomb 98', 'Energie', 1);
-INSERT INTO ProduitEnergie(nom, prix, quantite_stock, description, type, id_reappro) VALUES ('Gazole', 1.4, 'Gazole', 'Energie', 1);
-INSERT INTO ProduitEnergie(nom, prix, quantite_stock, description, type, id_reappro) VALUES ('E85', 0.8, 'Ethanol', 'Energie', 2);
-INSERT INTO ProduitEnergie(nom, prix, quantite_stock, description, type, id_reappro) VALUES ('GPL', 0.6, 'Gaz de petrole liquéfié', 'Energie', 2);
-INSERT INTO ProduitEnergie(nom, prix, quantite_stock, description, type, id_reappro) VALUES ('Electricité', 0.2, 'Electricité', 'Energie', 3);
-INSERT INTO ProduitEnergie(nom, prix, quantite_stock, description, type, id_reappro) VALUES ('Coca', 1.2, 'Bouteille de Coca-Cola goût original', 'Produit', 4);
-INSERT INTO ProduitEnergie(nom, prix, quantite_stock, description, type, id_reappro) VALUES ('Fanta', 1.2, 'Bouteille de Fanta goût original', 'Produit', 4);
-INSERT INTO ProduitEnergie(nom, prix, quantite_stock, description, type, id_reappro) VALUES ('Sprite', 1.2, 'Bouteille de Sprite goût original', 'Produit', 4);
-INSERT INTO ProduitEnergie(nom, prix, quantite_stock, description, type, id_reappro) VALUES ('Eau', 0.8, 'Bouteille d''eau', 'Produit', 5);
-INSERT INTO ProduitEnergie(nom, prix, quantite_stock, description, type, id_reappro) VALUES ('Chips', 1.2, 'Sachet de chips', 'Produit', 5);
-INSERT INTO ProduitEnergie(nom, prix, quantite_stock, description, type, id_reappro) VALUES ('Bonbons', 1.2, 'Sachet de bonbons', 'Produit', 5);
+INSERT INTO ProduitEnergie(nom, prix, quantite_stock, description, type, id_reappro) VALUES ('SP95', 1.5, 1000, 'Essence sans plomb 95', 'Energie', 1);
+INSERT INTO ProduitEnergie(nom, prix, quantite_stock, description, type, id_reappro) VALUES ('SP98', 1.6, 1000, 'Essence sans plomb 98', 'Energie', 1);
+INSERT INTO ProduitEnergie(nom, prix, quantite_stock, description, type, id_reappro) VALUES ('Gazole', 1.4, 1000, 'Gazole', 'Energie', 1);
+INSERT INTO ProduitEnergie(nom, prix, quantite_stock, description, type, id_reappro) VALUES ('E85', 0.8, 1000, 'Ethanol', 'Energie', 2);
+INSERT INTO ProduitEnergie(nom, prix, quantite_stock, description, type, id_reappro) VALUES ('GPL', 0.6, 1000, 'Gaz de petrole liquéfié', 'Energie', 2);
+INSERT INTO ProduitEnergie(nom, prix, quantite_stock, description, type, id_reappro) VALUES ('Electricité', 0.2, 1000, 'Electricité', 'Energie', 3);
+INSERT INTO ProduitEnergie(nom, prix, quantite_stock, description, type, id_reappro) VALUES ('Coca', 1.2, 1000, 'Bouteille de Coca-Cola goût original', 'Produit', 4);
+INSERT INTO ProduitEnergie(nom, prix, quantite_stock, description, type, id_reappro) VALUES ('Fanta', 1.2, 1000,  'Bouteille de Fanta goût original', 'Produit', 4);
+INSERT INTO ProduitEnergie(nom, prix, quantite_stock, description, type, id_reappro) VALUES ('Sprite', 1.2,1000, 'Bouteille de Sprite goût original', 'Produit', 4);
+INSERT INTO ProduitEnergie(nom, prix, quantite_stock, description, type, id_reappro) VALUES ('Eau', 0.8, 1000, 'Bouteille d''eau', 'Produit', 5);
+INSERT INTO ProduitEnergie(nom, prix, quantite_stock, description, type, id_reappro) VALUES ('Chips', 1.2, 1000, 'Sachet de chips', 'Produit', 5);
+INSERT INTO ProduitEnergie(nom, prix, quantite_stock, description, type, id_reappro) VALUES ('Bonbons', 1.2, 1000, 'Sachet de bonbons', 'Produit', 5);
  
 INSERT INTO LignesReapprovisionnement VALUES (1, 1, 1000);
 INSERT INTO LignesReapprovisionnement VALUES (1, 2, 1000);

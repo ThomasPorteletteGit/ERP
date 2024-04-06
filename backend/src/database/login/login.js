@@ -1,19 +1,23 @@
 const express = require('express');
 const router = express.Router();
 
-const { login } = require('./loginFunctions');
+const { login, getUserStatus } = require('./loginFunctions');
 
 router.post('/', (req, res) => {
-    const username = req.body.username;
+    const nom = req.body.nom;
+    const prenom = req.body.prenom;
     const password = req.body.password;
-    login(username, password, (result) => {
+    login(nom, prenom, password, (result) => {
         res.status(result.code).send(result);
     });
 });
 
 router.post('/getUserStatus', (req, res) => {
-    //id à récupérer
-    getUserStatus(req, res);
+    const nom = req.body.nom;
+    const prenom = req.body.prenom;
+    getUserStatus(nom, prenom, (result) => {
+        res.status(result.code).send(result);
+    });
 });
 
 module.exports = router;

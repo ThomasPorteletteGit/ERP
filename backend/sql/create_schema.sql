@@ -111,6 +111,7 @@ CREATE TABLE Livraison (
 );
 
 CREATE TABLE Boutique (
+    jour VARCHAR(255),
     horaire_ouverture TIME,
     horaire_fermeture TIME
 );

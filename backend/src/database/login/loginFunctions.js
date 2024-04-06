@@ -1,33 +1,28 @@
 const dao = require('../../data/DAO');
-/**
- * 
- * @param {*} username Nom d'utilisateur sous la forme NomPrénom
- * @param {*} password Mot de passe
- * @param {*} callback Fonction de rappel qui renvoie le résultat de la requête qui va permettre de créer un cookie de session si le login est réussi
- */
-function login(username, password, callback) {
-    dao.select('type', 'employe', 'nom='+username, (result) => {
-        if (result.length === 0) { 
+
+function login(nom, prenom, password, callback) {
+    dao.select('type_employe, mot_de_passe', 'employe', `nom='${nom}' AND prenom='${prenom}'`, (result) => {
+        if(result.length === 0){
             callback({error: 'Utilisateur non trouvé', code: 404});
         }
+        else if(result.rows[0].mot_de_passe !== password){
+            callback({error: 'Mot de passe incorrect', code: 401});
+        }
         else {
-            dao.select('mot_de_passe', 'employe', 'nom='+username, (result) => {
-                if (result[0].mot_de_passe === password) {
-                    callback({type: 'employe', code: 200});
-                }
-                else {
-                    callback({error: 'Mot de passe incorrect', code: 401});
-                }
-            });
+            callback({id_employe: result.rows[0].id_employe, code: 200});
         }
     });
 }
 
-function getUserStatus(id){
-    dao.select('type', 'id_employe='+id, (result) => {
-        return result[0].type;
-    }
-    );
+function getUserStatus(nom, prenom, callback) {
+    dao.select('type_employe', 'employe', `nom='${nom}' AND prenom='${prenom}'`, (result) => {
+        if(result.length === 0){
+            callback({error: 'Utilisateur non trouvé', code: 404});
+        }
+        else {
+            callback({type_employe: result.rows[0].type_employe, code: 200});
+        }
+    });
 }
 
-module.exports = { login, getUserStatus};
+module.exports = { login, getUserStatus };

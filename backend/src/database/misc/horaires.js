@@ -11,19 +11,19 @@ router.get('/get/:jour', (req, res) => {
     getHorairesByDay(req, res);
 });
 
-router.get('/get/ouverture/:jour', (req, res) => {
+router.get('/ouverture/get/:jour', (req, res) => {
     getHorairesOuvertureByDay(req, res);
 });
 
-router.get('/get/fermeture/:jour', (req, res) => {
+router.get('/fermeture/get/:jour', (req, res) => {
     getHorairesFermetureByDay(req, res);
 });
 
-router.post('/set/ouverture/:jour/:heure', (req, res) => {
+router.post('/ouverture/set/:jour/:heure', (req, res) => {
     setHoraireOuverture(req, res);
 });
 
-router.post('/set/fermeture/:jour/:heure', (req, res) => {
+router.post('/fermeture/set/:jour/:heure', (req, res) => {
     setHoraireFermeture(req, res);
 });
 

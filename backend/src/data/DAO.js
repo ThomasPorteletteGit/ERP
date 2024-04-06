@@ -36,6 +36,28 @@ class DAO
             callback(result);
         });
     }
+    /**
+     * 
+     * @param {*} attributes  Les attributs à sélectionner sous la forme "attribut1, attribut2, ..."
+     * @param {*} table  La table à sélectionner
+     * @param {*} condition  La condition de sélection sous la forme "attribut1 = valeur1 AND attribut2 = valeur2 ..."
+     * @param {*} order  L'ordre de sélection sous la forme "attribut1 ASC/DESC, attribut2 ASC/DESC, ..."
+     * @param {*} callback  La fonction à appeler une fois la requête exécutée
+     */
+    
+    selectOrderBy(attributes, table, condition, order, callback)
+    {
+        let selectQuery = "SELECT " + attributes + " FROM " + table;
+        if (condition !== '') {
+            selectQuery += " WHERE " + condition;
+        }
+        selectQuery += " ORDER BY " + order;
+        this.dbConnection.query(selectQuery, (err, result) => {
+            if (err) throw err;
+            callback(result);
+        });
+    }
+    
 
     /**
      * @param {*} table La table dans laquelle insérer les valeurs
@@ -59,7 +81,7 @@ class DAO
      * 
      */
 
-    update(attributes, table, condition, callback)
+    update(table, attributes, condition, callback)
     {
         let updateQuery = "UPDATE " + table + " SET " + attributes + " WHERE " + condition;
         this.dbConnection.query(updateQuery, (err, result) => {
