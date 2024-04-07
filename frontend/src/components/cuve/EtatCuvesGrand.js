@@ -44,7 +44,7 @@ const EtatCuvesGrand = () => {
                 <Cuve carburant="E85" niveau={20} />
                 <div id="cuvesButtons" className="DivBlock"> 
                     <button className="btnCuvesGrandClick button_style" id="thefirst">Modifier le prix</button>
-                    <button className="btnCuvesGrandClick">Demande de réapprovisionnement</button>
+                    <button className="btnCuvesGrandClick button_style">Demande de réapprovisionnement</button>
                 </div>
             </div>
         </div>

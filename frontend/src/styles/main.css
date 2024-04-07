@@ -2590,13 +2590,13 @@ input[name="nameProduit"] {
     position: relative;
     padding: 10px 20px;
     border-radius: 7px;
-    border: 1px solid rgb(61, 106, 255);
+    border: 1px solid #c3f3fb;
     font-size: 14px;
     text-transform: uppercase;
     font-weight: 600;
     letter-spacing: 2px;
-    background: transparent;
-    color: #fff;
+    color: white;
+    background-color:transparent;
     overflow: hidden;
     box-shadow: 0 0 0 0 transparent;
     -webkit-transition: all 0.2s ease-in;
@@ -2605,11 +2605,12 @@ input[name="nameProduit"] {
   }
   
 .button_style:hover {
-    background: rgb(61, 106, 255);
-    box-shadow: 0 0 30px 5px rgba(0, 142, 236, 0.815);
+    background: #c3f3fb;
+    box-shadow: 0 0 10px 5px rgb(195,243,251, 0.8);
     -webkit-transition: all 0.2s ease-out;
     -moz-transition: all 0.2s ease-out;
     transition: all 0.2s ease-out;
+    color: black;
   }
   
 .button_style:hover::before {
@@ -2658,4 +2659,3 @@ input[name="nameProduit"] {
     -moz-transition: box-shadow 0.2s ease-in;
     transition: box-shadow 0.2s ease-in;
 }
-  
