@@ -9,13 +9,17 @@ const CarteEnergie = () => {
         <section id="carte">
             <div className="composantGrand">
                 <div className="composantGrandCarteEM">
-                    <div className="Top_Component_Grand">
-                        <h2 className="component_title">Carte Energie</h2>
-                        <hr></hr>
+                    <div className="Divflex">
+                        <div id="topComposant">
+                            <h2 className="component_title2">Carte énergie</h2>
+                        </div>
                     </div>
-                    <button id="buttonCarteEM" className="buttonCarte">Voir liste client</button>
-                    <button id="buttonCarteEM" className="buttonCarte">Ajouter une carte</button>
-                    <button id="buttonCarteEM" className="buttonCarte">Avantage carte énergie</button>
+                    <div className="separator"></div>
+                    <div className="carte-btn-container">
+                        <button id="buttonCarteEM" className="buttonCarte">Voir liste client</button>
+                        <button id="buttonCarteEM" className="buttonCarte">Ajouter une carte</button>
+                        <button id="buttonCarteEM" className="buttonCarte">Avantage carte énergie</button>
+                    </div>
                 </div>
             </div>
         </section>
