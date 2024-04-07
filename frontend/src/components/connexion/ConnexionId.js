@@ -1,8 +1,18 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-const ConnexionId = () => {
+const ConnexionId = ({userType}) => {
+    const clearURL = () => {
+        if (window.location.href.includes("/dashboard")) {
+            window.history.pushState({}, document.title, "/");
+        }
+    }
+    
     const navigate = useNavigate();
+    if(userType === 'gerant' || userType === 'employe') {
+        navigate('/dashboard');
+        clearURL();
+    }    
     const [id, setId] = useState('');
     const [password, setPassword] = useState('');
 
@@ -46,11 +56,7 @@ const ConnexionId = () => {
         }
     };
 
-    const clearURL = () => {
-        if (window.location.href.includes("/dashboard")) {
-            window.history.pushState({}, document.title, "/");
-        }
-    }
+ 
 
     const handleInputChange = (e) => {
         setId(e.target.value);

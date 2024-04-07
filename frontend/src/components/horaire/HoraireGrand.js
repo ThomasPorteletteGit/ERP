@@ -11,7 +11,7 @@ function SelectHeure({onChange, jour, horaire}) {
 
   
     return (
-        <select className='horaires' onChange={handleChange}>
+        <select className='horaires' onChange={(e) => handleChange(e)}>
             {
                 [...Array(24).keys()].map(i =>
                     [0, 30].map(j => {
@@ -43,18 +43,6 @@ const HoraireGrand = ({horaires}) => {
 
     const handleValider = () => {
         console.log("Validation des modifications");
-        const modifiedFermeture = document.querySelectorAll('.horaires.fermeture');
-        const modifiedOuverture = document.querySelectorAll('.horaires.ouverture');
-
-        modifiedFermeture.forEach((heure) => {
-            console.log(heure);
-        });
-
-        modifiedOuverture.forEach((heure) => {
-            console.log(heure);
-        });
-        
-
     };
 
     const setHeureOuverture = (jour, heure) => {
@@ -94,10 +82,10 @@ const HoraireGrand = ({horaires}) => {
                                         <tr>
                                             <td>{jour.jour}</td>
                                             <td>
-                                                <SelectHeure className="ouverture" onChange={() => setHeureOuverture} jour={jour} horaire={jour.horaire_ouverture}/>
+                                                <SelectHeure className="ouverture" jour={jour.jour} horaire={jour.horaire_ouverture}/>
                                             </td>
                                             <td>
-                                                <SelectHeure className="fermeture" sonChange={() => setHeureFermeture} jour={jour} horaire={jour.horaire_fermeture}/>
+                                                <SelectHeure className="fermeture" jour={jour.jour} horaire={jour.horaire_fermeture}/>
                                             </td>
                                         </tr>
                                     );
@@ -105,8 +93,8 @@ const HoraireGrand = ({horaires}) => {
                             }
                         </tbody>
                     </table>
-                    <button className='buttonAnnuler' onClick={handleAnnuler}>Annuler</button>
-                    <button className='buttonValider' onClick={handleValider}>Valider</button>
+                    <button className='buttonAnnuler' onClick={() => handleAnnuler()}>Annuler</button>
+                    <button className='buttonValider' onClick={() => handleValider()}>Valider</button>
                 </div>
             </div>
         </section>

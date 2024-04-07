@@ -1,11 +1,10 @@
 import React from "react";
 
-const EtatCuvesReapro = (energies) => {
-    const energiesObject = energies.energies;
+const EtatCuvesReapro = ({energies}) => {
 
     const handleValiderReapro = async () => {
         let energiesReapro = [];
-        energiesObject.forEach((energie) => {
+        energies.forEach((energie) => {
             if (document.getElementById(energie).checked) {
                 energiesReapro.push(energie);
             }
@@ -27,13 +26,13 @@ const EtatCuvesReapro = (energies) => {
             <div className="Divflex">
                 <div id="divPrix">
                     {
-                    energiesObject.map((energie) => {
-                        return (
-                            <div className="Divflex" key={energie}>
-                                <input type="checkbox" id={energie} name={energie}/>
-                                <label for={energie}>{energie.nom}</label>
-                            </div>
-                        );
+                        energies.map((energie) => {
+                            return (
+                                <div className="Divflex" key={energie}>
+                                    <input type="checkbox" id={energie} name={energie}/>
+                                    <label for={energie}>{energie.nom}</label>
+                                </div>
+                            );
                     })}
                 </div>
                 <div className="DivBlock">
