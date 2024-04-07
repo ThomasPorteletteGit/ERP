@@ -6,7 +6,6 @@ import ServiceParking from "./ServiceParking";
 const ReservationPlaceP = ({id_placeP}) => {
     const id = id_placeP;
     console.log("id_placeP : " + id); 
-    console.log(id_placeP);
     
     document.addEventListener("click", function (event) {
 
@@ -47,7 +46,7 @@ const ReservationPlaceP = ({id_placeP}) => {
     
 
     return (
-        <div className="composantGrand DivBlock">
+        <div className="composantGrand DivBlock" id="centPourCent">
             <div className="Top_Component_Grand">
                 <h2 className="component_title"> Réservation de la place n° {id_placeP}</h2>
             </div>

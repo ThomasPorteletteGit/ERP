@@ -90,7 +90,7 @@ const ConnexionId = ({userType}) => {
     //on écrit le cookie pour le récupérer sur le dashboard (modifier l'affichage en fonction de la valeur)
     const writeStatusCookie = (status) => {
         let date = new Date();
-        date.setTime(date.getTime() + (10 * 60 * 1000));
+        date.setTime(date.getTime() + (10 * 60 * 1000 * 6 * 24)); // 1 jour
         document.cookie = "status=" + status + "; expires=" + date.toUTCString() + "; path=/";
     };
 

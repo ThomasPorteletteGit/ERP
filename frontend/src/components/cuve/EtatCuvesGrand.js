@@ -29,7 +29,7 @@ const EtatCuvesGrand = ({energies}) => {
     }); 
     return (
         <div className="composantGrand" id="cuvesGrands">
-            <div className="Divflex">
+            {/* <div className="Divflex">
                 <div id="topComposant">
                     <h2 className="component_title">🛢️ Etat des cuves</h2>
                 </div>
@@ -37,18 +37,27 @@ const EtatCuvesGrand = ({energies}) => {
                     <h4>Dernière mise à jour : <span id="lastUpdate">X</span> min</h4>
                     <button id="buttonUpdate">Actualiser ⟳</button>
                 </div>
+            </div> */}
+            <div className="Divflex">
+                <div id="topComposant">
+                    <h2 className="component_title2">🛢️ Etat des cuves</h2>
+                </div>
+                <div id="topComposant2">
+                    <h4>Dernière mise à jour : <span id="lastUpdate">X</span> min</h4>
+                    <button id="buttonUpdate">Actualiser ⟳</button>
+                </div>
             </div>
-            <hr />
+            <div className="separator"></div>
             <div id="cuvesGrand">
                 {
-                    energiesAndQuantities.map((energie) => {
+                    energies.map((energie) => {
                         return <Cuve carburant={energie.nom} niveau={energie.quantite_stock*100/1000} />
                     })
                 }
 
                 <div id="cuvesButtons" className="DivBlock">
-                    <button className="btnCuvesGrandClick" id="thefirst">Modifier le prix</button>
-                    <button className="btnCuvesGrandClick">Demande de réapprovisionnement</button>
+                    <button className="btnCuvesGrandClick button_style" id="thefirst">Modifier le prix</button>
+                    <button className="btnCuvesGrandClick button_style">Demande de réapprovisionnement</button>
                 </div>
             </div>
         </div>

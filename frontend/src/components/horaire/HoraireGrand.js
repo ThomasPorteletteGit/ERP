@@ -62,10 +62,12 @@ const HoraireGrand = ({horaires}) => {
     return (
         <section id="modifHoraire">
             <div className="composantGrand">
-                <div className="Top_Component_Grand">
-                    <h2 className="component_title">🕐Horaires</h2>
-                    <hr></hr>
+                <div className="Divflex">
+                    <div id="topComposant">
+                        <h2 className="component_title2"> 🕐Horaires</h2>
+                    </div>
                 </div>
+                <div className='separator'></div>
                 <div className="tableauHeure">
                     <table>
                         <thead>

@@ -49,7 +49,11 @@ const IncidentsGrand = () => {
 
     return (
         <div className='container-composantGrandIncident'>
-            <h2 className="component_title">⚠️ Incidents</h2>
+            <div className="Divflex">
+                <div id="topComposant">
+                    <h2 className="component_title2">⚠️ Incidents</h2>
+                </div>
+            </div>
             <div className="separator"></div>
             <div className="composantGrandIncident">
                 <div className="left-container-incident">
@@ -66,14 +70,14 @@ const IncidentsGrand = () => {
                     <div>
                         <h3>Incidents à confirmer</h3>
                         <ul>
-                        {incidentsAConfirmer.map((incident, index) => (
-                            <li key={index}>
-                                <strong>Niveau:</strong> {incident.niveau}, <strong>Description:</strong> {incident.description}
-                                <p></p>
-                                <button className="confirm-button" onClick={() => handleConfirm(incident)}>Confirmer</button>
-                                <button className="delete-button" onClick={() => handleDelete(incident)}>Supprimer</button>
-                            </li>
-                        ))}
+                            {incidentsAConfirmer.map((incident, index) => (
+                                <li key={index}>
+                                    <strong>Niveau:</strong> {incident.niveau}, <strong>Description:</strong> {incident.description}
+                                    <p></p>
+                                    <button className="confirm-button" onClick={() => handleConfirm(incident)}>Confirmer</button>
+                                    <button className="delete-button" onClick={() => handleDelete(incident)}>Supprimer</button>
+                                </li>
+                            ))}
                         </ul>
                     </div>
                 </div>

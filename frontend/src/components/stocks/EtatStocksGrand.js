@@ -6,18 +6,18 @@ import StockProduit from "./StockProduit";
 
 const EtatStockGrand = () => {
     document.addEventListener("click", function (event) {
-        
-if (event.target.classList.contains("btnStockGrandClickTop") || event.target.classList.contains("btnStockGrandClickBottom")) {         
-    const buttonText = event.target.textContent;
+
+        if (event.target.classList.contains("btnStockGrandClickTop") || event.target.classList.contains("btnStockGrandClickBottom")) {
+            const buttonText = event.target.textContent;
             switch (buttonText) {
                 case "Voir le stock":
-                    document.getElementById("stockGrand").innerHTML = ReactDOMServer.renderToString(<StockProduit/>);
+                    document.getElementById("stockGrand").innerHTML = ReactDOMServer.renderToString(<StockProduit />);
                     break;
                 case "Annuler un réapprovisionnement":
-                    document.getElementById("stockGrand").innerHTML = ReactDOMServer.renderToString(<EtatStockAnnuleReapro/>);
+                    document.getElementById("stockGrand").innerHTML = ReactDOMServer.renderToString(<EtatStockAnnuleReapro />);
                     break;
                 case "Demande de réapprovisionnement":
-                    document.getElementById("stockGrand").innerHTML = ReactDOMServer.renderToString(<EtatStockReapro/>);
+                    document.getElementById("stockGrand").innerHTML = ReactDOMServer.renderToString(<EtatStockReapro />);
                     break;
                 default:
                     console.log("Bouton inconnu cliqué: " + buttonText);
@@ -30,10 +30,10 @@ if (event.target.classList.contains("btnStockGrandClickTop") || event.target.cla
         <div className="composantGrand" id="stockGrands">
             <div className="Divflex">
                 <div id="topComposant">
-                    <h2 className="component_title">📦 Stocks</h2>
+                    <h2 className="component_title2">📦 Stocks</h2>
                 </div>
             </div>
-            <hr />
+            <div className="separator"></div>
             <div id="stockGrand">
                 <div className="Divflex">
                     <button className="btnStockGrandClickTop" >Voir le stock</button>
