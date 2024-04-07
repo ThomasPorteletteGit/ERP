@@ -25,23 +25,26 @@
 
 #cuvesGrand{
     display: flex;
-    margin-left: 0.5vw;
+    height: 90%;
+    width: 100%;
+    justify-content: space-evenly;
+    align-items: center;
 }
 
 #cuvesGrand .cuve-container{
     background: #777CA6;
-    margin-top: 10px;
-    width: 8vw;
-    height: 48vh;
-    border-radius: 2vh;
+    border-radius: 20px;
+    width: 6%;
+    padding: 2%;
+    height: 90%;
 }
 
 #cuvesGrand .cuve-container h2{
-    font-size: 3vh;
+    font-size: 20px;
 }
 
 #cuvesGrand .progress-bar{
-    border-radius: 0 0 2vh 2vh;
+    border-radius: 20px;
 }
 
 
@@ -94,7 +97,7 @@
 }
 
 #cuvesButtons{
-    max-width: 35%;
+    width: 35%;
     height: 99%;
 }
 
@@ -157,16 +160,14 @@
     border-radius: 20px;
 }
 
-#cuvesGrand{
-    height: 80%;
-}
-
-#cuvesGrand .cuve-container{
-    height: 93%;
+#cuvesGrands .Divflex{
+    height: 10%;
+    width: 100%;
 }
 
 #cuvesGrand .cuve-container .jauge{
     height: 91%;
+    width: 95%;
     border-radius: 20px !important;
 }
 

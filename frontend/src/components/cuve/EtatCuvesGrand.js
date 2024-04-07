@@ -36,12 +36,14 @@ const EtatCuvesGrand = () => {
             </div>
             <hr />
             <div id="cuvesGrand">
-                <Cuve carburant={"ESP-97"} niveau={20} />
-                <Cuve carburant={"GAZOLE"} niveau={70} />
-                <Cuve carburant={"DIESEL"} niveau={50} />
-                <Cuve carburant={"GPL"} niveau={2} />
-                <div id="cuvesButtons" className="DivBlock">
-                    <button className="btnCuvesGrandClick" id="thefirst">Modifier le prix</button>
+                <Cuve carburant="SP-95" niveau={80} />
+                <Cuve carburant="SP-98" niveau={60} />
+                <Cuve carburant="Gazole" niveau={75} />
+                <Cuve carburant="GPL" niveau={40} />
+                <Cuve carburant="Elec" niveau={100} />
+                <Cuve carburant="E85" niveau={20} />
+                <div id="cuvesButtons" className="DivBlock"> 
+                    <button className="btnCuvesGrandClick button_style" id="thefirst">Modifier le prix</button>
                     <button className="btnCuvesGrandClick">Demande de réapprovisionnement</button>
                 </div>
             </div>
