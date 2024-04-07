@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import ChoixPaiement from './components/paiement/ChoixPaiement';
 import MontantAPayer from './components/MontantAPayer';
@@ -15,33 +15,31 @@ import './styles/icons.css'
 import './styles/choixdupaiement.css';
 import './styles/login.css';
 
-
-
 function App() {
-
-  const [routing, setRouting] = useState(<ConnexionId />);
+  const [userType, setUserType] = useState("");
 
   useEffect(() => {
-    let sessionCookie = document.cookie.split('=')[1] || "";
-
-    if (sessionCookie === "") {
-      setRouting(<ConnexionId />);
-    }
-    else {
-      setRouting(<Dashboard userType="gerant" />);
-      // setRouting(<Dashboard userType="gérant"/>);
-    }
+    const cookieValue = document.cookie.split('=')[1];
+    const userType = cookieValue === 'Gerant' ? 'gerant' : 'employe';
+    setUserType(userType);
   }, []);
+
+  let dashboardElement;
+  if (userType === "gerant") {
+    dashboardElement = <Dashboard userType="gerant" />;
+  } else {
+    dashboardElement = <Dashboard userType="employe" />;
+  }
 
   return (
     <Router>
       <div className="App">
         <Routes>
-          <Route path="/" element={routing} />
+          <Route path="/" element={<ConnexionId />} />
           <Route path="/choixpaiement" element={<ChoixPaiement />} />
           <Route path="/montant-a-payer" element={<MontantAPayer />} />
           <Route path="/panier" element={<Panier />} />
-          <Route path="/dashboard" element={<Dashboard userType="gerant" />} />
+          <Route path="/dashboard" element={dashboardElement} />
           <Route path="/connexion" element={<ConnexionId />} />
           <Route path="/connexionPassword" element={<ConnexionPassword />} />
         </Routes>
