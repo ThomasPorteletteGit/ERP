@@ -10,23 +10,24 @@ import ServiceLivraison from "./livraison/ServiceLivraison";
 
 const ServicesGrand = () => {
     return (
-        
+
         <div className="composantGrand DivBlock">
-            <div className="Top_Component_Grand">
-                <h2 className="component_title"> ⚒️ Services</h2>
+            <div className="Divflex">
+                <div id="topComposant">
+                    <h2 className="component_title2">⚒️ Services</h2>
+                </div>
+            </div>
+            <div className="separator"></div>
+            <div className="button_container_grand_services">
+                <button className="bouttonsServiceGrand" id="parkingButton">Parking</button>
+                <button className="bouttonsServiceGrand" id="covoiturageButton">Co-voiturage</button>
+                <button className="bouttonsServiceGrand" id="livraisonButton">Livraison</button>
+                <button className="bouttonsServiceGrand" id="autresButton">Autres</button>
             </div>
 
-            <hr/>
-            <div className="button_container_grand_services">
-                    <button className="bouttonsServiceGrand" id="parkingButton">Parking</button>
-                    <button className="bouttonsServiceGrand" id="covoiturageButton">Co-voiturage</button>
-                    <button className="bouttonsServiceGrand" id="livraisonButton">Livraison</button>
-                    <button className="bouttonsServiceGrand" id="autresButton">Autres</button>
-            </div>
-          
-        </div>         
-    );   
-    
+        </div>
+    );
+
 };
 
 document.addEventListener("click", function (event) {
@@ -61,13 +62,13 @@ document.addEventListener("click", function (event) {
         const divGeneral = document.getElementsByClassName("dashboard-right")[0];
         let saveDiv = divGeneral.innerHTML;
         console.log("Afficher les places de parking");
-        
+
         divGeneral.innerHTML = ReactDOMServer.renderToString(<ServiceParking />);
         divGeneral.style.display = "block";
 
     }
 
-    function afficherVueCoVoiturage () {
+    function afficherVueCoVoiturage() {
         const divGeneral = document.getElementsByClassName("dashboard-right")[0];
     const divSmallIcons = document.getElementsByClassName("smallIcons")[0];
     
@@ -80,12 +81,12 @@ document.addEventListener("click", function (event) {
     divGeneral.style.display = "block";
     }
 
-    function afficherVueLivraison () {
+    function afficherVueLivraison() {
 
         const divGeneral = document.getElementsByClassName("dashboard-right")[0];
         let saveDiv = divGeneral.innerHTML;
         console.log("Afficher les livraisons");
-        
+
         divGeneral.innerHTML = ReactDOMServer.renderToString(<ServiceLivraison />);
         divGeneral.style.display = "block";
 

@@ -2,15 +2,15 @@ import React, { useState } from "react";
 
 // Données de transaction à récupérer dans la base de données
 const transactionsData = [
-    { id_transaction: 1, date: '2024-03-01', quantité: 'Problème de pompe', prix: 20, statut: "En cours..."},
-    { id_transaction: 2, date: '2024-03-02', quantité: 'Fuite de carburant', prix: 1, statut: "Terminé"},
-    { id_transaction: 3, date: '2024-03-02', quantité: 'Fuite de carburant', prix: 1, statut: "Terminé"},
+    { id_transaction: 1, date: '2024-03-01', quantité: 'Problème de pompe', prix: 20, statut: "En cours..." },
+    { id_transaction: 2, date: '2024-03-02', quantité: 'Fuite de carburant', prix: 1, statut: "Terminé" },
+    { id_transaction: 3, date: '2024-03-02', quantité: 'Fuite de carburant', prix: 1, statut: "Terminé" },
 ];
 
 const transactionsDataAConfirmer = [
-    { id_transaction: 1, date: '2024-03-01', quantité: 'Problème de pompe', prix: 20, statut: "En cours..."},
-    { id_transaction: 2, date: '2024-03-02', quantité: 'Fuite de carburant', prix: 1, statut: "Terminé"},
-    { id_transaction: 3, date: '2024-03-02', quantité: 'Fuite de carburant', prix: 1, statut: "Terminé"},
+    { id_transaction: 1, date: '2024-03-01', quantité: 'Problème de pompe', prix: 20, statut: "En cours..." },
+    { id_transaction: 2, date: '2024-03-02', quantité: 'Fuite de carburant', prix: 1, statut: "Terminé" },
+    { id_transaction: 3, date: '2024-03-02', quantité: 'Fuite de carburant', prix: 1, statut: "Terminé" },
 ];
 
 const TransactionGrand = () => {
@@ -27,11 +27,15 @@ const TransactionGrand = () => {
     };
 
     return (
-        <div className='container-composantGrandIncident'>
-            <h2 className="component_title">💸 Transaction</h2>
+        <div className='container-composantGrandTransaction'>
+            <div className="Divflex">
+                <div id="topComposant">
+                    <h2 className="component_title2">💸 Transaction</h2>
+                </div>
+            </div>
             <div className="separator"></div>
-            <div className="composantGrandIncident">
-                <div className="left-container">
+            <div className="composantGrandTransaction">
+                <div className="left-container-transaction">
                     <h3>Informations des transactions</h3>
                     <ul className="ul-transaction">
                         {transactions.map((transaction, index) => (
@@ -40,16 +44,17 @@ const TransactionGrand = () => {
                                 <div className="separatorBlack"></div>
                                 <strong>Quantité:</strong> {transaction.quantité},<br />
                                 <strong>Total à payer:</strong> {transaction.prix} <span className="currency">euros</span>,<br />
-                                <strong>Paiement:</strong> {transaction.statut} 
-                            </li>                                  
+                                <strong>Paiement:</strong> {transaction.statut}
+                            </li>
                         ))}
                     </ul>
                 </div>
-                <div className="right-container">
+                <div className="separatorColumn"></div>
+                <div className="right-container-transaction">
                     <h3>Informations des transactions à confirmer</h3>
-                        <ul className="ul-transaction">
-                            {transactions.map((transaction, index) => (
-                                <div className="transaction-list-container">
+                    <ul className="ul-transaction">
+                        {transactions.map((transaction, index) => (
+                            <div className="transaction-list-container">
                                 <div className="transaction-list-container" key={index}>
                                     <div className="transaction-item">
                                         <li>
@@ -64,7 +69,7 @@ const TransactionGrand = () => {
                                             <button className="delete-button" onClick={() => handleDelete(transaction)}>Annuler</button>
                                         </li>
                                     </div>
-                            
+
                                     <div className="transaction-item">
                                         <li>
                                             <strong>Transaction n°</strong> {transaction.id_transaction},<br />
@@ -78,11 +83,10 @@ const TransactionGrand = () => {
                                         </li>
                                     </div>
                                 </div>
-                            </div>                            
-                            ))}
-                        </ul>
-                    </div>
-                <div className="separatorColumn"></div>
+                            </div>
+                        ))}
+                    </ul>
+                </div>
             </div>
         </div>
     );

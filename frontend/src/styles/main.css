@@ -429,33 +429,14 @@ cuves
 .etat-cuves-container {
     display: flex;
     align-items: center;
-    width : 100%;
-    height: 85%;
-    justify-content: space-around;
 }
 
 .cuve-container {
-    padding: 3%;
+    width: 2vw;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 10px;
     background-color: #777ca6;
-    height: 85%;
-    width: 7%;
-    border-radius: 5px;
-}
-
-#etat-cuves .component-title{
-    font-size: 20px;
-}
-
-#etat-cuves .top_container{
-    height: 15%;
-}
-
-.etat-cuves-container .cuve-container:first-child{
-    border-radius: 5px 5px 5px 20px !important;
-}
-
-.etat-cuves-container .cuve-container:last-child{
-    border-radius: 5px 5px 20px 0px !important;
 }
 
 .cuve-container h2,
@@ -465,8 +446,7 @@ p {
 
 .jauge {
     background-color: #f0f0f0;
-    height: 80%;
-    width: 80%;
+    height: 10vh;
     margin-top: 10px;
     padding: 2px 2px !important;
     position: relative;
@@ -1105,6 +1085,12 @@ select {
     /* Change la couleur au survol */
 }
 
+.ul-direction {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    height: 40%;
+}
 
 
 /* Caisse */
@@ -1308,6 +1294,8 @@ th {
 
 .separator {
     border: 1px solid #ccc;
+    margin: 10px 0;
+
 }
 
 .total {
@@ -1516,7 +1504,7 @@ ul {
     list-style-type: none;
     padding: 0;
     margin: 0;
-    max-height: 300px;
+    /* max-height: 300px; */
     overflow-y: auto;
 }
 
@@ -1536,9 +1524,10 @@ ul li {
 }
 
 .separatorColumn {
-    border-left: 1px solid #ccc;
-    border-right: 1px solid #ccc;
+    border-left: 2px solid #ccc;
+    border-right: 2px solid #ccc;
     margin: 10px 0;
+    height: 500px;
 }
 
 .left-container-incident {
@@ -1643,6 +1632,7 @@ ul li {
 
 .direction-details {
     margin-top: 4%;
+    height: 150%;
 }
 
 .composantGrand h3 {
@@ -1867,33 +1857,68 @@ ul li {
 
 /* Transaction */
 
-.direction-details ul li {
-    margin-bottom: 10px;
+.container-composantGrandTransaction {
+    background-color: #2B2D42; /* Fond bleu */
+    height: 73.8vh;
+    border-radius: 20px;
 }
 
-.ul-transaction li strong {
-    text-align: left;
-    align-self: baseline;
+#topComposant {
+    text-align: center;
 }
 
-.separatorBlack {
-    border: 1px solid #131313;
+.separator {
+    width: 100%;
+    height: 1px;
+    background-color: #131313;
     margin: 10px 0;
+}
+
+.composantGrandTransaction {
+    display: flex;
+    justify-content: center; 
+}
+
+.left-container-transaction {
+    flex: 1;
+    padding-right: 10px; 
+    max-width: 50%; 
+}
+
+.right-container-transaction {
+    flex: 1;
+    padding-left: 10px; 
+    max-width: 50%; 
+}
+
+.left-container-transaction h3,
+.right-container-transaction h3 {
+    text-align: center; 
+    margin-right: 5%;
+    margin: 6%;
 }
 
 .ul-transaction {
     list-style: none;
-    padding: 0;
-    width: 70%;
-    max-height: 28%;
-    /* Ajustez la hauteur maximale selon vos besoins */
-    overflow-y: auto;
-    /* Ajout de la barre de défilement si nécessaire */
+    margin-left: 14%;
 }
 
-.ul-transaction li {
-    margin-bottom: 20px;
-    text-align: left;
+.transaction-list-container {
+    margin-bottom: 20px; 
+}
+
+.transaction-item {
+    border: 1px solid #131313; 
+    border-radius: 5px; 
+    margin-bottom: 10px; 
+    background-color: #fff; 
+}
+
+.separatorBlack {
+    width: 100%;
+    height: 1px;
+    background-color: #131313;
+    margin: 5px 0; 
 }
 
 .confirm-button,
@@ -1901,27 +1926,18 @@ ul li {
 .confirm-button-desactivate {
     margin: 5px;
     padding: 3px 8px;
-    /* Réduire la taille des boutons */
     background-color: #ebebeb;
-    color: rgb(24, 24, 24);
+    color: #181818;
     border: none;
     border-radius: 3px;
-    /* Réduire le rayon du bord */
     cursor: pointer;
 }
 
-.confirm-button,
-.delete-button {
-    flex: 0 0 auto;
-    /* Ne pas agrandir ou réduire les boutons */
+.confirm-button-desactivate.disabled {
+    opacity: 0.5; /* Bouton désactivé avec opacité réduite */
+    pointer-events: none; /* Désactive les interactions */
 }
 
-.listClient {
-    max-height: 425px;
-    margin: 5px;
-    overflow-y: auto;
-    border-radius: 5px;
-}
 
 
 /*Carte membre / energie*/
@@ -1946,7 +1962,7 @@ ul li {
     list-style: none;
     padding: 0;
     width: 70%;
-    max-height: 300px;
+    max-height: 30%;
     /* Ajustez la hauteur maximale selon vos besoins */
     overflow-y: auto;
     /* Ajout de la barre de défilement si nécessaire */
@@ -1971,6 +1987,7 @@ ul li {
 .transaction-list-container {
     background-color: #f0f0f0;
     padding: 20px;
+    border-radius: 20px;
 }
 
 .client {
@@ -2502,67 +2519,34 @@ input[name="nameProduit"] {
 
 .formulaire_enregistrer_covoiturage {
     display: flex;
-    flex-direction: column; 
+    flex-direction: horizontal;
+    align-items: center;
     margin: 10px;
-    font-size: 150%; /* 150% */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 150%;
 }
 
 .formulaireEntree {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    width: 70%;
-    margin: 2% 0;
-}
-
-.formulaireEntree label {
-    width: 30%;
-    text-align: left;
-    margin-right: 20%;  
-}
-
-.formulaireEntree input {
-    width: 60%;
     border-radius: 8px;
-    height: 40px;
-    align-items: right;    
+    box-sizing: border-box;
+    margin: 5%;
 }
-
 
 .boutonsAnnulationConfirmationCOV {
     display: flex;
     justify-content: space-around;
     align-items: horizontal;
     /* resize: horizontal; */
-    margin-top: 2%;
-    height: 80%;
+    margin-top: 5%;
+
 }
 
-.boutonsAnnulationConfirmationCOV button {
-    width: 40%;
-    height: 10%;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 25px;
-    background-color: #4d5b84;
-    border: black;
-    margin: 5px;
-}
 
-.nomClientCov {
-    display: flex; 
-}
-
-.formCOV { 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-     
-}
-
-#centPourCent {
-    height: 100%;
-}
 /****************************** Livraisons *************************************/
 
 .livraison {
@@ -2636,79 +2620,3 @@ input[name="nameProduit"] {
     display: flex;
     justify-content: left;
 }
-
-/* Button */
-
-.button_style {
-    position: relative;
-    padding: 10px 20px;
-    border-radius: 7px;
-    border: 1px solid rgb(61, 106, 255);
-    font-size: 14px;
-    text-transform: uppercase;
-    font-weight: 600;
-    letter-spacing: 2px;
-    background: transparent;
-    color: #fff;
-    overflow: hidden;
-    box-shadow: 0 0 0 0 transparent;
-    -webkit-transition: all 0.2s ease-in;
-    -moz-transition: all 0.2s ease-in;
-    transition: all 0.2s ease-in;
-  }
-  
-.button_style:hover {
-    background: rgb(61, 106, 255);
-    box-shadow: 0 0 30px 5px rgba(0, 142, 236, 0.815);
-    -webkit-transition: all 0.2s ease-out;
-    -moz-transition: all 0.2s ease-out;
-    transition: all 0.2s ease-out;
-  }
-  
-.button_style:hover::before {
-    -webkit-animation: sh02 0.5s 0s linear;
-    -moz-animation: sh02 0.5s 0s linear;
-    animation: sh02 0.5s 0s linear;
-  }
-  
-.button_style::before {
-    content: '';
-    display: block;
-    width: 0px;
-    height: 86%;
-    position: absolute;
-    top: 7%;
-    left: 0%;
-    opacity: 0;
-    background: #fff;
-    box-shadow: 0 0 50px 30px #fff;
-    -webkit-transform: skewX(-20deg);
-    -moz-transform: skewX(-20deg);
-    -ms-transform: skewX(-20deg);
-    -o-transform: skewX(-20deg);
-    transform: skewX(-20deg);
-  }
-  
-  @keyframes sh02 {
-    from {
-      opacity: 0;
-      left: 0%;
-    }
-  
-    50% {
-      opacity: 1;
-    }
-  
-    to {
-      opacity: 0;
-      left: 100%;
-    }
-  }
-  
-.button_style:active {
-    box-shadow: 0 0 0 0 transparent;
-    -webkit-transition: box-shadow 0.2s ease-in;
-    -moz-transition: box-shadow 0.2s ease-in;
-    transition: box-shadow 0.2s ease-in;
-}
-  

@@ -25,7 +25,7 @@
 
 #cuvesGrand{
     display: flex;
-    height: 90%;
+    height: 85%;
     width: 100%;
     justify-content: space-evenly;
     align-items: center;
@@ -101,12 +101,21 @@
     height: 99%;
 }
 
-#cuvesButtons button{
+#cuvesButtons button:first-child{
     margin: 10px;
     width: 90%;
     height: 46.2%;
     text-align: center;
     font-size: 26px;
+}
+
+#cuvesButtons button:last-child{
+    margin: 10px;
+    width: 90%;
+    height: 46.2%;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bolder;
 }
 
 #cuvesPrix{
@@ -161,7 +170,6 @@
 }
 
 #cuvesGrands .Divflex{
-    height: 10%;
     width: 100%;
 }
 
