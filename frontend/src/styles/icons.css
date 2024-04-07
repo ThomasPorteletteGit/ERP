@@ -25,7 +25,7 @@
 
 #cuvesGrand{
     display: flex;
-    height: 90%;
+    height: 85%;
     width: 100%;
     justify-content: space-evenly;
     align-items: center;
@@ -170,7 +170,6 @@
 }
 
 #cuvesGrands .Divflex{
-    height: 10%;
     width: 100%;
 }
 

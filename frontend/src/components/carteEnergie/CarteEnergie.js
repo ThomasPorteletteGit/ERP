@@ -7,14 +7,20 @@ import AvantageCarte from "./AvantageCarte";
 const CarteEnergie = () => {
     return (
         <section id="carte">
-            <div className="composantGrandCarteEM">
-                <div className="Top_Component_Grand">
-                    <h2 className="component_title">Carte Energie</h2>
-                    <hr></hr>
+            <div className="composantGrand">
+                <div className="composantGrandCarteEM">
+                    <div className="Divflex">
+                        <div id="topComposant">
+                            <h2 className="component_title2">Carte énergie</h2>
+                        </div>
+                    </div>
+                    <div className="separator"></div>
+                    <div className="carte-btn-container">
+                        <button id="buttonCarteEM" className="buttonCarte">Voir liste client</button>
+                        <button id="buttonCarteEM" className="buttonCarte">Ajouter une carte</button>
+                        <button id="buttonCarteEM" className="buttonCarte">Avantage carte énergie</button>
+                    </div>
                 </div>
-                <button id="buttonCarteEM" className="buttonCarte">Voir liste client</button>
-                <button id="buttonCarteEM" className="buttonCarte">Ajouter une carte</button>
-                <button id="buttonCarteEM" className="buttonCarte">Avantage carte énergie</button>
             </div>
         </section>
     );
@@ -24,7 +30,7 @@ document.addEventListener("click", function (event) {
     if (event.target.classList.contains("buttonCarte")) {
         const buttonText = event.target.textContent;
         switch (buttonText) {
-            case "Voir liste des clients":
+            case "Voir liste client":
                 console.log("Bouton liste client -> liste client cliqué");
                 afficherClients();
                 break;
@@ -45,7 +51,8 @@ document.addEventListener("click", function (event) {
 });
 
 function afficherClients() {
-    const divGeneral = document.getElementsByClassName("dashboard-right")[0];
+    const divGeneral = document.getElementsByClassName("composantGrand")[0];
+    console.log(divGeneral.innerHTML);
     let saveDiv = divGeneral.innerHTML;
     console.log("Afficher les clients");
 
@@ -54,7 +61,7 @@ function afficherClients() {
 }
 
 function ajouterCarte() {
-    const divGeneral = document.getElementsByClassName("dashboard-right")[0];
+    const divGeneral = document.getElementsByClassName("composantGrand")[0];
     let saveDiv = divGeneral.innerHTML;
     console.log("Afficher les clients");
 
@@ -63,7 +70,7 @@ function ajouterCarte() {
 }
 
 function voirAvantage() {
-    const divGeneral = document.getElementsByClassName("dashboard-right")[0];
+    const divGeneral = document.getElementsByClassName("composantGrand")[0];
     let saveDiv = divGeneral.innerHTML;
     console.log("Afficher les clients");
 

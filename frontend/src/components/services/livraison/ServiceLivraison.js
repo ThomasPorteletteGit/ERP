@@ -7,6 +7,7 @@ import ServiceCoVoiturage from "../coVoiturage/ServiceCoVoiturage";
 
 import ServicesGrand from "../ServicesGrand";
 import searchIcon from '../../../assets/img/searchIcon.png';
+import SmallIcons from "../../SmallIcons";
 
 const ServiceLivrasion = () => {
     const Cov = [
@@ -122,11 +123,13 @@ document.addEventListener("click", function (event) {
         switch (buttonText) {
             case "Retour":
                 console.log("Bouton Retour aux services grands");
-                // TODO: Ajouter code pour afficher les places de parking
                 const divGeneral = document.getElementsByClassName("dashboard-right")[0];
-                console.log("Reserver la place de parking");
-                
-                divGeneral.innerHTML = ReactDOMServer.renderToString(<ServicesGrand />);
+                console.log("Retour aux services grands");
+                // Rendu du composant SmallIcons
+                const smallIconsComponent = ReactDOMServer.renderToString(<SmallIcons iconClicked="services" />);
+                // Rendu du composant ServiceCoVoiturage
+                const servicesGrandCOmponent = ReactDOMServer.renderToString(<ServicesGrand />);
+                divGeneral.innerHTML = smallIconsComponent ; // + servicesGrandCOmponent;
                 divGeneral.style.display = "block";
                 break;
             default:
@@ -145,5 +148,7 @@ function enregistrerLivraison (id_livraison) { // TODO mmodif -> covoiturage
    // divGeneral.innerHTML = ReactDOMServer.renderToString(<ModifierLivraison id_livraison={id_livraison}/>);
    // divGeneral.style.display = "block";
 }
+
+
 
 export default ServiceLivrasion;
