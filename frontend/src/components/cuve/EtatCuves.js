@@ -16,6 +16,8 @@ const EtatCuves = () => {
                 <Cuve carburant="SP-98" niveau={60} />
                 <Cuve carburant="Gazole" niveau={75} />
                 <Cuve carburant="GPL" niveau={40} />
+                <Cuve carburant="Elec" niveau={100} />
+                <Cuve carburant="E85" niveau={20} />
             </div>
         </section>
     );

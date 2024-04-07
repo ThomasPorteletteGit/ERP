@@ -6,8 +6,10 @@ import creditCard from '../../assets/img/cb.png';
 const ChoixPaiement = () => {
     return (
         <section id="choixpaiement">
+            <div className='component-title'>
+                <h2 className='view-title'>💰 Paiement</h2>
+            </div>
             <div className='choixPaiement'>
-                <h2 className='view-title'>Choix du paiement</h2>
                 <div className='paymentChoice'>
                     <button id="esp" className='cdpbouton'>
                         <p className="carte_text">CASH</p>
