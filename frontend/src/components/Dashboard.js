@@ -33,9 +33,6 @@ await fetch('/incidents/get')
     });
 
 const Dashboard = ({ userType }) => {
-    // const cookie = document.cookie.split('=')[1];
-    // // const userType = cookie === 'gerant' ? 'gerant' : 'employe';
-    // const userType = 'employe';
 
     return (
         <>
