@@ -34,7 +34,7 @@ const Especes = () => {
                         <h2 className="component_title2"> 💸Espèces</h2>
                     </div>
                 </div>
-                <hr />
+                <div className="separator"></div>
 
                 <div id="PayerEspeces">
                     <h1>Paiement</h1>

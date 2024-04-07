@@ -6,40 +6,45 @@ import AjouterCarteM from "./AjouterCarteM";
 
 const AvantageCarteM = () => {
     const avantagesCarte = () => {
-        return ( 
-            <div className="avantages">
-                <div className="infoAvantages">
-                    <h3>Points de fidélité : </h3>
+        return (
+            <div className="composantGrand">
+
+                <div className="avantages">
+                    <div className="infoAvantages">
+                        <h3>Points de fidélité : </h3>
+                    </div>
+                    <div className="infoPoint">
+                        <h4>Comment recuperer des points de fidélité ?</h4>
+                        <hr></hr>
+                        <p className="avantage">BLA bla bla</p>
+                    </div>
+                    <div className="infoPoint">
+                        <h4>Comment utiliser les points de fidélité ?</h4>
+                        <hr></hr>
+                        <p className="avantage">BLA bla bla</p>
+                    </div>
+                    <button id="buttonCarteEM" className="buttonCarte">Modifier</button>
                 </div>
-                <div className="infoPoint">
-                    <h4>Comment recuperer des points de fidélité ?</h4>
-                    <hr></hr>
-                    <p className="avantage">BLA bla bla</p>
-                </div>
-                <div className="infoPoint">
-                    <h4>Comment utiliser les points de fidélité ?</h4>
-                    <hr></hr>
-                    <p className="avantage">BLA bla bla</p>
-                </div>
-                <button id="buttonCarteEM" className="buttonCarte">Modifier</button>
             </div>
         );
     };
 
     return (
         <section id='carte'>
-            <div className="composantGrandCarteEM">
-                <div className="Top_Component_Grand">
-                    <h2 className="component_title">Avantage</h2>
-                    <hr></hr>
-                </div>
-                <button id="buttonCarteEM" className="buttonCarte">Voir liste des clients</button>
-                <button id="buttonCarteEM" className="buttonCarte">Ajouter une carte</button>
-                <div className="energie">
-                    {avantagesCarte()}
+            <div className="composantGrand">
+                <div className="composantGrandCarteEM">
+                    <div className="Top_Component_Grand">
+                        <h2 className="component_title">Avantage</h2>
+                        <hr></hr>
+                    </div>
+                    <button id="buttonCarteEM" className="buttonCarte">Voir liste des clients</button>
+                    <button id="buttonCarteEM" className="buttonCarte">Ajouter une carte</button>
+                    <div className="energie">
+                        {avantagesCarte()}
+                    </div>
                 </div>
             </div>
-        </section> 
+        </section>
     );
 
 };

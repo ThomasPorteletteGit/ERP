@@ -429,7 +429,7 @@ cuves
 .etat-cuves-container {
     display: flex;
     align-items: center;
-    width : 100%;
+    width: 100%;
     height: 85%;
     justify-content: space-around;
 }
@@ -437,30 +437,39 @@ cuves
 .cuve-container {
     padding: 3%;
     background-color: #777ca6;
-    height: 87%;
+    height: 85%;
     width: 7%;
     border-radius: 5px;
 }
 
-#etat-cuves .component-title{
+#etat-cuves .component-title {
     font-size: 20px;
 }
 
-#etat-cuves .top_container{
+#etat-cuves .top_container {
     height: 15%;
 }
 
-.etat-cuves-container .cuve-container:first-child{
+.etat-cuves-container .cuve-container:first-child {
     border-radius: 5px 5px 5px 20px !important;
 }
 
-.etat-cuves-container .cuve-container:last-child{
+.etat-cuves-container .cuve-container:last-child {
     border-radius: 5px 5px 20px 0px !important;
 }
 
 .cuve-container h2,
 p {
     font-size: 6px;
+}
+
+
+#cuvesGrand> :nth-child(-n+2)>h2 {
+    font-size: 16px !important;
+}
+
+.etat-cuves-container> :nth-child(-n+2)>h2 {
+    font-size: 5px !important;
 }
 
 .jauge {
@@ -655,7 +664,7 @@ p {
     z-index: 1;
 }
 
-#text_livraison{
+#text_livraison {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -667,7 +676,7 @@ p {
     z-index: 1;
 }
 
-#text_voiture{
+#text_voiture {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -679,7 +688,7 @@ p {
     z-index: 1;
 }
 
-#text_parking{
+#text_parking {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -892,7 +901,7 @@ select {
     border-radius: 5px;
 }
 
-.transaction-container{
+.transaction-container {
     height: 80%;
 
 }
@@ -1308,7 +1317,6 @@ th {
 
 .separator {
     border: 1px solid #ccc;
-    margin: 10px 0;
 }
 
 .total {
@@ -1587,29 +1595,29 @@ ul li {
 } */
 
 #parkingButton {
-    background: url("../assets/img/image-210.png") ; 
-    background-size: 100% 100%; 
-    background-repeat: no-repeat; 
-      
-}
-
-#covoiturageButton{
-    background: url("../assets/img/image-220.png") ; 
-    background-size: 100% 100%; 
-    background-repeat: no-repeat; 
+    background: url("../assets/img/image-210.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
 
 }
 
-#livraisonButton{
-    background: url("../assets/img/image-230.png") ; 
-    background-size: 100% 100%; 
-    background-repeat: no-repeat; 
+#covoiturageButton {
+    background: url("../assets/img/image-220.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+
 }
 
-#autresButton{
-    background: url("../assets/img/image-240.png") ; 
-    background-size: 100% 100%; 
-    background-repeat: no-repeat; 
+#livraisonButton {
+    background: url("../assets/img/image-230.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+#autresButton {
+    background: url("../assets/img/image-240.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
 }
 
 .button_container_grand_services button {
@@ -1620,7 +1628,7 @@ ul li {
     height: 45%;
     border-radius: 8px;
     cursor: pointer;
-    font-size: 35px; 
+    font-size: 35px;
     font-weight: bold;
 }
 
@@ -2244,9 +2252,9 @@ input[name="nameProduit"] {
 /* EtatStockReapro */
 
 .etat-stock h2 {
-    font-size: 24px; 
-    margin-top: 10px; 
-    margin-bottom: 10px; 
+    font-size: 24px;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 .etat-stock {
@@ -2261,10 +2269,12 @@ input[name="nameProduit"] {
     margin-bottom: 15px;
 }
 
-.etat-stock th, .etat-stock td {
+.etat-stock th,
+.etat-stock td {
     padding: 20px;
     text-align: center;
-    border: 1px solid black; /* Ajout de la bordure noire */
+    border: 1px solid black;
+    /* Ajout de la bordure noire */
 }
 
 .etat-stock th {
@@ -2275,14 +2285,17 @@ input[name="nameProduit"] {
 .etat-stock td {
     border-bottom: 1px solid #000000;
     color: #000;
-    background-color: #dbdada; /* Couleur de fond blanche pour toutes les lignes */
+    background-color: #dbdada;
+    /* Couleur de fond blanche pour toutes les lignes */
 }
 
 .etat-stock .produit {
     width: 40%;
 }
 
-.etat-stock .quantite, .etat-stock .prix, .etat-stock .action {
+.etat-stock .quantite,
+.etat-stock .prix,
+.etat-stock .action {
     width: 20%;
 }
 
@@ -2306,7 +2319,7 @@ input[name="nameProduit"] {
 
 .table-scroll {
     overflow-y: auto;
-    max-height: 10%; 
+    max-height: 10%;
 }
 
 .buttonRéapprovisionnement {
@@ -2351,13 +2364,15 @@ input[name="nameProduit"] {
 
 .product-info {
     flex-grow: 1;
-    text-align: left; /* Aligner le texte à gauche */
+    text-align: left;
+    /* Aligner le texte à gauche */
 }
 
 .product-info p {
     font-size: 20px;
     padding-right: 50%;
-    margin: 2%; /* Supprimer les marges pour éviter l'espacement supplémentaire */
+    margin: 2%;
+    /* Supprimer les marges pour éviter l'espacement supplémentaire */
 }
 
 
@@ -2481,13 +2496,13 @@ input[name="nameProduit"] {
 }
 
 .button_ajout_propositionCOV {
-   
-        border: solid #000;
-        border-radius: 8px;
-        padding: 10px;
-        margin: 15px;
-        background-color: #4d5b84;
-        box-shadow: 5px 6px 5px #101e49;
+
+    border: solid #000;
+    border-radius: 8px;
+    padding: 10px;
+    margin: 15px;
+    background-color: #4d5b84;
+    box-shadow: 5px 6px 5px #101e49;
 
 }
 
@@ -2496,33 +2511,68 @@ input[name="nameProduit"] {
 
 .formulaire_enregistrer_covoiturage {
     display: flex;
-    flex-direction: horizontal;
-    align-items: center;
+    flex-direction: column;
     margin: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     font-size: 150%;
+    /* 150% */
 }
 
 .formulaireEntree {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    border-radius: 8px;
-    box-sizing: border-box;
-    margin: 5%;
+    width: 70%;
+    margin: 2% 0;
 }
+
+.formulaireEntree label {
+    width: 30%;
+    text-align: left;
+    margin-right: 20%;
+}
+
+.formulaireEntree input {
+    width: 60%;
+    border-radius: 8px;
+    height: 40px;
+    align-items: right;
+}
+
 
 .boutonsAnnulationConfirmationCOV {
     display: flex;
     justify-content: space-around;
     align-items: horizontal;
     /* resize: horizontal; */
-    margin-top: 5%;
+    margin-top: 2%;
+    height: 80%;
+}
+
+.boutonsAnnulationConfirmationCOV button {
+    width: 40%;
+    height: 10%;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 25px;
+    background-color: #4d5b84;
+    border: black;
+    margin: 5px;
+}
+
+.nomClientCov {
+    display: flex;
+}
+
+.formCOV {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
 }
 
+#centPourCent {
+    height: 100%;
+}
 
 /****************************** Livraisons *************************************/
 
@@ -2582,4 +2632,110 @@ input[name="nameProduit"] {
     font-size: 170%;
     display: flex;
     justify-content: left;
+}
+
+/* Button */
+
+.button_style,
+#buttonCarteEM {
+    position: relative;
+    padding: 10px 20px;
+    border-radius: 7px;
+    border: 1px solid #c3f3fb;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 2px;
+    color: white;
+    background-color:transparent;
+    overflow: hidden;
+    box-shadow: 0 0 0 0 transparent;
+    -webkit-transition: all 0.2s ease-in;
+    -moz-transition: all 0.2s ease-in;
+    transition: all 0.2s ease-in;
+  }
+  
+.button_style:hover, #buttonCarteEM:hover {
+    background: #c3f3fb;
+    box-shadow: 0 0 10px 5px rgb(195,243,251, 0.8);
+    -webkit-transition: all 0.2s ease-out;
+    -moz-transition: all 0.2s ease-out;
+    transition: all 0.2s ease-out;
+    color: black;
+  }
+  
+.button_style:hover::before, #buttonCarteEM:hover::before {
+    -webkit-animation: sh02 0.5s 0s linear;
+    -moz-animation: sh02 0.5s 0s linear;
+    animation: sh02 0.5s 0s linear;
+}
+
+.button_style::before,
+#buttonCarteEM::before {
+    content: '';
+    display: block;
+    width: 0px;
+    height: 86%;
+    position: absolute;
+    top: 7%;
+    left: 0%;
+    opacity: 0;
+    background: #fff;
+    box-shadow: 0 0 50px 30px #fff;
+    -webkit-transform: skewX(-20deg);
+    -moz-transform: skewX(-20deg);
+    -ms-transform: skewX(-20deg);
+    -o-transform: skewX(-20deg);
+    transform: skewX(-20deg);
+}
+
+@keyframes sh02 {
+    from {
+        opacity: 0;
+        left: 0%;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+        left: 100%;
+    }
+}
+
+.button_style:active,
+#buttonCarteEM:active {
+    box-shadow: 0 0 0 0 transparent;
+    -webkit-transition: box-shadow 0.2s ease-in;
+    -moz-transition: box-shadow 0.2s ease-in;
+    transition: box-shadow 0.2s ease-in;
+}
+
+.carte-btn-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    height: 80%;
+    gap: 10%;
+    margin: auto;
+}
+
+.carte-btn-container>button {
+    width: 80%;
+    height: 20%;
+}
+
+.composantGrandCarteEM {
+    height: 100%;
+    width: 100%;
+}
+
+.energie {
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    scrollbar-width: none;
 }
