@@ -54,7 +54,7 @@ const HoraireGrand = ({ }) => {
                         <h2 className="component_title2"> 🕐Horaires</h2>
                     </div>
                 </div>
-                <hr />
+                <div className='separator'></div>
                 <div className="tableauHeure">
                     <table>
                         <thead>

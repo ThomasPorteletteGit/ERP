@@ -13,12 +13,12 @@ const directionData = [
 const DirectionGrand = () => {
     return (
         <div className="composantGrand">
-            <div className="direction-header">
-                <div className="componantDirectionGrand">
-                    <h2>Direction</h2>
+            <div className="Divflex">
+                <div id="topComposant">
+                    <h2 className="component_title2">👩‍💼 Direction</h2>
                 </div>
             </div>
-            <hr />
+            <div className="separator"></div>
             <h3>Détails de l'incident</h3>
             <div className="direction-details">
                 <ul>

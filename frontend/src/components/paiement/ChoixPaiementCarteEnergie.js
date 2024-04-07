@@ -10,7 +10,7 @@ const ChoixPaiementCarteEnergie = () => {
                         <h2 className="component_title2"> 🔋Carte Energie</h2>
                     </div>
                 </div>
-                <hr />
+                <div className='separator'></div>
                 <div id="PayerCB">
                     <h1>Paiement</h1>
                     <div id="Produits" className="DivBlock">
