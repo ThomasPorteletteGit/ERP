@@ -3,7 +3,7 @@ const dao = require('../../data/DAO');
 // Fonctions pour les energies
 
 function getAll(req, res) {
-    dao.select('*', 'ProduitEnergie', "type='Energie'", (result) => {
+    dao.selectOrderBy('*', 'ProduitEnergie', "type='Energie'" ,'id_produit_energie ASC', (result) => {
         res.send(result.rows);
     });
 }
@@ -27,14 +27,14 @@ function getEnergieNamesAndPrices(req, res) {
 }
 
 function getEnergieIds(req, res) {
-    dao.select('id', 'ProduitEnergie', "type='Energie'", (result) => {
+    dao.select('id_produit_energie', 'ProduitEnergie', "type='Energie'", (result) => {
         res.send(result.rows);
     });
 }
 
 function getEnergieId(req, res) {
     let name = req.body.name;
-    dao.select('id', 'ProduitEnergie', `nom='${name}'`, (result) => {
+    dao.select('id_produit', 'ProduitEnergie', `nom='${name}'`, (result) => {
         res.send(result.rows);
     });
 }
@@ -54,12 +54,14 @@ function reapprovisionnerEnergie(req, res) {
 }
 
 function modiferPrixEnergie(req, res) {
-    let prix = req.body;
-    for (let energie in prix) {
-        dao.update('ProduitEnergie', `prix = ${prix[energie]}`, `nom = '${energie}'`, (result) => {
-            res.send(result);
-        });
-    }
+    const objects = req.body;
+    let queries = [];
+    objects.map((array) => {
+        queries.push(`UPDATE ProduitEnergie SET prix = ${array.prix} WHERE nom = '${array.nom}'`);
+    });
+    dao.mutliUpdate(queries, (result) => {
+        res.send(result);
+    });
 }
 
 // Fonctions pour les produits
@@ -71,14 +73,21 @@ function getProduitNames(req, res) {
 }
 
 function getProduitIds(req, res) {
-    dao.select('id', 'ProduitEnergie', "type='Produit'", (result) => {
+    dao.select('id_produit_energie', 'ProduitEnergie', "type='Produit'", (result) => {
+        res.send(result.rows);
+    });
+}
+
+function getProduitFromId(req, res) {
+    let name = req.params.id_produit_energie;
+    dao.select('*', 'ProduitEnergie', `nom='${name}'`, (result) => {
         res.send(result.rows);
     });
 }
 
 function getProduitId(req, res) {
     let name = req.body.name;
-    dao.select('id', 'ProduitEnergie', `nom='${name}'`, (result) => {
+    dao.select('id_produit_energie', 'ProduitEnergie', `nom='${name}'`, (result) => {
         res.send(result.rows);
     });
 }
@@ -92,7 +101,7 @@ function getProduitStock(req, res) {
 function reapprovisionnerProduit(req, res) {
     let id = req.body.id;
     let quantite = req.body.quantite;
-    dao.update('ProduitEnergie', `quantite = quantite + ${quantite}`, `id = ${id}`, (result) => {
+    dao.update('ProduitEnergie', `quantite = quantite + ${quantite}`, `id_produit_energie= ${id}`, (result) => {
         res.send(result);
     });
 }
@@ -114,6 +123,7 @@ module.exports = {
     {
         getProduitNames,
         getProduitIds,
+        getProduitFromId,
         getProduitId,
         getProduitStock,
         reapprovisionnerProduit

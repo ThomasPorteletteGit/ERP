@@ -9,7 +9,7 @@ const EtatCuvesGrand = ({energies}) => {
     let energiesAndPrices = [];
     energies.forEach((energie) => {
         energiesAndQuantities.push({ nom: energie.nom, quantite_stock: energie.quantite_stock });
-        energiesAndPrices.push({ nom: energie.nom, prix: energie.prix });
+        energiesAndPrices.push([energie.nom, energie.prix]);
     });
     
     document.addEventListener("click", function (event) {
@@ -29,15 +29,6 @@ const EtatCuvesGrand = ({energies}) => {
     }); 
     return (
         <div className="composantGrand" id="cuvesGrands">
-            {/* <div className="Divflex">
-                <div id="topComposant">
-                    <h2 className="component_title">🛢️ Etat des cuves</h2>
-                </div>
-                <div id="topComposant2">
-                    <h4>Dernière mise à jour : <span id="lastUpdate">X</span> min</h4>
-                    <button id="buttonUpdate">Actualiser ⟳</button>
-                </div>
-            </div> */}
             <div className="Divflex">
                 <div id="topComposant">
                     <h2 className="component_title2">🛢️ Etat des cuves</h2>

@@ -65,7 +65,8 @@ CREATE TABLE Incident (
     id_incident SERIAL PRIMARY KEY,
     date DATE,
     description TEXT,
-    niveau INT
+    niveau INT,
+    est_confirme BOOLEAN
 );
 
 -- Table Pompe

@@ -11,12 +11,26 @@ import CarteMembre from './carteMembre/CarteMembre';
 import CarteEnergie from './carteEnergie/CarteEnergie';
 import StatutPompe from './pompe/StatutPompe';
 
-let pompesStates;
+let pompesStates = new Array();
+let liste_cartes_membres = new Array();
+let liste_cartes_energies = new Array();
 
 await fetch('/pompes/get')
     .then(response => response.json())
     .then(data => {
         pompesStates = data;
+    });
+    
+await fetch('/cartesMembre/get')
+    .then(response => response.json())
+    .then(data => {
+        liste_cartes_membres = data;
+    });
+
+await fetch('/cartesEnergie/get')
+    .then(response => response.json())
+    .then(data => {
+        liste_cartes_energies = data;
     });
 
 const Header = () => {
@@ -24,8 +38,8 @@ const Header = () => {
     const handleClick = (componentId) => () => {
         const divGeneral = document.getElementsByClassName("dashboard-right")[0];
         const componentsGrand = {
-            membre: <CarteMembre />,
-            energie: <CarteEnergie />
+            membre: <CarteMembre liste_cartes_membres={liste_cartes_membres} />,
+            energie: <CarteEnergie liste_cartes_energies={liste_cartes_energies} />
         };
 
         divGeneral.innerHTML = ReactDOMServer.renderToString(<SmallIcons iconClicked={componentId} />) + ReactDOMServer.renderToString(componentsGrand[componentId]);

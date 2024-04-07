@@ -58,6 +58,22 @@ const HoraireGrand = ({horaires}) => {
         //a remet comme avant les modifs
     };
 
+    document.addEventListener("click", function (event) {
+        if (event.target.classList.contains("btnHoraireGrandClick")) {
+            const buttonText = event.target.textContent;
+            switch (buttonText) {
+                case "Valider":
+                    handleValider();
+                    break;
+                case "Annuler":
+                    handleAnnuler();
+                    break;
+                default:
+                    break;
+            }
+        }
+    });
+
 
     return (
         <section id="modifHoraire">
@@ -95,8 +111,8 @@ const HoraireGrand = ({horaires}) => {
                             }
                         </tbody>
                     </table>
-                    <button className='buttonAnnuler' onClick={() => handleAnnuler()}>Annuler</button>
-                    <button className='buttonValider' onClick={() => handleValider()}>Valider</button>
+                    <button className='btnHoraireGrandClick buttonAnnuler' onClick={() => handleAnnuler()}>Annuler</button>
+                    <button className='btnHoraireGrandClick buttonValider' onClick={() => handleValider()}>Valider</button>
                 </div>
             </div>
         </section>

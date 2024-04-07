@@ -4,7 +4,27 @@ import ListeClientM from "./ListeClientM";
 import AjouterCarteM from "./AjouterCarteM";
 import AvantageCarteM from "./AvantageCarteM";
 
-const CarteMembre = () => {
+const CarteMembre = ({liste_cartes_membres}) => {
+
+    document.addEventListener("click", function (event) {
+        if (event.target.classList.contains("buttonCarte") && event.target.classList.contains("Membre")) {
+            const buttonText = event.target.textContent;
+            switch (buttonText) {
+                case "Voir liste clients":
+                    afficherClients(liste_cartes_membres);
+                    break;
+                case "Ajouter une carte":
+                    ajouterCarte(liste_cartes_membres);
+                    break;
+                case "Avantage carte membre":
+                    voirAvantage(liste_cartes_membres);
+                    break;
+                default:
+                    break;
+            }
+            event.preventDefault();
+        }
+    });
     return (
         <section id="carte">
             <div className="composantGrand">
@@ -16,9 +36,9 @@ const CarteMembre = () => {
                     </div>
                     <div className="separator"></div>
                     <div className="carte-btn-container">
-                        <button id="buttonCarteEM" className="buttonCarte">Voir liste client</button>
-                        <button id="buttonCarteEM" className="buttonCarte">Ajouter une carte</button>
-                        <button id="buttonCarteEM" className="buttonCarte">Avantage carte membre</button>
+                        <button id="buttonCarteEM" className="buttonCarte Membre">Voir liste clients</button>
+                        <button id="buttonCarteEM" className="buttonCarte Membre">Ajouter une carte</button>
+                        <button id="buttonCarteEM" className="buttonCarte Membre">Avantage carte membre</button>
                     </div>
                 </div>
             </div>
@@ -26,54 +46,29 @@ const CarteMembre = () => {
     );
 };
 
-document.addEventListener("click", function (event) {
-    if (event.target.classList.contains("buttonCarte")) {
-        const buttonText = event.target.textContent;
-        switch (buttonText) {
-            case "Voir liste des clients":
-                console.log("Bouton liste client -> liste client cliqué");
-                afficherClients();
-                break;
-            case "Ajouter une carte":
-                console.log("Bouton ajouter carte cliqué");
-                ajouterCarte();
-                break;
-            case "Avantage carte membre":
-                console.log("Bouton avantage cliqué");
-                voirAvantage();
-                break;
-            default:
-                console.log("Bouton inconnu cliqué" + buttonText);
-                break;
-        }
-        event.preventDefault();
-    }
-});
 
-function afficherClients() {
+
+function afficherClients(liste_cartes_membres) {
     const divGeneral = document.getElementsByClassName("dashboard-right")[0];
     let saveDiv = divGeneral.innerHTML;
-    console.log("Afficher les clients");
 
-    divGeneral.innerHTML = ReactDOMServer.renderToString(<ListeClientM />);
+    divGeneral.innerHTML = ReactDOMServer.renderToString(<ListeClientM liste_cartes_membres={liste_cartes_membres}/>);
     divGeneral.style.display = "block";
 }
 
-function ajouterCarte() {
+function ajouterCarte(liste_cartes_membres) {
     const divGeneral = document.getElementsByClassName("dashboard-right")[0];
     let saveDiv = divGeneral.innerHTML;
-    console.log("Afficher les clients");
 
-    divGeneral.innerHTML = ReactDOMServer.renderToString(<AjouterCarteM />);
+    divGeneral.innerHTML = ReactDOMServer.renderToString(<AjouterCarteM liste_cartes_membres={liste_cartes_membres}/>);
     divGeneral.style.display = "block";
 }
 
-function voirAvantage() {
+function voirAvantage(liste_cartes_membres) {
     const divGeneral = document.getElementsByClassName("dashboard-right")[0];
     let saveDiv = divGeneral.innerHTML;
-    console.log("Afficher les clients");
 
-    divGeneral.innerHTML = ReactDOMServer.renderToString(<AvantageCarteM />);
+    divGeneral.innerHTML = ReactDOMServer.renderToString(<AvantageCarteM liste_cartes_membres={liste_cartes_membres}/>);
     divGeneral.style.display = "block";
 }
 export default CarteMembre;

@@ -9,6 +9,9 @@ const transactionRoutes = require('./src/database/transactions/transaction');
 const loginRoutes = require('./src/database/login/login');
 const horairesRoutes = require('./src/database/misc/horaires');
 const pompesRoutes = require('./src/database/pompes/pompes');
+const cartesEnergieRoutes = require('./src/database/cartes/carteEnergie');
+const cartesMembreRoutes = require('./src/database/cartes/carteMembre');
+
 
 app.use(cors());
 app.use(express.json());
@@ -22,6 +25,8 @@ app.use('/transaction', transactionRoutes);
 app.use('/login', loginRoutes);
 app.use('/horaires', horairesRoutes);
 app.use('/pompes', pompesRoutes);
+app.use('/cartesEnergie', cartesEnergieRoutes);
+app.use('/cartesMembre', cartesMembreRoutes);
 
 
 const PORT = process.env.PORT || 5000;

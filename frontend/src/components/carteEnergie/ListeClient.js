@@ -1,24 +1,15 @@
 import React, {useState}from "react";
 
 //faire logique bouton supprimer
-const ListeClient = () => {
-    const [clients, setClients] = useState([
-        { id: 1, nom: "Truc", prenom: " Jean", adresse:" 1 rue de la paix"},
-        { id: 2, nom: "Bidule", prenom: " Jean", adresse:" 2 rue de la paix"},
-        { id: 3, nom: "Machin", prenom: " Jean", adresse:" 3 rue de la paix"},
-        { id: 4, nom: "Chose", prenom: " Jean", adresse:" 4 rue de la paix"},
-        { id: 5, nom: "Truc", prenom: " Gertrude", adresse:" 5 rue de la paix"},
-        { id: 6, nom: "Bidule", prenom: " Gertrude", adresse:" 6 rue de la paix"},
-        { id: 7, nom: "Machin", prenom: " Gertrude", adresse:" 7 rue de la paix"},
-    ]);
+const ListeClient = ({liste_cartes_energies}) => {
 
     const liste = () => {
-        return  clients.map((element) => (
+        return liste_cartes_energies.map((element) => (
             <div key={element.id} className="client">
                 <div className="infoClient">
                     <h4>{element.nom}{element.prenom}{element.adresse}</h4>
                 </div>
-                <button id="buttonCarteEM">Supprimer</button>
+                <button id="buttonCarteEM Energie">Supprimer</button>
             </div>
         ));
     };
@@ -30,8 +21,8 @@ const ListeClient = () => {
                     <h2 className="component_title">Liste des clients</h2>
                     <hr></hr>
                 </div>
-                <button id="buttonCarteEM" className="buttonCarte">Ajouter une carte</button>
-                <button id="buttonCarteEM" className="buttonCarte">Avantage carte énergie</button>
+                <button id="buttonCarteEM" className="buttonCarte Energie">Ajouter une carte</button>
+                <button id="buttonCarteEM" className="buttonCarte Energie">Avantage carte énergie</button>
                 <div className="energie">
                     {liste()}
                 </div>

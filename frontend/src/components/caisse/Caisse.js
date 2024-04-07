@@ -1,28 +1,7 @@
 import React, { useState } from 'react';
 
 const transactions = [
-    { nom: 1, quantity: 2, price: '25.25' },
-    { nom: 2, quantity: 3, price: '10.00' },
-    { nom: 3, quantity: 1, price: '5.50' },
-    { nom: 1, quantity: 2, price: '25.25' },
-    { nom: 2, quantity: 3, price: '10.00' },
-    { nom: 3, quantity: 1, price: '5.50' },
-    { nom: 1, quantity: 2, price: '25.25' },
-    { nom: 2, quantity: 3, price: '10.00' },
-    { nom: 3, quantity: 1, price: '5.50' },
-    { nom: 1, quantity: 2, price: '25.25' },
-    { nom: 2, quantity: 3, price: '10.00' },
-    { nom: 3, quantity: 1, price: '5.50' },
-    { nom: 1, quantity: 2, price: '25.25' },
-    { nom: 2, quantity: 3, price: '10.00' },
-    { nom: 3, quantity: 1, price: '5.50' },
-    { nom: 1, quantity: 2, price: '25.25' },
-    { nom: 2, quantity: 3, price: '10.00' },
-    { nom: 3, quantity: 1, price: '5.50' },
-    { nom: 1, quantity: 2, price: '25.25' },
-    { nom: 2, quantity: 3, price: '10.00' },
-    { nom: 3, quantity: 1, price: '5.50' },
-    // Add more transactions as needed
+
 ];
 
 const ChoixPaiement = () => {
@@ -30,6 +9,17 @@ const ChoixPaiement = () => {
     const [previousValue, setPreviousValue] = useState('');
     const [operator, setOperator] = useState('');
     const [resultDisplayed, setResultDisplayed] = useState(false);
+
+    //router.get("/getName/:id"
+    const searchArticle = async (article) => {
+        let result;
+        await fetch(`/stockEnergie/get/${article}`)
+            .then((response) => response.json())
+            .then((data) => {
+                result = data;
+            });
+        return result;
+    }
 
     const handleButtonClick = (value) => {
         if (resultDisplayed) {

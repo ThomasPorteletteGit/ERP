@@ -4,10 +4,33 @@ import ListeClient from "./ListeClient";
 import AvantageCarte from "./AvantageCarte";
 
 //a faire logique bouton enregistrer
-const AjouterCarte = () => {
+const AjouterCarte = ({liste_cartes_energies}) => {
     const [nom, setNom] = useState('');
     const [prenom, setPrenom] = useState('');
     const [adresse, setAdresse] = useState('');
+
+    
+    document.addEventListener("click", function (event) {
+        if (event.target.classList.contains("buttonCarte") && event.target.classList.contains("Energie")) {
+            const buttonText = event.target.textContent;
+            switch (buttonText) {
+                case "Voir liste clients":
+                    afficherClients(liste_cartes_energies);
+                    break;
+                case "Avantage carte énergie":
+                    voirAvantage(liste_cartes_energies);
+                    break;
+                case "Enregistrer":
+                    break;
+                case "Annuler":
+                    ajouterCarte(liste_cartes_energies);
+                    break;
+                default:
+                    break;
+            }
+            event.preventDefault();
+        }
+    });
 
     return (
         <section id='carte'>
@@ -18,8 +41,8 @@ const AjouterCarte = () => {
                         <hr></hr>
                     </div>
 
-                    <button id="buttonCarteEM" className="buttonCarte">Voir liste des clients</button>
-                    <button id="buttonCarteEM" className="buttonCarte">Ajouter une carte</button>
+                    <button id="buttonCarteEM" className="buttonCarte Energie">Voir liste clients</button>
+                    <button id="buttonCarteEM" className="buttonCarte Energie">Ajouter une carte</button>
 
                     <form>
                         <div className="infoClientCarte">
@@ -31,13 +54,13 @@ const AjouterCarte = () => {
                             <input type="text" value={prenom} onChange={(e) => setPrenom(e.target.value)} required />
                         </div>
                         <div className="infoClientCarte">
-                            <h3>Adresse :</h3>
+                            <h3>Adresse Mail:</h3>
                             <input type="text" value={adresse} onChange={(e) => setAdresse(e.target.value)} required />
                         </div>
 
                         <div className="infoClientCarte">
-                            <button id="buttonCarteEM" className="buttonCarte" type="submit">Enregistrer</button>
-                            <button id="buttonCarteEM" className="buttonCarte" type="button">Annuler</button>
+                            <button id="buttonCarteEM" className="buttonCarte Energie" type="submit">Enregistrer</button>
+                            <button id="buttonCarteEM" className="buttonCarte Energie" type="button">Annuler</button>
                         </div>
                     </form>
                 </div>
@@ -47,58 +70,28 @@ const AjouterCarte = () => {
 };
 
 
-document.addEventListener("click", function (event) {
-    if (event.target.classList.contains("buttonCarte")) {
-        const buttonText = event.target.textContent;
-        switch (buttonText) {
-            case "Voir liste client":
-                console.log("Bouton liste client -> liste client cliqué");
-                afficherClients();
-                break;
-            case "Avantage carte énergie":
-                console.log("Bouton avantage cliqué");
-                voirAvantage();
-                break;
-            case "Enregistrer":
-                console.log("Bouton enregister cliqué");
 
-                break;
-            case "Annuler":
-                console.log("Bouton annuler cliqué");
-                annuler();
-                break;
-            default:
-                console.log("Bouton inconnu cliqué" + buttonText);
-                break;
-        }
-        event.preventDefault();
-    }
-});
-
-function afficherClients() {
+function afficherClients(liste_cartes_energies) {
     const divGeneral = document.getElementsByClassName("composantGrand")[0];
     let saveDiv = divGeneral.innerHTML;
-    console.log("Afficher les clients");
 
-    divGeneral.innerHTML = ReactDOMServer.renderToString(<ListeClient />);
+    divGeneral.innerHTML = ReactDOMServer.renderToString(<ListeClient liste_cartes_energies={liste_cartes_energies}/>);
     divGeneral.style.display = "block";
 }
 
-function voirAvantage() {
+function voirAvantage(liste_cartes_energies) {
     const divGeneral = document.getElementsByClassName("composantGrand")[0];
     let saveDiv = divGeneral.innerHTML;
-    console.log("Afficher les clients");
 
-    divGeneral.innerHTML = ReactDOMServer.renderToString(<AvantageCarte />);
+    divGeneral.innerHTML = ReactDOMServer.renderToString(<AvantageCarte liste_cartes_energies={liste_cartes_energies} />);
     divGeneral.style.display = "block";
 }
 
-function annuler() {
+function ajouterCarte(liste_cartes_energies) {
     const divGeneral = document.getElementsByClassName("composantGrand")[0];
     let saveDiv = divGeneral.innerHTML;
-    console.log("annuler");
 
-    divGeneral.innerHTML = ReactDOMServer.renderToString(<AjouterCarte />);
+    divGeneral.innerHTML = ReactDOMServer.renderToString(<AjouterCarte liste_cartes_energies={liste_cartes_energies}/>);
     divGeneral.style.display = "block";
 }
 

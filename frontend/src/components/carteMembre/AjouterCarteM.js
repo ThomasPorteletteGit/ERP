@@ -4,10 +4,33 @@ import ListeClientM from "./ListeClientM";
 import AvantageCarteM from "./AvantageCarteM";
 
 //a faire logique bouton enregistrer
-const AjouterCarteM = () => {
+const AjouterCarteM = ({liste_cartes_membres}) => {
     const [nom, setNom] = useState('');
     const [prenom, setPrenom] = useState('');
     const [adresse, setAdresse] = useState('');
+
+        
+    document.addEventListener("click", function (event) {
+        if (event.target.classList.contains("buttonCarte") && event.target.classList.contains("Membre")) {
+            const buttonText = event.target.textContent;
+            switch (buttonText) {
+                case "Voir liste clients":
+                    afficherClients(liste_cartes_membres);
+                    break;
+                case "Avantage carte énergie":
+                    voirAvantage(liste_cartes_membres);
+                    break;
+                case "Enregistrer":
+                    break;
+                case "Ajouter une carte":
+                    ajouterCarte(liste_cartes_membres);
+                    break;
+                default:
+                    break;
+            }
+            event.preventDefault();
+        }
+    });
 
     return (
         <section id='carte'>
@@ -19,8 +42,8 @@ const AjouterCarteM = () => {
                         <hr></hr>
                     </div>
 
-                    <button id="buttonCarteEM" className="buttonCarte">Voir liste des clients</button>
-                    <button id="buttonCarteEM" className="buttonCarte">Ajouter une carte</button>
+                    <button id="buttonCarteEM" className="buttonCarte Membre">Voir liste clients</button>
+                    <button id="buttonCarteEM" className="buttonCarte Membre">Ajouter une carte</button>
 
                     <form>
                         <div className="infoClientCarte">
@@ -37,8 +60,8 @@ const AjouterCarteM = () => {
                         </div>
 
                         <div className="infoClientCarte">
-                            <button id="buttonCarteEM" className="buttonCarte" type="submit">Enregistrer</button>
-                            <button id="buttonCarteEM" className="buttonCarte" type="button">Annuler</button>
+                            <button id="buttonCarteEM" className="buttonCarte Membre" type="submit">Enregistrer</button>
+                            <button id="buttonCarteEM" className="buttonCarte Membre" type="button">Annuler</button>
                         </div>
                     </form>
                 </div>
@@ -48,58 +71,27 @@ const AjouterCarteM = () => {
 };
 
 
-document.addEventListener("click", function (event) {
-    if (event.target.classList.contains("buttonCarte")) {
-        const buttonText = event.target.textContent;
-        switch (buttonText) {
-            case "Voir liste client":
-                console.log("Bouton liste client -> liste client cliqué");
-                afficherClients();
-                break;
-            case "Avantage carte énergie":
-                console.log("Bouton avantage cliqué");
-                voirAvantage();
-                break;
-            case "Enregistrer":
-                console.log("Bouton enregister cliqué");
-
-                break;
-            case "Annuler":
-                console.log("Bouton annuler cliqué");
-                annuler();
-                break;
-            default:
-                console.log("Bouton inconnu cliqué" + buttonText);
-                break;
-        }
-        event.preventDefault();
-    }
-});
-
-function afficherClients() {
+function afficherClients(liste_cartes_membres) {
     const divGeneral = document.getElementsByClassName("dashboard-right")[0];
     let saveDiv = divGeneral.innerHTML;
-    console.log("Afficher les clients");
 
-    divGeneral.innerHTML = ReactDOMServer.renderToString(<ListeClientM />);
+    divGeneral.innerHTML = ReactDOMServer.renderToString(<ListeClientM liste_cartes_membres={liste_cartes_membres}/>);
     divGeneral.style.display = "block";
 }
 
-function voirAvantage() {
+function voirAvantage(liste_cartes_membres) {
     const divGeneral = document.getElementsByClassName("dashboard-right")[0];
     let saveDiv = divGeneral.innerHTML;
-    console.log("Afficher les clients");
 
-    divGeneral.innerHTML = ReactDOMServer.renderToString(<AvantageCarteM />);
+    divGeneral.innerHTML = ReactDOMServer.renderToString(<AvantageCarteM liste_cartes_membres={liste_cartes_membres} />);
     divGeneral.style.display = "block";
 }
 
-function annuler() {
+function ajouterCarte(liste_cartes_membres) {
     const divGeneral = document.getElementsByClassName("dashboard-right")[0];
     let saveDiv = divGeneral.innerHTML;
-    console.log("annuler");
 
-    divGeneral.innerHTML = ReactDOMServer.renderToString(<AjouterCarteM />);
+    divGeneral.innerHTML = ReactDOMServer.renderToString(<AjouterCarteM liste_cartes_membres={liste_cartes_membres}/>);
     divGeneral.style.display = "block";
 }
 
