@@ -1,14 +1,15 @@
-
 import React , { useEffect } from "react";
-import services from "../Services";
-
+import { useHistory } from 'react-router-dom';
 import ReactDOMServer from 'react-dom/server';
+
+import services from "../Services";
 import searchIcon from '../../../assets/img/searchIcon.png';
 import backArrow from '../../../assets/img/en-arriere.png';
 import ReservationPlaceP from "../placeParking/ReservationPlaceP";
-import { useHistory } from 'react-router-dom';
 import EnregistrerCovoiturage from './EnregistrerCovoiturage';
 import ServicesGrand from "../ServicesGrand";
+import ModificationCOV from "./ModificationCOV";
+import SmallIcons from "../../SmallIcons";
 
 const ServiceCoVoiturage = () => {
     // à récup dans la bd
@@ -46,16 +47,16 @@ const ServiceCoVoiturage = () => {
 
     document.addEventListener('click', function (event) {
         Cov.map(element => {
-            const buttonReserver = document.getElementById("buttonReserverCov"+element.id_cov);
+            const buttonModifier = document.getElementById("buttonModifierCov"+element.id_cov);
             const buttonSupprimer = document.getElementById("buttonSupprimerCov"+element.id_cov);
 
-            if (buttonReserver === null || buttonSupprimer === null) {
+            if (buttonModifier === null || buttonSupprimer === null) {
                 return;
             }
 
-            buttonReserver.addEventListener("click", function() {
+            buttonModifier.addEventListener("click", function() {
                 
-                enregistrerCOV(element.id_cov)
+                modifierCOV(element.id_cov)
                 
             });
             event.preventDefault();
@@ -64,6 +65,9 @@ const ServiceCoVoiturage = () => {
                 // Ajoutez votre logique pour le bouton Supprimer ici
                 console.log(" ## SUPPRESSION proposition cov " + element.id_cov + " ##");
                 // TODO SUPPRIMER RESERVATION BD
+                supprimerCOV(element.id_cov);
+                 
+                
                 
 
             });
@@ -83,16 +87,25 @@ const ServiceCoVoiturage = () => {
                             <h2> Proposition n° {element.id_cov} </h2>
                         </div>
 
+                        
+
                         <div className="etatPropositionCov">
                             <span className={`statut-propositionCov ${getStatusColor(element.statut)}`}></span>
                         </div>
 
+                        <div className="dateCOV">
+                            <h2> Prévu pour le : {element.date} </h2>
+                        </div>
+                    </div>
+
+                    <div className="nomClientCov">
+                            <h2> Nom : {element.nomClient} </h2>
                     </div>
 
                     <div className="bouttonsCov">
                         
-                        <button id={"buttonReserverCov"+element.id_cov} className="bouttonsCov" disabled={!element.statut} >Modifier</button>
-                        <button id={"buttonSupprimerCov"+element.id_cov} className="bouttonsCov" disabled={element.statut} >Annuler</button>
+                        <button id={"buttonModifierCov"+element.id_cov} className="bouttonsCov" disabled={!element.statut} >Modifier</button>
+                        <button id={"buttonSupprimerCov"+element.id_cov} className="bouttonsCov" disabled={element.statut} >Supprimer</button>
                     
                     </div>
                 </div>
@@ -114,7 +127,7 @@ const ServiceCoVoiturage = () => {
 
                     
                 <button id="backArrowServiceButton" className="backArrowServiceButton" >Retour</button>
-                <input type="text" name="text" className="search" placeholder=" Entrez un numéro de place " />
+                <input type="text" name="text" className="search" placeholder=" Entrez un numéro de proposition " />
                 <button type="submit" name="submit" className="submitSearchCov">
                     <img src={searchIcon} alt="Search" className="searchIconImage" />
                 </button>
@@ -142,13 +155,8 @@ document.addEventListener("click", function (event) {
         const buttonText = event.target.textContent;
         switch (buttonText) {
             case "Retour":
-                console.log("Bouton Retour aux services grands");
-                // TODO: Ajouter code pour afficher les places de parking
-                const divGeneral = document.getElementsByClassName("dashboard-right")[0];
-                console.log("Reserver la place de parking");
-                
-                divGeneral.innerHTML = ReactDOMServer.renderToString(<ServicesGrand />);
-                divGeneral.style.display = "block";
+                console.log("Bouton Retour aux services grands"); 
+                retourServicesGrand();
                 break;
             default:
                 console.log("Bouton inconnu cliqué" + buttonText);
@@ -168,21 +176,6 @@ document.addEventListener("click", function (event) {
 });
 
 
-// document.addEventListener('DOMContentLoaded', function (event) {    
-//     const boutonRetour = document.querySelector("backArrowServiceButton");
-//     console.log("Bouton retour" + boutonRetour);
-//     if (boutonRetour != null) {
-
-//         boutonRetour.addEventListener('click', () => {
-//             const divGeneral = document.getElementsByClassName("dashboard-right")[0];
-//             console.log("Reserver la place de parking");
-            
-//             divGeneral.innerHTML = ReactDOMServer.renderToString(<ServicesGrand />);
-//             divGeneral.style.display = "block";
-        
-//         });
-//     }
-// });
 
 function enregistrerCOV(id_cov) { // TODO mmodif -> covoiturage
     const divGeneral = document.getElementsByClassName("dashboard-right")[0];
@@ -192,7 +185,33 @@ function enregistrerCOV(id_cov) { // TODO mmodif -> covoiturage
     divGeneral.style.display = "block";
 }
 
+function modifierCOV(id_cov) { 
+    // TODO mmodif -> modification de la proposition selon id_cov dans bd
+    console.log("Modifier une proposition de covoiturage");
+    const divGeneral = document.getElementsByClassName("dashboard-right")[0];
+    console.log("Enregistrer une proposition de covoiturage");
+    
+    divGeneral.innerHTML = ReactDOMServer.renderToString(<ModificationCOV id_cov={id_cov} />);
+    divGeneral.style.display = "block";
 
+}
+
+function supprimerCOV(id_cov) { 
+    // TODO mmodif -> suppression de la proposition selon id_cov dans bd
+    console.log("Supprimer une proposition de covoiturage");
+
+}
+
+function retourServicesGrand() {
+    const divGeneral = document.getElementsByClassName("dashboard-right")[0];
+    console.log("Retour aux services grands");
+    // Rendu du composant SmallIcons
+    const smallIconsComponent = ReactDOMServer.renderToString(<SmallIcons iconClicked="services" />);
+    // Rendu du composant ServiceCoVoiturage
+    const servicesGrandCOmponent = ReactDOMServer.renderToString(<ServicesGrand />);
+    divGeneral.innerHTML = smallIconsComponent ;
+    divGeneral.style.display = "block";
+}
 
 
 export default ServiceCoVoiturage;

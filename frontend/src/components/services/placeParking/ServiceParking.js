@@ -1,11 +1,10 @@
 import React , { useEffect } from "react";
-import services from "../Services";
-
-import ReactDOMServer from 'react-dom/server'
-import searchIcon from '../../../assets/img/searchIcon.png';
-import ReservationPlaceP from "./ReservationPlaceP";
 import { useHistory } from 'react-router-dom';
-
+import ReactDOMServer from 'react-dom/server';
+import services from "../Services"; 
+import searchIcon from '../../../assets/img/searchIcon.png';
+import ReservationPlaceP from "./ReservationPlaceP"; 
+import SmallIcons from "../../SmallIcons";
 import ServicesGrand from "../ServicesGrand";
 
 const ServiceParking = () => {
@@ -124,11 +123,13 @@ document.addEventListener("click", function (event) {
         switch (buttonText) {
             case "Retour":
                 console.log("Bouton Retour aux services grands");
-                // TODO: Ajouter code pour afficher les places de parking
                 const divGeneral = document.getElementsByClassName("dashboard-right")[0];
-                console.log("Reserver la place de parking");
-                
-                divGeneral.innerHTML = ReactDOMServer.renderToString(<ServicesGrand />);
+                console.log("Retour aux services grands");
+                // Rendu du composant SmallIcons
+                const smallIconsComponent = ReactDOMServer.renderToString(<SmallIcons iconClicked="services" />);
+                // Rendu du composant ServiceCoVoiturage
+                const servicesGrandCOmponent = ReactDOMServer.renderToString(<ServicesGrand />);
+                divGeneral.innerHTML = smallIconsComponent ; //+ servicesGrandCOmponent;
                 divGeneral.style.display = "block";
                 break;
             default:
