@@ -7,14 +7,16 @@ import AvantageCarteM from "./AvantageCarteM";
 const CarteMembre = () => {
     return (
         <section id="carte">
-            <div className="composantGrandCarteEM">
-                <div className="Top_Component_Grand">
-                    <h2 className="component_title">Carte Membre</h2>
-                    <hr></hr>
+            <div className="composantGrand">
+                <div className="composantGrandCarteEM">
+                    <div className="Top_Component_Grand">
+                        <h2 className="component_title">Carte Membre</h2>
+                        <hr></hr>
+                    </div>
+                    <button id="buttonCarteEM" className="buttonCarte">Voir liste client</button>
+                    <button id="buttonCarteEM" className="buttonCarte">Ajouter une carte</button>
+                    <button id="buttonCarteEM" className="buttonCarte">Avantage carte membre</button>
                 </div>
-                <button id="buttonCarteEM" className="buttonCarte">Voir liste client</button>
-                <button id="buttonCarteEM" className="buttonCarte">Ajouter une carte</button>
-                <button id="buttonCarteEM" className="buttonCarte">Avantage carte membre</button>
             </div>
         </section>
     );
@@ -62,7 +64,7 @@ function ajouterCarte() {
     divGeneral.style.display = "block";
 }
 
-function voirAvantage(){
+function voirAvantage() {
     const divGeneral = document.getElementsByClassName("dashboard-right")[0];
     let saveDiv = divGeneral.innerHTML;
     console.log("Afficher les clients");

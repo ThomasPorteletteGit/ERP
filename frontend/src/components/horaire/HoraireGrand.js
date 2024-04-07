@@ -21,15 +21,15 @@ function SelectHeure({ onChange, valeurInitiale }) {
     );
 }
 
-const HoraireGrand = ({}) => {
+const HoraireGrand = ({ }) => {
     const [heureOuverture, setHeureOuverture] = useState("06:00");
     const [heureFermeture, setHeureFermeture] = useState("22:00");
-    
+
     const handleHeureOuverture = (nouvelleHeure) => {
         console.log("Nouvelle heure d'ouverture : " + nouvelleHeure);
         setHeureOuverture(nouvelleHeure);
     };
-    
+
     const handleHeureFermeture = (nouvelleHeure) => {
         console.log("Nouvelle heure de fermeture : " + nouvelleHeure);
         setHeureFermeture(nouvelleHeure);
@@ -49,10 +49,12 @@ const HoraireGrand = ({}) => {
     return (
         <section id="modifHoraire">
             <div className="composantGrand">
-                <div className="Top_Component_Grand">
-                    <h2 className="component_title">🕐Horaires</h2>
-                    <hr></hr>
+                <div className="Divflex">
+                    <div id="topComposant">
+                        <h2 className="component_title2"> 🕐Horaires</h2>
+                    </div>
                 </div>
+                <hr />
                 <div className="tableauHeure">
                     <table>
                         <thead>
@@ -65,72 +67,72 @@ const HoraireGrand = ({}) => {
                         <tbody>
                             <tr>
                                 <td>Lundi</td>
-                                <td><SelectHeure 
-                                        onChange={handleHeureOuverture} 
-                                        valeurInitiale={heureOuverture} />
+                                <td><SelectHeure
+                                    onChange={handleHeureOuverture}
+                                    valeurInitiale={heureOuverture} />
                                 </td>
-                                <td><SelectHeure 
-                                        onChange={handleHeureFermeture} 
-                                        valeurInitiale={heureFermeture} /></td>
+                                <td><SelectHeure
+                                    onChange={handleHeureFermeture}
+                                    valeurInitiale={heureFermeture} /></td>
                             </tr>
                             <tr>
                                 <td>Mardi</td>
-                                <td><SelectHeure 
-                                        onChange={handleHeureOuverture} 
-                                        valeurInitiale={heureOuverture}
-                                     />
+                                <td><SelectHeure
+                                    onChange={handleHeureOuverture}
+                                    valeurInitiale={heureOuverture}
+                                />
                                 </td>
                                 <td>
-                                    <SelectHeure 
-                                        onChange={handleHeureFermeture} 
-                                        valeurInitiale={heureFermeture} 
+                                    <SelectHeure
+                                        onChange={handleHeureFermeture}
+                                        valeurInitiale={heureFermeture}
                                     />
                                 </td>
                             </tr>
                             <tr>
                                 <td>Mercredi</td>
-                                <td><SelectHeure 
-                                        onChange={handleHeureOuverture} 
-                                        valeurInitiale={heureOuverture} /></td>
-                                <td><SelectHeure 
-                                        onChange={handleHeureFermeture} 
-                                        valeurInitiale={heureFermeture} /></td>
+                                <td><SelectHeure
+                                    onChange={handleHeureOuverture}
+                                    valeurInitiale={heureOuverture} /></td>
+                                <td><SelectHeure
+                                    onChange={handleHeureFermeture}
+                                    valeurInitiale={heureFermeture} /></td>
                             </tr>
                             <tr>
                                 <td>Jeudi</td>
-                                <td><SelectHeure 
-                                        onChange={handleHeureOuverture} 
-                                        valeurInitiale={heureOuverture} /></td>
-                                <td><SelectHeure 
-                                        onChange={handleHeureFermeture} 
-                                        valeurInitiale={heureFermeture} /></td>
+                                <td><SelectHeure
+                                    onChange={handleHeureOuverture}
+                                    valeurInitiale={heureOuverture} /></td>
+                                <td><SelectHeure
+                                    onChange={handleHeureFermeture}
+                                    valeurInitiale={heureFermeture} /></td>
                             </tr>
                             <tr>
                                 <td>Vendredi</td>
-                                <td><SelectHeure 
-                                        onChange={handleHeureOuverture} 
-                                        valeurInitiale={heureOuverture} /></td>
-                                <td><SelectHeure 
-                                        onChange={handleHeureFermeture} 
-                                        valeurInitiale={heureFermeture} /></td>
+                                <td><SelectHeure
+                                    onChange={handleHeureOuverture}
+                                    valeurInitiale={heureOuverture} /></td>
+                                <td><SelectHeure
+                                    onChange={handleHeureFermeture}
+                                    valeurInitiale={heureFermeture} /></td>
                             </tr>
                             <tr>
                                 <td>Samedi</td>
-                                <td><SelectHeure 
-                                        onChange={handleHeureOuverture} 
-                                        valeurInitiale={heureOuverture} /></td>
-                                <td><SelectHeure 
-                                        onChange={handleHeureFermeture} 
-                                        valeurInitiale={heureFermeture} /></td>
+                                <td><SelectHeure
+                                    onChange={handleHeureOuverture}
+                                    valeurInitiale={heureOuverture} /></td>
+                                <td><SelectHeure
+                                    onChange={handleHeureFermeture}
+                                    valeurInitiale={heureFermeture} /></td>
                             </tr>
                             <tr>
                                 <td>Dimanche</td>
-                                <td><SelectHeure 
-                                        onChange={handleHeureOuverture} 
-                                        valeurInitiale={heureOuverture} /></td>
-                                <td><SelectHeure 
-                                        onChange={handleHeureFermeture} 
-                                        valeurInitiale={heureFermeture} /></td>
+                                <td><SelectHeure
+                                    onChange={handleHeureOuverture}
+                                    valeurInitiale={heureOuverture} /></td>
+                                <td><SelectHeure
+                                    onChange={handleHeureFermeture}
+                                    valeurInitiale={heureFermeture} /></td>
                             </tr>
                         </tbody>
                     </table>
