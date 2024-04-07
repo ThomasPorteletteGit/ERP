@@ -2495,34 +2495,67 @@ input[name="nameProduit"] {
 
 .formulaire_enregistrer_covoiturage {
     display: flex;
-    flex-direction: horizontal;
-    align-items: center;
+    flex-direction: column; 
     margin: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 150%;
+    font-size: 150%; /* 150% */
 }
 
 .formulaireEntree {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    border-radius: 8px;
-    box-sizing: border-box;
-    margin: 5%;
+    width: 70%;
+    margin: 2% 0;
 }
+
+.formulaireEntree label {
+    width: 30%;
+    text-align: left;
+    margin-right: 20%;  
+}
+
+.formulaireEntree input {
+    width: 60%;
+    border-radius: 8px;
+    height: 40px;
+    align-items: right;    
+}
+
 
 .boutonsAnnulationConfirmationCOV {
     display: flex;
     justify-content: space-around;
     align-items: horizontal;
     /* resize: horizontal; */
-    margin-top: 5%;
-
+    margin-top: 2%;
+    height: 80%;
 }
 
+.boutonsAnnulationConfirmationCOV button {
+    width: 40%;
+    height: 10%;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 25px;
+    background-color: #4d5b84;
+    border: black;
+    margin: 5px;
+}
 
+.nomClientCov {
+    display: flex; 
+}
+
+.formCOV { 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+     
+}
+
+#centPourCent {
+    height: 100%;
+}
 /****************************** Livraisons *************************************/
 
 .livraison {

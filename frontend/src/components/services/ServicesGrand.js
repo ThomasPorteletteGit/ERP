@@ -7,6 +7,7 @@ import ServiceCoVoiturage from "./coVoiturage/ServiceCoVoiturage";
 import ServiceLivraison from "./livraison/ServiceLivraison";
 
 
+
 const ServicesGrand = () => {
     return (
         
@@ -68,11 +69,15 @@ document.addEventListener("click", function (event) {
 
     function afficherVueCoVoiturage () {
         const divGeneral = document.getElementsByClassName("dashboard-right")[0];
-        let saveDiv = divGeneral.innerHTML;
-        console.log("Afficher les propositions de co-voiturage");
-        
-        divGeneral.innerHTML = ReactDOMServer.renderToString(<ServiceCoVoiturage />);
-        divGeneral.style.display = "block";
+    const divSmallIcons = document.getElementsByClassName("smallIcons")[0];
+    
+    
+    // Rendu du composant ServiceCoVoiturage
+    const serviceCoVoiturageComponent = ReactDOMServer.renderToString(<ServiceCoVoiturage />);
+    
+    // Ajout du rendu des deux composants à la div "dashboard-right"
+    divGeneral.innerHTML = serviceCoVoiturageComponent;
+    divGeneral.style.display = "block";
     }
 
     function afficherVueLivraison () {
