@@ -40,6 +40,10 @@
     font-size: 3vh;
 }
 
+#cuvesGrand .progress-bar{
+    border-radius: 0 0 2vh 2vh;
+}
+
 
 
 .composantGrand{
