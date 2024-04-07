@@ -15,7 +15,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static('public'));
 
-app.use('/incident', incidentRoutes);
+app.use('/incidents', incidentRoutes);
 app.use('/stockEnergie', stockEnergieRoutes);
 app.use('/stockProduits', stockProduitsRoutes);
 app.use('/transaction', transactionRoutes);

@@ -31,7 +31,6 @@ function SelectHeure({onChange, jour, horaire}) {
 }
 
 const HoraireGrand = ({horaires}) => {
-   
     const handleHeureOuverture = () => {
 
         
@@ -43,24 +42,27 @@ const HoraireGrand = ({horaires}) => {
     };
 
     const handleValider = () => {
+        console.log("Validation des modifications");
+        const modifiedFermeture = document.querySelectorAll('.horaires.fermeture');
+        const modifiedOuverture = document.querySelectorAll('.horaires.ouverture');
+
+        modifiedFermeture.forEach((heure) => {
+            console.log(heure);
+        });
+
+        modifiedOuverture.forEach((heure) => {
+            console.log(heure);
+        });
+        
 
     };
 
-    const setHeureOuvertureDb = (jour, heure) => {
-        fetch('/horaires/ouverture/set/'+jour+'/'+heure)
-        .then(response => response.json())
-        .then(data => {
-            console.log(data);
-        });
+    const setHeureOuverture = (jour, heure) => {
+       
     };
 
-
-    const setHeureFermetureDb = (jour, heure) => {
-        fetch('/horaires/fermeture/set/'+jour+'/'+heure)
-        .then(response => response.json())
-        .then(data => {
-            console.log(data);
-        });
+    const setHeureFermeture = (jour, heure) => {
+    
     };
 
     const handleAnnuler = () => {
@@ -92,10 +94,10 @@ const HoraireGrand = ({horaires}) => {
                                         <tr>
                                             <td>{jour.jour}</td>
                                             <td>
-                                                <SelectHeure onChange={setHeureOuvertureDb} jour={jour} horaire={jour.horaire_ouverture}/>
+                                                <SelectHeure className="ouverture" onChange={() => setHeureOuverture} jour={jour} horaire={jour.horaire_ouverture}/>
                                             </td>
                                             <td>
-                                                <SelectHeure onChange={setHeureFermetureDb} jour={jour} horaire={jour.horaire_fermeture}/>
+                                                <SelectHeure className="fermeture" sonChange={() => setHeureFermeture} jour={jour} horaire={jour.horaire_fermeture}/>
                                             </td>
                                         </tr>
                                     );
