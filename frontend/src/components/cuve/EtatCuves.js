@@ -3,8 +3,7 @@ import Cuve from './Cuve';
 import agrandir from '../../assets/img/agrandir.png';
 
 
-const EtatCuves = (energies) => {
-    const energiesObject = energies.energies;
+const EtatCuves = ({energies}) => {
     return (
         <section id="etat-cuves">
             <div className="top_container">
@@ -13,7 +12,7 @@ const EtatCuves = (energies) => {
             </div>
             <div className="etat-cuves-container">
                 {
-                    energiesObject.map((energie) => {
+                    energies.map((energie) => {
                         return <Cuve carburant={energie.nom} niveau={energie.quantite_stock*100/1000} />
                     })
                 }

@@ -8,7 +8,7 @@ const incidents = [
     { id_incident: 2, date: '2024-03-02', description: 'Fuite de carburant', niveau: 1 },
 ];
 
-const Incidents = () => {
+const Incidents = ({incidents}) => {
     return (
         <section id="incidents">
             <div className="top_container">

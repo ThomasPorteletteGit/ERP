@@ -17,7 +17,7 @@ function SelectHeure({onChange, jour, horaire}) {
                     [0, 30].map(j => {
                         let heureFormat = (i < 10 ? '0' + i : i) + ':' + (j < 10 ? '0' + j : j);
                         
-                        if (heureFormat === horaire || heureFormat === horaire) {
+                        if (heureFormat === horaire.substring(0,5) || heureFormat === horaire.substring(0,5)) {
                             return <option value={heureFormat} key={heureFormat} selected>{heureFormat}</option>
                         }
                         else {
@@ -30,8 +30,8 @@ function SelectHeure({onChange, jour, horaire}) {
     );
 }
 
-const HoraireGrand = ({}) => {
-    const jours = ["Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi", "Dimanche"];
+const HoraireGrand = ({horaires}) => {
+   
     const handleHeureOuverture = () => {
 
         
@@ -68,27 +68,6 @@ const HoraireGrand = ({}) => {
         //a remet comme avant les modifs
     };
 
-    const getHoraireOuverture = async (jour) => {
-        let horaire;
-        await fetch('/horaires/ouverture/get/'+jour)
-        .then(response => response.json())
-        .then(data => {
-            horaire = data.horaire_ouverture;
-        });
-        return horaire;
-
-    };
- 
-    const getHoraireFermeture = async (jour) => {
-        let horaire;
-        await fetch('/horaires/fermeture/get/'+jour)
-        .then(response => response.json())
-        .then(data => {
-            horaire = data.horaire_fermeture;
-        });
-        return horaire;
-    }
-
 
     return (
         <section id="modifHoraire">
@@ -108,17 +87,15 @@ const HoraireGrand = ({}) => {
                         </thead>
                         <tbody>
                             {
-                                jours.map(async jour => {
-                                    const horaire_ouverture = await getHoraireOuverture(jour);
-                                    const horaire_fermeture = await getHoraireFermeture(jour);
+                                horaires.map(jour => {
                                     return (
                                         <tr>
-                                            <td>{jour}</td>
+                                            <td>{jour.jour}</td>
                                             <td>
-                                                <SelectHeure onChange={setHeureOuvertureDb} jour={jour} horaire={horaire_ouverture}/>
+                                                <SelectHeure onChange={setHeureOuvertureDb} jour={jour} horaire={jour.horaire_ouverture}/>
                                             </td>
                                             <td>
-                                                <SelectHeure onChange={setHeureFermetureDb} jour={jour} horaire={horaire_fermeture}/>
+                                                <SelectHeure onChange={setHeureFermetureDb} jour={jour} horaire={jour.horaire_fermeture}/>
                                             </td>
                                         </tr>
                                     );

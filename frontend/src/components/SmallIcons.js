@@ -12,10 +12,25 @@ import ChoixPaiementCarteEnergie from "./paiement/ChoixPaiementCarteEnergie";
 import EtatStockGrand from "./stocks/EtatStocksGrand";
 import TransactionGrand from "./transaction/TransactionGrand";
 
-const SmallIcons = ({ iconClicked, energies }) => {
+let energies;
+let horaires;
+await fetch('/stockEnergie/get')
+    .then(response => response.json())
+    .then(data => {
+        energies = data;
+    });
+
+await fetch('/horaires/get')
+    .then(response => response.json())
+    .then(data => {
+        horaires = data;
+    });
+
+
+const SmallIcons = ({ iconClicked }) => {
     console.log(iconClicked);
     const components = ['etat-cuves', 'direction', 'incidents', 'transaction', 'stocks', 'services', 'horaires', 'esp', 'cb', 'carteEnergie'];
-    const componentsGrand = [<EtatCuvesGrand energies={energies}/>, <DirectionGrand />, <IncidentsGrand />, <TransactionGrand />, <EtatStockGrand />, <ServicesGrand />, <HoraireGrand />, <Especes />, <CarteBancaire />, <ChoixPaiementCarteEnergie />];
+    const componentsGrand = [<EtatCuvesGrand energies={energies}/>, <DirectionGrand />, <IncidentsGrand />, <TransactionGrand />, <EtatStockGrand />, <ServicesGrand />, <HoraireGrand horaires={horaires}/>, <Especes />, <CarteBancaire />, <ChoixPaiementCarteEnergie />];
 
     const emojis = {
         'etat-cuves': '🛢️',

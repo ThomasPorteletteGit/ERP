@@ -4,11 +4,13 @@ import ReactDOMServer from 'react-dom/server'
 import EtatCuvesPrix from "./EtatCuvesPrix";
 import EtatCuvesReapro from "./EtatCuvesReapro";
 
-const EtatCuvesGrand = (energies) => {
-    const energiesObject = energies.energies.energies;
-    console.log(energiesObject);
-    const energiesAndQuantities = energiesObject.filter(energie => energie.quantite_stock !== undefined);
-    const energiesAndPrices = energiesObject.filter(energie => energie.prix !== undefined);
+const EtatCuvesGrand = ({energies}) => {
+    let energiesAndQuantities = [];
+    let energiesAndPrices = [];
+    energies.forEach((energie) => {
+        energiesAndQuantities.push({ nom: energie.nom, quantite_stock: energie.quantite_stock });
+        energiesAndPrices.push({ nom: energie.nom, prix: energie.prix });
+    });
     
     document.addEventListener("click", function (event) {
         if (event.target.classList.contains("btnCuvesGrandClick")) {

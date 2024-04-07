@@ -13,17 +13,24 @@ import ComponentsAnimation from "./ComponentsAnimation";
 import ChoixduPaiementCompAnim from './paiement/ChoixduPaiementCompAnim';
 import ChoixPaiement from './paiement/ChoixPaiement';
 
-let energies;
-let energiesAndPrices;
-let energiesAndQuantities;
-
+let energies, horaires, incidents;
 await fetch('/stockEnergie/get')
     .then(response => response.json())
     .then(data => {
         energies = data;
     });
 
+await fetch('/horaires/get')
+    .then(response => response.json())
+    .then(data => {
+        horaires = data;
+    });
 
+await fetch('/incidents/get')
+    .then(response => response.json())
+    .then(data => {
+        incidents = data;
+    });
 
 const Dashboard = ({ userType }) => {
     // const cookie = document.cookie.split('=')[1];
@@ -33,7 +40,7 @@ const Dashboard = ({ userType }) => {
     return (
         <>
             <Header />
-            <ComponentsAnimation energies={energies} />
+            <ComponentsAnimation/>
             <ChoixduPaiementCompAnim />
             <div id='dashboard'>
                 <div className="dashboard-container">
@@ -50,14 +57,14 @@ const Dashboard = ({ userType }) => {
                         {userType === 'gerant' && (
                             <div className='container right-to-right'>
                                 <div className="incidents-services">
-                                    <Incidents />
+                                    <Incidents incidents={incidents} />
                                     <Services />
                                 </div>
                                 <div className='stock-container'>
                                     <Stocks />
                                 </div>
                                 <div className="horaires-releve-direction">
-                                    <Horaires />
+                                    <Horaires horaires={horaires} />
                                     <div className='releve-direction'>
                                         <Releve />
                                         <Direction />
@@ -69,13 +76,13 @@ const Dashboard = ({ userType }) => {
                         {userType === 'employe' && (
                             <div className='container right-to-right'>
                                 <div className="incidents-services">
-                                    <Incidents />
+                                    <Incidents incidents={incidents}/>
                                 </div>
                                 <div className='stock-container'>
                                     <Stocks />
                                 </div>
                                 <div className="horaires-releve-direction">
-                                    <Horaires />
+                                    <Horaires horaires={horaires}/>
                                     <div className='services-employe'>
                                         <Services />
                                     </div>

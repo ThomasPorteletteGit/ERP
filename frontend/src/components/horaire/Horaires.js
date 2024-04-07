@@ -2,8 +2,7 @@ import agrandir from '../../assets/img/agrandir.png';
 import React, { useState } from 'react'; 
 
 function SelectHeureMatin(jour) {
-    
-    const [heureMatin, setHeureMatin] = useState("6h");
+    const [heureMatin, setHeureMatin] = useState(jour.jour.horaire_ouverture);
 
     return (
         <div>
@@ -13,7 +12,7 @@ function SelectHeureMatin(jour) {
 }
 
 function SelectHeureSoir(jour) {
-    const [heureSoir, setHeureSoir] = useState("22h");
+    const [heureSoir, setHeureSoir] = useState(jour.jour.horaire_fermeture);
 
     return (
         <div>
@@ -23,8 +22,7 @@ function SelectHeureSoir(jour) {
 }
 
 
-const Horaires = () => {
-
+const Horaires = ({horaires}) => {
     return (
         <section id="horaires">
             <div className="horaires-container">
@@ -47,41 +45,16 @@ const Horaires = () => {
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>Lundi</td>
-                                <td>{SelectHeureMatin("Lundi")}</td>
-                                <td>{SelectHeureSoir("Lundi")}</td>
-                            </tr>
-                            <tr>
-                                <td>Mardi</td>
-                                <td>{SelectHeureMatin("Mardi")}</td>
-                                <td>{SelectHeureSoir("Lundi")}</td>
-                            </tr>
-                            <tr>
-                                <td>Mercredi</td>
-                                <td>{SelectHeureMatin("Mercredi")}</td>
-                                <td>{SelectHeureSoir("Mercredi")}</td>
-                            </tr>
-                            <tr>
-                                <td>Jeudi</td>
-                                <td>{SelectHeureMatin("Jeudi")}</td>
-                                <td>{SelectHeureSoir("Jeudi")}</td>
-                            </tr>
-                            <tr>
-                                <td>Vendredi</td>
-                                <td>{SelectHeureMatin("Vendredi")}</td>
-                                <td>{SelectHeureSoir("Vendredi")}</td>
-                            </tr>
-                            <tr>
-                                <td>Samedi</td>
-                                <td>{SelectHeureMatin("Samedi")}</td>
-                                <td>{SelectHeureSoir("Samedi")}</td>
-                            </tr>
-                            <tr>
-                                <td>Dimanche</td>
-                                <td>{SelectHeureMatin("Dimanche")}</td>
-                                <td>{SelectHeureSoir("Dimanche")}</td>
-                            </tr>
+                            {horaires.map((horaire) => {
+                                return (
+                                    <tr key={horaire.jour}>
+                                        <td>{horaire.jour}</td>
+                                        <td><SelectHeureMatin jour={horaire} /></td>
+                                        <td><SelectHeureSoir jour={horaire} /></td>
+                                    </tr>
+                                );
+                            })}
+                            
                         </tbody>
                     </table>
                 </div>
