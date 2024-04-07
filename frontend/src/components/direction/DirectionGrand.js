@@ -15,7 +15,7 @@ const DirectionGrand = () => {
         <div className="composantGrand">
             <div className="direction-header">
                 <div className="componantDirectionGrand">
-                    <h2>Direction</h2>
+                    <h2>👩‍💼 Direction</h2>
                 </div>
             </div>
             <hr />

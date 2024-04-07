@@ -54,7 +54,7 @@ const ReservationPlaceP = ({id_placeP}) => {
             <hr/>
 
             <div className="formulaire_reservation_placeP">
-                <form>
+                <form id="formReservationPP">
                     <div className="formulaireEntree">
                         <label className="leftLabel" htmlFor="nom">Nom :</label>
                         <input className="inputReservationPP" type="text" id="nom" name="nom" required></input>
@@ -90,15 +90,15 @@ const ReservationPlaceP = ({id_placeP}) => {
                         <input className="inputReservationPP" type="number" id="duree" name="duree" required></input>
                     </div>
 
-                    <div className="boutonsAnnulationReservation">
-                        <button type="submit" className="boutonAnnulerReservation">Annuler</button>
-                        <button type="submit" className="boutonConfirmerReservation">Réserver</button>
-                    </div>
+                    
                 </form>
                   
                    
             </div>
-          
+            <div className="boutonsAnnulationReservation">
+                        <button type="submit" className="boutonAnnulerReservation">Annuler</button>
+                        <button type="submit" className="boutonConfirmerReservation">Réserver</button>
+                    </div>
         </div>         
     );   
    
