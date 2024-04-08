@@ -40,7 +40,6 @@ const Header = () => {
                     <div className='buttons-user'>
                         <div className='buttons'>
                             <img id="homeButton" className='dashboardImages' src={homeButton} alt="bouton accueil" />
-                            <img id="backArrow" className='dashboardImages' src={backArrow} alt="fleche retour" />
                             <img id="scaleButton" className='dashboardImages' src={scaleButton} alt="bouton agrandir" />
                             <img id="exit" className='dashboardImages' src={exit} alt="bouton exit" />
 
@@ -76,10 +75,6 @@ const Header = () => {
                             {/* <StatutPompe numeroPompe={1} carburant="SP-95" quantite={80} prix={60} /> */}
                         </div>
                     </div>
-
-
-
-
                 </div>
             </section>
         </>
