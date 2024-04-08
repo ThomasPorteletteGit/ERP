@@ -21,7 +21,7 @@ const DirectionGrand = () => {
             <div className="separator"></div>
             <h3>Détails de l'incident</h3>
             <div className="direction-details">
-                <ul>
+                <ul className="ul-direction">
                     {directionData.map((incident, index) => (
                         <li key={index}>
                             <h3>Directrice</h3>

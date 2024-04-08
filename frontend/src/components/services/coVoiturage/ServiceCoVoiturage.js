@@ -90,16 +90,16 @@ const ServiceCoVoiturage = () => {
                         
 
                         <div className="etatPropositionCov">
+                            <h2> Statut : </h2>
                             <span className={`statut-propositionCov ${getStatusColor(element.statut)}`}></span>
                         </div>
 
-                        <div className="dateCOV">
-                            <h2> Prévu pour le : {element.date} </h2>
-                        </div>
+    
                     </div>
 
                     <div className="nomClientCov">
-                            <h2> Nom : {element.nomClient} </h2>
+                        <h3> Client : {element.nomClient} </h3>
+                        <h3> Prévu pour le : {element.date} </h3>
                     </div>
 
                     <div className="bouttonsCov">

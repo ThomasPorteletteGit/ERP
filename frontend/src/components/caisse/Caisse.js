@@ -119,7 +119,7 @@ const ChoixPaiement = () => {
                         value={inputValue}
                         onChange={(e) => setInputValue(e.target.value)}
                     />
-                    <button onClick={() => setInputValue('')}>Effacer</button>
+                    <button onClick={() => setInputValue('')} className="button_style">Effacer</button>
                 </div>
                 <div className="numeric-buttons">
                     {[1, 2, 3].map((number) => (

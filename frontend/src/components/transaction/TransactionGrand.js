@@ -27,15 +27,15 @@ const TransactionGrand = () => {
     };
 
     return (
-        <div className='container-composantGrandIncident'>
+        <div className='container-composantGrandTransaction'>
             <div className="Divflex">
                 <div id="topComposant">
                     <h2 className="component_title2">💸 Transaction</h2>
                 </div>
             </div>
             <div className="separator"></div>
-            <div className="composantGrandIncident">
-                <div className="left-container">
+            <div className="composantGrandTransaction">
+                <div className="left-container-transaction">
                     <h3>Informations des transactions</h3>
                     <ul className="ul-transaction">
                         {transactions.map((transaction, index) => (
@@ -49,7 +49,8 @@ const TransactionGrand = () => {
                         ))}
                     </ul>
                 </div>
-                <div className="right-container">
+                <div className="separatorColumn"></div>
+                <div className="right-container-transaction">
                     <h3>Informations des transactions à confirmer</h3>
                     <ul className="ul-transaction">
                         {transactions.map((transaction, index) => (
@@ -86,7 +87,6 @@ const TransactionGrand = () => {
                         ))}
                     </ul>
                 </div>
-                <div className="separatorColumn"></div>
             </div>
         </div>
     );

@@ -472,6 +472,7 @@ p {
     font-size: 5px !important;
 }
 
+
 .jauge {
     background-color: #f0f0f0;
     height: 80%;
@@ -664,7 +665,7 @@ p {
     z-index: 1;
 }
 
-#text_livraison {
+#text_livraison{
     position: absolute;
     top: 50%;
     left: 50%;
@@ -676,7 +677,7 @@ p {
     z-index: 1;
 }
 
-#text_voiture {
+#text_voiture{
     position: absolute;
     top: 50%;
     left: 50%;
@@ -688,7 +689,7 @@ p {
     z-index: 1;
 }
 
-#text_parking {
+#text_parking{
     position: absolute;
     top: 50%;
     left: 50%;
@@ -901,7 +902,7 @@ select {
     border-radius: 5px;
 }
 
-.transaction-container {
+.transaction-container{
     height: 80%;
 
 }
@@ -1114,6 +1115,12 @@ select {
     /* Change la couleur au survol */
 }
 
+.ul-direction {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    height: 40%;
+}
 
 
 /* Caisse */
@@ -1317,6 +1324,8 @@ th {
 
 .separator {
     border: 1px solid #ccc;
+    margin: 10px 0;
+
 }
 
 .total {
@@ -1525,7 +1534,7 @@ ul {
     list-style-type: none;
     padding: 0;
     margin: 0;
-    max-height: 300px;
+    /* max-height: 300px; */
     overflow-y: auto;
 }
 
@@ -1545,9 +1554,10 @@ ul li {
 }
 
 .separatorColumn {
-    border-left: 1px solid #ccc;
-    border-right: 1px solid #ccc;
+    border-left: 2px solid #ccc;
+    border-right: 2px solid #ccc;
     margin: 10px 0;
+    height: 500px;
 }
 
 .left-container-incident {
@@ -1595,29 +1605,29 @@ ul li {
 } */
 
 #parkingButton {
-    background: url("../assets/img/image-210.png");
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
+    background: url("../assets/img/image-210.png") ; 
+    background-size: 100% 100%; 
+    background-repeat: no-repeat; 
+      
+}
+
+#covoiturageButton{
+    background: url("../assets/img/image-220.png") ; 
+    background-size: 100% 100%; 
+    background-repeat: no-repeat; 
 
 }
 
-#covoiturageButton {
-    background: url("../assets/img/image-220.png");
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
-
+#livraisonButton{
+    background: url("../assets/img/image-230.png") ; 
+    background-size: 100% 100%; 
+    background-repeat: no-repeat; 
 }
 
-#livraisonButton {
-    background: url("../assets/img/image-230.png");
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
-}
-
-#autresButton {
-    background: url("../assets/img/image-240.png");
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
+#autresButton{
+    background: url("../assets/img/image-240.png") ; 
+    background-size: 100% 100%; 
+    background-repeat: no-repeat; 
 }
 
 .button_container_grand_services button {
@@ -1628,7 +1638,7 @@ ul li {
     height: 45%;
     border-radius: 8px;
     cursor: pointer;
-    font-size: 35px;
+    font-size: 35px; 
     font-weight: bold;
 }
 
@@ -1647,10 +1657,12 @@ ul li {
 .componantDirectionGrand h2 {
     text-align: left;
     margin-left: 5%;
+    font-size: 2rem;
 }
 
 .direction-details {
     margin-top: 4%;
+    height: 150%;
 }
 
 .composantGrand h3 {
@@ -1685,17 +1697,9 @@ ul li {
     height: 98%;
 }
 
-.boutonsAnnulationReservation {
-    display: flex;
-    justify-content: space-around;
-    align-items: horizontal;
-    /* resize: horizontal; */
-    margin-top: 5%;
-}
-
 .boutonsAnnulationReservation button {
-    width: 100%;
-    height: 20%;
+    width: 40%;
+    height: 10%;
     border-radius: 8px;
     cursor: pointer;
     font-size: 25px;
@@ -1883,33 +1887,68 @@ ul li {
 
 /* Transaction */
 
-.direction-details ul li {
-    margin-bottom: 10px;
+.container-composantGrandTransaction {
+    background-color: #2B2D42; /* Fond bleu */
+    height: 73.8vh;
+    border-radius: 20px;
 }
 
-.ul-transaction li strong {
-    text-align: left;
-    align-self: baseline;
+#topComposant {
+    text-align: center;
 }
 
-.separatorBlack {
-    border: 1px solid #131313;
+.separator {
+    width: 100%;
+    height: 1px;
+    background-color: #131313;
     margin: 10px 0;
+}
+
+.composantGrandTransaction {
+    display: flex;
+    justify-content: center; 
+}
+
+.left-container-transaction {
+    flex: 1;
+    padding-right: 10px; 
+    max-width: 50%; 
+}
+
+.right-container-transaction {
+    flex: 1;
+    padding-left: 10px; 
+    max-width: 50%; 
+}
+
+.left-container-transaction h3,
+.right-container-transaction h3 {
+    text-align: center; 
+    margin-right: 5%;
+    margin: 6%;
 }
 
 .ul-transaction {
     list-style: none;
-    padding: 0;
-    width: 70%;
-    max-height: 28%;
-    /* Ajustez la hauteur maximale selon vos besoins */
-    overflow-y: auto;
-    /* Ajout de la barre de défilement si nécessaire */
+    margin-left: 14%;
 }
 
-.ul-transaction li {
-    margin-bottom: 20px;
-    text-align: left;
+.transaction-list-container {
+    margin-bottom: 20px; 
+}
+
+.transaction-item {
+    border: 1px solid #131313; 
+    border-radius: 5px; 
+    margin-bottom: 10px; 
+    background-color: #fff; 
+}
+
+.separatorBlack {
+    width: 100%;
+    height: 1px;
+    background-color: #131313;
+    margin: 5px 0; 
 }
 
 .confirm-button,
@@ -1917,27 +1956,18 @@ ul li {
 .confirm-button-desactivate {
     margin: 5px;
     padding: 3px 8px;
-    /* Réduire la taille des boutons */
     background-color: #ebebeb;
-    color: rgb(24, 24, 24);
+    color: #181818;
     border: none;
     border-radius: 3px;
-    /* Réduire le rayon du bord */
     cursor: pointer;
 }
 
-.confirm-button,
-.delete-button {
-    flex: 0 0 auto;
-    /* Ne pas agrandir ou réduire les boutons */
+.confirm-button-desactivate.disabled {
+    opacity: 0.5; /* Bouton désactivé avec opacité réduite */
+    pointer-events: none; /* Désactive les interactions */
 }
 
-.listClient {
-    max-height: 425px;
-    margin: 5px;
-    overflow-y: auto;
-    border-radius: 5px;
-}
 
 
 /*Carte membre / energie*/
@@ -1962,7 +1992,7 @@ ul li {
     list-style: none;
     padding: 0;
     width: 70%;
-    max-height: 300px;
+    max-height: 30%;
     /* Ajustez la hauteur maximale selon vos besoins */
     overflow-y: auto;
     /* Ajout de la barre de défilement si nécessaire */
@@ -1987,6 +2017,7 @@ ul li {
 .transaction-list-container {
     background-color: #f0f0f0;
     padding: 20px;
+    border-radius: 20px;
 }
 
 .client {
@@ -2052,24 +2083,28 @@ ul li {
 /**********************************  Reservation d'une place de parking (ReservationPlaceP) **********************************/
 .formulaire_reservation_placeP {
     display: flex;
-    flex-direction: horizontal;
-    align-items: center;
+    flex-direction: column; 
     margin: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 150%;
+    font-size: 150%; /* 150% */
 }
 
-.formulaireEntree {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
 
-    border-radius: 8px;
-    box-sizing: border-box;
-    margin: 5%;
+#formReservationPP {
+    display: flex;
+    flex-direction: column;
+     
 }
+
+.boutonsAnnulationReservation {
+    display: flex;
+    justify-content: space-around;
+    align-items: horizontal;
+    /* resize: horizontal; */
+    margin-top: 2%;
+    height: 80%;
+}
+
+
 
 /****************************************** Stock ******************************************/
 
@@ -2252,9 +2287,9 @@ input[name="nameProduit"] {
 /* EtatStockReapro */
 
 .etat-stock h2 {
-    font-size: 24px;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    font-size: 24px; 
+    margin-top: 10px; 
+    margin-bottom: 10px; 
 }
 
 .etat-stock {
@@ -2269,12 +2304,10 @@ input[name="nameProduit"] {
     margin-bottom: 15px;
 }
 
-.etat-stock th,
-.etat-stock td {
+.etat-stock th, .etat-stock td {
     padding: 20px;
     text-align: center;
-    border: 1px solid black;
-    /* Ajout de la bordure noire */
+    border: 1px solid black; /* Ajout de la bordure noire */
 }
 
 .etat-stock th {
@@ -2285,17 +2318,14 @@ input[name="nameProduit"] {
 .etat-stock td {
     border-bottom: 1px solid #000000;
     color: #000;
-    background-color: #dbdada;
-    /* Couleur de fond blanche pour toutes les lignes */
+    background-color: #dbdada; /* Couleur de fond blanche pour toutes les lignes */
 }
 
 .etat-stock .produit {
     width: 40%;
 }
 
-.etat-stock .quantite,
-.etat-stock .prix,
-.etat-stock .action {
+.etat-stock .quantite, .etat-stock .prix, .etat-stock .action {
     width: 20%;
 }
 
@@ -2319,7 +2349,7 @@ input[name="nameProduit"] {
 
 .table-scroll {
     overflow-y: auto;
-    max-height: 10%;
+    max-height: 10%; 
 }
 
 .buttonRéapprovisionnement {
@@ -2364,15 +2394,13 @@ input[name="nameProduit"] {
 
 .product-info {
     flex-grow: 1;
-    text-align: left;
-    /* Aligner le texte à gauche */
+    text-align: left; /* Aligner le texte à gauche */
 }
 
 .product-info p {
     font-size: 20px;
     padding-right: 50%;
-    margin: 2%;
-    /* Supprimer les marges pour éviter l'espacement supplémentaire */
+    margin: 2%; /* Supprimer les marges pour éviter l'espacement supplémentaire */
 }
 
 
@@ -2412,7 +2440,8 @@ input[name="nameProduit"] {
     width: 15px;
     height: 15px;
     border-radius: 50%;
-
+    margin-left: 15px;
+    margin-top: 10%;
 }
 
 .bouttonsCov {
@@ -2496,58 +2525,53 @@ input[name="nameProduit"] {
 }
 
 .button_ajout_propositionCOV {
-
-    border: solid #000;
-    border-radius: 8px;
-    padding: 10px;
-    margin: 15px;
-    background-color: #4d5b84;
-    box-shadow: 5px 6px 5px #101e49;
+   
+        border: solid #000;
+        border-radius: 8px;
+        padding: 10px;
+        margin: 15px;
+        background-color: #4d5b84;
+        box-shadow: 5px 6px 5px #101e49;
 
 }
 
-
+.etatPropositionCov {
+    display: flex;
+    justify-content: space-around;
+    align-items: horizontal;
+}
+.nomClientCov {
+    display: flex;
+    justify-content: space-around;
+    align-items: horizontal;
+}
 /*$$$$$$$$$$$$$$$$$$$$$ Formulaire covoiturage $$$$$$$$$$$$$$$$$$$$$*/
 
 .formulaire_enregistrer_covoiturage {
-    display: flex;
-    flex-direction: column;
-    margin: 10px;
+     
     font-size: 150%;
-    /* 150% */
+    margin: 2%;
 }
+
+
 
 .formulaireEntree {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    width: 70%;
-    margin: 2% 0;
-}
-
-.formulaireEntree label {
-    width: 30%;
-    text-align: left;
-    margin-right: 20%;
-}
-
-.formulaireEntree input {
-    width: 60%;
     border-radius: 8px;
-    height: 40px;
-    align-items: right;
+    box-sizing: border-box;
+    margin: 2%;
 }
-
 
 .boutonsAnnulationConfirmationCOV {
     display: flex;
     justify-content: space-around;
     align-items: horizontal;
     /* resize: horizontal; */
-    margin-top: 2%;
+    margin-top: 5%;
     height: 80%;
 }
-
 .boutonsAnnulationConfirmationCOV button {
     width: 40%;
     height: 10%;
@@ -2558,21 +2582,18 @@ input[name="nameProduit"] {
     border: black;
     margin: 5px;
 }
-
 .nomClientCov {
     display: flex;
 }
-
 .formCOV {
     display: flex;
     flex-direction: column;
-    align-items: center;
-
 }
 
 #centPourCent {
     height: 100%;
 }
+
 
 /****************************** Livraisons *************************************/
 
@@ -2600,11 +2621,25 @@ input[name="nameProduit"] {
     align-items: horizontal;
 }
 
+.infoClientLivraison {
+    display: flex;
+    justify-content: space-around;
+    align-items: horizontal;
+}
+
+.statutLivraison {
+    display: flex;
+    justify-content: space-around;
+    align-items: horizontal;
+}
+
 .statut-livraison {
     display: inline-block;
     width: 15px;
     height: 15px;
     border-radius: 50%;
+    margin-left: 15px;
+    margin-top: 10%;
 }
 
 .buttonsLivraison {
@@ -2615,7 +2650,7 @@ input[name="nameProduit"] {
     margin-top: 5%;
 }
 
-.buttonsLivraison {
+.buttonsLivraison button {
     width: 20%;
     height: 20%;
     border-radius: 8px;
@@ -2634,108 +2669,109 @@ input[name="nameProduit"] {
     justify-content: left;
 }
 
+#centPourCent {
+    width: 100%;
+    height: 100%;
+   
+}
+
+
 /* Button */
 
-.button_style,
-#buttonCarteEM {
-    position: relative;
-    padding: 10px 20px;
-    border-radius: 7px;
-    border: 1px solid #c3f3fb;
-    font-size: 14px;
-    text-transform: uppercase;
-    font-weight: 600;
-    letter-spacing: 2px;
-    color: white;
-    background-color:transparent;
-    overflow: hidden;
-    box-shadow: 0 0 0 0 transparent;
-    -webkit-transition: all 0.2s ease-in;
-    -moz-transition: all 0.2s ease-in;
-    transition: all 0.2s ease-in;
-  }
-  
-.button_style:hover, #buttonCarteEM:hover {
-    background: #c3f3fb;
-    box-shadow: 0 0 10px 5px rgb(195,243,251, 0.8);
-    -webkit-transition: all 0.2s ease-out;
-    -moz-transition: all 0.2s ease-out;
-    transition: all 0.2s ease-out;
-    color: black;
-  }
-  
-.button_style:hover::before, #buttonCarteEM:hover::before {
-    -webkit-animation: sh02 0.5s 0s linear;
-    -moz-animation: sh02 0.5s 0s linear;
-    animation: sh02 0.5s 0s linear;
-}
-
-.button_style::before,
-#buttonCarteEM::before {
-    content: '';
-    display: block;
-    width: 0px;
-    height: 86%;
-    position: absolute;
-    top: 7%;
-    left: 0%;
-    opacity: 0;
-    background: #fff;
-    box-shadow: 0 0 50px 30px #fff;
-    -webkit-transform: skewX(-20deg);
-    -moz-transform: skewX(-20deg);
-    -ms-transform: skewX(-20deg);
-    -o-transform: skewX(-20deg);
-    transform: skewX(-20deg);
-}
-
-@keyframes sh02 {
-    from {
-        opacity: 0;
+    .button_style,
+    #buttonCarteEM {
+        position: relative;
+        padding: 10px 20px;
+        border-radius: 7px;
+        border: 1px solid #c3f3fb;
+        font-size: 14px;
+        text-transform: uppercase;
+        font-weight: 600;
+        letter-spacing: 2px;
+        color: white;
+        background-color:transparent;
+        overflow: hidden;
+        box-shadow: 0 0 0 0 transparent;
+        -webkit-transition: all 0.2s ease-in;
+        -moz-transition: all 0.2s ease-in;
+        transition: all 0.2s ease-in;
+      }
+      
+    .button_style:hover, #buttonCarteEM:hover {
+        background: #c3f3fb;
+        box-shadow: 0 0 10px 5px rgb(195,243,251, 0.8);
+        -webkit-transition: all 0.2s ease-out;
+        -moz-transition: all 0.2s ease-out;
+        transition: all 0.2s ease-out;
+        color: black;
+      }
+      
+    .button_style:hover::before, #buttonCarteEM:hover::before {
+        -webkit-animation: sh02 0.5s 0s linear;
+        -moz-animation: sh02 0.5s 0s linear;
+        animation: sh02 0.5s 0s linear;
+    }
+    .button_style::before,
+    #buttonCarteEM::before {
+        content: '';
+        display: block;
+        width: 0px;
+        height: 86%;
+        position: absolute;
+        top: 7%;
         left: 0%;
-    }
-
-    50% {
-        opacity: 1;
-    }
-
-    to {
         opacity: 0;
-        left: 100%;
+        background: #fff;
+        box-shadow: 0 0 50px 30px #fff;
+        -webkit-transform: skewX(-20deg);
+        -moz-transform: skewX(-20deg);
+        -ms-transform: skewX(-20deg);
+        -o-transform: skewX(-20deg);
+        transform: skewX(-20deg);
     }
-}
-
-.button_style:active,
-#buttonCarteEM:active {
-    box-shadow: 0 0 0 0 transparent;
-    -webkit-transition: box-shadow 0.2s ease-in;
-    -moz-transition: box-shadow 0.2s ease-in;
-    transition: box-shadow 0.2s ease-in;
-}
-
-.carte-btn-container {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
-    height: 80%;
-    gap: 10%;
-    margin: auto;
-}
-
-.carte-btn-container>button {
-    width: 80%;
-    height: 20%;
-}
-
-.composantGrandCarteEM {
-    height: 100%;
-    width: 100%;
-}
-
-.energie {
-    width: 100%;
-    height: 100%;
-    overflow-y: auto;
-    scrollbar-width: none;
-}
+    @keyframes sh02 {
+        from {
+            opacity: 0;
+            left: 0%;
+        }
+        50% {
+            opacity: 1;
+        }
+        to {
+            opacity: 0;
+            left: 100%;
+        }
+    }
+    .button_style:active,
+    #buttonCarteEM:active {
+        box-shadow: 0 0 0 0 transparent;
+        -webkit-transition: box-shadow 0.2s ease-in;
+        -moz-transition: box-shadow 0.2s ease-in;
+        transition: box-shadow 0.2s ease-in;
+    }
+    .carte-btn-container {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        height: 80%;
+        gap: 10%;
+        margin: auto;
+    }
+    .carte-btn-container>button {
+        width: 80%;
+        height: 20%;
+    }
+    .composantGrandCarteEM {
+        height: 100%;
+        width: 100%;
+    }
+    .energie {
+        width: 100%;
+        width: 100%;
+        height: 100%;
+        height: 100%;
+        overflow-y: auto;
+      
+        scrollbar-width: none;
+    }

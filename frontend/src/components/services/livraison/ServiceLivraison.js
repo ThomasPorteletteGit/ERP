@@ -37,10 +37,16 @@ const ServiceLivrasion = () => {
                             <h2> Livraison n° {element.id_livraison} </h2>
                         </div>
 
-                        <div className="statutLivraisson">
+                        <div className="statutLivraison">
+                            <h2> Statut : </h2>
                             <span className={`statut-livraison ${getStatusColor(element.statut)}`}></span>
                         </div>
 
+                    </div>
+
+                    <div className="infoClientLivraison">
+                        <h3> Client : {element.nomClient} </h3>
+                        <h3> Date : {element.date} </h3>
                     </div>
 
                     <div className="buttonsLivraison">
