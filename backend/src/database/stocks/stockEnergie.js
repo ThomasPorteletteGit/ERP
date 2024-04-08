@@ -1,10 +1,14 @@
 const express = require('express');
 const router = express.Router();
 
-const { getAll, getEnergieNames, getEnergieNamesAndQuantities, getEnergieNamesAndPrices ,getEnergieIds, getEnergieId, getEnergieStock, reapprovisionnerEnergie, modiferPrixEnergie } = require('./stockFunctions').energies;
+const { getAll, getEnergieFromId, getEnergieNames, getEnergieNamesAndQuantities, getEnergieNamesAndPrices ,getEnergieIds, getEnergieId, getEnergieStock, reapprovisionnerEnergie, modiferPrixEnergie } = require('./stockFunctions').energies;
 
 router.get('/get', (req, res) => {
     getAll(req, res);
+});
+
+router.get('/get/:id', (req, res) => {
+    getEnergieFromId(req, res);
 });
 
 router.get('/names', (req, res) => {
@@ -23,7 +27,7 @@ router.get('/getIds', (req, res) => {
     getEnergieIds(req, res);
 });
 
-router.post('/getId', (req, res) => {
+router.get('/getId/:nom', (req, res) => {
     getEnergieId(req, res);
 });
 

@@ -42,7 +42,7 @@ const Dashboard = ({ userType }) => {
             <div id='dashboard'>
                 <div className="dashboard-container">
                     <div className="dashboard-left">
-                        <Caisse />
+                        <Caisse energies={energies}/>
                     </div>
                     <div className="dashboard-right">
                         <div className="etat-transac">

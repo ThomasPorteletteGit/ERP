@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const ChoixPaiement = () => {
+const ChoixPaiement = ({energies}) => {
     const [transactions, setTransactions] = useState([]);
     const [inputValue, setInputValue] = useState('');
     const [previousValue, setPreviousValue] = useState('');
@@ -20,12 +20,17 @@ const ChoixPaiement = () => {
                     });
                 break;
             case 'energie':
+                article = document.getElementById("carburant").value;
                 await fetch(`/stockEnergie/get/${article}`)
                     .then((response) => response.json())
                     .then((data) => {
                         result = data;
                     });
+                break;
+            default:
+                break;
         }
+        
         return result;
     };
 
@@ -41,23 +46,18 @@ const ChoixPaiement = () => {
         }
     };
 
-    const updateTransactions = () => {
-        const table = document.getElementById('contenuCaisse');
-        table.innerHTML = '';
-        transactions.forEach((transaction, index) => {
-            const row = table.insertRow(index);
-            const cell1 = row.insertCell(0);
-            const cell2 = row.insertCell(1);
-            const cell3 = row.insertCell(2);
-            const cell4 = row.insertCell(3);
-            cell1.innerHTML = transaction.nom;
-            cell2.innerHTML = transaction.quantity;
-            cell3.innerHTML = transaction.price + '€';
-            cell4.innerHTML = (transaction.quantity * parseFloat(transaction.price)).toFixed(2) + '€';
-        });
+    const addEnergie = ({energie}) => {
+        console.log(energie);
+        energie = energie[0];
+        if (energie !== undefined) {
+            const newTransaction = {
+                nom: energie.nom,
+                quantity: inputQuantity,
+                price: energie.prix
+            };
+            setTransactions(previous => [...previous, newTransaction]);
+        }
     };
-
-        
     
 
     const handleButtonClick = (value) => {
@@ -163,7 +163,7 @@ const ChoixPaiement = () => {
                 </div>
                 <div class="caisse2-container"> 
                     {showFirstCaisse ? (
-                          <>
+                        <>
                     <div className="search-bar">
                         <input
                             type="text"
@@ -178,7 +178,11 @@ const ChoixPaiement = () => {
                             onChange={(e) => setInputQuantity(e.target.value)}
                         />
                         <button onClick={() => setInputValue('')} className="button_style">Effacer</button>
-                        <button onClick={() => setInputValue('')} className="button_style">Rechercher</button>
+                        <button onClick={async () => {
+                            let article = await searchArticle({article:inputValue, type:"produit"});
+                            addArticle({article});
+                            }
+                    }    className="button_style">Rechercher</button>
                     </div>
                     <div className="numeric-buttons">
                         {[1, 2, 3].map((number) => (
@@ -213,17 +217,19 @@ const ChoixPaiement = () => {
                             <div className="caisse-carburant">
 
                                 <select id="carburant" name="carburant">
-                                <option value="SP-95">SP-95</option>
-                                <option value="SP-98l">SP-98</option>
-                                <option value="gazole">Gazole</option>
-                                <option value="gpl">GPL</option>
-                                <option value="electrique">Elec</option>
-                                <option value="E85">E85</option>
+                                    {energies.map((energie) => (
+                                        <option key={energie.id_produit_energie} value={energie.id_produit_energie}>
+                                            {energie.nom}
+                                        </option>
+                                    ))}
                                 </select>
                             
                                 <input type="number" id="quantite" name="quantite" placeholder="Quantité en litres" />
 
-                                <button id="calculer" className="button_style">Calculer</button>
+                                <button id="calculer" className="button_style" onClick={ async () => {
+                                    let energie = await searchArticle({article:inputValue, type:"energie"});
+                                    addEnergie({energie});
+                                }}>Calculer</button>
                                 
                                 <p id='prix'>Ici calculer le prix avec la bd</p>
                             </div>

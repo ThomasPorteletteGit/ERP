@@ -8,6 +8,13 @@ function getAll(req, res) {
     });
 }
 
+function getEnergieFromId(req, res) {
+    let id = req.params.id;
+    dao.select('*', 'ProduitEnergie', `id_produit_energie=${id}`, (result) => {
+        res.send(result.rows);
+    });
+}
+
 function getEnergieNames(req, res) {
     dao.select('nom', 'ProduitEnergie', "type='Energie'", (result) => {
         res.send(result.rows);
@@ -33,8 +40,8 @@ function getEnergieIds(req, res) {
 }
 
 function getEnergieId(req, res) {
-    let name = req.body.name;
-    dao.select('id_produit', 'ProduitEnergie', `nom='${name}'`, (result) => {
+    let name = req.params.nom;
+    dao.select('id_produit_energie', 'ProduitEnergie', `nom='${name}'`, (result) => {
         res.send(result.rows);
     });
 }
@@ -80,14 +87,14 @@ function getProduitIds(req, res) {
 
 function getProduitFromId(req, res) {
     let id = req.params.id;
-    dao.select('*', 'ProduitEnergie', `id_produit_energie=${id}`, (result) => {
+    dao.select('*', 'ProduitEnergie', `id_produit_energie=${id} AND type='Produit'`, (result) => {
         res.send(result.rows);
     });
 }
 
 function getProduitId(req, res) {
     let name = req.body.name;
-    dao.select('id_produit_energie', 'ProduitEnergie', `nom='${name}'`, (result) => {
+    dao.select('id_produit_energie', 'ProduitEnergie', `nom='${name} `, (result) => {$
         res.send(result.rows);
     });
 }
@@ -110,6 +117,7 @@ module.exports = {
     energies:
     {
         getAll,
+        getEnergieFromId,
         getEnergieNames,
         getEnergieNamesAndQuantities,
         getEnergieNamesAndPrices,
