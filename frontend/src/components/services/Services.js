@@ -26,10 +26,10 @@ const services = () => {
                         <p id="text_livraison">Livraison</p>
                         <img src={livraison} id="image_livraison" alt="livraison"/>
                     </button>
-                    <button className="button_service_autres">
+                    {/* <button className="button_service_autres">
                         <p id="text_autre">Autres</p>
                         <img src={autres} id="image_autres" alt="autres"/>
-                    </button>
+                    </button> */}
                 </div>
             </div>
         </section>

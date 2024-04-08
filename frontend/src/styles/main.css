@@ -2877,3 +2877,32 @@ input[name="nameProduit"] {
 
     scrollbar-width: none;
 }
+
+.defautcuvediv {
+    margin-left: 20px;
+    display: flex;
+    width: 130%;
+    margin: 8% 8%;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 2%;
+    font-size: 4em;
+}
+
+.defautcuvediv input {
+    /* styles spécifiques pour l'input */
+    font-size: 0.9em;
+    margin-top: 1%
+}
+
+.Etatcuvediv {
+    display: flex;
+    align-items: start;
+}
+
+.btnEtat {
+    display: block;
+    width: 45%;
+    height: auto;
+}
