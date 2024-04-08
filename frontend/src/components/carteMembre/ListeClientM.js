@@ -33,7 +33,6 @@ const ListeClientM = ({liste_cartes_membres}) => {
                         <hr></hr>
                     </div>
                     <button id="buttonCarteEM" className="buttonCarte Membre">Ajouter une carte</button>
-                    <button id="buttonCarteEM" className="buttonCarte Membre">Avantage carte énergie</button>
                     <div className="energie">
                         {liste({liste_cartes_membres})}
                     </div>

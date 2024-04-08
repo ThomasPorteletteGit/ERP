@@ -133,10 +133,9 @@ function returnHome() {
 
 function annuler() {
     const divGeneral = document.getElementsByClassName("dashboard-right")[0];
-    let saveDiv = divGeneral.innerHTML;
-    console.log("annuler");
-
-    divGeneral.innerHTML = ReactDOMServer.renderToString(<AjouterCarteM />);
+    const smallIcons = ReactDOMServer.renderToString(<SmallIcons />);
+    const carteMembre = ReactDOMServer.renderToString(<CarteMembre />);
+    divGeneral.innerHTML = smallIcons + carteMembre;
     divGeneral.style.display = "block";
 }
 

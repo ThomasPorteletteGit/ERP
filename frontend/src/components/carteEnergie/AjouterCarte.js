@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import ReactDOMServer from 'react-dom/server'
 import CarteEnergie from "./CarteEnergie";
 import SmallIcons from "../SmallIcons";
+import ListeClient from "./ListeClient";
+import AvantageCarte from "./AvantageCarte";
 
 //a faire logique bouton enregistrer
 const AjouterCarte = ({liste_cartes_energies}) => {
@@ -65,31 +67,6 @@ const AjouterCarte = ({liste_cartes_energies}) => {
     );
 };
 
-
-
-function afficherClients(liste_cartes_energies) {
-    const divGeneral = document.getElementsByClassName("composantGrand")[0];
-    let saveDiv = divGeneral.innerHTML;
-
-    divGeneral.innerHTML = ReactDOMServer.renderToString(<ListeClient liste_cartes_energies={liste_cartes_energies}/>);
-    divGeneral.style.display = "block";
-}
-
-function voirAvantage(liste_cartes_energies) {
-    const divGeneral = document.getElementsByClassName("composantGrand")[0];
-    let saveDiv = divGeneral.innerHTML;
-
-    divGeneral.innerHTML = ReactDOMServer.renderToString(<AvantageCarte liste_cartes_energies={liste_cartes_energies} />);
-    divGeneral.style.display = "block";
-}
-
-function ajouterCarte(liste_cartes_energies) {
-    const divGeneral = document.getElementsByClassName("composantGrand")[0];
-    let saveDiv = divGeneral.innerHTML;
-
-    divGeneral.innerHTML = ReactDOMServer.renderToString(<AjouterCarte liste_cartes_energies={liste_cartes_energies}/>);
-    divGeneral.style.display = "block";
-}
 
 
 function annuler() {

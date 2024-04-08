@@ -50,7 +50,7 @@ const CarteEnergie = ({liste_cartes_energies}) => {
 function afficherClients(liste_cartes_energies) {
     const divGeneral = document.getElementsByClassName("dashboard-right")[0];
     const smallIcons = ReactDOMServer.renderToString(<SmallIcons />);
-    divGeneral.innerHTML = ReactDOMServer.renderToString(<ListeClient liste_cartes_energies={liste_cartes_energies}/>);
+    const carteEnergie = ReactDOMServer.renderToString(<ListeClient liste_cartes_energies={liste_cartes_energies}/>);
     divGeneral.innerHTML = smallIcons + carteEnergie;
     divGeneral.style.display = "block";
 }
@@ -58,7 +58,7 @@ function afficherClients(liste_cartes_energies) {
 function ajouterCarte(liste_cartes_energies) {
     const divGeneral = document.getElementsByClassName("dashboard-right")[0];
     const smallIcons = ReactDOMServer.renderToString(<SmallIcons />);
-    divGeneral.innerHTML = ReactDOMServer.renderToString(<AjouterCarte liste_cartes_energies={liste_cartes_energies}/>);
+    const carteEnergie = ReactDOMServer.renderToString(<AjouterCarte liste_cartes_energies={liste_cartes_energies}/>);
     divGeneral.innerHTML = smallIcons + carteEnergie;
     divGeneral.style.display = "block";
 }
@@ -66,7 +66,7 @@ function ajouterCarte(liste_cartes_energies) {
 function voirAvantage(liste_cartes_energies) {
     const divGeneral = document.getElementsByClassName("dashboard-right")[0];
     const smallIcons = ReactDOMServer.renderToString(<SmallIcons />);
-    divGeneral.innerHTML = ReactDOMServer.renderToString(<AvantageCarte liste_cartes_energies={liste_cartes_energies} />);
+    const carteEnergie = ReactDOMServer.renderToString(<AvantageCarte liste_cartes_energies={liste_cartes_energies} />);
     divGeneral.innerHTML = smallIcons + carteEnergie;
     divGeneral.style.display = "block";
 }
