@@ -29,6 +29,7 @@ const ChoixPaiement = () => {
     const [inputValue, setInputValue] = useState('');
     const [previousValue, setPreviousValue] = useState('');
     const [operator, setOperator] = useState('');
+    const [inputQuantity, setInputQuantity] = useState('');
     const [resultDisplayed, setResultDisplayed] = useState(false);
 
     const handleButtonClick = (value) => {
@@ -39,6 +40,7 @@ const ChoixPaiement = () => {
             setInputValue((prevValue) => prevValue + value);
         }
     };
+
 
     const handleOperatorClick = (op) => {
         if (inputValue !== '') {
@@ -92,7 +94,9 @@ const ChoixPaiement = () => {
     return (
         <div className="caisse-container">
             <div id="caisse">
-                <h1>🛒 Caisse</h1>
+                <div className="caisseTitre">
+                    <h2>🛒 Caisse</h2>
+                </div>
                 <hr className="separator" />
                 <div className="caisse-details">
                     <table>
@@ -122,6 +126,9 @@ const ChoixPaiement = () => {
                     <p>Total: {calculateTotal()}€ | Nombre d'articles: {calculateTotalQuantity()}</p>
                 </div>
                 <hr className="separator" />
+                <div className="switch_button">
+                    <button className="button_style">SWITCH</button>
+                </div>
                 <div className="search-bar">
                     <input
                         type="text"
@@ -129,7 +136,14 @@ const ChoixPaiement = () => {
                         value={inputValue}
                         onChange={(e) => setInputValue(e.target.value)}
                     />
+                    <input
+                        type="number"
+                        placeholder="Quantité"
+                        value={inputQuantity}
+                        onChange={(e) => setInputQuantity(e.target.value)}
+                    />
                     <button onClick={() => setInputValue('')} className="button_style">Effacer</button>
+                    <button onClick={() => setInputValue('')} className="button_style">Rechercher</button>
                 </div>
                 <div className="numeric-buttons">
                     {[1, 2, 3].map((number) => (
