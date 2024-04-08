@@ -3,11 +3,54 @@ import agrandir from '../assets/img/agrandir.png';
 
 // à récup dans la bd
 const stocks = [
-    { id: 1, carburant: 'SP-95', quantite: 1000 },
-    { id: 2, carburant: 'SP-98', quantite: 500 },
-    { id: 3, carburant: 'Gazole', quantite: 750 },
-    { id: 4, carburant: 'GPL', quantite: 400 },
-    { id: 4, carburant: 'GPL', quantite: 400 }
+    {
+        id_produit_energie: 1,
+        nom: 'Essence SP-95',
+        prix: 1.50,
+        quantite_stock: 1000,
+        description: 'Carburant sans plomb 95',
+        type: 'carburant'
+    },
+    {
+        id_produit_energie: 2,
+        nom: 'Essence SP-98',
+        prix: 1.60,
+        quantite_stock: 500,
+        description: 'Carburant sans plomb 98',
+        type: 'carburant'
+    },
+    {
+        id_produit_energie: 3,
+        nom: 'Gazole',
+        prix: 1.40,
+        quantite_stock: 750,
+        description: 'Carburant diesel',
+        type: 'carburant'
+    },
+    {
+        id_produit_energie: 4,
+        nom: 'GPL',
+        prix: 0.80,
+        quantite_stock: 400,
+        description: 'Gaz de pétrole liquéfié',
+        type: 'carburant'
+    },
+    {
+        id_produit_energie: 5,
+        nom: 'Lubrifiant moteur',
+        prix: 15.99,
+        quantite_stock: 100,
+        description: 'Huile moteur synthétique 5W-30',
+        type: 'lubrifiant'
+    },
+    {
+        id_produit_energie: 6,
+        nom: 'Antigel',
+        prix: 4.99,
+        quantite_stock: 200,
+        description: 'Antigel pour moteur',
+        type: 'accessoire'
+    }
 ];
 
 const Stocks = () => {
@@ -21,8 +64,17 @@ const Stocks = () => {
                 {/* on boucle sur tous les stocks */}
                 {stocks.map((stock, index) => (
                     <div key={index} className="stock">
-                        <p>{stock.carburant}</p>
-                        <p>{stock.quantite}L</p>
+                        <div>
+                            <div className="Divflex">
+                                <div className="nomStock">{stock.nom}</div>
+                                <div className="typeStock">{stock.type}</div>
+                            </div>
+                            <div className="descriptionStock">{stock.description}</div>
+                            <div className="Divflex">
+                                <div className="prixStock">{stock.prix} €</div>
+                                <div className="quantiteStock">{stock.quantite_stock} litres</div>
+                            </div>
+                        </div>
                     </div>
                 ))}
             </div>
