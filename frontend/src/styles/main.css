@@ -2911,7 +2911,7 @@ input[name="nameProduit"] {
     justify-content: flex-start;
     align-items: flex-start;
     gap: 2%;
-    font-size: 4em;
+    font-size: 3em;
 }
 
 .defautcuvediv input {

@@ -182,10 +182,9 @@
 
 #btnValiderPrix,
 #btnAnnulerPrix {
-    background: #cef4fb;
     justify-content: end;
-    color: black;
-    font-size: 5rem;
+    color: white;
+    font-size: 3rem;
     border-radius: 20px;
     margin-top: 8%;
     margin-bottom: 8%;
