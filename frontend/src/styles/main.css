@@ -2176,34 +2176,32 @@ ul li {
 
 /****************************************** Stock ******************************************/
 
+/* position: relative;
+    padding: 10px 20px;
+    border-radius: 7px;
+    border: 1px solid #c3f3fb;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 2px;
+    color: white;
+    background-color: transparent;
+    overflow: hidden;
+    box-shadow: 0 0 0 0 transparent;
+    transition: all 0.2s ease-in; */
+
 .btnStockGrandClickTop {
     width: 100%;
-    padding: 10.5%;
-    border: none;
-    height: 100%;
-    border-radius: 20px;
     margin: 2%;
-    display: block;
-    background-color: #f1f1f1;
-    color: #111111;
-    font-size: 200%;
+    height: 30vh;
     cursor: pointer;
-    transition: background-color 0.3s ease;
 }
 
 .btnStockGrandClickBottom {
     width: 46%;
-    padding: 8.4%;
-    border: none;
-    height: 1%;
-    border-radius: 20px;
     margin: 2%;
-    display: block;
-    background-color: #f1f1f1;
-    color: #111111;
-    font-size: 200%;
+    height: 30vh;
     cursor: pointer;
-    transition: background-color 0.3s ease;
 }
 
 /*Stock Produit*/
@@ -2377,21 +2375,20 @@ input[name="nameProduit"] {
 /* EtatStockReapro */
 
 .etat-stock h2 {
-    font-size: 24px;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    font-size: 30px;
+    margin-bottom: 20px;
 }
 
 .etat-stock {
     margin: 5%;
-    min-height: 20%;
+    min-height: 20vh;
 }
 
 .etat-stock table {
     width: 100%;
     border-collapse: collapse;
-    height: 10%;
-    margin-bottom: 15px;
+    height: 10vh;
+    margin-bottom: 20px;
 }
 
 .etat-stock th,
@@ -2399,23 +2396,22 @@ input[name="nameProduit"] {
     padding: 20px;
     text-align: center;
     border: 1px solid black;
-    /* Ajout de la bordure noire */
 }
 
 .etat-stock th {
-    background-color: #2B2D42;
+    background-color: #474961;
     color: rgb(255, 255, 255);
 }
 
 .etat-stock td {
     border-bottom: 1px solid #000000;
     color: #000;
-    background-color: #dbdada;
+    background-color: #ffffff;
     /* Couleur de fond blanche pour toutes les lignes */
 }
 
 .etat-stock .produit {
-    width: 40%;
+    width: 40vh;
 }
 
 .etat-stock .quantite,
@@ -2445,20 +2441,22 @@ input[name="nameProduit"] {
 .table-scroll {
     overflow-y: auto;
     max-height: 10%;
+    border: #000;
+    border-radius: 20px;
 }
 
 .buttonRéapprovisionnement {
-    background-color: #dfdfdf;
+    background-color: #fafafa;
     color: rgb(0, 0, 0);
-    margin: 5%;
+    margin-bottom: 4vh;
     border: black;
     font-size: 150%;
     padding: 10px 20px;
     border-radius: 20px;
     padding: 2%;
     cursor: pointer;
-    height: 30%;
-    width: 50%;
+    height: 4vh;
+    width: 50vh;
 }
 
 /* Annuler Réaprovisionnement */
@@ -2781,7 +2779,10 @@ input[name="nameProduit"] {
 /* Button */
 
 .button_style,
-#buttonCarteEM {
+#buttonCarteEM,
+.btnStockGrandClickBottom,
+.btnStockGrandClickTop,
+.buttonRéapprovisionnement  {
     position: relative;
     padding: 10px 20px;
     border-radius: 7px;
@@ -2800,7 +2801,10 @@ input[name="nameProduit"] {
 }
 
 .button_style:hover,
-#buttonCarteEM:hover {
+#buttonCarteEM:hover,
+.btnStockGrandClickBottom:hover,
+.btnStockGrandClickTop:hover,
+.buttonRéapprovisionnement:hover  {
     background: #c3f3fb;
     box-shadow: 0 0 10px 5px rgb(195, 243, 251, 0.8);
     -webkit-transition: all 0.2s ease-out;
@@ -2810,14 +2814,20 @@ input[name="nameProduit"] {
 }
 
 .button_style:hover::before,
-#buttonCarteEM:hover::before {
+#buttonCarteEM:hover::before,
+.btnStockGrandClickBottom::before,
+.btnStockGrandClickTop::before,
+.buttonRéapprovisionnement::before  {
     -webkit-animation: sh02 0.5s 0s linear;
     -moz-animation: sh02 0.5s 0s linear;
     animation: sh02 0.5s 0s linear;
 }
 
 .button_style::before,
-#buttonCarteEM::before {
+#buttonCarteEM::before,
+.btnStockGrandClickBottom::before,
+.btnStockGrandClickTop::before,
+.buttonRéapprovisionnement::before  {
     content: '';
     display: block;
     width: 0px;
@@ -2852,7 +2862,10 @@ input[name="nameProduit"] {
 }
 
 .button_style:active,
-#buttonCarteEM:active {
+#buttonCarteEM:active,
+.btnStockGrandClickBottom:active,
+.btnStockGrandClickTop:active,
+.buttonRéapprovisionnement:active {
     box-shadow: 0 0 0 0 transparent;
     -webkit-transition: box-shadow 0.2s ease-in;
     -moz-transition: box-shadow 0.2s ease-in;
