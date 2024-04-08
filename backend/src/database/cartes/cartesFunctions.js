@@ -39,7 +39,7 @@ function getMemberCardById(req, res) {
 function addMemberCard(req, res) {
     let champs = 'type, credit, id_client';
     let valeurs = `'Membre', ${req.body.credit}, ${req.body.id_client}`;
-    dao.insert('Carte', champs, valeurs, (result) => {
+    dao.insertWithoutId('Carte', champs, valeurs, (result) => {
         res.send(result);
     });
 }

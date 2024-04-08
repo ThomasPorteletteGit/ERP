@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 const ConnexionId = ({userType}) => {
+    
     const clearURL = () => {
         if (window.location.href.includes("/dashboard")) {
             window.history.pushState({}, document.title, "/");

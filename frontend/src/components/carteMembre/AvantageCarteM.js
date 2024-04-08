@@ -5,7 +5,7 @@ import AjouterCarteM from "./AjouterCarteM";
 
 
 const AvantageCarteM = ({liste_cartes_membres}) => {
- 
+
     document.addEventListener("click", function (event) {
         if (event.target.classList.contains("buttonCarte") && event.target.classList.contains("Membre")) {
             const buttonText = event.target.textContent;

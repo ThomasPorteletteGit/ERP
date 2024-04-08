@@ -11,7 +11,7 @@ const horairesRoutes = require('./src/database/misc/horaires');
 const pompesRoutes = require('./src/database/pompes/pompes');
 const cartesEnergieRoutes = require('./src/database/cartes/carteEnergie');
 const cartesMembreRoutes = require('./src/database/cartes/carteMembre');
-
+const clientRoutes = require('./src/database/misc/client');
 
 app.use(cors());
 app.use(express.json());
@@ -27,6 +27,7 @@ app.use('/horaires', horairesRoutes);
 app.use('/pompes', pompesRoutes);
 app.use('/cartesEnergie', cartesEnergieRoutes);
 app.use('/cartesMembre', cartesMembreRoutes);
+app.use('/client', clientRoutes);
 
 
 const PORT = process.env.PORT || 5000;

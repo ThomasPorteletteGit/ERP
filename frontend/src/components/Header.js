@@ -15,6 +15,8 @@ let pompesStates = new Array();
 let liste_cartes_membres = new Array();
 let liste_cartes_energies = new Array();
 
+await fetch('/client/')
+
 await fetch('/pompes/get')
     .then(response => response.json())
     .then(data => {

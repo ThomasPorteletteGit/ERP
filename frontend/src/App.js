@@ -20,6 +20,9 @@ function App() {
 
   useEffect(() => {
     const cookieValue = document.cookie.split('=')[1];
+    if (cookieValue === undefined) {
+      return;
+    }
     const userType = cookieValue === 'Gerant' ? 'gerant' : 'employe';
     setUserType(userType);
   }, []);
