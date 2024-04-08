@@ -1671,21 +1671,38 @@ ul li {
 #parkingButton {
     background: url("../assets/img/image-210.png");
     background-size: 100% 100%;
+    background-color: #c3f3fb;
     background-repeat: no-repeat;
-
+    background-size: contain;
+    background-repeat: no-repeat; 
+    background-position: center; 
+    border: none; 
+    outline: none; 
 }
 
 #covoiturageButton {
     background: url("../assets/img/image-220.png");
     background-size: 100% 100%;
+    background-color: #c3f3fb;
     background-repeat: no-repeat;
-
+    background-size: contain;
+    background-repeat: no-repeat; 
+    background-position: center; 
+    border: none; 
+    outline: none; 
 }
 
 #livraisonButton {
     background: url("../assets/img/image-230.png");
     background-size: 100% 100%;
+    background-color: #c3f3fb;
     background-repeat: no-repeat;
+    background-size: contain;
+    background-repeat: no-repeat; 
+    background-position: center; 
+    width: 95%;
+    border: none; 
+    outline: none; 
 }
 
 #autresButton {
@@ -1702,7 +1719,7 @@ ul li {
     height: 45%;
     border-radius: 8px;
     cursor: pointer;
-    font-size: 35px;
+    font-size: 50px;
     font-weight: bold;
 }
 
@@ -1714,6 +1731,10 @@ ul li {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+}
+
+.bouttonsServiceGrand{
+    border-radius: 40px !important;
 }
 
 /* Direction grand */
@@ -2193,14 +2214,14 @@ ul li {
 .btnStockGrandClickTop {
     width: 100%;
     margin: 2%;
-    height: 30vh;
+    height: 26vh;
     cursor: pointer;
 }
 
 .btnStockGrandClickBottom {
     width: 46%;
     margin: 2%;
-    height: 30vh;
+    height: 26vh;
     cursor: pointer;
 }
 
@@ -2248,6 +2269,7 @@ ul li {
     max-height: 400px; 
     justify-content: flex-start; 
     align-items: center;
+    scrollbar-width: none;
 }
 
 
