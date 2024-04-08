@@ -1132,8 +1132,13 @@ select {
     border-radius: 20px;
     background-color: #2B2D42;
     width: 100%;
-    height: 100%;
-    margin-top: 2%;
+    height: 98%;
+    margin-top: 1%;
+}
+
+.caisseTitre h2{
+    display: flex;
+    padding-left: 5%;
 }
 
 .caisse-details {
@@ -1145,13 +1150,25 @@ select {
     margin: 8px;
     color: black;
     overflow-y: auto;
-    height: 100%;
-    margin: 3%;
+    height: 40%;
+    margin: 2%;
+    scrollbar-width: none;
+
 }
 
 .caisse-container {
-    height: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100%;
 }
+
+
+.caisse-details>table>tbody>tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
 
 .caisse-details table {
     width: 100%;
@@ -1217,6 +1234,17 @@ select {
     margin-bottom: 20px;
 }
 
+.switch_button{
+    margin-bottom: 10px;
+    display: flex;
+    margin-right: 20px;
+}
+
+.switch_button button{
+    margin-left: auto;
+}
+
+
 
 th,
 td {
@@ -1233,9 +1261,9 @@ th {
     gap: 10px;
     border: 1px solid #ccc;
     padding: 1%;
-    margin-left: 5%;
     border-radius: 8px;
     width: 20%;
+    margin-left: 2%;
 }
 
 .numeric-buttons {
@@ -1327,8 +1355,7 @@ th {
 
 .separator {
     border: 1px solid #ccc;
-    margin: 10px 0;
-
+    margin: 5px 0;
 }
 
 .total {
@@ -1336,7 +1363,6 @@ th {
     background-color: white;
     border-radius: 10px;
     padding: 5px 10px;
-    margin: 10px;
     text-align: right;
 }
 
@@ -1350,10 +1376,15 @@ th {
     padding: 10px;
     font-size: 16px;
     border: 1px solid #ccc;
-    width: 40%;
+    width: 20%;
     margin-bottom: 10px;
     border-radius: 8px;
     box-sizing: border-box;
+    margin-left: 2%;
+}
+
+.search-bar:last-child{
+    margin-right: 2%;
 }
 
 
@@ -2176,16 +2207,38 @@ ul li {
 
 .imagesContainer {
     display: grid;
+    margin-top: 2%;
+    margin-left: 3%;
+    margin-right: 3%;
     grid-template-columns: repeat(4, 1fr);
-    /* 4 colonnes */
-    gap: 20px;
-    /* Espacement entre les images */
+    background-color: #f7f6f6;
+    border-radius: 30px;
+    padding-top: 2%;
+    color: black;
+    gap: 15px;
+    overflow-y: auto; 
+    max-height: 400px; 
+    justify-content: flex-start; 
+    align-items: center;
 }
 
+
 .imageItem {
-    width: 100%;
-    height: auto;
+    width: 50%; 
+    border-radius: 30px;
+    height: auto; 
+    margin-left: 25%;
+    align-self: flex-start; 
 }
+
+.imagesContainer img {
+    border-radius: 30px;
+}
+
+.imagesContainer p {
+    font-size: 120%;
+}
+
 
 /* Stock Ajouter Produit */
 

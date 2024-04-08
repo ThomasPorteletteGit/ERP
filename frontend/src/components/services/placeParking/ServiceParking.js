@@ -98,7 +98,7 @@ const ServiceParking = () => {
             
             <form className="formulaireRecherchePlaceP">
                 <button id="backArrowServiceButton" className="backArrowServiceButton" >Retour</button>
-                <input type="text" name="text" className="search" placeholder=" Entrez un numéro de place " />
+                <input type="text" name="text" className="searchPP" placeholder=" Entrez un numéro de place " />
                 <button type="submit" name="submit" className="submitSearchParking">
                     <img src={searchIcon} alt="Search" className="searchIconImage" />
                 </button>
@@ -138,6 +138,17 @@ document.addEventListener("click", function (event) {
         }
         event.preventDefault();
     }
+    if (event.target.classList.contains("submitSearchParking")) {
+        console.log("Bouton Recherche Place Parking cliqué");
+        if(document.getElementsByClassName("searchPP") != null){ 
+            console.log("Recherche de la place de parking numéro : " + document.getElementsByClassName("searchPP").value);
+            // TODO : Recherche de la place de parking dans la bd
+            afficherUnePlaceParking(document.getElementsByClassName("searchPP").value);
+        
+        }
+        event.preventDefault();
+    
+    }
 });
 
 function reserverPlaceParking(id_placeP) {
@@ -146,6 +157,13 @@ function reserverPlaceParking(id_placeP) {
     
     divGeneral.innerHTML = ReactDOMServer.renderToString(<ReservationPlaceP id_placeP={id_placeP}/>);
     divGeneral.style.display = "block";
+}
+
+function afficherUnePlaceParking(id_placeP) {
+    const divGeneral = document.getElementsByClassName("dashboard-right")[0];
+    console.log("Afficher la place de parking numéro : " + id_placeP);
+    // FAUT AFFICHER LA PLACE DE PARKING RECUPEREE VIA BD
+
 }
 
 export default ServiceParking;
