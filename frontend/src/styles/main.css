@@ -634,7 +634,18 @@ p {
     background-color: #c3f3fb;
     border: none;
     width: 45%;
-    height: 35%;
+    height: 45%;
+    border-radius: 8px;
+    position: relative;
+    overflow: clip;
+}
+
+.button_container button:last-child {
+    background-size: cover;
+    background-color: #c3f3fb;
+    border: none;
+    width: 95%;
+    height: 45%;
     border-radius: 8px;
     position: relative;
     overflow: clip;
