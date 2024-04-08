@@ -1,26 +1,64 @@
 import React, { useState } from 'react';
 
-const transactions = [
-
-];
 
 const ChoixPaiement = () => {
+    const [transactions, setTransactions] = useState([]);
     const [inputValue, setInputValue] = useState('');
     const [previousValue, setPreviousValue] = useState('');
     const [operator, setOperator] = useState('');
     const [inputQuantity, setInputQuantity] = useState('');
     const [resultDisplayed, setResultDisplayed] = useState(false);
 
-    //router.get("/getName/:id"
-    const searchArticle = async (article) => {
+    const searchArticle = async ({article, type}) => {
         let result;
-        await fetch(`/stockEnergie/get/${article}`)
-            .then((response) => response.json())
-            .then((data) => {
-                result = data;
-            });
+        switch (type) {
+            case 'produit':
+                await fetch(`/stockProduits/get/${article}`)
+                    .then((response) => response.json())
+                    .then((data) => {
+                        result = data;
+                    });
+                break;
+            case 'energie':
+                await fetch(`/stockEnergie/get/${article}`)
+                    .then((response) => response.json())
+                    .then((data) => {
+                        result = data;
+                    });
+        }
         return result;
-    }
+    };
+
+    const addArticle = ({article}) => {
+        article = article[0];
+        if (article !== undefined) {
+            const newTransaction = {
+                nom: article.nom,
+                quantity: inputQuantity,
+                price: article.prix
+            };
+            setTransactions(previous => [...previous, newTransaction]);
+        }
+    };
+
+    const updateTransactions = () => {
+        const table = document.getElementById('contenuCaisse');
+        table.innerHTML = '';
+        transactions.forEach((transaction, index) => {
+            const row = table.insertRow(index);
+            const cell1 = row.insertCell(0);
+            const cell2 = row.insertCell(1);
+            const cell3 = row.insertCell(2);
+            const cell4 = row.insertCell(3);
+            cell1.innerHTML = transaction.nom;
+            cell2.innerHTML = transaction.quantity;
+            cell3.innerHTML = transaction.price + '€';
+            cell4.innerHTML = (transaction.quantity * parseFloat(transaction.price)).toFixed(2) + '€';
+        });
+    };
+
+        
+    
 
     const handleButtonClick = (value) => {
         if (resultDisplayed) {
@@ -98,7 +136,7 @@ const ChoixPaiement = () => {
                                 <th>Total</th>
                             </tr>
                         </thead>
-                        <tbody>
+                        <tbody id="contenuCaisse">
                             {transactions.map((transaction, index) => (
                                 <tr key={index}>
                                     <td>{transaction.nom}</td>
@@ -133,7 +171,11 @@ const ChoixPaiement = () => {
                         onChange={(e) => setInputQuantity(e.target.value)}
                     />
                     <button onClick={() => setInputValue('')} className="button_style">Effacer</button>
-                    <button onClick={() => setInputValue('')} className="button_style">Rechercher</button>
+                    <button onClick={async () => {
+                        let article = await searchArticle({article:inputValue, type:"produit"});
+                        addArticle({article});
+                    }
+                    } className="button_style">Rechercher</button>
                 </div>
                 <div className="numeric-buttons">
                     {[1, 2, 3].map((number) => (
