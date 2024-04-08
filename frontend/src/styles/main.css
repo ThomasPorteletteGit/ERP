@@ -1153,6 +1153,7 @@ select {
     padding: 0;
     margin: 0;
     height: 40%;
+    border-radius: 20px;
 }
 
 
@@ -1747,7 +1748,8 @@ ul li {
 
 .direction-details {
     margin-top: 4%;
-    height: 150%;
+    height: 130vh;
+    border-radius: 20px;
 }
 
 .composantGrand h3 {
@@ -1760,15 +1762,13 @@ ul li {
 }
 
 .direction-details ul {
-    margin-left: 10%;
-    margin-right: 10%;
+    margin-left: 2%;
+    margin-right: 2%;
     font-size: 120%;
 }
 
 
 .direction-details ul {
-    margin-left: 10%;
-    margin-right: 10%;
     font-size: 120%;
 }
 
