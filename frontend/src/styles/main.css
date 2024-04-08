@@ -2169,16 +2169,38 @@ ul li {
 
 .imagesContainer {
     display: grid;
+    margin-top: 2%;
+    margin-left: 3%;
+    margin-right: 3%;
     grid-template-columns: repeat(4, 1fr);
-    /* 4 colonnes */
-    gap: 20px;
-    /* Espacement entre les images */
+    background-color: #f7f6f6;
+    border-radius: 30px;
+    padding-top: 2%;
+    color: black;
+    gap: 15px;
+    overflow-y: auto; 
+    max-height: 400px; 
+    justify-content: flex-start; 
+    align-items: center;
 }
 
+
 .imageItem {
-    width: 100%;
-    height: auto;
+    width: 50%; 
+    border-radius: 30px;
+    height: auto; 
+    margin-left: 25%;
+    align-self: flex-start; 
 }
+
+.imagesContainer img {
+    border-radius: 30px;
+}
+
+.imagesContainer p {
+    font-size: 120%;
+}
+
 
 /* Stock Ajouter Produit */
 
