@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 
-
 const ChoixPaiement = () => {
     const [transactions, setTransactions] = useState([]);
     const [inputValue, setInputValue] = useState('');
@@ -8,6 +7,7 @@ const ChoixPaiement = () => {
     const [operator, setOperator] = useState('');
     const [inputQuantity, setInputQuantity] = useState('');
     const [resultDisplayed, setResultDisplayed] = useState(false);
+    const [showFirstCaisse, setShowFirstCaisse] = useState(true);
 
     const searchArticle = async ({article, type}) => {
         let result;
@@ -119,6 +119,10 @@ const ChoixPaiement = () => {
         }
     };
 
+    const handleSwitchClick = () => {
+        setShowFirstCaisse(!showFirstCaisse);
+    };
+
     return (
         <div className="caisse-container">
             <div id="caisse">
@@ -155,55 +159,77 @@ const ChoixPaiement = () => {
                 </div>
                 <hr className="separator" />
                 <div className="switch_button">
-                    <button className="button_style">SWITCH</button>
+                    <button id="switchbtn" className="button_style" onClick={() => handleSwitchClick()}>SWITCH</button>
                 </div>
-                <div className="search-bar">
-                    <input
-                        type="text"
-                        placeholder="Recherche..."
-                        value={inputValue}
-                        onChange={(e) => setInputValue(e.target.value)}
-                    />
-                    <input
-                        type="number"
-                        placeholder="Quantité"
-                        value={inputQuantity}
-                        onChange={(e) => setInputQuantity(e.target.value)}
-                    />
-                    <button onClick={() => setInputValue('')} className="button_style">Effacer</button>
-                    <button onClick={async () => {
-                        let article = await searchArticle({article:inputValue, type:"produit"});
-                        addArticle({article});
-                    }
-                    } className="button_style">Rechercher</button>
+                <div class="caisse2-container"> 
+                    {showFirstCaisse ? (
+                          <>
+                    <div className="search-bar">
+                        <input
+                            type="text"
+                            placeholder="Recherche..."
+                            value={inputValue}
+                            onChange={(e) => setInputValue(e.target.value)}
+                        />
+                        <input
+                            type="number"
+                            placeholder="Quantité"
+                            value={inputQuantity}
+                            onChange={(e) => setInputQuantity(e.target.value)}
+                        />
+                        <button onClick={() => setInputValue('')} className="button_style">Effacer</button>
+                        <button onClick={() => setInputValue('')} className="button_style">Rechercher</button>
+                    </div>
+                    <div className="numeric-buttons">
+                        {[1, 2, 3].map((number) => (
+                            <button key={number} onClick={() => handleButtonClick(number)}>
+                                {number}
+                            </button>
+                        ))}
+                        <button onClick={() => handleOperatorClick('+')}>+</button>
+                        {[4, 5, 6].map((number) => (
+                            <button key={number} onClick={() => handleButtonClick(number)}>
+                                {number}
+                            </button>
+                        ))}
+                        <button onClick={() => handleOperatorClick('-')}>-</button>
+                        {[7, 8, 9].map((number) => (
+                            <button key={number} onClick={() => handleButtonClick(number)}>
+                                {number}
+                            </button>
+                        ))}
+                        <button onClick={() => handleOperatorClick('*')}>x</button>
+                        <button onClick={() => setInputValue('.')}>.</button>
+                        <button key={0} onClick={() => handleButtonClick(0)}>
+                            {0}
+                        </button>
+                        <button onClick={handleEqualsClick}>=</button>
+                        <button onClick={() => handleOperatorClick('/')}>/</button>
+                    </div>
+                    </>
+                     ) : (
+                        <>
+                            <h2>🚗 Carburant</h2>
+                            <div className="caisse-carburant">
+
+                                <select id="carburant" name="carburant">
+                                <option value="SP-95">SP-95</option>
+                                <option value="SP-98l">SP-98</option>
+                                <option value="gazole">Gazole</option>
+                                <option value="gpl">GPL</option>
+                                <option value="electrique">Elec</option>
+                                <option value="E85">E85</option>
+                                </select>
+                            
+                                <input type="number" id="quantite" name="quantite" placeholder="Quantité en litres" />
+
+                                <button id="calculer" className="button_style">Calculer</button>
+                                
+                                <p id='prix'>Ici calculer le prix avec la bd</p>
+                            </div>
+                        </>
+                    )}
                 </div>
-                <div className="numeric-buttons">
-                    {[1, 2, 3].map((number) => (
-                        <button key={number} onClick={() => handleButtonClick(number)}>
-                            {number}
-                        </button>
-                    ))}
-                    <button onClick={() => handleOperatorClick('+')}>+</button>
-                    {[4, 5, 6].map((number) => (
-                        <button key={number} onClick={() => handleButtonClick(number)}>
-                            {number}
-                        </button>
-                    ))}
-                    <button onClick={() => handleOperatorClick('-')}>-</button>
-                    {[7, 8, 9].map((number) => (
-                        <button key={number} onClick={() => handleButtonClick(number)}>
-                            {number}
-                        </button>
-                    ))}
-                    <button onClick={() => handleOperatorClick('*')}>x</button>
-                    <button onClick={() => setInputValue('.')}>.</button>
-                    <button key={0} onClick={() => handleButtonClick(0)}>
-                        {0}
-                    </button>
-                    <button onClick={handleEqualsClick}>=</button>
-                    <button onClick={() => handleOperatorClick('/')}>/</button>
-                </div>
-            
             </div>
         </div>
     );
