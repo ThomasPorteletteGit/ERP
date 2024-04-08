@@ -42,8 +42,12 @@ Vue choix paiement
     background-color: #2B2D42;
     width: 100%;
     height: 37.5%;
-    margin-top: 2%;
-    margin-top: 14px;
+    margin-top: 4%;
+}
+
+#choixpaiement .component-title{
+    display: flex;
+    margin-left: 5%;
 }
 
 .choixPaiement {
@@ -423,7 +427,7 @@ cuves
     border-radius: 20px;
     background-color: #2b2d42;
     width: 100%;
-    height: 24.2%;
+    height: 23%;
 }
 
 .etat-cuves-container {
@@ -713,7 +717,7 @@ p {
     border-radius: 20px;
     background-color: #2B2D42;
     width: 100%;
-    height: 35%;
+    height: 36.5%;
     margin-top: 14px;
 }
 
@@ -914,7 +918,7 @@ select {
     width: 50%;
     height: 100%;
     background-color: #2b2d42;
-    border-radius: 12px;
+    border-radius: 20px;
     margin-bottom: 20px;
 }
 
@@ -924,16 +928,32 @@ select {
 
 .horaires-container {
     height: 100%;
+    width: 100%;
 }
 
 .horaires-content {
-    padding-top: 85px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    height: 60%;
+    height: 76%;
     overflow-x: auto;
+    scrollbar-width: none;
+    width: 96%;
+    margin-left: 2%;
+    border-radius: 0 0 20px 20px;
 }
+
+
+
+.horaires-content>table>tbody>tr:nth-child(even) {
+    background-color: #f2f2f2;
+    color: black;
+}
+
+.horaires-content>table>tbody>tr:nth-child(odd) {
+    background-color: white;
+    color: black;
+}
+
 
 .horaires-content p {
     font-size: 15px;
@@ -953,7 +973,7 @@ select {
     align-items: flex-start;
     background-color: #2b2d42;
     border-radius: 12px 12px 0 0;
-    padding-left: 3%;
+    padding-left: 11%;
 }
 
 .horaire-header h2 {
@@ -1023,7 +1043,6 @@ select {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-left: 10px;
     overflow: auto;
 }
 
