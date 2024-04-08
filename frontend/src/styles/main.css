@@ -42,8 +42,12 @@ Vue choix paiement
     background-color: #2B2D42;
     width: 100%;
     height: 37.5%;
-    margin-top: 2%;
-    margin-top: 14px;
+    margin-top: 4%;
+}
+
+#choixpaiement .component-title{
+    display: flex;
+    margin-left: 5%;
 }
 
 .choixPaiement {
@@ -423,7 +427,7 @@ cuves
     border-radius: 20px;
     background-color: #2b2d42;
     width: 100%;
-    height: 24.2%;
+    height: 23%;
 }
 
 .etat-cuves-container {
@@ -713,7 +717,7 @@ p {
     border-radius: 20px;
     background-color: #2B2D42;
     width: 100%;
-    height: 35%;
+    height: 36.5%;
     margin-top: 14px;
 }
 
@@ -914,7 +918,7 @@ select {
     width: 50%;
     height: 100%;
     background-color: #2b2d42;
-    border-radius: 12px;
+    border-radius: 20px;
     margin-bottom: 20px;
 }
 
@@ -924,16 +928,32 @@ select {
 
 .horaires-container {
     height: 100%;
+    width: 100%;
 }
 
 .horaires-content {
-    padding-top: 85px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    height: 60%;
+    height: 76%;
     overflow-x: auto;
+    scrollbar-width: none;
+    width: 96%;
+    margin-left: 2%;
+    border-radius: 0 0 20px 20px;
 }
+
+
+
+.horaires-content>table>tbody>tr:nth-child(even) {
+    background-color: #f2f2f2;
+    color: black;
+}
+
+.horaires-content>table>tbody>tr:nth-child(odd) {
+    background-color: white;
+    color: black;
+}
+
 
 .horaires-content p {
     font-size: 15px;
@@ -953,7 +973,7 @@ select {
     align-items: flex-start;
     background-color: #2b2d42;
     border-radius: 12px 12px 0 0;
-    padding-left: 3%;
+    padding-left: 11%;
 }
 
 .horaire-header h2 {
@@ -1023,7 +1043,6 @@ select {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-left: 10px;
     overflow: auto;
 }
 
@@ -1132,8 +1151,13 @@ select {
     border-radius: 20px;
     background-color: #2B2D42;
     width: 100%;
-    height: 100%;
-    margin-top: 2%;
+    height: 98%;
+    margin-top: 1%;
+}
+
+.caisseTitre h2{
+    display: flex;
+    padding-left: 5%;
 }
 
 .caisse-details {
@@ -1145,13 +1169,25 @@ select {
     margin: 8px;
     color: black;
     overflow-y: auto;
-    height: 100%;
-    margin: 3%;
+    height: 40%;
+    margin: 2%;
+    scrollbar-width: none;
+
 }
 
 .caisse-container {
-    height: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100%;
 }
+
+
+.caisse-details>table>tbody>tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
 
 .caisse-details table {
     width: 100%;
@@ -1217,6 +1253,17 @@ select {
     margin-bottom: 20px;
 }
 
+.switch_button{
+    margin-bottom: 10px;
+    display: flex;
+    margin-right: 20px;
+}
+
+.switch_button button{
+    margin-left: auto;
+}
+
+
 
 th,
 td {
@@ -1233,9 +1280,9 @@ th {
     gap: 10px;
     border: 1px solid #ccc;
     padding: 1%;
-    margin-left: 5%;
     border-radius: 8px;
     width: 20%;
+    margin-left: 2%;
 }
 
 .numeric-buttons {
@@ -1327,8 +1374,7 @@ th {
 
 .separator {
     border: 1px solid #ccc;
-    margin: 10px 0;
-
+    margin: 5px 0;
 }
 
 .total {
@@ -1336,7 +1382,6 @@ th {
     background-color: white;
     border-radius: 10px;
     padding: 5px 10px;
-    margin: 10px;
     text-align: right;
 }
 
@@ -1350,10 +1395,15 @@ th {
     padding: 10px;
     font-size: 16px;
     border: 1px solid #ccc;
-    width: 40%;
+    width: 20%;
     margin-bottom: 10px;
     border-radius: 8px;
     box-sizing: border-box;
+    margin-left: 2%;
+}
+
+.search-bar:last-child{
+    margin-right: 2%;
 }
 
 
@@ -2839,4 +2889,70 @@ input[name="nameProduit"] {
     overflow-y: auto;
 
     scrollbar-width: none;
+}
+
+.defautcuvediv {
+    margin-left: 20px;
+    display: flex;
+    width: 130%;
+    margin: 8% 8%;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 2%;
+    font-size: 4em;
+}
+
+.defautcuvediv input {
+    /* styles spécifiques pour l'input */
+    font-size: 0.9em;
+    margin-top: 1%
+}
+
+.Etatcuvediv {
+    display: flex;
+    align-items: start;
+}
+
+.btnEtat {
+    display: block;
+    width: 45%;
+    height: auto;
+}
+
+.caisse-carburant{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 5% 10% 10% 10%;
+}
+
+.caisse2-container{
+    height: 100%;
+}
+
+.caisse-carburant p{
+    margin-top: 5%;
+    font-size: 15px;
+}
+
+.caisse-carburant h2{
+    font-size: 20px;
+    text-align: left;
+}
+
+.caisse-carburant input,
+.caisse-carburant select {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ffffff;
+    width: 60%;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    box-sizing: border-box;
+}
+
+.caisse-carburant button{
+    margin-top: 5%;
 }
