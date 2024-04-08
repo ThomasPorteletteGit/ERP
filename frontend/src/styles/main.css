@@ -1325,7 +1325,6 @@ th {
 .separator {
     border: 1px solid #ccc;
     margin: 10px 0;
-
 }
 
 .total {
@@ -2774,4 +2773,14 @@ input[name="nameProduit"] {
         overflow-y: auto;
       
         scrollbar-width: none;
+    }
+
+    #buttonReturn{
+        background: url("../assets/img/en-arriere.png") no-repeat;
+        background-size: cover;
+        width: 23px;
+        height: 23px;
+        margin: 10px;
+        color: rgba(0, 0, 0, 0);
+        float: left;
     }
