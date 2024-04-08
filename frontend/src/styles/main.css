@@ -2858,3 +2858,40 @@ input[name="nameProduit"] {
 
     scrollbar-width: none;
 }
+
+.caisse-carburant{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 5% 10% 10% 10%;
+}
+
+.caisse2-container{
+    height: 100%;
+}
+
+.caisse-carburant p{
+    margin-top: 5%;
+    font-size: 15px;
+}
+
+.caisse-carburant h2{
+    font-size: 20px;
+    text-align: left;
+}
+
+.caisse-container input,
+select {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ffffff;
+    width: 60%;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    box-sizing: border-box;
+}
+
+.caisse-carburant button{
+    margin-top: 5%;
+}
