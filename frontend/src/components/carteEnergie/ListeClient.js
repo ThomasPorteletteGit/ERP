@@ -7,17 +7,53 @@ import SmallIcons from "../SmallIcons";
 //faire logique bouton supprimer
 const ListeClient = ({liste_cartes_energies}) => {
 
-    const liste = () => {
+    const liste = ({liste_cartes_energies}) => {
+        if(liste_cartes_energies.length === 0){
+            return <h2>Aucun client</h2>
+        }
         return liste_cartes_energies.map((element) => (
-            <div key={element.id} className="client">
+            <div id={element.id_client+"carteEnergie"} className="client">
                 <div className="infoClient">
-                    <h4>{element.nom}{element.prenom}{element.adresse}</h4>
+                    <h4>{element.nom} {element.prenom} {element.adresse_mail}</h4>
                 </div>
                 <button id="buttonCarteEM Energie" className="buttonCarte">Supprimer</button>
             </div>
         ));
     };
 
+    const supprimerClient = async (button) => {
+        const id_carte = button.parentElement.id.split('carteEnergie')[0];
+        const data = {id_carte: id_carte};
+        const options = {
+            method: 'DELETE',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        };
+        await fetch("/cartesEnergie/delete", options);
+    }
+
+    document.addEventListener("click", function (event) {
+        if (event.target.classList.contains("buttonCarte")) {
+            const buttonText = event.target.textContent;
+            switch (buttonText) {
+                case "Supprimer":
+                    supprimerClient(event.target);
+                    console.log("Bouton supprimer cliqué");
+                    break;
+                case "Retour":
+                    console.log("Bouton retour cliqué");
+                    returnHome();
+                    break;
+                default:
+                    console.log("Bouton inconnu cliqué" + buttonText);
+                    break;
+            }
+            event.preventDefault();
+        }
+    });
+    
     return (
         <section id='carte'>
             <div className="composantGrand">
@@ -29,7 +65,7 @@ const ListeClient = ({liste_cartes_energies}) => {
                     </div>
                     
                     <div className="energie">
-                        {liste()}
+                        {liste({liste_cartes_energies})}
                     </div>
                 </div>
             </div>
@@ -38,24 +74,6 @@ const ListeClient = ({liste_cartes_energies}) => {
 
 };
 
-document.addEventListener("click", function (event) {
-    if (event.target.classList.contains("buttonCarte")) {
-        const buttonText = event.target.textContent;
-        switch (buttonText) {
-            case "Supprimer":
-                console.log("Bouton supprimer cliqué");
-                break;
-            case "Retour":
-                console.log("Bouton retour cliqué");
-                returnHome();
-                break;
-            default:
-                console.log("Bouton inconnu cliqué" + buttonText);
-                break;
-        }
-        event.preventDefault();
-    }
-});
 
 function returnHome() {
     const divGeneral = document.getElementsByClassName("dashboard-right")[0];

@@ -13,15 +13,48 @@ const ListeClientM = ({liste_cartes_membres}) => {
         }
         return liste_cartes_membres.map((element) => (
             <div className="composantGrand">
-                <div key={element.id} className="client">
+                <div id={element.id_client+"carteMembre"} className="client">
                     <div className="infoClient">
-                        <h4>{element.nom}{element.prenom}{element.adresse}</h4>
+                        <h4>{element.nom} {element.prenom} {element.adresse_mail}</h4>
                     </div>
-                    <button id="buttonCarteEM" className="buttonAction">Supprimer</button>
+                    <button id="buttonCarteEM" className="buttonAction delete-button">Supprimer</button>
                 </div>
             </div>
         ));
     };
+
+    const supprimerClient = async (button) => {
+        const id_carte = button.parentElement.id.split('carteMembre')[0];
+        const data = {id_carte: id_carte};
+        const options = {
+            method: 'DELETE',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        };
+        await fetch("/cartesMembre/delete", options);
+    };
+
+ 
+    document.addEventListener("click", function (event) {
+        if (event.target.classList.contains("buttonAction")) {
+            const buttonText = event.target.textContent;
+            switch (buttonText) {
+                case "Supprimer":
+                    supprimerClient(event.target);
+                    console.log("Bouton supprimer cliqué");
+                    break;
+                case "Retour":
+                    console.log("bouton retour cliqué");
+                    returnHome();
+                default:
+                    console.log("Bouton inconnu cliqué" + buttonText);
+                    break;
+            }
+            event.preventDefault();
+        }
+    });
 
     return (
         <section id='carte'>
@@ -44,23 +77,7 @@ const ListeClientM = ({liste_cartes_membres}) => {
 };
 
 
-document.addEventListener("click", function (event) {
-    if (event.target.classList.contains("buttonAction")) {
-        const buttonText = event.target.textContent;
-        switch (buttonText) {
-            case "Supprimer":
-                console.log("Bouton supprimer cliqué");
-                break;
-            case "Retour":
-                console.log("bouton retour cliqué");
-                returnHome();
-            default:
-                console.log("Bouton inconnu cliqué" + buttonText);
-                break;
-        }
-        event.preventDefault();
-    }
-});
+
 
 
 function returnHome() {

@@ -27,29 +27,45 @@ function getNewId(req, res) {
 
 function addTransaction(req, res) {
     const transaction = req.body.transaction;
-
-    dao.insert("TransactionJournaliere", $`'${transaction.id_transaction}', NULL, '${transaction.montant_total}'`, (result) => {
-        console.log(result);
-    });
-
-    dao.insert("Ticket", $`'${transaction.prix_total}', '${transaction.moyen_paiement}', 'NOW()', '${transaction.id_transaction}'`, (result) => {
-        console.log(result);
-    });
-
-    const ticketId = 0;
-    dao.select('MAX(id_ticket)', 'Ticket', "", (result) => {
-        ticketId = result.rows[0].max;
-    });
-
-    transaction.produits.forEach(produit => {
-        dao.insert("ProduitTicket", $`'${ticketId}', '${produit.id_produit}', '${produit.quantite_achetee}'`, (result) => {
-            console.log(result);
+    let id_transaction_journaliere, ticketId;
+  
+    dao.insertWithoutId("TransactionJournaliere", 'date_validation, montant_total', `NULL, '${transaction.montant_total}'`, (result) => {
+        dao.select('MAX(id_transaction)', 'TransactionJournaliere', '', (result) => {
+            id_transaction_journaliere = result.rows[0].max;
+            dao.insertWithoutId("Ticket",'prixTotal, moyen_paiement, date, id_transaction_journaliere' ,`'${transaction.montant_total}', '${transaction.moyen_paiement}', 'NOW()', '${id_transaction_journaliere}'`, (result) => {
+                dao.select('MAX(id_ticket)', 'Ticket', "", (result) => {
+                    ticketId = result.rows[0].max;
+                    transaction.produits.forEach(produit => {
+                        let produitId;
+                        dao.select('id_produit_energie', 'ProduitEnergie', `nom_produit = '${produit.nom}'`, (result) => {
+                            produitId = result.rows[0].id_produit;
+                        });
+                        dao.insert("TicketProduit", `'${ticketId}', '${produitId}', '${produit.quantity}'`, (result) => {
+                            console.log(result);
+                        });
+                    });
+                });
+            });
         });
     });
+
+    
+    
+   
+    
+  
+   
+
+    
+
+    
+
+
+   
 }
 
 function deleteTransaction(req, res) {
-    let condition = "id = '" + req.body.id + "'";
+    let condition = "id_transaction = '" + req.body.id + "'";
     dao.delete('Ticket', condition, (result) => {
         res.send(result);
     });

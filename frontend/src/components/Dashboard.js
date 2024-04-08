@@ -12,8 +12,10 @@ import Direction from './direction/Direction';
 import ComponentsAnimation from "./ComponentsAnimation";
 import ChoixduPaiementCompAnim from './paiement/ChoixduPaiementCompAnim';
 import ChoixPaiement from './paiement/ChoixPaiement';
+import instance from './misc/Singleton';
 
 let energies, horaires, incidents;
+let prixTotal = 0;
 await fetch('/stockEnergie/get')
     .then(response => response.json())
     .then(data => {
@@ -42,13 +44,13 @@ const Dashboard = ({ userType }) => {
             <div id='dashboard'>
                 <div className="dashboard-container">
                     <div className="dashboard-left">
-                        <Caisse energies={energies}/>
+                        <Caisse energies={energies} singleton={instance}/>
                     </div>
                     <div className="dashboard-right">
                         <div className="etat-transac">
                             <EtatCuves energies={energies}/>
                             <Transaction />
-                            <ChoixPaiement />
+                            <ChoixPaiement singleton={instance}/>
                         </div>
 
                         {userType === 'gerant' && (

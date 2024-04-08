@@ -68,7 +68,6 @@ const AjouterCarteM = ({liste_cartes_membres}) => {
                     const nom = document.querySelector(".infoClientCarte.nom input").value;
                     const prenom = document.querySelector(".infoClientCarte.prenom input").value;
                     const adresse = document.querySelector(".infoClientCarte.mail input").value;
-                    console.log(nom, prenom, adresse)
                     enregistrerCarte({nom, prenom, adresse});
                     break;
                 case "Annuler":

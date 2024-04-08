@@ -31,27 +31,48 @@ function SelectHeure({onChange, jour, horaire}) {
 }
 
 const HoraireGrand = ({horaires}) => {
-    const handleHeureOuverture = () => {
+   
 
+    const handleValider = async () => {
+        let newHoraires = [];
+        let horaires = document.querySelectorAll('.horaires');
+        let i = 0;
+        for (let horaire of horaires) {
+            if (i % 2 === 0) {
+                newHoraires.push({
+                    jour: horaire.parentElement.parentElement.firstChild.textContent,
+                    horaire_ouverture: horaire.value,
+                    horaire_fermeture: horaires[i + 1].value
+                });
+            }
+            i++;
+        }
+        for(let horaire of newHoraires) {
+            const dataOuverture = {jour: horaire.jour, heure: horaire.horaire_ouverture};
+            const dataFermeture = {jour: horaire.jour, heure: horaire.horaire_fermeture};
+            const optionsOuverture = {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(dataOuverture)
+            };
+            const optionsFermeture = {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(dataFermeture)
+            };
+
+            await fetch('/horaires/ouverture/set', optionsOuverture);
+            await fetch('/horaires/fermeture/set', optionsFermeture);
+        }
+
+      
         
     };
-    
-    
-    const handleHeureFermeture = () => {
-      
-    };
 
-    const handleValider = () => {
-        console.log("Validation des modifications");
-    };
-
-    const setHeureOuverture = (jour, heure) => {
-       
-    };
-
-    const setHeureFermeture = (jour, heure) => {
-    
-    };
 
     const handleAnnuler = () => {
         console.log("Annulation des modifications");
@@ -111,8 +132,8 @@ const HoraireGrand = ({horaires}) => {
                             }
                         </tbody>
                     </table>
-                    <button className='btnHoraireGrandClick buttonAnnuler' onClick={() => handleAnnuler()}>Annuler</button>
-                    <button className='btnHoraireGrandClick buttonValider' onClick={() => handleValider()}>Valider</button>
+                    <button className='btnHoraireGrandClick buttonAnnuler'>Annuler</button>
+                    <button className='btnHoraireGrandClick buttonValider'>Valider</button>
                 </div>
             </div>
         </section>

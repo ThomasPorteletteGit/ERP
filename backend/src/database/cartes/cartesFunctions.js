@@ -3,7 +3,7 @@ const dao = require('../../data/DAO');
 // Fonctions pour les cartes energie
 
 function getAllEnergyCards(req, res) {
-    dao.select('*', 'Carte', "type='Energie'", (result) => {
+    dao.selectWithJoin('*', 'Carte', "type='Energie'", "JOIN Client ON Carte.id_client=Client.id_client", (result) => {
         res.send(result.rows);
     });
 }
@@ -17,7 +17,15 @@ function getEnergyCardById(req, res) {
 function addEnergyCard(req, res) {
     let champs = 'type, credit, id_client';
     let valeurs = `'Energie', ${req.body.credit}, ${req.body.id_client}`;
-    dao.insert('Carte', champs, valeurs, (result) => {
+    dao.insertWithoutId('Carte', champs, valeurs, (result) => {
+        res.send(result);
+    });
+}
+
+function deleteEnergyCard(req, res) {
+    let id_carte = req.body.id_carte;
+    console.log(id_carte);
+    dao.delete('Carte', `id_carte=${id_carte}`, (result) => {
         res.send(result);
     });
 }
@@ -25,13 +33,13 @@ function addEnergyCard(req, res) {
 // Fonctions pour les cartes membre
 
 function getAllMemberCards(req, res) {
-    dao.select('*', 'Carte', "type='Membre'", (result) => {
+    dao.selectWithJoin('*', 'Carte', "type='Membre'", "JOIN Client ON Carte.id_client=Client.id_client", (result) => {
         res.send(result.rows);
     });
 }
 
 function getMemberCardById(req, res) {
-    dao.select('*', 'Carte', `type='Membre' AND id_carte=${req.params.id_carte}`, (result) => {
+    dao.selectWithJoin('*', 'Carte', `type='Membre' AND id_carte=${req.params.id_carte}`, "JOIN Client ON Carte.id_client=Client.id_client", (result) => {
         res.send(result.rows);
     });
 }
@@ -44,6 +52,13 @@ function addMemberCard(req, res) {
     });
 }
 
+function deleteMemberCard(req, res) {
+    let id_carte = req.body.id_carte;
+    dao.delete('Carte', `id_carte=${id_carte}`, (result) => {
+        res.send(result);
+    });
+}
+
 
 
 module.exports = {
@@ -51,13 +66,15 @@ module.exports = {
     {
         getAllEnergyCards,
         getEnergyCardById,
-        addEnergyCard
+        addEnergyCard,
+        deleteEnergyCard
     },
     membres:
     {
         getAllMemberCards,
         getMemberCardById,
-        addMemberCard
+        addMemberCard,
+        deleteMemberCard
     }
 
 }

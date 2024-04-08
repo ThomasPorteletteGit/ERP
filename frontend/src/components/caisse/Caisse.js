@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
+import instance from '../misc/Singleton';
 
 const ChoixPaiement = ({energies}) => {
     const [transactions, setTransactions] = useState([]);
     const [inputValue, setInputValue] = useState('');
+    const [energyValue, setEnergyValue] = useState('');
     const [previousValue, setPreviousValue] = useState('');
     const [operator, setOperator] = useState('');
     const [inputQuantity, setInputQuantity] = useState('');
@@ -43,6 +45,7 @@ const ChoixPaiement = ({energies}) => {
                 price: article.prix
             };
             setTransactions(previous => [...previous, newTransaction]);
+            instance.addProduit(newTransaction);
         }
     };
 
@@ -52,10 +55,11 @@ const ChoixPaiement = ({energies}) => {
         if (energie !== undefined) {
             const newTransaction = {
                 nom: energie.nom,
-                quantity: inputQuantity,
+                quantity: energyValue,
                 price: energie.prix
             };
             setTransactions(previous => [...previous, newTransaction]);
+            instance.addProduit(newTransaction);
         }
     };
     
@@ -78,12 +82,28 @@ const ChoixPaiement = ({energies}) => {
         }
     };
 
+    const deleteProduct = (button) => {
+        let row = button.parentNode.parentNode;
+        let name = row.cells[0].innerHTML;
+        let quantity = row.cells[1].innerHTML;
+        let price = row.cells[2].innerHTML;
+        let total = row.cells[3].innerHTML;
+        let newTransactions = transactions.filter((transaction) => transaction.nom !== name);
+        setTransactions(newTransactions);
+        instance.removeProduit({nom:name, quantity:quantity, price:price});
+        instance.setPrixTotal(instance.getPrixTotal() - parseFloat(total));
+        instance.setPrixAffiche(instance.getPrixAffiche() - parseFloat(total));
+    }
+
+
     const calculateTotal = () => {
         const total = transactions.reduce(
             (acc, transaction) =>
                 acc + transaction.quantity * parseFloat(transaction.price),
             0
         );
+        instance.setPrixTotal(total);
+        instance.setPrixAffiche(total);
         return total.toFixed(2);
     };
 
@@ -224,7 +244,9 @@ const ChoixPaiement = ({energies}) => {
                                     ))}
                                 </select>
                             
-                                <input type="number" id="quantite" name="quantite" placeholder="Quantité en litres" />
+                                <input type="number" id="quantite" name="quantite" placeholder="Quantité en litres" onChange={(e) => {
+                                    setEnergyValue(e.target.value);
+                                }}/>
 
                                 <button id="calculer" className="button_style" onClick={ async () => {
                                     let energie = await searchArticle({article:inputValue, type:"energie"});
