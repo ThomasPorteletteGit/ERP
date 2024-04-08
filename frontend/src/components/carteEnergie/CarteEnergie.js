@@ -3,6 +3,7 @@ import ReactDOMServer from 'react-dom/server'
 import ListeClient from "./ListeClient";
 import AjouterCarte from "./AjouterCarte";
 import AvantageCarte from "./AvantageCarte";
+import SmallIcons from "../SmallIcons";
 
 const CarteEnergie = () => {
     return (
@@ -51,30 +52,26 @@ document.addEventListener("click", function (event) {
 });
 
 function afficherClients() {
-    const divGeneral = document.getElementsByClassName("composantGrand")[0];
-    console.log(divGeneral.innerHTML);
-    let saveDiv = divGeneral.innerHTML;
-    console.log("Afficher les clients");
-
-    divGeneral.innerHTML = ReactDOMServer.renderToString(<ListeClient />);
+    const divGeneral = document.getElementsByClassName("dashboard-right")[0];
+    const smallIcons = ReactDOMServer.renderToString(<SmallIcons />);
+    const carteEnergie = ReactDOMServer.renderToString(<ListeClient />);
+    divGeneral.innerHTML = smallIcons + carteEnergie;
     divGeneral.style.display = "block";
 }
 
 function ajouterCarte() {
-    const divGeneral = document.getElementsByClassName("composantGrand")[0];
-    let saveDiv = divGeneral.innerHTML;
-    console.log("Afficher les clients");
-
-    divGeneral.innerHTML = ReactDOMServer.renderToString(<AjouterCarte />);
+    const divGeneral = document.getElementsByClassName("dashboard-right")[0];
+    const smallIcons = ReactDOMServer.renderToString(<SmallIcons />);
+    const carteEnergie = ReactDOMServer.renderToString(<AjouterCarte />);
+    divGeneral.innerHTML = smallIcons + carteEnergie;
     divGeneral.style.display = "block";
 }
 
 function voirAvantage() {
-    const divGeneral = document.getElementsByClassName("composantGrand")[0];
-    let saveDiv = divGeneral.innerHTML;
-    console.log("Afficher les clients");
-
-    divGeneral.innerHTML = ReactDOMServer.renderToString(<AvantageCarte />);
+    const divGeneral = document.getElementsByClassName("dashboard-right")[0];
+    const smallIcons = ReactDOMServer.renderToString(<SmallIcons />);
+    const carteEnergie = ReactDOMServer.renderToString(<AvantageCarte />);
+    divGeneral.innerHTML = smallIcons + carteEnergie;
     divGeneral.style.display = "block";
 }
 export default CarteEnergie;

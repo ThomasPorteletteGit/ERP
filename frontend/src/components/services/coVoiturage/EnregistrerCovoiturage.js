@@ -56,7 +56,7 @@ const EnregistrerCovoiturage = () => {
             <div className="boutonsAnnulationConfirmationCOV">
                         <button type="submit" className="boutonAnnulerProposition">Annuler</button>
                         <button type="submit" className="boutonConfirmerProposition">Ajouter la proposition</button>
-                </div>
+            </div>
 
             
             

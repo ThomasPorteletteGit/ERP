@@ -22,7 +22,7 @@ const ServicesGrand = () => {
                 <button className="bouttonsServiceGrand" id="parkingButton">Parking</button>
                 <button className="bouttonsServiceGrand" id="covoiturageButton">Co-voiturage</button>
                 <button className="bouttonsServiceGrand" id="livraisonButton">Livraison</button>
-                <button className="bouttonsServiceGrand" id="autresButton">Autres</button>
+                {/* <button className="bouttonsServiceGrand" id="autresButton">Autres</button> */}
             </div>
 
         </div>
@@ -73,12 +73,12 @@ document.addEventListener("click", function (event) {
     const divSmallIcons = document.getElementsByClassName("smallIcons")[0];
     
     
-    // Rendu du composant ServiceCoVoiturage
-    const serviceCoVoiturageComponent = ReactDOMServer.renderToString(<ServiceCoVoiturage />);
-    
-    // Ajout du rendu des deux composants à la div "dashboard-right"
-    divGeneral.innerHTML = serviceCoVoiturageComponent;
-    divGeneral.style.display = "block";
+        // Rendu du composant ServiceCoVoiturage
+        const serviceCoVoiturageComponent = ReactDOMServer.renderToString(<ServiceCoVoiturage />);
+        
+        // Ajout du rendu des deux composants à la div "dashboard-right"
+        divGeneral.innerHTML = serviceCoVoiturageComponent;
+        divGeneral.style.display = "block";
     }
 
     function afficherVueLivraison() {

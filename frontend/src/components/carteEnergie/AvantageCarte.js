@@ -1,14 +1,11 @@
 import React from "react";
 import ReactDOMServer from 'react-dom/server'
-import ListeClient from "./ListeClient";
-import AjouterCarte from "./AjouterCarte";
-
+import SmallIcons from "../SmallIcons";
+import CarteEnergie from "./CarteEnergie";
 
 const AvantageCarte = () => {
     const avantagesCarte = () => {
         return (
-            <div className="composantGrand">
-
                 <div className="avantages">
                     <div className="infoAvantages">
                         <h3>Points de fidélité : </h3>
@@ -25,7 +22,6 @@ const AvantageCarte = () => {
                     </div>
                     <button id="buttonCarteEM" className="buttonCarte">Modifier</button>
                 </div>
-            </div>
         );
     };
 
@@ -34,11 +30,10 @@ const AvantageCarte = () => {
             <div className="composantGrand">
                 <div className="composantGrandCarteEM">
                     <div className="Top_Component_Grand">
+                        <button id="buttonReturn" className="buttonCarte">Retour</button>
                         <h2 className="component_title">Avantage</h2>
                         <hr></hr>
                     </div>
-                    <button id="buttonCarteEM" className="buttonCarte">Voir liste des clients</button>
-                    <button id="buttonCarteEM" className="buttonCarte">Ajouter une carte</button>
                     <div className="energie">
                         {avantagesCarte()}
                     </div>
@@ -53,16 +48,12 @@ document.addEventListener("click", function (event) {
     if (event.target.classList.contains("buttonCarte")) {
         const buttonText = event.target.textContent;
         switch (buttonText) {
-            case "Voir liste des clients":
-                console.log("Bouton liste client -> liste client cliqué");
-                afficherClients();
-                break;
-            case "Ajouter une carte":
-                console.log("Bouton ajouter carte cliqué");
-                ajouterCarte();
-                break;
             case "Modifier":
                 console.log("Bouton modifer cliqué");
+                break;
+            case "Retour":
+                console.log("Bouton retour cliqué");
+                returnHome();
                 break;
             default:
                 console.log("Bouton inconnu cliqué" + buttonText);
@@ -72,21 +63,13 @@ document.addEventListener("click", function (event) {
     }
 });
 
-function afficherClients() {
-    const divGeneral = document.getElementsByClassName("composantGrand")[0];
-    let saveDiv = divGeneral.innerHTML;
-    console.log("Afficher les clients");
+function returnHome() {
+    const divGeneral = document.getElementsByClassName("dashboard-right")[0];
+    console.log("return Home");
 
-    divGeneral.innerHTML = ReactDOMServer.renderToString(<ListeClient />);
-    divGeneral.style.display = "block";
-}
-
-function ajouterCarte() {
-    const divGeneral = document.getElementsByClassName("composantGrand")[0];
-    let saveDiv = divGeneral.innerHTML;
-    console.log("Afficher les clients");
-
-    divGeneral.innerHTML = ReactDOMServer.renderToString(<AjouterCarte />);
+    const smallIcons = ReactDOMServer.renderToString(<SmallIcons />);
+    const carteEnergie = ReactDOMServer.renderToString(<CarteEnergie />);
+    divGeneral.innerHTML = smallIcons + carteEnergie;
     divGeneral.style.display = "block";
 }
 

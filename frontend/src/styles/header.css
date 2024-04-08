@@ -44,7 +44,6 @@
 }
 
 .user #tomdelacote {
-    margin-left: 5%;
     margin-top: 1%;
     display: flex;
 }
@@ -176,7 +175,7 @@
     border-radius: 4px;
     color: black;
     background-color: #c3f3fb;
-
+    font-size: 25px;
 }
 
 

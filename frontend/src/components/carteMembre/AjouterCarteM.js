@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import ReactDOMServer from 'react-dom/server'
-import ListeClientM from "./ListeClientM";
-import AvantageCarteM from "./AvantageCarteM";
+import CarteMembre from "./CarteMembre";
+import SmallIcons from "../SmallIcons";
 
 //a faire logique bouton enregistrer
 const AjouterCarteM = () => {
@@ -12,15 +12,12 @@ const AjouterCarteM = () => {
     return (
         <section id='carte'>
             <div className="composantGrand">
-
                 <div className="composantGrandCarteEM">
                     <div className="Top_Component_Grand">
+                        <button id="buttonReturn" className="buttonAction">Retour</button>
                         <h2 className="component_title">Ajouter une carte</h2>
                         <hr></hr>
                     </div>
-
-                    <button id="buttonCarteEM" className="buttonCarte">Voir liste des clients</button>
-                    <button id="buttonCarteEM" className="buttonCarte">Ajouter une carte</button>
 
                     <form>
                         <div className="infoClientCarte">
@@ -52,13 +49,8 @@ document.addEventListener("click", function (event) {
     if (event.target.classList.contains("buttonCarte")) {
         const buttonText = event.target.textContent;
         switch (buttonText) {
-            case "Voir liste client":
-                console.log("Bouton liste client -> liste client cliqué");
-                afficherClients();
-                break;
-            case "Avantage carte énergie":
-                console.log("Bouton avantage cliqué");
-                voirAvantage();
+            case "Retour":
+                console.log("Bouton retour cliqué");
                 break;
             case "Enregistrer":
                 console.log("Bouton enregister cliqué");
@@ -76,23 +68,14 @@ document.addEventListener("click", function (event) {
     }
 });
 
-function afficherClients() {
+function returnHome() {
     const divGeneral = document.getElementsByClassName("dashboard-right")[0];
-    let saveDiv = divGeneral.innerHTML;
-    console.log("Afficher les clients");
-
-    divGeneral.innerHTML = ReactDOMServer.renderToString(<ListeClientM />);
+    const smallIcons = ReactDOMServer.renderToString(<SmallIcons />);
+    const carteMembre = ReactDOMServer.renderToString(<CarteMembre />);
+    divGeneral.innerHTML = smallIcons + carteMembre;
     divGeneral.style.display = "block";
 }
 
-function voirAvantage() {
-    const divGeneral = document.getElementsByClassName("dashboard-right")[0];
-    let saveDiv = divGeneral.innerHTML;
-    console.log("Afficher les clients");
-
-    divGeneral.innerHTML = ReactDOMServer.renderToString(<AvantageCarteM />);
-    divGeneral.style.display = "block";
-}
 
 function annuler() {
     const divGeneral = document.getElementsByClassName("dashboard-right")[0];
