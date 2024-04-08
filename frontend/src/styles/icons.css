@@ -85,7 +85,7 @@
 }
 
 #topComposant2>h4 {
-    align-self: flex-end;
+    align-self: center;
 
 }
 
@@ -182,12 +182,11 @@
 
 #btnValiderPrix,
 #btnAnnulerPrix {
-    background: #cef4fb;
     justify-content: end;
-    color: black;
-    font-size: 5rem;
+    color: white;
+    font-size: 2.3rem;
     border-radius: 20px;
-    margin-top: 8%;
+    margin-top: 3%;
     margin-bottom: 8%;
     margin-left: auto;
     margin-right: -12%;

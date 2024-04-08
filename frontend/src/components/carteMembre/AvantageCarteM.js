@@ -1,14 +1,12 @@
 import React from "react";
 import ReactDOMServer from 'react-dom/server'
-import ListeClientM from "./ListeClientM";
-import AjouterCarteM from "./AjouterCarteM";
+import SmallIcons from "../SmallIcons";
+import CarteMembre from "./CarteMembre";
 
 
 const AvantageCarteM = () => {
     const avantagesCarte = () => {
         return (
-            <div className="composantGrand">
-
                 <div className="avantages">
                     <div className="infoAvantages">
                         <h3>Points de fidélité : </h3>
@@ -23,9 +21,8 @@ const AvantageCarteM = () => {
                         <hr></hr>
                         <p className="avantage">BLA bla bla</p>
                     </div>
-                    <button id="buttonCarteEM" className="buttonCarte">Modifier</button>
+                    <button id="buttonCarteEM" className="buttonAction">Modifier</button>
                 </div>
-            </div>
         );
     };
 
@@ -34,11 +31,10 @@ const AvantageCarteM = () => {
             <div className="composantGrand">
                 <div className="composantGrandCarteEM">
                     <div className="Top_Component_Grand">
+                        <button id="buttonReturn" className="buttonAction">Retour</button>
                         <h2 className="component_title">Avantage</h2>
                         <hr></hr>
                     </div>
-                    <button id="buttonCarteEM" className="buttonCarte">Voir liste des clients</button>
-                    <button id="buttonCarteEM" className="buttonCarte">Ajouter une carte</button>
                     <div className="energie">
                         {avantagesCarte()}
                     </div>
@@ -50,16 +46,12 @@ const AvantageCarteM = () => {
 };
 
 document.addEventListener("click", function (event) {
-    if (event.target.classList.contains("buttonCarte")) {
+    if (event.target.classList.contains("buttonAction")) {
         const buttonText = event.target.textContent;
         switch (buttonText) {
-            case "Voir liste des clients":
-                console.log("Bouton liste client -> liste client cliqué");
-                afficherClients();
-                break;
-            case "Ajouter une carte":
-                console.log("Bouton ajouter carte cliqué");
-                ajouterCarte();
+            case "Retour":
+                console.log("Bouton retour cliqué");
+                returnHome();
                 break;
             case "Modifier":
                 console.log("Bouton modifer cliqué");
@@ -72,22 +64,14 @@ document.addEventListener("click", function (event) {
     }
 });
 
-function afficherClients() {
-    const divGeneral = document.getElementsByClassName("dashboard-right")[0];
-    let saveDiv = divGeneral.innerHTML;
-    console.log("Afficher les clients");
 
-    divGeneral.innerHTML = ReactDOMServer.renderToString(<ListeClientM />);
+function returnHome() {
+    const divGeneral = document.getElementsByClassName("dashboard-right")[0];
+    const smallIcons = ReactDOMServer.renderToString(<SmallIcons />);
+    const carteMembre = ReactDOMServer.renderToString(<CarteMembre />);
+    divGeneral.innerHTML = smallIcons + carteMembre;
     divGeneral.style.display = "block";
 }
 
-function ajouterCarte() {
-    const divGeneral = document.getElementsByClassName("dashboard-right")[0];
-    let saveDiv = divGeneral.innerHTML;
-    console.log("Afficher les clients");
-
-    divGeneral.innerHTML = ReactDOMServer.renderToString(<AjouterCarteM />);
-    divGeneral.style.display = "block";
-}
 
 export default AvantageCarteM;
