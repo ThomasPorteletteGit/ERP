@@ -45,7 +45,7 @@ Vue choix paiement
     margin-top: 4%;
 }
 
-#choixpaiement .component-title{
+#choixpaiement .component-title {
     display: flex;
     margin-left: 5%;
 }
@@ -1166,7 +1166,7 @@ select {
     margin-top: 1%;
 }
 
-.caisseTitre h2{
+.caisseTitre h2 {
     display: flex;
     padding-left: 5%;
 }
@@ -1264,13 +1264,13 @@ select {
     margin-bottom: 20px;
 }
 
-.switch_button{
+.switch_button {
     margin-bottom: 10px;
     display: flex;
     margin-right: 20px;
 }
 
-.switch_button button{
+.switch_button button {
     margin-left: auto;
 }
 
@@ -1413,7 +1413,7 @@ th {
     margin-left: 2%;
 }
 
-.search-bar:last-child{
+.search-bar:last-child {
     margin-right: 2%;
 }
 
@@ -1674,10 +1674,10 @@ ul li {
     background-color: #c3f3fb;
     background-repeat: no-repeat;
     background-size: contain;
-    background-repeat: no-repeat; 
-    background-position: center; 
-    border: none; 
-    outline: none; 
+    background-repeat: no-repeat;
+    background-position: center;
+    border: none;
+    outline: none;
 }
 
 #covoiturageButton {
@@ -1686,10 +1686,10 @@ ul li {
     background-color: #c3f3fb;
     background-repeat: no-repeat;
     background-size: contain;
-    background-repeat: no-repeat; 
-    background-position: center; 
-    border: none; 
-    outline: none; 
+    background-repeat: no-repeat;
+    background-position: center;
+    border: none;
+    outline: none;
 }
 
 #livraisonButton {
@@ -1698,11 +1698,11 @@ ul li {
     background-color: #c3f3fb;
     background-repeat: no-repeat;
     background-size: contain;
-    background-repeat: no-repeat; 
-    background-position: center; 
+    background-repeat: no-repeat;
+    background-position: center;
     width: 95%;
-    border: none; 
-    outline: none; 
+    border: none;
+    outline: none;
 }
 
 #autresButton {
@@ -1733,7 +1733,7 @@ ul li {
     justify-content: space-around;
 }
 
-.bouttonsServiceGrand{
+.bouttonsServiceGrand {
     border-radius: 40px !important;
 }
 
@@ -2265,20 +2265,20 @@ ul li {
     padding-top: 2%;
     color: black;
     gap: 15px;
-    overflow-y: auto; 
-    max-height: 400px; 
-    justify-content: flex-start; 
+    overflow-y: auto;
+    max-height: 400px;
+    justify-content: flex-start;
     align-items: center;
     scrollbar-width: none;
 }
 
 
 .imageItem {
-    width: 50%; 
+    width: 50%;
     border-radius: 30px;
-    height: auto; 
+    height: auto;
     margin-left: 25%;
-    align-self: flex-start; 
+    align-self: flex-start;
 }
 
 .imagesContainer img {
@@ -2804,7 +2804,7 @@ input[name="nameProduit"] {
 #buttonCarteEM,
 .btnStockGrandClickBottom,
 .btnStockGrandClickTop,
-.buttonRéapprovisionnement  {
+.buttonRéapprovisionnement {
     position: relative;
     padding: 10px 20px;
     border-radius: 7px;
@@ -2826,7 +2826,7 @@ input[name="nameProduit"] {
 #buttonCarteEM:hover,
 .btnStockGrandClickBottom:hover,
 .btnStockGrandClickTop:hover,
-.buttonRéapprovisionnement:hover  {
+.buttonRéapprovisionnement:hover {
     background: #c3f3fb;
     box-shadow: 0 0 10px 5px rgb(195, 243, 251, 0.8);
     -webkit-transition: all 0.2s ease-out;
@@ -2839,7 +2839,7 @@ input[name="nameProduit"] {
 #buttonCarteEM:hover::before,
 .btnStockGrandClickBottom::before,
 .btnStockGrandClickTop::before,
-.buttonRéapprovisionnement::before  {
+.buttonRéapprovisionnement::before {
     -webkit-animation: sh02 0.5s 0s linear;
     -moz-animation: sh02 0.5s 0s linear;
     animation: sh02 0.5s 0s linear;
@@ -2849,7 +2849,7 @@ input[name="nameProduit"] {
 #buttonCarteEM::before,
 .btnStockGrandClickBottom::before,
 .btnStockGrandClickTop::before,
-.buttonRéapprovisionnement::before  {
+.buttonRéapprovisionnement::before {
     content: '';
     display: block;
     width: 0px;
@@ -2921,7 +2921,8 @@ input[name="nameProduit"] {
     height: 100%;
     overflow-y: auto;
 
-    scrollbar-width: none;}
+    scrollbar-width: none;
+}
 
 
 .defautcuvediv {
@@ -2947,13 +2948,9 @@ input[name="nameProduit"] {
     align-items: start;
 }
 
-.btnEtat {
-    display: block;
-    width: 45%;
-    height: auto;
-}
 
-.caisse-carburant{
+
+.caisse-carburant {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -2961,22 +2958,23 @@ input[name="nameProduit"] {
     padding: 5% 10% 10% 10%;
 }
 
-.caisse2-container{
+.caisse2-container {
     height: 100%;
 }
 
-.caisse-carburant p{
+.caisse-carburant p {
     margin-top: 5%;
     font-size: 15px;
 }
 
-.caisse-carburant h2{
+.caisse-carburant h2 {
     font-size: 20px;
     text-align: left;
 }
 
 .caisse-carburant input,
-.caisse-carburant select, select[name="niveau"] {
+.caisse-carburant select,
+select[name="niveau"] {
     padding: 10px;
     font-size: 16px;
     border: 1px solid #ffffff;
@@ -2986,17 +2984,18 @@ input[name="nameProduit"] {
     box-sizing: border-box;
 }
 
-.caisse-carburant button{
+.caisse-carburant button {
     margin-top: 5%;
 }
 
 
-    #buttonReturn{
-        background: url("../assets/img/en-arriere.png") no-repeat;
-        background-size: cover;
-        width: 23px;
-        height: 23px;
-        margin: 10px;
-        color: rgba(0, 0, 0, 0);
-        float: left;
-    }
+#buttonReturn {
+    background: url("../assets/img/en-arriere.png") no-repeat;
+    background-size: cover;
+    width: 23px;
+    height: 23px;
+    margin: 10px;
+    color: rgba(0, 0, 0, 0);
+    float: left;
+}
+
