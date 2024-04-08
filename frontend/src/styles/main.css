@@ -45,7 +45,7 @@ Vue choix paiement
     margin-top: 4%;
 }
 
-#choixpaiement .component-title{
+#choixpaiement .component-title {
     display: flex;
     margin-left: 5%;
 }
@@ -1153,6 +1153,7 @@ select {
     padding: 0;
     margin: 0;
     height: 40%;
+    border-radius: 20px;
 }
 
 
@@ -1166,7 +1167,7 @@ select {
     margin-top: 1%;
 }
 
-.caisseTitre h2{
+.caisseTitre h2 {
     display: flex;
     padding-left: 5%;
 }
@@ -1264,13 +1265,13 @@ select {
     margin-bottom: 20px;
 }
 
-.switch_button{
+.switch_button {
     margin-bottom: 10px;
     display: flex;
     margin-right: 20px;
 }
 
-.switch_button button{
+.switch_button button {
     margin-left: auto;
 }
 
@@ -1413,7 +1414,7 @@ th {
     margin-left: 2%;
 }
 
-.search-bar:last-child{
+.search-bar:last-child {
     margin-right: 2%;
 }
 
@@ -1507,14 +1508,14 @@ th {
 
 .right-container form textarea {
     height: 160px;
-    width: 60%;
+    width: 90%;
     margin-bottom: 5%;
     resize: vertical;
     align-self: center;
 }
 
 .right-container form button {
-    width: 50%;
+    width: 90%;
     align-self: center;
     font-size: 150%;
     padding: 10px 20px;
@@ -1671,21 +1672,38 @@ ul li {
 #parkingButton {
     background: url("../assets/img/image-210.png");
     background-size: 100% 100%;
+    background-color: #c3f3fb;
     background-repeat: no-repeat;
-
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: none;
+    outline: none;
 }
 
 #covoiturageButton {
     background: url("../assets/img/image-220.png");
     background-size: 100% 100%;
+    background-color: #c3f3fb;
     background-repeat: no-repeat;
-
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: none;
+    outline: none;
 }
 
 #livraisonButton {
     background: url("../assets/img/image-230.png");
     background-size: 100% 100%;
+    background-color: #c3f3fb;
     background-repeat: no-repeat;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 95%;
+    border: none;
+    outline: none;
 }
 
 #autresButton {
@@ -1702,7 +1720,7 @@ ul li {
     height: 45%;
     border-radius: 8px;
     cursor: pointer;
-    font-size: 35px;
+    font-size: 50px;
     font-weight: bold;
 }
 
@@ -1716,6 +1734,10 @@ ul li {
     justify-content: space-around;
 }
 
+.bouttonsServiceGrand {
+    border-radius: 40px !important;
+}
+
 /* Direction grand */
 
 .componantDirectionGrand h2 {
@@ -1726,7 +1748,8 @@ ul li {
 
 .direction-details {
     margin-top: 4%;
-    height: 150%;
+    height: 130vh;
+    border-radius: 20px;
 }
 
 .composantGrand h3 {
@@ -1739,15 +1762,13 @@ ul li {
 }
 
 .direction-details ul {
-    margin-left: 10%;
-    margin-right: 10%;
+    margin-left: 2%;
+    margin-right: 2%;
     font-size: 120%;
 }
 
 
 .direction-details ul {
-    margin-left: 10%;
-    margin-right: 10%;
     font-size: 120%;
 }
 
@@ -1962,12 +1983,12 @@ ul li {
     text-align: center;
 }
 
-.separator {
+/*.separator {
     width: 100%;
     height: 1px;
     background-color: #131313;
     margin: 10px 0;
-}
+}*/
 
 .composantGrandTransaction {
     display: flex;
@@ -2193,14 +2214,14 @@ ul li {
 .btnStockGrandClickTop {
     width: 100%;
     margin: 2%;
-    height: 30vh;
+    height: 26vh;
     cursor: pointer;
 }
 
 .btnStockGrandClickBottom {
     width: 46%;
     margin: 2%;
-    height: 30vh;
+    height: 26vh;
     cursor: pointer;
 }
 
@@ -2244,19 +2265,20 @@ ul li {
     padding-top: 2%;
     color: black;
     gap: 15px;
-    overflow-y: auto; 
-    max-height: 400px; 
-    justify-content: flex-start; 
+    overflow-y: auto;
+    max-height: 400px;
+    justify-content: flex-start;
     align-items: center;
+    scrollbar-width: none;
 }
 
 
 .imageItem {
-    width: 50%; 
+    width: 50%;
     border-radius: 30px;
-    height: auto; 
+    height: auto;
     margin-left: 25%;
-    align-self: flex-start; 
+    align-self: flex-start;
 }
 
 .imagesContainer img {
@@ -2782,7 +2804,7 @@ input[name="nameProduit"] {
 #buttonCarteEM,
 .btnStockGrandClickBottom,
 .btnStockGrandClickTop,
-.buttonRéapprovisionnement  {
+.buttonRéapprovisionnement {
     position: relative;
     padding: 10px 20px;
     border-radius: 7px;
@@ -2804,7 +2826,7 @@ input[name="nameProduit"] {
 #buttonCarteEM:hover,
 .btnStockGrandClickBottom:hover,
 .btnStockGrandClickTop:hover,
-.buttonRéapprovisionnement:hover  {
+.buttonRéapprovisionnement:hover {
     background: #c3f3fb;
     box-shadow: 0 0 10px 5px rgb(195, 243, 251, 0.8);
     -webkit-transition: all 0.2s ease-out;
@@ -2817,7 +2839,7 @@ input[name="nameProduit"] {
 #buttonCarteEM:hover::before,
 .btnStockGrandClickBottom::before,
 .btnStockGrandClickTop::before,
-.buttonRéapprovisionnement::before  {
+.buttonRéapprovisionnement::before {
     -webkit-animation: sh02 0.5s 0s linear;
     -moz-animation: sh02 0.5s 0s linear;
     animation: sh02 0.5s 0s linear;
@@ -2827,7 +2849,7 @@ input[name="nameProduit"] {
 #buttonCarteEM::before,
 .btnStockGrandClickBottom::before,
 .btnStockGrandClickTop::before,
-.buttonRéapprovisionnement::before  {
+.buttonRéapprovisionnement::before {
     content: '';
     display: block;
     width: 0px;
@@ -2902,36 +2924,69 @@ input[name="nameProduit"] {
     scrollbar-width: none;
 }
 
+
 .defautcuvediv {
     margin-left: 20px;
     display: flex;
     width: 130%;
-    margin: 8% 8%;
+    margin: 4% 4%;
     flex-direction: row;
     justify-content: flex-start;
     align-items: flex-start;
     gap: 2%;
-    font-size: 4em;
+    font-size: 30px;
 }
 
+.defautcuveinput{
+    margin-left: 2%;
+    margin-top: 4%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100%;
+    gap: 5%;
+}
+
+#prixDIESEL{
+    margin-top: 10%;
+}
+
+#prixElec{
+    margin-top: 10%;
+}
+
+.defautcuveinput input{
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ffffff;
+    border-radius: 8px;
+    box-sizing: border-box;
+}
+
+#divPrixEtat{
+    margin-left: 2%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+
 .defautcuvediv input {
-    /* styles spécifiques pour l'input */
     font-size: 0.9em;
     margin-top: 1%
 }
 
 .Etatcuvediv {
+    height: 50%;
     display: flex;
     align-items: start;
 }
 
-.btnEtat {
-    display: block;
-    width: 45%;
-    height: auto;
-}
 
-.caisse-carburant{
+
+.caisse-carburant {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -2939,22 +2994,23 @@ input[name="nameProduit"] {
     padding: 5% 10% 10% 10%;
 }
 
-.caisse2-container{
+.caisse2-container {
     height: 100%;
 }
 
-.caisse-carburant p{
+.caisse-carburant p {
     margin-top: 5%;
     font-size: 15px;
 }
 
-.caisse-carburant h2{
+.caisse-carburant h2 {
     font-size: 20px;
     text-align: left;
 }
 
 .caisse-carburant input,
-.caisse-carburant select {
+.caisse-carburant select,
+select[name="niveau"] {
     padding: 10px;
     font-size: 16px;
     border: 1px solid #ffffff;
@@ -2964,6 +3020,18 @@ input[name="nameProduit"] {
     box-sizing: border-box;
 }
 
-.caisse-carburant button{
+.caisse-carburant button {
     margin-top: 5%;
 }
+
+
+#buttonReturn {
+    background: url("../assets/img/en-arriere.png") no-repeat;
+    background-size: cover;
+    width: 23px;
+    height: 23px;
+    margin: 10px;
+    color: rgba(0, 0, 0, 0);
+    float: left;
+}
+

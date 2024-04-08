@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import ReactDOMServer from 'react-dom/server'
-import ListeClientM from "./ListeClientM";
-import AvantageCarteM from "./AvantageCarteM";
+import CarteMembre from "./CarteMembre";
+import SmallIcons from "../SmallIcons";
 
 //a faire logique bouton enregistrer
 const AjouterCarteM = ({liste_cartes_membres}) => {
@@ -64,12 +64,6 @@ const AjouterCarteM = ({liste_cartes_membres}) => {
         if (event.target.classList.contains("buttonCarte") && event.target.classList.contains("Membre")) {
             const buttonText = event.target.textContent;
             switch (buttonText) {
-                case "Voir liste clients":
-                    afficherClients(liste_cartes_membres);
-                    break;
-                case "Avantage carte énergie":
-                    voirAvantage(liste_cartes_membres);
-                    break;
                 case "Enregistrer":
                     const nom = document.querySelector(".infoClientCarte.nom input").value;
                     const prenom = document.querySelector(".infoClientCarte.prenom input").value;
@@ -77,8 +71,11 @@ const AjouterCarteM = ({liste_cartes_membres}) => {
                     console.log(nom, prenom, adresse)
                     enregistrerCarte({nom, prenom, adresse});
                     break;
-                case "Ajouter une carte":
-                    ajouterCarte(liste_cartes_membres);
+                case "Annuler":
+                    annuler();
+                    break;
+                case "Retour":
+                    returnHome();
                     break;
                 default:
                     break;
@@ -91,15 +88,12 @@ const AjouterCarteM = ({liste_cartes_membres}) => {
     return (
         <section id='carte'>
             <div className="composantGrand">
-
                 <div className="composantGrandCarteEM">
                     <div className="Top_Component_Grand">
+                        <button id="buttonReturn" className="buttonAction">Retour</button>
                         <h2 className="component_title">Ajouter une carte</h2>
                         <hr></hr>
                     </div>
-
-                    <button id="buttonCarteEM" className="buttonCarte Membre">Voir liste clients</button>
-                    <button id="buttonCarteEM" className="buttonCarte Membre">Ajouter une carte</button>
 
                     <form>
                         <div className="infoClientCarte nom">
@@ -127,28 +121,25 @@ const AjouterCarteM = ({liste_cartes_membres}) => {
 };
 
 
-function afficherClients(liste_cartes_membres) {
-    const divGeneral = document.getElementsByClassName("dashboard-right")[0];
-    let saveDiv = divGeneral.innerHTML;
 
-    divGeneral.innerHTML = ReactDOMServer.renderToString(<ListeClientM liste_cartes_membres={liste_cartes_membres}/>);
+function returnHome() {
+    const divGeneral = document.getElementsByClassName("dashboard-right")[0];
+    const smallIcons = ReactDOMServer.renderToString(<SmallIcons />);
+    const carteMembre = ReactDOMServer.renderToString(<CarteMembre />);
+    divGeneral.innerHTML = smallIcons + carteMembre;
     divGeneral.style.display = "block";
 }
 
-function voirAvantage(liste_cartes_membres) {
+
+function annuler() {
     const divGeneral = document.getElementsByClassName("dashboard-right")[0];
     let saveDiv = divGeneral.innerHTML;
+    console.log("annuler");
 
-    divGeneral.innerHTML = ReactDOMServer.renderToString(<AvantageCarteM liste_cartes_membres={liste_cartes_membres} />);
+    divGeneral.innerHTML = ReactDOMServer.renderToString(<AjouterCarteM />);
     divGeneral.style.display = "block";
 }
 
-function ajouterCarte(liste_cartes_membres) {
-    const divGeneral = document.getElementsByClassName("dashboard-right")[0];
-    let saveDiv = divGeneral.innerHTML;
 
-    divGeneral.innerHTML = ReactDOMServer.renderToString(<AjouterCarteM liste_cartes_membres={liste_cartes_membres}/>);
-    divGeneral.style.display = "block";
-}
 
 export default AjouterCarteM;

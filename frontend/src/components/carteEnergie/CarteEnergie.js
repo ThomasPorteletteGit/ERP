@@ -3,6 +3,7 @@ import ReactDOMServer from 'react-dom/server'
 import ListeClient from "./ListeClient";
 import AjouterCarte from "./AjouterCarte";
 import AvantageCarte from "./AvantageCarte";
+import SmallIcons from "../SmallIcons";
 
 const CarteEnergie = ({liste_cartes_energies}) => {
 
@@ -46,28 +47,28 @@ const CarteEnergie = ({liste_cartes_energies}) => {
     );
 };
 
-
 function afficherClients(liste_cartes_energies) {
-    const divGeneral = document.getElementsByClassName("composantGrand")[0];
-    let saveDiv = divGeneral.innerHTML;
-
+    const divGeneral = document.getElementsByClassName("dashboard-right")[0];
+    const smallIcons = ReactDOMServer.renderToString(<SmallIcons />);
     divGeneral.innerHTML = ReactDOMServer.renderToString(<ListeClient liste_cartes_energies={liste_cartes_energies}/>);
+    divGeneral.innerHTML = smallIcons + carteEnergie;
     divGeneral.style.display = "block";
 }
 
 function ajouterCarte(liste_cartes_energies) {
-    const divGeneral = document.getElementsByClassName("composantGrand")[0];
-    let saveDiv = divGeneral.innerHTML;
-
+    const divGeneral = document.getElementsByClassName("dashboard-right")[0];
+    const smallIcons = ReactDOMServer.renderToString(<SmallIcons />);
     divGeneral.innerHTML = ReactDOMServer.renderToString(<AjouterCarte liste_cartes_energies={liste_cartes_energies}/>);
+    divGeneral.innerHTML = smallIcons + carteEnergie;
     divGeneral.style.display = "block";
 }
 
 function voirAvantage(liste_cartes_energies) {
-    const divGeneral = document.getElementsByClassName("composantGrand")[0];
-    let saveDiv = divGeneral.innerHTML;
-
+    const divGeneral = document.getElementsByClassName("dashboard-right")[0];
+    const smallIcons = ReactDOMServer.renderToString(<SmallIcons />);
     divGeneral.innerHTML = ReactDOMServer.renderToString(<AvantageCarte liste_cartes_energies={liste_cartes_energies} />);
+    divGeneral.innerHTML = smallIcons + carteEnergie;
     divGeneral.style.display = "block";
 }
+
 export default CarteEnergie;

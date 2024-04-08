@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOMServer from 'react-dom/server'
-import ListeClientM from "./ListeClientM";
-import AjouterCarteM from "./AjouterCarteM";
+import SmallIcons from "../SmallIcons";
+import CarteMembre from "./CarteMembre";
 
 
 const AvantageCarteM = ({liste_cartes_membres}) => {
@@ -10,13 +10,10 @@ const AvantageCarteM = ({liste_cartes_membres}) => {
         if (event.target.classList.contains("buttonCarte") && event.target.classList.contains("Membre")) {
             const buttonText = event.target.textContent;
             switch (buttonText) {
-                case "Voir liste clients":
-                    afficherClients(liste_cartes_membres);
-                    break;
-                case "Ajouter une carte":
-                    ajouterCarte(liste_cartes_membres);
-                    break;
                 case "Modifier":
+                    break;
+                case "Retour":
+                    returnHome();
                     break;
                 default:
                     break;
@@ -28,8 +25,6 @@ const AvantageCarteM = ({liste_cartes_membres}) => {
 
     const avantagesCarte = () => {
         return (
-            <div className="composantGrand">
-
                 <div className="avantages">
                     <div className="infoAvantages">
                         <h3>Points de fidélité : </h3>
@@ -46,7 +41,6 @@ const AvantageCarteM = ({liste_cartes_membres}) => {
                     </div>
                     <button id="buttonCarteEM" className="buttonCarte Membre">Modifier</button>
                 </div>
-            </div>
         );
     };
 
@@ -55,6 +49,7 @@ const AvantageCarteM = ({liste_cartes_membres}) => {
             <div className="composantGrand">
                 <div className="composantGrandCarteEM">
                     <div className="Top_Component_Grand">
+                        <button id="buttonReturn" className="buttonAction">Retour</button>
                         <h2 className="component_title">Avantage</h2>
                         <hr></hr>
                     </div>
@@ -71,21 +66,13 @@ const AvantageCarteM = ({liste_cartes_membres}) => {
 };
 
 
-
-function afficherClients() {
+function returnHome() {
     const divGeneral = document.getElementsByClassName("dashboard-right")[0];
-    let saveDiv = divGeneral.innerHTML;
-
-    divGeneral.innerHTML = ReactDOMServer.renderToString(<ListeClientM />);
+    const smallIcons = ReactDOMServer.renderToString(<SmallIcons />);
+    const carteMembre = ReactDOMServer.renderToString(<CarteMembre />);
+    divGeneral.innerHTML = smallIcons + carteMembre;
     divGeneral.style.display = "block";
 }
 
-function ajouterCarte() {
-    const divGeneral = document.getElementsByClassName("dashboard-right")[0];
-    let saveDiv = divGeneral.innerHTML;
-
-    divGeneral.innerHTML = ReactDOMServer.renderToString(<AjouterCarteM />);
-    divGeneral.style.display = "block";
-}
 
 export default AvantageCarteM;

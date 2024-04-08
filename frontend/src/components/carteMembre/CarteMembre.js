@@ -3,6 +3,7 @@ import ReactDOMServer from 'react-dom/server'
 import ListeClientM from "./ListeClientM";
 import AjouterCarteM from "./AjouterCarteM";
 import AvantageCarteM from "./AvantageCarteM";
+import SmallIcons from "../SmallIcons";
 
 const CarteMembre = ({liste_cartes_membres}) => {
 
@@ -50,25 +51,25 @@ const CarteMembre = ({liste_cartes_membres}) => {
 
 function afficherClients(liste_cartes_membres) {
     const divGeneral = document.getElementsByClassName("dashboard-right")[0];
-    let saveDiv = divGeneral.innerHTML;
-
-    divGeneral.innerHTML = ReactDOMServer.renderToString(<ListeClientM liste_cartes_membres={liste_cartes_membres}/>);
+    const smallIcons = ReactDOMServer.renderToString(<SmallIcons />);
+    const carteMembre = ReactDOMServer.renderToString(<ListeClientM liste_cartes_membres={liste_cartes_membres}/>);
+    divGeneral.innerHTML = smallIcons + carteMembre;
     divGeneral.style.display = "block";
 }
 
 function ajouterCarte(liste_cartes_membres) {
     const divGeneral = document.getElementsByClassName("dashboard-right")[0];
-    let saveDiv = divGeneral.innerHTML;
-
-    divGeneral.innerHTML = ReactDOMServer.renderToString(<AjouterCarteM liste_cartes_membres={liste_cartes_membres}/>);
+    const smallIcons = ReactDOMServer.renderToString(<SmallIcons />);
+    const carteMembre = ReactDOMServer.renderToString(<AjouterCarteM liste_cartes_membres={liste_cartes_membres}/>);
+    divGeneral.innerHTML = smallIcons + carteMembre;
     divGeneral.style.display = "block";
 }
 
 function voirAvantage(liste_cartes_membres) {
     const divGeneral = document.getElementsByClassName("dashboard-right")[0];
-    let saveDiv = divGeneral.innerHTML;
-
-    divGeneral.innerHTML = ReactDOMServer.renderToString(<AvantageCarteM liste_cartes_membres={liste_cartes_membres}/>);
+    const smallIcons = ReactDOMServer.renderToString(<SmallIcons />);
+    const carteMembre = ReactDOMServer.renderToString(<AvantageCarteM liste_cartes_membres={liste_cartes_membres} />);
+    divGeneral.innerHTML = smallIcons + carteMembre;
     divGeneral.style.display = "block";
 }
 export default CarteMembre;

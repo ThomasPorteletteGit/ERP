@@ -33,20 +33,29 @@ const EtatCuvesPrix = ({energies}) => {
     return (
         <div id="cuvesPrix">
             <h3>Modification du prix</h3>
-            <div className="Divflex">
+            <div className="Etatcuvediv">
                 <div id="divPrix">
                     {
                         energies.map((array) => {
                             return (
-                                <div className="Divflex" key={array[0]}>
+                                <div className="defautcuvediv" key={array[0]}>
                                     <label for={array[0]}>{array[0]}</label>
-                                    <input type="number" id={"prix" + array[0]} name={array[0]} defaultValue={array[1]} step="0.01" min="0" required/>
+                                    
                                 </div>
                             );
                     })}
                 </div>
+                <div className="defautcuveinput">
+                    {
+                        energies.map((array) => {
+                            return (
+                                <input type="number" id={"prix" + array[0]} name={"prix" + array[0]} min="0" max="10" step="0.001" value={array[1]} />
+                            );
+                    })}
+                </div>
                 <div className="DivBlock">
-                    <button id="btnValiderPrix">Valider</button>
+                    <button id="btnValiderPrix" className="button_style">Valider</button>
+                    <button id="btnAnnulerPrix" className="button_style">Annuler</button>
                 </div>
             </div>
         </div>

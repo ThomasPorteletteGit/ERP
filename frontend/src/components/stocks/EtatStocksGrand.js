@@ -29,11 +29,11 @@ const EtatStockGrand = () => {
     return (
         <div className="composantGrand" id="stockGrands">
             <div className="Divflex">
-                <div id="topComposant">
-                    <h2 className="component_title">📦 Stocks</h2>
+                    <div id="topComposant">
+                        <h2 className="component_title2">📦 Stocks</h2>
+                    </div>
                 </div>
-            </div>
-            <hr />
+                <div className='separator'></div>
             <div id="stockGrand">
                 <div className="Divflex">
                     <button className=" btnStockGrandClickTop">Voir le stock</button>

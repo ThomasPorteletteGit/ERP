@@ -23,19 +23,19 @@ const EtatCuvesReapro = ({energies}) => {
     return(
         <div id="cuvesPrix">
             <h3>Demande de réaprovisionnement</h3>
-            <div className="Divflex">
-                <div id="divPrix">
+            <div className="Etatcuvediv">
+                <div id="divPrixEtat">
                     {
                         energies.map((energie) => {
                             return (
-                                <div className="Divflex" key={energie}>
+                                <div className="defautreaprodiv" key={energie}>
                                     <input type="checkbox" id={energie} name={energie}/>
                                     <label for={energie}>{energie.nom}</label>
                                 </div>
                             );
                     })}
                 </div>
-                <div className="DivBlock">
+                <div className="btnEtat">
                     <button id="btnValiderReapro" onClick={handleValiderReapro}>Valider</button>
                     <button id="btnAnnulerReapro">Annuler</button>
                 </div>

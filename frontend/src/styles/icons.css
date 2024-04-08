@@ -85,7 +85,7 @@
 }
 
 #topComposant2>h4 {
-    align-self: flex-end;
+    align-self: center;
 
 }
 
@@ -182,14 +182,61 @@
 
 #btnValiderPrix,
 #btnAnnulerPrix {
-    background: #cef4fb;
     justify-content: end;
-    color: black;
-    font-size: 5rem;
+    color: white;
+    font-size: 2.3rem;
     border-radius: 20px;
-    margin-top: 8%;
+    margin-top: 3%;
     margin-bottom: 8%;
     margin-left: auto;
     margin-right: -12%;
     padding: 60px;
+}
+
+
+input[type="checkbox"] {
+    transform: scale(2.5);
+}
+
+.defautreaprodiv label {
+    display: inline;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    font-size: 2.5em;
+}
+
+.defautreaprodiv {
+    width: 100%;
+    margin: 15% 15%;
+    text-align: left;
+
+}
+
+#divPrixEtat {
+    display: block;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1vh;
+    margin-left: 5%;
+}
+
+
+#btnAnnulerReapro,
+#btnValiderReapro {
+    justify-content: end;
+    font-size: 3rem;
+    border-radius: 20px;
+    margin-top: 3%;
+    margin-bottom: 8%;
+    margin-left: auto;
+    margin-right: -12%;
+    padding: 60px;
+
+}
+
+.btnEtat {
+    display: block;
+    width: 35%;
+    margin: 0 auto;
+    padding: 10px;
 }

@@ -117,7 +117,7 @@ const IncidentsGrand = ({incidents}) => {
                                 <label className="texte-description">Description:</label>
                                 <textarea name="description"  placeholder="Rentrer la description de l'incident" required></textarea>
                             </div>
-                            <button className="valider_incident">Enregistrer</button>
+                            <button className="button_style" type="submit">Enregistrer</button>
                         </form>
                     </div>
                 </div>

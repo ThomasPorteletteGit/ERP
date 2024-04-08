@@ -1,8 +1,7 @@
 import React from "react";
 import ReactDOMServer from 'react-dom/server'
-import ListeClient from "./ListeClient";
-import AjouterCarte from "./AjouterCarte";
-
+import SmallIcons from "../SmallIcons";
+import CarteEnergie from "./CarteEnergie";
 
 const AvantageCarte = ({liste_cartes_energies}) => {
 
@@ -11,14 +10,10 @@ const AvantageCarte = ({liste_cartes_energies}) => {
         if (event.target.classList.contains("buttonCarte") && event.target.classList.contains("Energie")) {
             const buttonText = event.target.textContent;
             switch (buttonText) {
-                case "Voir liste clients":
-                    afficherClients(liste_cartes_energies);
-                    break;
-                case "Ajouter une carte":
-                    ajouterCarte(liste_cartes_energies);
-                    break;
                 case "Modifier":
                     break;
+                case "Retour":
+                    returnHome();
                 default:
                     break;
             }
@@ -28,8 +23,6 @@ const AvantageCarte = ({liste_cartes_energies}) => {
         
     const avantagesCarte = () => {
         return (
-            <div className="composantGrand">
-
                 <div className="avantages">
                     <div className="infoAvantages">
                         <h3>Points de fidélité : </h3>
@@ -46,7 +39,6 @@ const AvantageCarte = ({liste_cartes_energies}) => {
                     </div>
                     <button id="buttonCarteEM" className="buttonCarte Energie">Modifier</button>
                 </div>
-            </div>
         );
     };
 
@@ -55,6 +47,7 @@ const AvantageCarte = ({liste_cartes_energies}) => {
             <div className="composantGrand">
                 <div className="composantGrandCarteEM">
                     <div className="Top_Component_Grand">
+                        <button id="buttonReturn" className="buttonCarte">Retour</button>
                         <h2 className="component_title">Avantage</h2>
                         <hr></hr>
                     </div>
@@ -71,19 +64,13 @@ const AvantageCarte = ({liste_cartes_energies}) => {
 };
 
 
-function afficherClients(liste_cartes_energies) {
-    const divGeneral = document.getElementsByClassName("composantGrand")[0];
-    let saveDiv = divGeneral.innerHTML;
+function returnHome() {
+    const divGeneral = document.getElementsByClassName("dashboard-right")[0];
+    console.log("return Home");
 
-    divGeneral.innerHTML = ReactDOMServer.renderToString(<ListeClient liste_cartes_energies={liste_cartes_energies}/>);
-    divGeneral.style.display = "block";
-}
-
-function ajouterCarte(liste_cartes_energies) {
-    const divGeneral = document.getElementsByClassName("composantGrand")[0];
-    let saveDiv = divGeneral.innerHTML;
-
-    divGeneral.innerHTML = ReactDOMServer.renderToString(<AjouterCarte liste_cartes_energies={liste_cartes_energies}/>);
+    const smallIcons = ReactDOMServer.renderToString(<SmallIcons />);
+    const carteEnergie = ReactDOMServer.renderToString(<CarteEnergie />);
+    divGeneral.innerHTML = smallIcons + carteEnergie;
     divGeneral.style.display = "block";
 }
 
