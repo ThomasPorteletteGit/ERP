@@ -429,14 +429,33 @@ cuves
 .etat-cuves-container {
     display: flex;
     align-items: center;
+    width: 100%;
+    height: 85%;
+    justify-content: space-around;
 }
 
 .cuve-container {
-    width: 2vw;
-    border: 1px solid #ccc;
-    padding: 10px;
-    margin: 10px;
+    padding: 3%;
     background-color: #777ca6;
+    height: 85%;
+    width: 7%;
+    border-radius: 5px;
+}
+
+#etat-cuves .component-title {
+    font-size: 20px;
+}
+
+#etat-cuves .top_container {
+    height: 15%;
+}
+
+.etat-cuves-container .cuve-container:first-child {
+    border-radius: 5px 5px 5px 20px !important;
+}
+
+.etat-cuves-container .cuve-container:last-child {
+    border-radius: 5px 5px 20px 0px !important;
 }
 
 .cuve-container h2,
@@ -444,9 +463,20 @@ p {
     font-size: 6px;
 }
 
+
+#cuvesGrand> :nth-child(-n+2)>h2 {
+    font-size: 16px !important;
+}
+
+.etat-cuves-container> :nth-child(-n+2)>h2 {
+    font-size: 5px !important;
+}
+
+
 .jauge {
     background-color: #f0f0f0;
-    height: 10vh;
+    height: 80%;
+    width: 80%;
     margin-top: 10px;
     padding: 2px 2px !important;
     position: relative;
@@ -2062,7 +2092,7 @@ ul li {
 #formReservationPP {
     display: flex;
     flex-direction: column;
-    align-items: center;
+     
 }
 
 .boutonsAnnulationReservation {
@@ -2518,15 +2548,12 @@ input[name="nameProduit"] {
 /*$$$$$$$$$$$$$$$$$$$$$ Formulaire covoiturage $$$$$$$$$$$$$$$$$$$$$*/
 
 .formulaire_enregistrer_covoiturage {
-    display: flex;
-    flex-direction: horizontal;
-    align-items: center;
-    margin: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+     
     font-size: 150%;
+    margin: 2%;
 }
+
+
 
 .formulaireEntree {
     display: flex;
@@ -2534,7 +2561,7 @@ input[name="nameProduit"] {
     justify-content: space-between;
     border-radius: 8px;
     box-sizing: border-box;
-    margin: 5%;
+    margin: 2%;
 }
 
 .boutonsAnnulationConfirmationCOV {
@@ -2543,7 +2570,28 @@ input[name="nameProduit"] {
     align-items: horizontal;
     /* resize: horizontal; */
     margin-top: 5%;
+    height: 80%;
+}
+.boutonsAnnulationConfirmationCOV button {
+    width: 40%;
+    height: 10%;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 25px;
+    background-color: #4d5b84;
+    border: black;
+    margin: 5px;
+}
+.nomClientCov {
+    display: flex;
+}
+.formCOV {
+    display: flex;
+    flex-direction: column;
+}
 
+#centPourCent {
+    height: 100%;
 }
 
 
@@ -2620,3 +2668,110 @@ input[name="nameProduit"] {
     display: flex;
     justify-content: left;
 }
+
+#centPourCent {
+    width: 100%;
+    height: 100%;
+   
+}
+
+
+/* Button */
+
+    .button_style,
+    #buttonCarteEM {
+        position: relative;
+        padding: 10px 20px;
+        border-radius: 7px;
+        border: 1px solid #c3f3fb;
+        font-size: 14px;
+        text-transform: uppercase;
+        font-weight: 600;
+        letter-spacing: 2px;
+        color: white;
+        background-color:transparent;
+        overflow: hidden;
+        box-shadow: 0 0 0 0 transparent;
+        -webkit-transition: all 0.2s ease-in;
+        -moz-transition: all 0.2s ease-in;
+        transition: all 0.2s ease-in;
+      }
+      
+    .button_style:hover, #buttonCarteEM:hover {
+        background: #c3f3fb;
+        box-shadow: 0 0 10px 5px rgb(195,243,251, 0.8);
+        -webkit-transition: all 0.2s ease-out;
+        -moz-transition: all 0.2s ease-out;
+        transition: all 0.2s ease-out;
+        color: black;
+      }
+      
+    .button_style:hover::before, #buttonCarteEM:hover::before {
+        -webkit-animation: sh02 0.5s 0s linear;
+        -moz-animation: sh02 0.5s 0s linear;
+        animation: sh02 0.5s 0s linear;
+    }
+    .button_style::before,
+    #buttonCarteEM::before {
+        content: '';
+        display: block;
+        width: 0px;
+        height: 86%;
+        position: absolute;
+        top: 7%;
+        left: 0%;
+        opacity: 0;
+        background: #fff;
+        box-shadow: 0 0 50px 30px #fff;
+        -webkit-transform: skewX(-20deg);
+        -moz-transform: skewX(-20deg);
+        -ms-transform: skewX(-20deg);
+        -o-transform: skewX(-20deg);
+        transform: skewX(-20deg);
+    }
+    @keyframes sh02 {
+        from {
+            opacity: 0;
+            left: 0%;
+        }
+        50% {
+            opacity: 1;
+        }
+        to {
+            opacity: 0;
+            left: 100%;
+        }
+    }
+    .button_style:active,
+    #buttonCarteEM:active {
+        box-shadow: 0 0 0 0 transparent;
+        -webkit-transition: box-shadow 0.2s ease-in;
+        -moz-transition: box-shadow 0.2s ease-in;
+        transition: box-shadow 0.2s ease-in;
+    }
+    .carte-btn-container {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        height: 80%;
+        gap: 10%;
+        margin: auto;
+    }
+    .carte-btn-container>button {
+        width: 80%;
+        height: 20%;
+    }
+    .composantGrandCarteEM {
+        height: 100%;
+        width: 100%;
+    }
+    .energie {
+        width: 100%;
+        width: 100%;
+        height: 100%;
+        height: 100%;
+        overflow-y: auto;
+      
+        scrollbar-width: none;
+    }
