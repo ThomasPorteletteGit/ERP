@@ -42,8 +42,12 @@ Vue choix paiement
     background-color: #2B2D42;
     width: 100%;
     height: 37.5%;
-    margin-top: 2%;
-    margin-top: 14px;
+    margin-top: 4%;
+}
+
+#choixpaiement .component-title{
+    display: flex;
+    margin-left: 5%;
 }
 
 .choixPaiement {
@@ -423,7 +427,7 @@ cuves
     border-radius: 20px;
     background-color: #2b2d42;
     width: 100%;
-    height: 24.2%;
+    height: 23%;
 }
 
 .etat-cuves-container {
@@ -630,7 +634,18 @@ p {
     background-color: #c3f3fb;
     border: none;
     width: 45%;
-    height: 35%;
+    height: 45%;
+    border-radius: 8px;
+    position: relative;
+    overflow: clip;
+}
+
+.button_container button:last-child {
+    background-size: cover;
+    background-color: #c3f3fb;
+    border: none;
+    width: 95%;
+    height: 45%;
     border-radius: 8px;
     position: relative;
     overflow: clip;
@@ -665,7 +680,7 @@ p {
     z-index: 1;
 }
 
-#text_livraison{
+#text_livraison {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -677,7 +692,7 @@ p {
     z-index: 1;
 }
 
-#text_voiture{
+#text_voiture {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -689,7 +704,7 @@ p {
     z-index: 1;
 }
 
-#text_parking{
+#text_parking {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -713,7 +728,7 @@ p {
     border-radius: 20px;
     background-color: #2B2D42;
     width: 100%;
-    height: 35%;
+    height: 36.5%;
     margin-top: 14px;
 }
 
@@ -902,7 +917,7 @@ select {
     border-radius: 5px;
 }
 
-.transaction-container{
+.transaction-container {
     height: 80%;
 
 }
@@ -914,7 +929,7 @@ select {
     width: 50%;
     height: 100%;
     background-color: #2b2d42;
-    border-radius: 12px;
+    border-radius: 20px;
     margin-bottom: 20px;
 }
 
@@ -924,16 +939,32 @@ select {
 
 .horaires-container {
     height: 100%;
+    width: 100%;
 }
 
 .horaires-content {
-    padding-top: 85px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    height: 60%;
+    height: 76%;
     overflow-x: auto;
+    scrollbar-width: none;
+    width: 96%;
+    margin-left: 2%;
+    border-radius: 0 0 20px 20px;
 }
+
+
+
+.horaires-content>table>tbody>tr:nth-child(even) {
+    background-color: #f2f2f2;
+    color: black;
+}
+
+.horaires-content>table>tbody>tr:nth-child(odd) {
+    background-color: white;
+    color: black;
+}
+
 
 .horaires-content p {
     font-size: 15px;
@@ -953,7 +984,7 @@ select {
     align-items: flex-start;
     background-color: #2b2d42;
     border-radius: 12px 12px 0 0;
-    padding-left: 3%;
+    padding-left: 11%;
 }
 
 .horaire-header h2 {
@@ -1000,7 +1031,10 @@ select {
     background-color: white;
     margin: 0 30px 0 10px;
     padding: 8px;
+}
 
+.stock p {
+    font-size: 25px;
 }
 
 
@@ -1020,7 +1054,6 @@ select {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-left: 10px;
     overflow: auto;
 }
 
@@ -1129,8 +1162,13 @@ select {
     border-radius: 20px;
     background-color: #2B2D42;
     width: 100%;
-    height: 100%;
-    margin-top: 2%;
+    height: 98%;
+    margin-top: 1%;
+}
+
+.caisseTitre h2{
+    display: flex;
+    padding-left: 5%;
 }
 
 .caisse-details {
@@ -1142,13 +1180,25 @@ select {
     margin: 8px;
     color: black;
     overflow-y: auto;
-    height: 100%;
-    margin: 3%;
+    height: 40%;
+    margin: 2%;
+    scrollbar-width: none;
+
 }
 
 .caisse-container {
-    height: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100%;
 }
+
+
+.caisse-details>table>tbody>tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
 
 .caisse-details table {
     width: 100%;
@@ -1214,6 +1264,17 @@ select {
     margin-bottom: 20px;
 }
 
+.switch_button{
+    margin-bottom: 10px;
+    display: flex;
+    margin-right: 20px;
+}
+
+.switch_button button{
+    margin-left: auto;
+}
+
+
 
 th,
 td {
@@ -1230,9 +1291,9 @@ th {
     gap: 10px;
     border: 1px solid #ccc;
     padding: 1%;
-    margin-left: 5%;
     border-radius: 8px;
     width: 20%;
+    margin-left: 2%;
 }
 
 .numeric-buttons {
@@ -1324,7 +1385,7 @@ th {
 
 .separator {
     border: 1px solid #ccc;
-    margin: 10px 0;
+    margin: 5px 0;
 }
 
 .total {
@@ -1332,7 +1393,6 @@ th {
     background-color: white;
     border-radius: 10px;
     padding: 5px 10px;
-    margin: 10px;
     text-align: right;
 }
 
@@ -1346,10 +1406,15 @@ th {
     padding: 10px;
     font-size: 16px;
     border: 1px solid #ccc;
-    width: 40%;
+    width: 20%;
     margin-bottom: 10px;
     border-radius: 8px;
     box-sizing: border-box;
+    margin-left: 2%;
+}
+
+.search-bar:last-child{
+    margin-right: 2%;
 }
 
 
@@ -1442,14 +1507,14 @@ th {
 
 .right-container form textarea {
     height: 160px;
-    width: 60%;
+    width: 90%;
     margin-bottom: 5%;
     resize: vertical;
     align-self: center;
 }
 
 .right-container form button {
-    width: 50%;
+    width: 90%;
     align-self: center;
     font-size: 150%;
     padding: 10px 20px;
@@ -1604,29 +1669,29 @@ ul li {
 } */
 
 #parkingButton {
-    background: url("../assets/img/image-210.png") ; 
-    background-size: 100% 100%; 
-    background-repeat: no-repeat; 
-      
-}
-
-#covoiturageButton{
-    background: url("../assets/img/image-220.png") ; 
-    background-size: 100% 100%; 
-    background-repeat: no-repeat; 
+    background: url("../assets/img/image-210.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
 
 }
 
-#livraisonButton{
-    background: url("../assets/img/image-230.png") ; 
-    background-size: 100% 100%; 
-    background-repeat: no-repeat; 
+#covoiturageButton {
+    background: url("../assets/img/image-220.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+
 }
 
-#autresButton{
-    background: url("../assets/img/image-240.png") ; 
-    background-size: 100% 100%; 
-    background-repeat: no-repeat; 
+#livraisonButton {
+    background: url("../assets/img/image-230.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+#autresButton {
+    background: url("../assets/img/image-240.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
 }
 
 .button_container_grand_services button {
@@ -1637,7 +1702,7 @@ ul li {
     height: 45%;
     border-radius: 8px;
     cursor: pointer;
-    font-size: 35px; 
+    font-size: 35px;
     font-weight: bold;
 }
 
@@ -1887,7 +1952,8 @@ ul li {
 /* Transaction */
 
 .container-composantGrandTransaction {
-    background-color: #2B2D42; /* Fond bleu */
+    background-color: #2B2D42;
+    /* Fond bleu */
     height: 73.8vh;
     border-radius: 20px;
 }
@@ -1896,33 +1962,33 @@ ul li {
     text-align: center;
 }
 
-.separator {
+/*.separator {
     width: 100%;
     height: 1px;
     background-color: #131313;
     margin: 10px 0;
-}
+}*/
 
 .composantGrandTransaction {
     display: flex;
-    justify-content: center; 
+    justify-content: center;
 }
 
 .left-container-transaction {
     flex: 1;
-    padding-right: 10px; 
-    max-width: 50%; 
+    padding-right: 10px;
+    max-width: 50%;
 }
 
 .right-container-transaction {
     flex: 1;
-    padding-left: 10px; 
-    max-width: 50%; 
+    padding-left: 10px;
+    max-width: 50%;
 }
 
 .left-container-transaction h3,
 .right-container-transaction h3 {
-    text-align: center; 
+    text-align: center;
     margin-right: 5%;
     margin: 6%;
 }
@@ -1933,21 +1999,21 @@ ul li {
 }
 
 .transaction-list-container {
-    margin-bottom: 20px; 
+    margin-bottom: 20px;
 }
 
 .transaction-item {
-    border: 1px solid #131313; 
-    border-radius: 5px; 
-    margin-bottom: 10px; 
-    background-color: #fff; 
+    border: 1px solid #131313;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    background-color: #fff;
 }
 
 .separatorBlack {
     width: 100%;
     height: 1px;
     background-color: #131313;
-    margin: 5px 0; 
+    margin: 5px 0;
 }
 
 .confirm-button,
@@ -1963,8 +2029,10 @@ ul li {
 }
 
 .confirm-button-desactivate.disabled {
-    opacity: 0.5; /* Bouton désactivé avec opacité réduite */
-    pointer-events: none; /* Désactive les interactions */
+    opacity: 0.5;
+    /* Bouton désactivé avec opacité réduite */
+    pointer-events: none;
+    /* Désactive les interactions */
 }
 
 
@@ -2082,16 +2150,17 @@ ul li {
 /**********************************  Reservation d'une place de parking (ReservationPlaceP) **********************************/
 .formulaire_reservation_placeP {
     display: flex;
-    flex-direction: column; 
+    flex-direction: column;
     margin: 10px;
-    font-size: 150%; /* 150% */
+    font-size: 150%;
+    /* 150% */
 }
 
 
 #formReservationPP {
     display: flex;
     flex-direction: column;
-     
+
 }
 
 .boutonsAnnulationReservation {
@@ -2107,34 +2176,32 @@ ul li {
 
 /****************************************** Stock ******************************************/
 
+/* position: relative;
+    padding: 10px 20px;
+    border-radius: 7px;
+    border: 1px solid #c3f3fb;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 2px;
+    color: white;
+    background-color: transparent;
+    overflow: hidden;
+    box-shadow: 0 0 0 0 transparent;
+    transition: all 0.2s ease-in; */
+
 .btnStockGrandClickTop {
     width: 100%;
-    padding: 10.5%;
-    border: none;
-    height: 100%;
-    border-radius: 20px;
     margin: 2%;
-    display: block;
-    background-color: #f1f1f1;
-    color: #111111;
-    font-size: 200%;
+    height: 30vh;
     cursor: pointer;
-    transition: background-color 0.3s ease;
 }
 
 .btnStockGrandClickBottom {
     width: 46%;
-    padding: 8.4%;
-    border: none;
-    height: 1%;
-    border-radius: 20px;
     margin: 2%;
-    display: block;
-    background-color: #f1f1f1;
-    color: #111111;
-    font-size: 200%;
+    height: 30vh;
     cursor: pointer;
-    transition: background-color 0.3s ease;
 }
 
 /*Stock Produit*/
@@ -2168,16 +2235,38 @@ ul li {
 
 .imagesContainer {
     display: grid;
+    margin-top: 2%;
+    margin-left: 3%;
+    margin-right: 3%;
     grid-template-columns: repeat(4, 1fr);
-    /* 4 colonnes */
-    gap: 20px;
-    /* Espacement entre les images */
+    background-color: #f7f6f6;
+    border-radius: 30px;
+    padding-top: 2%;
+    color: black;
+    gap: 15px;
+    overflow-y: auto; 
+    max-height: 400px; 
+    justify-content: flex-start; 
+    align-items: center;
 }
 
+
 .imageItem {
-    width: 100%;
-    height: auto;
+    width: 50%; 
+    border-radius: 30px;
+    height: auto; 
+    margin-left: 25%;
+    align-self: flex-start; 
 }
+
+.imagesContainer img {
+    border-radius: 30px;
+}
+
+.imagesContainer p {
+    font-size: 120%;
+}
+
 
 /* Stock Ajouter Produit */
 
@@ -2286,45 +2375,48 @@ input[name="nameProduit"] {
 /* EtatStockReapro */
 
 .etat-stock h2 {
-    font-size: 24px; 
-    margin-top: 10px; 
-    margin-bottom: 10px; 
+    font-size: 30px;
+    margin-bottom: 20px;
 }
 
 .etat-stock {
     margin: 5%;
-    min-height: 20%;
+    min-height: 20vh;
 }
 
 .etat-stock table {
     width: 100%;
     border-collapse: collapse;
-    height: 10%;
-    margin-bottom: 15px;
+    height: 10vh;
+    margin-bottom: 20px;
 }
 
-.etat-stock th, .etat-stock td {
+.etat-stock th,
+.etat-stock td {
     padding: 20px;
     text-align: center;
-    border: 1px solid black; /* Ajout de la bordure noire */
+    border: 1px solid black;
 }
 
 .etat-stock th {
-    background-color: #2B2D42;
+    background-color: #474961;
     color: rgb(255, 255, 255);
 }
 
 .etat-stock td {
     border-bottom: 1px solid #000000;
     color: #000;
-    background-color: #dbdada; /* Couleur de fond blanche pour toutes les lignes */
+    background-color: #ffffff;
+    /* Couleur de fond blanche pour toutes les lignes */
 }
 
 .etat-stock .produit {
-    width: 40%;
+    width: 40vh;
 }
 
-.etat-stock .quantite, .etat-stock .prix, .etat-stock .action {
+.etat-stock .quantite,
+.etat-stock .prix,
+.etat-stock .action {
     width: 20%;
 }
 
@@ -2348,21 +2440,23 @@ input[name="nameProduit"] {
 
 .table-scroll {
     overflow-y: auto;
-    max-height: 10%; 
+    max-height: 10%;
+    border: #000;
+    border-radius: 20px;
 }
 
 .buttonRéapprovisionnement {
-    background-color: #dfdfdf;
+    background-color: #fafafa;
     color: rgb(0, 0, 0);
-    margin: 5%;
+    margin-bottom: 4vh;
     border: black;
     font-size: 150%;
     padding: 10px 20px;
     border-radius: 20px;
     padding: 2%;
     cursor: pointer;
-    height: 30%;
-    width: 50%;
+    height: 4vh;
+    width: 50vh;
 }
 
 /* Annuler Réaprovisionnement */
@@ -2393,13 +2487,15 @@ input[name="nameProduit"] {
 
 .product-info {
     flex-grow: 1;
-    text-align: left; /* Aligner le texte à gauche */
+    text-align: left;
+    /* Aligner le texte à gauche */
 }
 
 .product-info p {
     font-size: 20px;
     padding-right: 50%;
-    margin: 2%; /* Supprimer les marges pour éviter l'espacement supplémentaire */
+    margin: 2%;
+    /* Supprimer les marges pour éviter l'espacement supplémentaire */
 }
 
 
@@ -2524,13 +2620,13 @@ input[name="nameProduit"] {
 }
 
 .button_ajout_propositionCOV {
-   
-        border: solid #000;
-        border-radius: 8px;
-        padding: 10px;
-        margin: 15px;
-        background-color: #4d5b84;
-        box-shadow: 5px 6px 5px #101e49;
+
+    border: solid #000;
+    border-radius: 8px;
+    padding: 10px;
+    margin: 15px;
+    background-color: #4d5b84;
+    box-shadow: 5px 6px 5px #101e49;
 
 }
 
@@ -2539,15 +2635,17 @@ input[name="nameProduit"] {
     justify-content: space-around;
     align-items: horizontal;
 }
+
 .nomClientCov {
     display: flex;
     justify-content: space-around;
     align-items: horizontal;
 }
+
 /*$$$$$$$$$$$$$$$$$$$$$ Formulaire covoiturage $$$$$$$$$$$$$$$$$$$$$*/
 
 .formulaire_enregistrer_covoiturage {
-     
+
     font-size: 150%;
     margin: 2%;
 }
@@ -2571,6 +2669,7 @@ input[name="nameProduit"] {
     margin-top: 5%;
     height: 80%;
 }
+
 .boutonsAnnulationConfirmationCOV button {
     width: 40%;
     height: 10%;
@@ -2581,9 +2680,11 @@ input[name="nameProduit"] {
     border: black;
     margin: 5px;
 }
+
 .nomClientCov {
     display: flex;
 }
+
 .formCOV {
     display: flex;
     flex-direction: column;
@@ -2671,109 +2772,202 @@ input[name="nameProduit"] {
 #centPourCent {
     width: 100%;
     height: 100%;
-   
+
 }
 
 
 /* Button */
 
-    .button_style,
-    #buttonCarteEM {
-        position: relative;
-        padding: 10px 20px;
-        border-radius: 7px;
-        border: 1px solid #c3f3fb;
-        font-size: 14px;
-        text-transform: uppercase;
-        font-weight: 600;
-        letter-spacing: 2px;
-        color: white;
-        background-color:transparent;
-        overflow: hidden;
-        box-shadow: 0 0 0 0 transparent;
-        -webkit-transition: all 0.2s ease-in;
-        -moz-transition: all 0.2s ease-in;
-        transition: all 0.2s ease-in;
-      }
-      
-    .button_style:hover, #buttonCarteEM:hover {
-        background: #c3f3fb;
-        box-shadow: 0 0 10px 5px rgb(195,243,251, 0.8);
-        -webkit-transition: all 0.2s ease-out;
-        -moz-transition: all 0.2s ease-out;
-        transition: all 0.2s ease-out;
-        color: black;
-      }
-      
-    .button_style:hover::before, #buttonCarteEM:hover::before {
-        -webkit-animation: sh02 0.5s 0s linear;
-        -moz-animation: sh02 0.5s 0s linear;
-        animation: sh02 0.5s 0s linear;
-    }
-    .button_style::before,
-    #buttonCarteEM::before {
-        content: '';
-        display: block;
-        width: 0px;
-        height: 86%;
-        position: absolute;
-        top: 7%;
-        left: 0%;
+.button_style,
+#buttonCarteEM,
+.btnStockGrandClickBottom,
+.btnStockGrandClickTop,
+.buttonRéapprovisionnement  {
+    position: relative;
+    padding: 10px 20px;
+    border-radius: 7px;
+    border: 1px solid #c3f3fb;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 2px;
+    color: white;
+    background-color: transparent;
+    overflow: hidden;
+    box-shadow: 0 0 0 0 transparent;
+    -webkit-transition: all 0.2s ease-in;
+    -moz-transition: all 0.2s ease-in;
+    transition: all 0.2s ease-in;
+}
+
+.button_style:hover,
+#buttonCarteEM:hover,
+.btnStockGrandClickBottom:hover,
+.btnStockGrandClickTop:hover,
+.buttonRéapprovisionnement:hover  {
+    background: #c3f3fb;
+    box-shadow: 0 0 10px 5px rgb(195, 243, 251, 0.8);
+    -webkit-transition: all 0.2s ease-out;
+    -moz-transition: all 0.2s ease-out;
+    transition: all 0.2s ease-out;
+    color: black;
+}
+
+.button_style:hover::before,
+#buttonCarteEM:hover::before,
+.btnStockGrandClickBottom::before,
+.btnStockGrandClickTop::before,
+.buttonRéapprovisionnement::before  {
+    -webkit-animation: sh02 0.5s 0s linear;
+    -moz-animation: sh02 0.5s 0s linear;
+    animation: sh02 0.5s 0s linear;
+}
+
+.button_style::before,
+#buttonCarteEM::before,
+.btnStockGrandClickBottom::before,
+.btnStockGrandClickTop::before,
+.buttonRéapprovisionnement::before  {
+    content: '';
+    display: block;
+    width: 0px;
+    height: 86%;
+    position: absolute;
+    top: 7%;
+    left: 0%;
+    opacity: 0;
+    background: #fff;
+    box-shadow: 0 0 50px 30px #fff;
+    -webkit-transform: skewX(-20deg);
+    -moz-transform: skewX(-20deg);
+    -ms-transform: skewX(-20deg);
+    -o-transform: skewX(-20deg);
+    transform: skewX(-20deg);
+}
+
+@keyframes sh02 {
+    from {
         opacity: 0;
-        background: #fff;
-        box-shadow: 0 0 50px 30px #fff;
-        -webkit-transform: skewX(-20deg);
-        -moz-transform: skewX(-20deg);
-        -ms-transform: skewX(-20deg);
-        -o-transform: skewX(-20deg);
-        transform: skewX(-20deg);
+        left: 0%;
     }
-    @keyframes sh02 {
-        from {
-            opacity: 0;
-            left: 0%;
-        }
-        50% {
-            opacity: 1;
-        }
-        to {
-            opacity: 0;
-            left: 100%;
-        }
+
+    50% {
+        opacity: 1;
     }
-    .button_style:active,
-    #buttonCarteEM:active {
-        box-shadow: 0 0 0 0 transparent;
-        -webkit-transition: box-shadow 0.2s ease-in;
-        -moz-transition: box-shadow 0.2s ease-in;
-        transition: box-shadow 0.2s ease-in;
+
+    to {
+        opacity: 0;
+        left: 100%;
     }
-    .carte-btn-container {
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-        justify-content: center;
-        height: 80%;
-        gap: 10%;
-        margin: auto;
-    }
-    .carte-btn-container>button {
-        width: 80%;
-        height: 20%;
-    }
-    .composantGrandCarteEM {
-        height: 100%;
-        width: 100%;
-    }
-    .energie {
-        width: 100%;
-        width: 100%;
-        height: 100%;
-        height: 100%;
-        overflow-y: auto;
-      
-        scrollbar-width: none;
-    }
+}
+
+.button_style:active,
+#buttonCarteEM:active,
+.btnStockGrandClickBottom:active,
+.btnStockGrandClickTop:active,
+.buttonRéapprovisionnement:active {
+    box-shadow: 0 0 0 0 transparent;
+    -webkit-transition: box-shadow 0.2s ease-in;
+    -moz-transition: box-shadow 0.2s ease-in;
+    transition: box-shadow 0.2s ease-in;
+}
+
+.carte-btn-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    height: 80%;
+    gap: 10%;
+    margin: auto;
+}
+
+.carte-btn-container>button {
+    width: 80%;
+    height: 20%;
+}
+
+.composantGrandCarteEM {
+    height: 100%;
+    width: 100%;
+}
+
+.energie {
+    width: 100%;
+    width: 100%;
+    height: 100%;
+    height: 100%;
+    overflow-y: auto;
+
+    scrollbar-width: none;}
+
+
+.defautcuvediv {
+    margin-left: 20px;
+    display: flex;
+    width: 130%;
+    margin: 4% 4%;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 2%;
+    font-size: 2.3em;
+}
+
+.defautcuvediv input {
+    /* styles spécifiques pour l'input */
+    font-size: 0.9em;
+    margin-top: 1%
+}
+
+.Etatcuvediv {
+    display: flex;
+    align-items: start;
+}
+
+.btnEtat {
+    display: block;
+    width: 45%;
+    height: auto;
+}
+
+.caisse-carburant{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 5% 10% 10% 10%;
+}
+
+.caisse2-container{
+    height: 100%;
+}
+
+.caisse-carburant p{
+    margin-top: 5%;
+    font-size: 15px;
+}
+
+.caisse-carburant h2{
+    font-size: 20px;
+    text-align: left;
+}
+
+.caisse-carburant input,
+.caisse-carburant select, select[name="niveau"] {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ffffff;
+    width: 60%;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    box-sizing: border-box;
+}
+
+.caisse-carburant button{
+    margin-top: 5%;
+}
+
 
     #buttonReturn{
         background: url("../assets/img/en-arriere.png") no-repeat;
