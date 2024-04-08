@@ -79,8 +79,8 @@ function getProduitIds(req, res) {
 }
 
 function getProduitFromId(req, res) {
-    let name = req.params.id_produit_energie;
-    dao.select('*', 'ProduitEnergie', `nom='${name}'`, (result) => {
+    let id = req.params.id;
+    dao.select('*', 'ProduitEnergie', `id_produit_energie=${id}`, (result) => {
         res.send(result.rows);
     });
 }
