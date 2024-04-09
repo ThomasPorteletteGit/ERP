@@ -10,9 +10,8 @@ const ChoixduPaiementCompAnim = () => {
     useEffect(() => {
         const divGeneral = document.getElementsByClassName("dashboard-right")[0];
         saveDiv = divGeneral.innerHTML;
-        const cpdboutton = ['esp', 'cb', 'carteEnergie', 'autre']
+        const cpdboutton = ['esp', 'cb', 'carteEnergie']
         const componentsGrand = [""];
-        // const componentsIncidentGrand = ["", "", <IncidentsGrand />, "", "", "", "", ""];
 
         const handleClick = (componentId) => () => {
             console.log('click ' + componentId);

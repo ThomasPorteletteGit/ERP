@@ -10,6 +10,7 @@
     align-items: center;
     justify-content: center;
     height: 100%;
+    width: 100%;
 }
 
 #header .container>div {
@@ -17,12 +18,12 @@
 }
 
 #header .container .logo {
-    width: 10vw;
+    width: auto;
     /* background-color: blue; */
 }
 
 #header .container .buttons-user {
-    width: 15.7vw;
+    width: 16.7vw;
     margin-left: 10px;
     /* background-color: aquamarine; */
 }
@@ -37,14 +38,18 @@
     margin-top: 10px;
 }
 
-#header .container .buttons-user img {
+#header .container .buttons-user img, #header .container .buttons-user a {
     width: 4vh;
     padding: 10px;
     margin-right: 4%;
 }
 
+#header .container .buttons-user img:hover{
+    cursor: pointer;
+}
+
 .user #tomdelacote {
-    margin-top: 1%;
+    margin-top: 4%;
     display: flex;
 }
 
@@ -86,7 +91,7 @@
 }
 
 #header .container .pompes {
-    width: 60vw;
+    width: 57vw;
 }
 
 #header .container .exit {
@@ -97,7 +102,7 @@
 #header .container .cards .cartes-membres-energies {
     margin-top: 10px;
     border-radius: 20px;
-    height: 14.1vh;
+    height: 13.1vh;
     background-color: #2b2d42;
 }
 
@@ -183,7 +188,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 14.1vh;
+    height: 13.1vh;
     margin-top: 10px;
     padding: 0 0.5vw;
     border-radius: 12px;
@@ -200,6 +205,10 @@
     flex-direction: column;
     align-items: center;
     height: 100%;
+}
+
+#energie{
+    border-radius: 0 0 20px 20px !important;
 }
 
 /* The switch - the box around the slider */

@@ -132,8 +132,8 @@ const HoraireGrand = ({horaires}) => {
                             }
                         </tbody>
                     </table>
-                    <button className='btnHoraireGrandClick buttonAnnuler'>Annuler</button>
-                    <button className='btnHoraireGrandClick buttonValider'>Valider</button>
+                    <button className='btnHoraireGrandClick buttonAnnuler button_style'>Annuler</button>
+                    <button className='btnHoraireGrandClick buttonValider button_style'>Valider</button>
                 </div>
             </div>
         </section>

@@ -42,12 +42,8 @@ Vue choix paiement
     background-color: #2B2D42;
     width: 100%;
     height: 37.5%;
-    margin-top: 4%;
-}
-
-#choixpaiement .component-title {
-    display: flex;
-    margin-left: 5%;
+    margin-top: 2%;
+    margin-top: 14px;
 }
 
 .choixPaiement {
@@ -361,6 +357,21 @@ panier
     width: 100% !important;
 }
 
+.incidentsDecrits {
+    border: solid #000;
+    border-radius: 8px;
+    padding: 10px;
+    margin: 15px;
+    background-color: #4d5b84;
+
+    box-shadow: 5px 6px 5px #101e49;
+}
+.listeDescription {
+    list-style-type: none;  
+    text-align: left;  
+
+}
+
 .dashboard-right .stock-container {
     display: flex;
     align-items: center;
@@ -427,7 +438,7 @@ cuves
     border-radius: 20px;
     background-color: #2b2d42;
     width: 100%;
-    height: 23%;
+    height: 24.2%;
 }
 
 .etat-cuves-container {
@@ -437,6 +448,19 @@ cuves
     height: 85%;
     justify-content: space-around;
 }
+
+.etat-cuves-container .cuve-container:first-child .jauge,
+.etat-cuves-container .cuve-container:first-child .progress-bar {
+    border-radius: 5px 5px 5px 20px;
+}
+
+
+.etat-cuves-container .cuve-container:last-child .jauge,
+.etat-cuves-container .cuve-container:last-child .progress-bar{
+    border-radius: 5px 5px 20px 5px;
+}
+
+
 
 .cuve-container {
     padding: 3%;
@@ -479,7 +503,7 @@ p {
 
 .jauge {
     background-color: #f0f0f0;
-    height: 80%;
+    height: 85%;
     width: 80%;
     margin-top: 10px;
     padding: 2px 2px !important;
@@ -634,18 +658,7 @@ p {
     background-color: #c3f3fb;
     border: none;
     width: 45%;
-    height: 45%;
-    border-radius: 8px;
-    position: relative;
-    overflow: clip;
-}
-
-.button_container button:last-child {
-    background-size: cover;
-    background-color: #c3f3fb;
-    border: none;
-    width: 95%;
-    height: 45%;
+    height: 35%;
     border-radius: 8px;
     position: relative;
     overflow: clip;
@@ -728,7 +741,7 @@ p {
     border-radius: 20px;
     background-color: #2B2D42;
     width: 100%;
-    height: 36.5%;
+    height: 35%;
     margin-top: 14px;
 }
 
@@ -929,7 +942,7 @@ select {
     width: 50%;
     height: 100%;
     background-color: #2b2d42;
-    border-radius: 20px;
+    border-radius: 12px;
     margin-bottom: 20px;
 }
 
@@ -939,32 +952,16 @@ select {
 
 .horaires-container {
     height: 100%;
-    width: 100%;
 }
 
 .horaires-content {
+    padding-top: 85px;
     display: flex;
     flex-direction: column;
-    height: 76%;
+    justify-content: center;
+    height: 60%;
     overflow-x: auto;
-    scrollbar-width: none;
-    width: 96%;
-    margin-left: 2%;
-    border-radius: 0 0 20px 20px;
 }
-
-
-
-.horaires-content>table>tbody>tr:nth-child(even) {
-    background-color: #f2f2f2;
-    color: black;
-}
-
-.horaires-content>table>tbody>tr:nth-child(odd) {
-    background-color: white;
-    color: black;
-}
-
 
 .horaires-content p {
     font-size: 15px;
@@ -984,7 +981,7 @@ select {
     align-items: flex-start;
     background-color: #2b2d42;
     border-radius: 12px 12px 0 0;
-    padding-left: 11%;
+    padding-left: 3%;
 }
 
 .horaire-header h2 {
@@ -1054,6 +1051,7 @@ select {
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-left: 10px;
     overflow: auto;
 }
 
@@ -1073,6 +1071,11 @@ select {
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
 }
 
+.titreRubriqueIncident {
+    display: flex;
+    justify-content: left;
+    margin-bottom: 1%;
+}
 /*releves, direction*/
 
 #releve,
@@ -1153,7 +1156,6 @@ select {
     padding: 0;
     margin: 0;
     height: 40%;
-    border-radius: 20px;
 }
 
 
@@ -1167,7 +1169,7 @@ select {
     margin-top: 1%;
 }
 
-.caisseTitre h2 {
+.caisseTitre h2{
     display: flex;
     padding-left: 5%;
 }
@@ -1265,13 +1267,13 @@ select {
     margin-bottom: 20px;
 }
 
-.switch_button {
+.switch_button{
     margin-bottom: 10px;
     display: flex;
     margin-right: 20px;
 }
 
-.switch_button button {
+.switch_button button{
     margin-left: auto;
 }
 
@@ -1414,7 +1416,7 @@ th {
     margin-left: 2%;
 }
 
-.search-bar:last-child {
+.search-bar:last-child{
     margin-right: 2%;
 }
 
@@ -1508,14 +1510,14 @@ th {
 
 .right-container form textarea {
     height: 160px;
-    width: 90%;
+    width: 60%;
     margin-bottom: 5%;
     resize: vertical;
     align-self: center;
 }
 
 .right-container form button {
-    width: 90%;
+    width: 50%;
     align-self: center;
     font-size: 150%;
     padding: 10px 20px;
@@ -1604,9 +1606,9 @@ ul {
 }
 
 ul li {
-    background-color: #f9f9f9;
+    background-color: #7c87a8;
     color: #000;
-    padding: 3%;
+    padding: 1%;
     margin-bottom: 2%;
     border-radius: 5px;
     border-color: #000;
@@ -1672,38 +1674,21 @@ ul li {
 #parkingButton {
     background: url("../assets/img/image-210.png");
     background-size: 100% 100%;
-    background-color: #c3f3fb;
     background-repeat: no-repeat;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    border: none;
-    outline: none;
+
 }
 
 #covoiturageButton {
     background: url("../assets/img/image-220.png");
     background-size: 100% 100%;
-    background-color: #c3f3fb;
     background-repeat: no-repeat;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    border: none;
-    outline: none;
+
 }
 
 #livraisonButton {
     background: url("../assets/img/image-230.png");
     background-size: 100% 100%;
-    background-color: #c3f3fb;
     background-repeat: no-repeat;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    width: 95%;
-    border: none;
-    outline: none;
 }
 
 #autresButton {
@@ -1720,7 +1705,7 @@ ul li {
     height: 45%;
     border-radius: 8px;
     cursor: pointer;
-    font-size: 50px;
+    font-size: 35px;
     font-weight: bold;
 }
 
@@ -1734,10 +1719,6 @@ ul li {
     justify-content: space-around;
 }
 
-.bouttonsServiceGrand {
-    border-radius: 40px !important;
-}
-
 /* Direction grand */
 
 .componantDirectionGrand h2 {
@@ -1748,8 +1729,7 @@ ul li {
 
 .direction-details {
     margin-top: 4%;
-    height: 130vh;
-    border-radius: 20px;
+    height: 150%;
 }
 
 .composantGrand h3 {
@@ -1762,13 +1742,15 @@ ul li {
 }
 
 .direction-details ul {
-    margin-left: 2%;
-    margin-right: 2%;
+    margin-left: 10%;
+    margin-right: 10%;
     font-size: 120%;
 }
 
 
 .direction-details ul {
+    margin-left: 10%;
+    margin-right: 10%;
     font-size: 120%;
 }
 
@@ -1983,12 +1965,12 @@ ul li {
     text-align: center;
 }
 
-/*.separator {
+.separator {
     width: 100%;
     height: 1px;
     background-color: #131313;
     margin: 10px 0;
-}*/
+}
 
 .composantGrandTransaction {
     display: flex;
@@ -2009,25 +1991,22 @@ ul li {
 
 .left-container-transaction h3,
 .right-container-transaction h3 {
-    text-align: center;
+    text-align: left;
     margin-right: 5%;
-    margin: 6%;
+    margin: 3%;
 }
 
 .ul-transaction {
     list-style: none;
-    margin-left: 14%;
+    margin-left: 10%;
 }
 
-.transaction-list-container {
-    margin-bottom: 20px;
-}
 
 .transaction-item {
     border: 1px solid #131313;
     border-radius: 5px;
     margin-bottom: 10px;
-    background-color: #fff;
+    /* background-color: #7c87a8; */
 }
 
 .separatorBlack {
@@ -2067,7 +2046,7 @@ ul li {
 }
 
 .ul-transaction li strong {
-    text-align: left;
+    text-align: center;
     align-self: baseline;
 }
 
@@ -2078,16 +2057,16 @@ ul li {
 
 .ul-transaction {
     list-style: none;
-    padding: 0;
-    width: 70%;
-    max-height: 30%;
+    padding: 1%;
+    width: 80%;
+    max-height: 18%;
     /* Ajustez la hauteur maximale selon vos besoins */
     overflow-y: auto;
     /* Ajout de la barre de défilement si nécessaire */
 }
 
 .ul-transaction li {
-    margin-bottom: 20px;
+    /* margin-bottom: 5%; */
     text-align: left;
 }
 
@@ -2103,9 +2082,10 @@ ul li {
 
 
 .transaction-list-container {
-    background-color: #f0f0f0;
-    padding: 20px;
-    border-radius: 20px;
+    background-color: #525b77;
+    margin-bottom: 20px;
+    padding: 5px;
+    border-radius: 15px;
 }
 
 .client {
@@ -2117,12 +2097,6 @@ ul li {
     justify-content: space-between;
     align-items: center;
     margin: 15px;
-}
-
-.transaction-item {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
 }
 
 .client {
@@ -2197,32 +2171,34 @@ ul li {
 
 /****************************************** Stock ******************************************/
 
-/* position: relative;
-    padding: 10px 20px;
-    border-radius: 7px;
-    border: 1px solid #c3f3fb;
-    font-size: 14px;
-    text-transform: uppercase;
-    font-weight: 600;
-    letter-spacing: 2px;
-    color: white;
-    background-color: transparent;
-    overflow: hidden;
-    box-shadow: 0 0 0 0 transparent;
-    transition: all 0.2s ease-in; */
-
 .btnStockGrandClickTop {
     width: 100%;
+    padding: 10.5%;
+    border: none;
+    height: 100%;
+    border-radius: 20px;
     margin: 2%;
-    height: 26vh;
+    display: block;
+    background-color: #f1f1f1;
+    color: #111111;
+    font-size: 200%;
     cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
 .btnStockGrandClickBottom {
     width: 46%;
+    padding: 8.4%;
+    border: none;
+    height: 1%;
+    border-radius: 20px;
     margin: 2%;
-    height: 26vh;
+    display: block;
+    background-color: #f1f1f1;
+    color: #111111;
+    font-size: 200%;
     cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
 /*Stock Produit*/
@@ -2265,20 +2241,19 @@ ul li {
     padding-top: 2%;
     color: black;
     gap: 15px;
-    overflow-y: auto;
-    max-height: 400px;
-    justify-content: flex-start;
+    overflow-y: auto; 
+    max-height: 400px; 
+    justify-content: flex-start; 
     align-items: center;
-    scrollbar-width: none;
 }
 
 
 .imageItem {
-    width: 50%;
+    width: 50%; 
     border-radius: 30px;
-    height: auto;
+    height: auto; 
     margin-left: 25%;
-    align-self: flex-start;
+    align-self: flex-start; 
 }
 
 .imagesContainer img {
@@ -2397,20 +2372,21 @@ input[name="nameProduit"] {
 /* EtatStockReapro */
 
 .etat-stock h2 {
-    font-size: 30px;
-    margin-bottom: 20px;
+    font-size: 24px;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 .etat-stock {
     margin: 5%;
-    min-height: 20vh;
+    min-height: 20%;
 }
 
 .etat-stock table {
     width: 100%;
     border-collapse: collapse;
-    height: 10vh;
-    margin-bottom: 20px;
+    height: 10%;
+    margin-bottom: 15px;
 }
 
 .etat-stock th,
@@ -2418,22 +2394,23 @@ input[name="nameProduit"] {
     padding: 20px;
     text-align: center;
     border: 1px solid black;
+    /* Ajout de la bordure noire */
 }
 
 .etat-stock th {
-    background-color: #474961;
+    background-color: #2B2D42;
     color: rgb(255, 255, 255);
 }
 
 .etat-stock td {
     border-bottom: 1px solid #000000;
     color: #000;
-    background-color: #ffffff;
+    background-color: #dbdada;
     /* Couleur de fond blanche pour toutes les lignes */
 }
 
 .etat-stock .produit {
-    width: 40vh;
+    width: 40%;
 }
 
 .etat-stock .quantite,
@@ -2463,22 +2440,20 @@ input[name="nameProduit"] {
 .table-scroll {
     overflow-y: auto;
     max-height: 10%;
-    border: #000;
-    border-radius: 20px;
 }
 
 .buttonRéapprovisionnement {
-    background-color: #fafafa;
+    background-color: #dfdfdf;
     color: rgb(0, 0, 0);
-    margin-bottom: 4vh;
+    margin: 5%;
     border: black;
     font-size: 150%;
     padding: 10px 20px;
     border-radius: 20px;
     padding: 2%;
     cursor: pointer;
-    height: 4vh;
-    width: 50vh;
+    height: 30%;
+    width: 50%;
 }
 
 /* Annuler Réaprovisionnement */
@@ -2801,10 +2776,7 @@ input[name="nameProduit"] {
 /* Button */
 
 .button_style,
-#buttonCarteEM,
-.btnStockGrandClickBottom,
-.btnStockGrandClickTop,
-.buttonRéapprovisionnement {
+#buttonCarteEM {
     position: relative;
     padding: 10px 20px;
     border-radius: 7px;
@@ -2823,10 +2795,7 @@ input[name="nameProduit"] {
 }
 
 .button_style:hover,
-#buttonCarteEM:hover,
-.btnStockGrandClickBottom:hover,
-.btnStockGrandClickTop:hover,
-.buttonRéapprovisionnement:hover {
+#buttonCarteEM:hover {
     background: #c3f3fb;
     box-shadow: 0 0 10px 5px rgb(195, 243, 251, 0.8);
     -webkit-transition: all 0.2s ease-out;
@@ -2836,20 +2805,14 @@ input[name="nameProduit"] {
 }
 
 .button_style:hover::before,
-#buttonCarteEM:hover::before,
-.btnStockGrandClickBottom::before,
-.btnStockGrandClickTop::before,
-.buttonRéapprovisionnement::before {
+#buttonCarteEM:hover::before {
     -webkit-animation: sh02 0.5s 0s linear;
     -moz-animation: sh02 0.5s 0s linear;
     animation: sh02 0.5s 0s linear;
 }
 
 .button_style::before,
-#buttonCarteEM::before,
-.btnStockGrandClickBottom::before,
-.btnStockGrandClickTop::before,
-.buttonRéapprovisionnement::before {
+#buttonCarteEM::before {
     content: '';
     display: block;
     width: 0px;
@@ -2884,10 +2847,7 @@ input[name="nameProduit"] {
 }
 
 .button_style:active,
-#buttonCarteEM:active,
-.btnStockGrandClickBottom:active,
-.btnStockGrandClickTop:active,
-.buttonRéapprovisionnement:active {
+#buttonCarteEM:active {
     box-shadow: 0 0 0 0 transparent;
     -webkit-transition: box-shadow 0.2s ease-in;
     -moz-transition: box-shadow 0.2s ease-in;
@@ -2924,114 +2884,76 @@ input[name="nameProduit"] {
     scrollbar-width: none;
 }
 
+/* ------------------------- BARRE DE DEFILEMENT ------------------------- */
 
-.defautcuvediv {
-    margin-left: 20px;
-    display: flex;
-    width: 130%;
-    margin: 4% 4%;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: flex-start;
-    gap: 2%;
-    font-size: 30px;
-}
-
-.defautcuveinput{
-    margin-left: 2%;
-    margin-top: 4%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    height: 100%;
-    gap: 5%;
-}
-
-#prixDIESEL{
-    margin-top: 10%;
-}
-
-#prixElec{
-    margin-top: 10%;
-}
-
-.defautcuveinput input{
-    width: 100%;
-    padding: 10px;
-    font-size: 16px;
-    border: 1px solid #ffffff;
+/* Styles pour la barre de défilement */  
+::-webkit-scrollbar {
+    width: 0px; /* Largeur de la barre de défilement */
     border-radius: 8px;
-    box-sizing: border-box;
+
+  }
+  /* Couleur de fond de la barre de défilement */
+  ::-webkit-scrollbar-track {
+    /* background: #b3b3b3;  */
+    background: rgba(0, 0, 0,0);
+  }
+  
+  /* Couleur de la poignée de la barre de défilement */
+  ::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0,0);
+  }
+  /* Hover sur la poignée de la barre de défilement */
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0,0);
+  }
+  
+
+/* ------------------------------- DERNIERES MODIFICATIONS TRANSACTIONS ------------------------------- */
+
+
+.left-container-transaction, .right-container-transaction {
+    width: 45%;
+    height: 290vh;
 }
 
-#divPrixEtat{
-    margin-left: 2%;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
+
+.ul-transaction {
+    list-style: none;
+    padding: 0;
 }
 
-
-.defautcuvediv input {
-    font-size: 0.9em;
-    margin-top: 1%
-}
-
-.Etatcuvediv {
-    height: 50%;
-    display: flex;
-    align-items: start;
-}
-
-
-
-.caisse-carburant {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    padding: 5% 10% 10% 10%;
-}
-
-.caisse2-container {
-    height: 100%;
-}
-
-.caisse-carburant p {
-    margin-top: 5%;
-    font-size: 15px;
-}
-
-.caisse-carburant h2 {
-    font-size: 20px;
-    text-align: left;
-}
-
-.caisse-carburant input,
-.caisse-carburant select,
-select[name="niveau"] {
-    padding: 10px;
-    font-size: 16px;
-    border: 1px solid #ffffff;
-    width: 60%;
+.transaction-item {
     margin-bottom: 10px;
-    border-radius: 8px;
-    box-sizing: border-box;
 }
 
-.caisse-carburant button {
-    margin-top: 5%;
+.confirm-button, .delete-button, .confirm-button-desactivate {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
-
-#buttonReturn {
-    background: url("../assets/img/en-arriere.png") no-repeat;
-    background-size: cover;
-    width: 23px;
-    height: 23px;
-    margin: 10px;
-    color: rgba(0, 0, 0, 0);
-    float: left;
+.confirm-button {
+    background-color: #308e46;
+    color: #fff;
 }
 
+.delete-button {
+    background-color: #cf414f;
+    color: #fff;
+}
+
+.confirm-button-desactivate {
+    background-color: #6c757d;
+    color: #fff;
+}
+
+.confirm-button:disabled {
+    background-color: #6c757d;
+    cursor: not-allowed;
+}
+
+.ListeTransactionAConfirmer {
+    margin-right: 2%;
+}

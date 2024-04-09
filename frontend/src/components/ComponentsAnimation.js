@@ -8,7 +8,6 @@ const ComponentsAnimation = () => {
     const [clickedComponent, setClickedComponent] = useState(null);
     let saveDiv;
 
-
     useEffect(() => {
         const components = ['etat-cuves', 'direction', 'incidents', 'transaction', 'stocks', 'services', 'horaires', 'releve', "choixpaiement", 'esp', 'cb', 'carteEnergie'];
 
@@ -41,9 +40,6 @@ const ComponentsAnimation = () => {
             setClickedComponent(componentId)
             const divGeneral = document.getElementsByClassName("dashboard-right")[0];
             saveDiv = divGeneral.innerHTML;
-            // divGeneral.innerHTML =  ReactDOMServer.renderToString(<SmallIcons iconClicked={componentId}/>) + ReactDOMServer.renderToString(componentsGrand[components.indexOf(componentId)]);
-            // divGeneral.style.display = "block";
-
             components.forEach((compId) => {
                 const comp = document.getElementById(compId);
                 if (comp) {
@@ -67,9 +63,9 @@ const ComponentsAnimation = () => {
         };
 
 
-        const boutonRetour = document.getElementById("backArrow")
+        const boutonHome = document.getElementById("homeButton")
 
-        boutonRetour.addEventListener("click", () => {
+        boutonHome.addEventListener("click", () => {
             const divGeneral = document.getElementsByClassName("dashboard-right")[0];
             if (saveDiv != null) {
                 divGeneral.style.display = "flex";
@@ -106,14 +102,7 @@ const ComponentsAnimation = () => {
                 }
             }
         });
-
-
-
-
-
-
     }, []);
-
 };
 
 export default ComponentsAnimation;
