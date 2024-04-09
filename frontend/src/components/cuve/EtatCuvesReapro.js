@@ -17,7 +17,9 @@ const EtatCuvesReapro = ({energies}) => {
             },
             body: JSON.stringify(energiesReapro)
         }
-        await fetch("/stockEnergie/reapprovisionner", options);
+        await fetch("/stockEnergie/reapprovisionner", options).then(response => response.json()).then(data => {
+            window.location.reload();
+        });
     }
 
     return(

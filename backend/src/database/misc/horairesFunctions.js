@@ -1,7 +1,7 @@
 const dao = require('../../data/DAO');
 
 function getAllHoraires(req, res) {
-    dao.select('*', 'Boutique', "", (result) => {
+    dao.selectOrderBy('*', 'Boutique', "", "id ASC", (result) => {
         res.send(result.rows);
     });
 }

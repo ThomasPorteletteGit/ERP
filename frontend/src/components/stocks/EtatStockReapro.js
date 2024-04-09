@@ -48,7 +48,7 @@ const EtatStockReapro = ({stocks}) => {
                             </tr>
                         </thead>
                         <tbody>
-                            {Array.from({ length: 3 }).map((_, index) => (
+                            {Array.from({ length: 2 }).map((_, index) => (
                                 <tr key={index}>
                                     <td className="produit"></td>
                                     <td className="quantite"></td>
@@ -73,7 +73,7 @@ const EtatStockReapro = ({stocks}) => {
                             </tr>
                         </thead>
                         <tbody>
-                            {Array.from({ length: 3 }).map((_, index) => (
+                            {Array.from({ length: 2 }).map((_, index) => (
                                 <tr key={index}>
                                     <td className="produit"></td>
                                     <td className="quantite"></td>

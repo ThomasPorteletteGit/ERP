@@ -33,7 +33,9 @@ const ListeClientM = ({liste_cartes_membres}) => {
             },
             body: JSON.stringify(data)
         };
-        await fetch("/cartesMembre/delete", options);
+        await fetch("/cartesMembre/delete", options).then(response => response.json()).then(data => {
+            window.location.reload();
+        });
     };
 
  

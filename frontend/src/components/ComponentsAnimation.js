@@ -36,7 +36,6 @@ const ComponentsAnimation = () => {
         }
 
         const handleClick = (componentId) => () => {
-            console.log('click test ' + componentId);
             setClickedComponent(componentId)
             const divGeneral = document.getElementsByClassName("dashboard-right")[0];
             saveDiv = divGeneral.innerHTML;

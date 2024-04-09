@@ -45,7 +45,9 @@ function addTransaction(req, res) {
                         dao.select('id_produit_energie', 'ProduitEnergie', `nom = '${produit.nom}'`, (result) => {
                             let produitId = result.rows[0].id_produit_energie;
                             dao.insert("TicketProduit", `'${ticketId}', '${produitId}', '${produit.quantity}'`, (result) => {
-                                console.log(result);
+                                dao.update("ProduitEnergie", `quantite_stock = quantite_stock - ${produit.quantity}`, `id_produit_energie = ${produitId}`, (result) => {
+                                    res.send(result);
+                                });
                             });
                         });
                         
@@ -71,9 +73,14 @@ function addTransaction(req, res) {
 }
 
 function deleteTransaction(req, res) {
-    let condition = "id_transaction = '" + req.body.id + "'";
-    dao.delete('Ticket', condition, (result) => {
-        res.send(result);
+    const id_transaction = req.body.id_transaction;
+    dao.select('id_ticket', 'Ticket', `id_transaction_journaliere = ${id_transaction}`, (result) => {
+        const id_ticket = result.rows[0].id_ticket;
+        dao.delete('TicketProduit', `id_ticket = ${id_ticket}`, (result) => {
+            dao.delete('Ticket', `id_ticket = ${id_ticket}`, (result) => {
+                res.send(result);
+            });
+        });
     });
 }
 

@@ -49,7 +49,9 @@ const Especes = () => {
             body: JSON.stringify(data),
         };
 
-        await fetch('/transaction/add', options)
+        await fetch('/transaction/add', options).then(response => response.json()).then(data => {
+            window.location.reload();
+        });
 
         instance.setPrixTotal(0);
         instance.setProduits([]);

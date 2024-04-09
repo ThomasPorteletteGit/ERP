@@ -58,7 +58,9 @@ const AjouterCarteM = ({liste_cartes_membres}) => {
             },
             body: JSON.stringify(data)
         }
-        await fetch('/cartesMembre/add', options);
+        await fetch('/cartesMembre/add', options).then(response => response.json()).then(data => {
+            window.location.reload();
+        });
     }
     document.addEventListener("click", function (event) {
         if (event.target.classList.contains("buttonCarte") && event.target.classList.contains("Membre")) {

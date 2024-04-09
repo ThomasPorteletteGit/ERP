@@ -31,7 +31,9 @@ const StockProduitAjouter = ({stocks}) => {
             },
             body: JSON.stringify(newProduct)
         }
-        await fetch("/stockProduits/add", options)
+        await fetch("/stockProduits/add", options).then(response => response.json()).then(data => {
+            window.location.reload();
+        });
     };
 
     return (

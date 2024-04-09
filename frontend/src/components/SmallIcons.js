@@ -50,7 +50,7 @@ await fetch('/transaction/get')
 
 
 const SmallIcons = ({ iconClicked }) => {
-    console.log(iconClicked);
+    console.trace(iconClicked);
     const components = ['etat-cuves', 'direction', 'incidents', 'transaction', 'stocks', 'services', 'horaires', 'esp', 'cb', 'carteEnergie'];
     const componentsGrand = [<EtatCuvesGrand energies={energies}/>, <DirectionGrand />, <IncidentsGrand incidents={incidents}/>, <TransactionGrand transactions={transactions}/>, <EtatStockGrand stocks={stocks}/>, <ServicesGrand />, <HoraireGrand horaires={horaires}/>, <Especes />, <CarteBancaire />, <ChoixPaiementCarteEnergie />];
 
@@ -93,6 +93,7 @@ const SmallIcons = ({ iconClicked }) => {
             event.preventDefault();
         }
     });
+
 
     return (
         <>

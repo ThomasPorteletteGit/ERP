@@ -65,8 +65,10 @@ const HoraireGrand = ({horaires}) => {
                 body: JSON.stringify(dataFermeture)
             };
 
-            await fetch('/horaires/ouverture/set', optionsOuverture);
-            await fetch('/horaires/fermeture/set', optionsFermeture);
+            await fetch('/horaires/ouverture/set', optionsOuverture)
+            await fetch('/horaires/fermeture/set', optionsFermeture).then(response => response.json()).then(data => {
+                window.location.reload();
+            });
         }
 
       

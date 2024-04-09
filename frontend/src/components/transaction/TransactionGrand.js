@@ -11,6 +11,10 @@ const TransactionGrand = ({transactions}) => {
             const id = e.target.parentElement.parentElement.parentElement.id;
             handleValidation(id);
         }
+        if (e.target.className == "delete-button Transaction") {
+            const id = e.target.parentElement.parentElement.parentElement.id;
+            handleAnnulation(id);
+        }
     });
 
     const handleValidation = async (id) => {
@@ -24,14 +28,32 @@ const TransactionGrand = ({transactions}) => {
             },
             body: JSON.stringify(data)
         }
-        await fetch('/transaction/validate',options)
+        await fetch('/transaction/validate',options).then(response => response.json()).then(data => {
+            window.location.reload();
+        });
+    }
+
+    const handleAnnulation = async (id) => {
+        const data = {
+            id_transaction: id
+        }
+        const options = {
+            method: 'DELETE',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        }
+        await fetch('/transaction/delete',options).then(response => response.json()).then(data => {
+            window.location.reload();
+        });
     }
         
     return (
         <div className='container-composantGrandTransaction'>
             <div className="Divflex">
                 <div id="topComposant">
-                    <h2 className="component_title2">💸 Transaction</h2>
+                    <h2 className="component_title2">💸 Transactions</h2>
                 </div>
             </div>
             <div className="separator"></div>
@@ -51,7 +73,8 @@ const TransactionGrand = ({transactions}) => {
                 </div>
                 <div className="separatorColumn"></div>
                 <div className="right-container-transaction">
-                    <h3>Informations des transactions à confirmer</h3>
+                <h3>Informations des transactions à confirmer</h3>
+                <div className="ListeTransactionAConfirmer" style={{ maxHeight: '50vh', overflowY: 'auto' }}>
                     <ul className="ul-transaction">
                         {transactionsNonValides.map((transaction, index) => (
                             <div className="transaction-list-container">
@@ -75,6 +98,7 @@ const TransactionGrand = ({transactions}) => {
                         ))}
                     </ul>
                 </div>
+            </div>
             </div>
         </div>
     );

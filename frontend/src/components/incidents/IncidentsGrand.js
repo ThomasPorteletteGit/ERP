@@ -7,7 +7,7 @@ const IncidentsGrand = ({incidents}) => {
 
     const validerIncident = async () => {
         const niveau = document.querySelector('select[name="niveau"]').value;
-        const description = document.querySelector('textarea[name="description"]').value;
+        const description = document.querySelector('textarea[name="description"]').value.replace("'", "''");
         const date = new Date();
         const year = date.getFullYear();
         const month = date.getMonth() + 1 < 10 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1;
@@ -21,7 +21,9 @@ const IncidentsGrand = ({incidents}) => {
             },
             body: JSON.stringify(incident)
         };
-        await fetch("/incidents/add", options);
+        await fetch("/incidents/add", options).then(response => response.json()).then(data => {
+            window.location.reload();
+        });
     }
 
     const confirmIncident = async (button) => {
@@ -34,7 +36,9 @@ const IncidentsGrand = ({incidents}) => {
             },
             body: JSON.stringify({incidentId: incidentId})
         };
-        await fetch("/incidents/confirm", options);
+        await fetch("/incidents/confirm", options).then(response => response.json()).then(data => {
+            window.location.reload();
+        });
     }
 
     const deleteIncident = async (button) => {
@@ -47,7 +51,9 @@ const IncidentsGrand = ({incidents}) => {
             },
             body: JSON.stringify({incidentId: incidentId})
         };
-        await fetch("/incidents/delete", options);
+        await fetch("/incidents/delete", options).then(response => response.json()).then(data => {
+            window.location.reload();
+        });
     }
 
     document.addEventListener('submit', function (e) {
@@ -117,7 +123,7 @@ const IncidentsGrand = ({incidents}) => {
                                 <label className="texte-description">Description:</label>
                                 <textarea name="description"  placeholder="Rentrer la description de l'incident" required></textarea>
                             </div>
-                            <button className="button_style" type="submit">Enregistrer</button>
+                            <button className="button_style" id="enregistrerI" type="submit">Enregistrer</button>
                         </form>
                     </div>
                 </div>

@@ -56,7 +56,6 @@ const Dashboard = ({ userType }) => {
         <>
             <Header />
             <ComponentsAnimation/>
-            <ChoixduPaiementCompAnim />
             <div id='dashboard'>
                 <div className="dashboard-container">
                     <div className="dashboard-left">

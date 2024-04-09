@@ -45,7 +45,7 @@ const ConnexionId = ({userType}) => {
                         checkLogin = false;
                     }
                 });
-
+            console.log(checkLogin);
             if (checkLogin) {
                 
                 writeStatusCookie(status);

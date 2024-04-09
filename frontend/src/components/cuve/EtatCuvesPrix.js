@@ -19,7 +19,9 @@ const EtatCuvesPrix = ({energies}) => {
             },
             body: JSON.stringify(prix)
         }
-        await fetch("/stockEnergie/modifierPrix", options);
+        await fetch("/stockEnergie/modifierPrix", options).then(response => response.json()).then(data => {
+            window.location.reload();
+        });
     }
 
     document.addEventListener("click", function (event) {
@@ -62,5 +64,7 @@ const EtatCuvesPrix = ({energies}) => {
         </div>
     );
 }
+
+
 
 export default EtatCuvesPrix;

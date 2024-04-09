@@ -57,7 +57,9 @@ const AjouterCarte = ({liste_cartes_energies}) => {
             },
             body: JSON.stringify(data)
         }
-        await fetch('/cartesEnergie/add', options);
+        await fetch('/cartesEnergie/add', options).then(response => response.json()).then(data => {
+            window.location.reload();
+        });
     }
 
     document.addEventListener("click", function (event) {
