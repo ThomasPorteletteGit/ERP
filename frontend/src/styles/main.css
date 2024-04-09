@@ -1951,10 +1951,31 @@ ul li {
 .tableauHeure td {
     padding: 10px;
     border: 1px solid #ccc;
+    width: auto;
 }
 
 .tableauHeure th {
     background-color: #f2f2f2;
+}
+
+.tableauHeure th:first-child {
+    border-radius: 20px 0 0 0;
+    border: none;
+}
+
+.tableauHeure th:last-child {
+    border-radius: 0 20px 0 0;
+    border: none;
+}
+
+.tableauHeure tbody:last-child tr:last-child td:first-child {
+    border-radius: 0 0 0 20px;
+    border: none;
+}
+
+.tableauHeure tbody:last-child tr:last-child td:last-child {
+    border-radius: 0 0 20px 0;
+    border: none;
 }
 
 .buttonAnnuler,
@@ -1983,12 +2004,28 @@ ul li {
 }
 
 .heures {
-    border-radius: 12px;
-    width: auto;
-    height: auto;
-    align-items: center;
-    justify-content: center;
-    padding: 4px;
+    width: 90%;
+    border-radius: 10px;
+    padding: 10px 10px 10px 10px;
+    border-color: #2B2D42;
+}
+
+.tableauHeure{
+    height: 80%;
+}
+
+.tableauHeure table{
+    height: 90%;
+}
+
+.tableauHeure tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+    color: black;
+}
+
+.tableauHeure tbody tr:nth-child(odd) {
+    background-color: white;
+    color: black;
 }
 
 /* Transaction */
