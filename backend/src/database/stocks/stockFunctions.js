@@ -61,6 +61,7 @@ function reapprovisionnerEnergie(req, res) {
 }
 
 function modiferPrixEnergie(req, res) {
+    console.log(req.body);
     const objects = req.body;
     let queries = [];
     objects.map((array) => {

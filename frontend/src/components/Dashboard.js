@@ -14,7 +14,7 @@ import ChoixduPaiementCompAnim from './paiement/ChoixduPaiementCompAnim';
 import ChoixPaiement from './paiement/ChoixPaiement';
 import instance from './misc/Singleton';
 
-let energies, horaires, incidents;
+let energies, horaires, incidents, transactions;
 let prixTotal = 0;
 await fetch('/stockEnergie/get')
     .then(response => response.json())
@@ -34,6 +34,13 @@ await fetch('/incidents/get')
         incidents = data;
     });
 
+await fetch('/transaction/get')
+    .then(response => response.json())
+    .then(data => {
+        transactions = data;
+    });
+
+
 const Dashboard = ({ userType }) => {
 
     return (
@@ -49,7 +56,7 @@ const Dashboard = ({ userType }) => {
                     <div className="dashboard-right">
                         <div className="etat-transac">
                             <EtatCuves energies={energies}/>
-                            <Transaction />
+                            <Transaction transactions={transactions}/>
                             <ChoixPaiement singleton={instance}/>
                         </div>
 

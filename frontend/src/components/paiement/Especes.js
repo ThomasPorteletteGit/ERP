@@ -4,7 +4,6 @@ import instance from '../misc/Singleton';
 const Especes = () => {
     
     document.addEventListener("click", function (event) {
-        console.log(event.target.id);
         if(event.target.id === "buttonPayer"){
             let inputEspeces = document.getElementById("inputEspeces").value;
             instance.setPrixAffiche(instance.getPrixAffiche() - inputEspeces);
@@ -20,7 +19,6 @@ const Especes = () => {
             addTransaction();
 
         }
-       
     });
 
     const spawnValidation = () => {

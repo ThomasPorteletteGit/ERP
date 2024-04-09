@@ -12,7 +12,7 @@ import ChoixPaiementCarteEnergie from "./paiement/ChoixPaiementCarteEnergie";
 import EtatStockGrand from "./stocks/EtatStocksGrand";
 import TransactionGrand from "./transaction/TransactionGrand";
 
-let energies, horaires, incidents;
+let energies, horaires, incidents, transactions;
 await fetch('/stockEnergie/get')
     .then(response => response.json())
     .then(data => {
@@ -31,11 +31,18 @@ await fetch('/incidents/get')
         incidents = data;
     });
 
+await fetch('/transaction/get')
+    .then(response => response.json())
+    .then(data => {
+        transactions = data;
+    });
+
+
 
 const SmallIcons = ({ iconClicked }) => {
     console.log(iconClicked);
     const components = ['etat-cuves', 'direction', 'incidents', 'transaction', 'stocks', 'services', 'horaires', 'esp', 'cb', 'carteEnergie'];
-    const componentsGrand = [<EtatCuvesGrand energies={energies}/>, <DirectionGrand />, <IncidentsGrand incidents={incidents}/>, <TransactionGrand />, <EtatStockGrand />, <ServicesGrand />, <HoraireGrand horaires={horaires}/>, <Especes />, <CarteBancaire />, <ChoixPaiementCarteEnergie />];
+    const componentsGrand = [<EtatCuvesGrand energies={energies}/>, <DirectionGrand />, <IncidentsGrand incidents={incidents}/>, <TransactionGrand transactions={transactions}/>, <EtatStockGrand />, <ServicesGrand />, <HoraireGrand horaires={horaires}/>, <Especes />, <CarteBancaire />, <ChoixPaiementCarteEnergie />];
 
     const emojis = {
         'etat-cuves': '🛢️',

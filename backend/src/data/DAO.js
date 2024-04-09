@@ -60,8 +60,10 @@ class DAO
 
     selectWithJoin(attributes, tables, condition, joinCondition, callback)
     {
-        let selectQuery = "SELECT " + attributes + " FROM " + tables + " "+ joinCondition + " WHERE " + condition;
-        console.log(selectQuery);
+        let selectQuery = "SELECT " + attributes + " FROM " + tables + " "+ joinCondition;
+        if (condition !== '') {
+            selectQuery += " WHERE " + condition;
+        }
         this.dbConnection.query(selectQuery, (err, result) => {
             if (err) throw err;
             callback(result);

@@ -6,6 +6,7 @@ const EtatCuvesPrix = ({energies}) => {
     });
     const handleValiderPrix = async () => {
         let prix = [];
+        console.log(energiesObject);
         energiesObject.forEach((energie) => {
             let prixEnergie = document.getElementById("prix" + energie.nom).value;
             prix.push({ nom: energie.nom, prix: prixEnergie });
@@ -49,7 +50,7 @@ const EtatCuvesPrix = ({energies}) => {
                     {
                         energies.map((array) => {
                             return (
-                                <input type="number" id={"prix" + array[0]} name={"prix" + array[0]} min="0" max="10" step="0.001" value={array[1]} />
+                                <input type="number" id={"prix" + array[0]} name={"prix" + array[0]} min="0" max="10" step="0.1" value={array[1]} />
                             );
                     })}
                 </div>
