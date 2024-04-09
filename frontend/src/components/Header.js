@@ -10,6 +10,7 @@ import ReactDOMServer from 'react-dom/server';
 import CarteMembre from './carteMembre/CarteMembre';
 import CarteEnergie from './carteEnergie/CarteEnergie';
 import StatutPompe from './pompe/StatutPompe';
+import { useEffect } from 'react';
 
 const Header = () => {
 
@@ -23,6 +24,20 @@ const Header = () => {
         divGeneral.innerHTML = ReactDOMServer.renderToString(<SmallIcons iconClicked={componentId} />) + ReactDOMServer.renderToString(componentsGrand[componentId]);
         divGeneral.style.display = "block";
     };
+
+    useEffect(() => {
+        const homeButton = document.getElementById('exit');
+        if (homeButton) {
+            homeButton.addEventListener('click', function() {
+                const status = document.cookie.split('=')[1];
+                const pastDate = new Date(0);
+                document.cookie = "status=" + status + "; expires=" + pastDate.toUTCString() + "; path=/";
+                window.location.href = "/";
+            });
+        }
+    }, []); 
+    
+
 
     return (
         <>
@@ -39,8 +54,7 @@ const Header = () => {
                     {/* nav et tom de la cote */}
                     <div className='buttons-user'>
                         <div className='buttons'>
-                            <img id="homeButton" className='dashboardImages' src={homeButton} alt="bouton accueil" />
-                            <img id="backArrow" className='dashboardImages' src={backArrow} alt="fleche retour" />
+                            <img id="homeButton" class='dashboardImages' src={homeButton} alt="bouton accueil" />
                             <img id="scaleButton" className='dashboardImages' src={scaleButton} alt="bouton agrandir" />
                             <img id="exit" className='dashboardImages' src={exit} alt="bouton exit" />
 
@@ -76,10 +90,6 @@ const Header = () => {
                             {/* <StatutPompe numeroPompe={1} carburant="SP-95" quantite={80} prix={60} /> */}
                         </div>
                     </div>
-
-
-
-
                 </div>
             </section>
         </>

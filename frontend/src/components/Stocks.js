@@ -64,16 +64,14 @@ const Stocks = () => {
                 {/* on boucle sur tous les stocks */}
                 {stocks.map((stock, index) => (
                     <div key={index} className="stock">
-                        <div>
-                            <div className="Divflex">
-                                <div className="nomStock">{stock.nom}</div>
-                                <div className="typeStock">{stock.type}</div>
-                            </div>
-                            <div className="descriptionStock">{stock.description}</div>
-                            <div className="Divflex">
-                                <div className="prixStock">{stock.prix} €</div>
-                                <div className="quantiteStock">{stock.quantite_stock} litres</div>
-                            </div>
+                        <div className="stockNomType">
+                            <div className="nomStock test">Nom : {stock.nom}</div>
+                            <div className="typeStock test">Type : {stock.type}</div>
+                        </div>
+                        <div className="descriptionStock">Description : {stock.description}</div>
+                        <div className="stockNomType">
+                            <div className="prixStock test">Prix : {stock.prix} €</div>
+                            <div className="quantiteStock test">Quantité : {stock.quantite_stock}</div>
                         </div>
                     </div>
                 ))}

@@ -136,8 +136,8 @@ const HoraireGrand = ({ }) => {
                             </tr>
                         </tbody>
                     </table>
-                    <button className='buttonAnnuler' onClick={handleAnnuler}>Annuler</button>
-                    <button className='buttonValider' onClick={handleValider}>Valider</button>
+                    <button className='buttonAnnuler button_style' onClick={handleAnnuler}>Annuler</button>
+                    <button className='buttonValider button_style' onClick={handleValider}>Valider</button>
                 </div>
             </div>
         </section>
