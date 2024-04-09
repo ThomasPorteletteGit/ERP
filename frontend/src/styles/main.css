@@ -2479,7 +2479,7 @@ input[name="nameProduit"] {
 .etat-stock table {
     width: 100%;
     border-collapse: collapse;
-    height: 10vh;
+    height: 7vh;
     margin-bottom: 20px;
 }
 
@@ -2532,7 +2532,7 @@ input[name="nameProduit"] {
 
 .table-scroll {
     overflow-y: auto;
-    max-height: 10%;
+    max-height: 5vh;
     border: #000;
     border-radius: 20px;
 }
