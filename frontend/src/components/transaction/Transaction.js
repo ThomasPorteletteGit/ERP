@@ -64,8 +64,6 @@ const Transaction = () => {
                     <p>Dernière transaction</p>
 
                     <div className='input-select-container'>
-                        <input type="date" id="datePicker" name="datePicker" onChange={handleTransactionDateChange} />
-
                         <select id="typeTransaction" name="typeTransaction" onChange={handleTransactionTypeChange}>
                             <option value="">Tous</option>
                             <option value="CB">CB</option>

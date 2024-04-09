@@ -923,9 +923,8 @@ p {
 
 .transaction-container .last-transaction input,
 select {
-    margin-left: 2%;
-    margin-right: 2%;
-    width: 40%;
+    margin-right: 10px;
+    width: 50%;
     background-color: white;
     border-radius: 5px;
 }
