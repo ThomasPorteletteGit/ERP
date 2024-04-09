@@ -36,6 +36,7 @@ router.get('/getStock', (req, res) => {
 });
 
 router.post('/reapprovisionner', (req, res) => {
+    console.log(req.body);
     reapprovisionnerEnergie(req, res);
 });
 

@@ -54,7 +54,7 @@ function getEnergieStock(req, res) {
 
 function reapprovisionnerEnergie(req, res) {
     req.body.forEach((energie) => {
-        dao.update('ProduitEnergie', `quantite_stock = quantite_stock + 1000`, `nom = '${energie}'`, (result) => {
+        dao.update('ProduitEnergie', `quantite_stock = quantite_stock + 150`, `nom = '${energie.nom}'`, (result) => {
             console.log(result);
         });
     });
@@ -113,9 +113,9 @@ function getProduitStock(req, res) {
 }
 
 function reapprovisionnerProduit(req, res) {
-    let id = req.body.id;
+    let nom = req.body.nom;
     let quantite = req.body.quantite;
-    dao.update('ProduitEnergie', `quantite_stock = quantite_stock + ${quantite}`, `id_produit_energie= ${id}`, (result) => {
+    dao.update('ProduitEnergie', `quantite_stock = quantite_stock + ${quantite}`, `nom = '${nom}'`, (result) => {
         res.send(result);
     });
 }
@@ -125,7 +125,7 @@ function addProduit(req, res) {
     let quantite = req.body.quantite_stock;
     let description = req.body.description;
     let prix = req.body.prix;
-    dao.insertWithoutId('ProduitEnergie', `nom, description, quantite_stock, prix, type`, `'${nom}', '${description}', ${quantite}, ${prix}, 'Produit'`, (result) => {
+    dao.insertWithoutId('ProduitEnergie', `nom, description, quantite_stock, prix, type`, `'${nom}', '${description}', 0, ${prix}, 'Produit'`, (result) => {
         res.send(result);
     });
 }

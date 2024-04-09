@@ -4,11 +4,16 @@ const EtatCuvesReapro = ({energies}) => {
 
     const handleValiderReapro = async () => {
         let energiesReapro = [];
-        energies.forEach((energie) => {
-            if (document.getElementById(energie).checked) {
-                energiesReapro.push(energie);
+        const energieDivs = document.getElementsByClassName("defautreaprodiv");
+        for (let i = 0; i < energieDivs.length; i++) {
+            const energieDiv = energieDivs[i];
+            const checkbox = energieDiv.getElementsByTagName("input")[0];
+            if (checkbox.checked) {
+                energiesReapro.push({nom: energieDiv.id});
             }
-        });
+        }   
+        console.log(energiesReapro);
+        
 
         const options = {
             method: "POST",
@@ -22,6 +27,13 @@ const EtatCuvesReapro = ({energies}) => {
         });
     }
 
+    document.addEventListener("click", (e) => {
+        if (e.target.id === "btnValiderReapro") {
+            console.log("Valider");
+            handleValiderReapro();
+        }
+    });
+
     return(
         <div id="cuvesPrix">
             <h3>Demande de réaprovisionnement</h3>
@@ -30,15 +42,15 @@ const EtatCuvesReapro = ({energies}) => {
                     {
                         energies.map((energie) => {
                             return (
-                                <div className="defautreaprodiv" key={energie}>
+                                <div className="defautreaprodiv" id={energie.nom}>
                                     <input type="checkbox" id={energie} name={energie}/>
-                                    <label for={energie}>{energie.nom}</label>
+                                    <label htmlFor={energie}>{energie.nom}</label>
                                 </div>
                             );
                     })}
                 </div>
                 <div className="btnEtat">
-                    <button id="btnValiderReapro" onClick={handleValiderReapro}>Valider</button>
+                    <button id="btnValiderReapro">Valider</button>
                     <button id="btnAnnulerReapro">Annuler</button>
                 </div>
             </div>

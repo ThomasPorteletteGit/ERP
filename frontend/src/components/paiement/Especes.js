@@ -22,7 +22,7 @@ const Especes = () => {
     });
 
     const spawnValidation = () => {
-        if(instance.getPrixAffiche() === 0){
+        if(instance.getPrixAffiche() === 0 && document.getElementById("buttonValider") === null){
             document.getElementById("ProduitsEspeces").innerHTML += "<button id='buttonValider'>Valider</button>";
         }
     }
@@ -58,10 +58,7 @@ const Especes = () => {
         document.getElementById("prixTotal").innerHTML = instance.getPrixAffiche();
         document.getElementById("ProduitsEspeces").innerHTML = "";
     
-    
 
-    const updateStocks = async () => {
-    }
     }
     
 
