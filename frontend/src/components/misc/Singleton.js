@@ -4,6 +4,8 @@ class Singleton {
             this.prixTotal = 0;
             this.prixAffiche = 0;
             this.produits = [];
+            this.nom = "";
+            this.email = "";
             Singleton.instance = this;
         }
         return Singleton.instance;
@@ -43,6 +45,23 @@ class Singleton {
     removeProduit(produit) {
         this.produits = this.produits.filter(p => p !== produit);
     }
+
+    getNom() {
+        return this.nom;
+    }
+
+    setNom(nom) {
+        this.nom = nom;
+    }
+
+    getEmail() {
+        return this.email;
+    }
+
+    setEmail(email) {
+        this.email = email;
+    }
+    
 }
 
 const instance = new Singleton();

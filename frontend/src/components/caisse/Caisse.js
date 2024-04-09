@@ -102,8 +102,9 @@ const ChoixPaiement = ({energies}) => {
                 acc + transaction.quantity * parseFloat(transaction.price),
             0
         );
-        instance.setPrixTotal(total);
-        instance.setPrixAffiche(total);
+        
+        instance.setPrixTotal(total.toFixed(2));
+        instance.setPrixAffiche(total.toFixed(2));
         return total.toFixed(2);
     };
 

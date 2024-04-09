@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const EtatStockReapro = () => {
+const EtatStockReapro = ({stocks}) => {
     const [addedItems, setAddedItems] = useState([]);
 
     const handleAddItem = (action, productName) => {

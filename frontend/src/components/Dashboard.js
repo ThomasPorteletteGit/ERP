@@ -14,13 +14,22 @@ import ChoixduPaiementCompAnim from './paiement/ChoixduPaiementCompAnim';
 import ChoixPaiement from './paiement/ChoixPaiement';
 import instance from './misc/Singleton';
 
-let energies, horaires, incidents, transactions;
+let energies, horaires, incidents, transactions, produits
 let prixTotal = 0;
 await fetch('/stockEnergie/get')
     .then(response => response.json())
     .then(data => {
         energies = data;
     });
+
+await fetch('/stockProduits/get')
+    .then(response => response.json())
+    .then(data => {
+        produits = data;
+    }
+);
+
+const stocks = produits.concat(energies);
 
 await fetch('/horaires/get')
     .then(response => response.json())
@@ -67,7 +76,7 @@ const Dashboard = ({ userType }) => {
                                     <Services />
                                 </div>
                                 <div className='stock-container'>
-                                    <Stocks />
+                                    <Stocks stocks={stocks}/>
                                 </div>
                                 <div className="horaires-releve-direction">
                                     <Horaires horaires={horaires} />
@@ -85,7 +94,7 @@ const Dashboard = ({ userType }) => {
                                     <Incidents incidents={incidents}/>
                                 </div>
                                 <div className='stock-container'>
-                                    <Stocks />
+                                    <Stocks stocks={stocks}/>
                                 </div>
                                 <div className="horaires-releve-direction">
                                     <Horaires horaires={horaires}/>

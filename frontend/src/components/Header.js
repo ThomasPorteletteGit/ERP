@@ -11,12 +11,11 @@ import CarteMembre from './carteMembre/CarteMembre';
 import CarteEnergie from './carteEnergie/CarteEnergie';
 import StatutPompe from './pompe/StatutPompe';
 import { useEffect } from 'react';
+import instance from './misc/Singleton';
 
 let pompesStates = new Array();
 let liste_cartes_membres = new Array();
 let liste_cartes_energies = new Array();
-
-await fetch('/client/')
 
 await fetch('/pompes/get')
     .then(response => response.json())
@@ -86,8 +85,8 @@ const Header = () => {
                         <div className='user'>
                             <img id="tomdelacote" className='dashboardImages' src={tomdelacote} alt="utilisateur connecté" />
                             <div className="Divflex">
-                                <p id="user_name">TOM DE LA COTE</p>
-                                <p id="user_mail">tomDeLaCote@gmail.com</p>
+                                <p id="user_name">{instance.getNom()}</p>
+                                <p id="user_mail">{}</p>
                             </div>
                         </div>
                     </div>

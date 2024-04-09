@@ -3,12 +3,30 @@ import React, { useState } from "react";
 // Données de transaction à récupérer dans la base de données
 
 const TransactionGrand = ({transactions}) => {
-    console.log(transactions);
     const transactionsValides = transactions.filter(transaction => transaction.date_validation != null);
     const transactionsNonValides = transactions.filter(transaction => transaction.date_validation == null);
 
+    document.addEventListener("click", function(e) {
+        if (e.target.className == "confirm-button Transaction") {
+            const id = e.target.parentElement.parentElement.parentElement.id;
+            handleValidation(id);
+        }
+    });
 
-
+    const handleValidation = async (id) => {
+        const data = {
+            id_transaction: id
+        }
+        const options = {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        }
+        await fetch('/transaction/validate',options)
+    }
+        
     return (
         <div className='container-composantGrandTransaction'>
             <div className="Divflex">
@@ -37,7 +55,7 @@ const TransactionGrand = ({transactions}) => {
                     <ul className="ul-transaction">
                         {transactionsNonValides.map((transaction, index) => (
                             <div className="transaction-list-container">
-                                <div className="transaction-list-container" key={index}>
+                                <div className="transaction-list-container" id={transaction.id_transaction}>
                                     <div className="transaction-item">
                                         <li>
                                             <strong>Transaction n°</strong> {transaction.id_transaction},<br />
@@ -47,8 +65,8 @@ const TransactionGrand = ({transactions}) => {
                                             <strong>Montant total énergie :</strong> {transaction.montant_total} <span className="currency">euros</span>,<br />
                                             <strong>Montant total :</strong> {transaction.montant_total} <span className="currency">euros</span>,<br />
                                             <p></p>
-                                            <button className="confirm-button">Valider</button>
-                                            <button className="delete-button">Annuler</button>
+                                            <button className="confirm-button Transaction">Valider</button>
+                                            <button className="delete-button Transaction">Annuler</button>
                                         </li>
                                     </div>
 

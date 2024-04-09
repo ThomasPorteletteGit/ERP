@@ -3,46 +3,20 @@ import ReactDOMServer from 'react-dom/server';
 import StockProduitAjouter from "./StockProduitAjouter";
 import image from '../../assets/img/tomdelacote.png';
 
-const exampleProducts = [
-    { name: 'Produit 1', image: image },
-    { name: 'Produit 2', image: image },
-    { name: 'Produit 3', image: image },
-    { name: 'Produit 1', image: image },
-    { name: 'Produit 2', image: image },
-    { name: 'Produit 3', image: image },
-    { name: 'Produit 1', image: image },
-    { name: 'Produit 2', image: image },
-    { name: 'Produit 3', image: image },
-    { name: 'Produit 1', image: image },
-    { name: 'Produit 2', image: image },
-    { name: 'Produit 3', image: image },
-    { name: 'Produit 1', image: image },
-    { name: 'Produit 2', image: image },
-    { name: 'Produit 3', image: image },
-    { name: 'Produit 1', image: image },
-    { name: 'Produit 2', image: image },
-    { name: 'Produit 3', image: image },
-    // Ajoutez autant de produits que nécessaire
-];
 
-const StockProduit = ({ products }) => {
+const StockProduit = ({ stocks }) => {
     const [searchTerm, setSearchTerm] = useState('');
-    const [showAddProductForm, setShowAddProductForm] = useState(false);
     const [newProductName, setNewProductName] = useState('');
     const [newProductImage, setNewProductImage] = useState('');
 
-    const handleSearchChange = (event) => {
-        setSearchTerm(event.target.value);
-    };
 
-    const handleAddProduct = () => {
-        // Ajoutez ici la logique pour ajouter un nouveau produit
-        // Par exemple, vous pouvez utiliser une fonction passée depuis le composant parent pour effectuer cette tâche.
-    };
+    document.addEventListener("click", function (event) {
+        if(event.target.className === "ajouterProduitbouton"){
+            const divGeneral = document.getElementById("stockGrandProduit");
+            divGeneral.innerHTML = ReactDOMServer.renderToString(<StockProduitAjouter />);
+        }
+    });
 
-    const filteredProducts = products.filter(product =>
-        product.name.toLowerCase().includes(searchTerm.toLowerCase())
-    );
 
     return (
         <div className="StokProduitContainer" id='stockGrandProduit'>
@@ -52,48 +26,22 @@ const StockProduit = ({ products }) => {
                 type="text"
                 placeholder="Rechercher un produit..."
                 value={searchTerm}
-                onChange={handleSearchChange}
+
             />
             <div className="imagesContainer">
-                {filteredProducts && filteredProducts.length > 0 ? (
-                    filteredProducts.map((product, index) => (
+                {stocks.length > 0 ? (
+                    stocks.map((product, index) => (
                         <div key={index} className="imageItem">
-                            <img src={product.image} alt={product.name} style={{ width: '100%' }} />
-                            <p>{product.name}</p>
+                            <p>{product.nom}</p>
+                            <p>{product.quantite_stock}</p>
                         </div>
                     ))
                 ) : (
                     <div className="noProductsMessage">Aucun produit trouvé</div>
                 )}
             </div>
-            {showAddProductForm && (
-                <div>
-                    <input
-                        type="text"
-                        placeholder="Nom du nouveau produit"
-                        value={newProductName}
-                        onChange={(e) => setNewProductName(e.target.value)}
-                    />
-                    <input
-                        type="text"
-                        placeholder="URL de l'image du nouveau produit"
-                        value={newProductImage}
-                        onChange={(e) => setNewProductImage(e.target.value)}
-                    />
-                    <button onClick={handleAddProduct}>Ajouter</button>
-                </div>
-            )}
         </div>
     );
 };
 
-const App = () => {
-    return (
-        <div>
-            <h1>Stock des produits</h1>
-            <StockProduit products={exampleProducts} />
-        </div>
-    );
-};
-
-export default App;
+export default StockProduit;

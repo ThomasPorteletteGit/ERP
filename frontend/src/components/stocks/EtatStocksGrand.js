@@ -4,20 +4,20 @@ import EtatStockAnnuleReapro from "./EtatStockAnnuleReapro";
 import EtatStockReapro from "./EtatStockReapro";
 import StockProduit from "./StockProduit";
 
-const EtatStockGrand = () => {
+const EtatStockGrand = ({stocks}) => {
     document.addEventListener("click", function (event) {
         
         if (event.target.classList.contains("btnStockGrandClickTop") || event.target.classList.contains("btnStockGrandClickBottom")) {         
         const buttonText = event.target.textContent;
             switch (buttonText) {
                 case "Voir le stock":
-                    document.getElementById("stockGrand").innerHTML = ReactDOMServer.renderToString(<StockProduit/>);
+                    document.getElementById("stockGrand").innerHTML = ReactDOMServer.renderToString(<StockProduit stocks={stocks}/>);
                     break;
                 case "Annuler un réapprovisionnement":
-                    document.getElementById("stockGrand").innerHTML = ReactDOMServer.renderToString(<EtatStockAnnuleReapro/>);
+                    document.getElementById("stockGrand").innerHTML = ReactDOMServer.renderToString(<EtatStockAnnuleReapro stocks={stocks}/>);
                     break;
                 case "Demande de réapprovisionnement":
-                    document.getElementById("stockGrand").innerHTML = ReactDOMServer.renderToString(<EtatStockReapro/>);
+                    document.getElementById("stockGrand").innerHTML = ReactDOMServer.renderToString(<EtatStockReapro stocks={stocks}/>);
                     break;
                 default:
                     console.log("Bouton inconnu cliqué: " + buttonText);

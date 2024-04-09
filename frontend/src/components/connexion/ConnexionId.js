@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import instance from '../misc/Singleton';
 
 const ConnexionId = ({userType}) => {
     
@@ -24,6 +25,7 @@ const ConnexionId = ({userType}) => {
             let checkLogin;
             const nom = id.split(" ")[0];
             const prenom = id.split(" ")[1];
+            instance.setNom(nom + " "+ prenom);
             const data = { nom: nom, prenom: prenom, password: password };
             const options = {
                 method: 'POST',
@@ -45,6 +47,7 @@ const ConnexionId = ({userType}) => {
                 });
 
             if (checkLogin) {
+                
                 writeStatusCookie(status);
                 navigate('/dashboard');
                 clearURL();

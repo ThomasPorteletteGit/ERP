@@ -60,10 +60,10 @@ const IncidentsGrand = ({incidents}) => {
 
 
     document.addEventListener('click', function (e) {
-        if(e.target.classList.contains('confirm-button')) {
+        if(e.target.classList.contains('confirm-button') && e.target.classList.contains('Incident')) {
             confirmIncident(e.target);
         }
-        else if(e.target.classList.contains('delete-button')) {
+        else if(e.target.classList.contains('delete-button') && e.target.classList.contains('Incident')) {
             deleteIncident(e.target);
         }
     });
@@ -94,8 +94,8 @@ const IncidentsGrand = ({incidents}) => {
                                 <li id={incident.id_incident+"incident"}>
                                     <strong>Niveau:</strong> {incident.niveau}, <strong>Description:</strong> {incident.description}
                                     <p></p>
-                                    <button className="confirm-button">Confirmer</button>
-                                    <button className="delete-button">Supprimer</button>
+                                    <button className="confirm-button Incident">Confirmer</button>
+                                    <button className="delete-button Incident">Supprimer</button>
                                 </li>
                             ))}
                         </ul>

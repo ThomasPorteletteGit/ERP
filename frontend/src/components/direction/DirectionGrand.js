@@ -1,13 +1,7 @@
 import React from "react";
 
 const directionData = [
-    { id: 1, date: '2024-03-01', description: 'Envoie du bon', prix: 10 },
-    { id: 2, date: '2024-03-02', description: 'Réception du bon', prix: 40 },
-    { id: 1, date: '2024-03-01', description: 'Envoie du bon', prix: 10 },
-    { id: 2, date: '2024-03-02', description: 'Réception du bon', prix: 40 },
-    { id: 1, date: '2024-03-01', description: 'Envoie du bon', prix: 10 },
-    { id: 2, date: '2024-03-02', description: 'Réception du bon', prix: 40 },
-    { id: 3, date: '2024-03-02', description: 'Réapprovisionnement en cours', prix: 49 }
+    { id: 1, date: '2024-04-09', description: 'Mettre à jour l\'heure de fermeture de la boutique le lundi à 19h30', prix: 10 },
 ];
 
 const DirectionGrand = () => {

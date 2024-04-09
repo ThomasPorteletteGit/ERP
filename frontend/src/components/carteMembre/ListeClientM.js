@@ -13,7 +13,7 @@ const ListeClientM = ({liste_cartes_membres}) => {
         }
         return liste_cartes_membres.map((element) => (
             <div className="composantGrand">
-                <div id={element.id_client+"carteMembre"} className="client">
+                <div id={element.id_carte+"carteMembre"} className="client">
                     <div className="infoClient">
                         <h4>{element.nom} {element.prenom} {element.adresse_mail}</h4>
                     </div>

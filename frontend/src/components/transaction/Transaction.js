@@ -14,7 +14,6 @@ const Transaction = ({transactions}) => {
     };
 
     const getPaymentTypeClass = (type) => {
-        console.log(type);
         return type === 'cb' ? 'cb-payment' : type === 'esp' ? 'esp-payment' : '';
     };
 
@@ -22,7 +21,7 @@ const Transaction = ({transactions}) => {
     return (
         <section id="transaction">
             <div className="top_container">
-                <h2 className='component-title'>💸 Transactions</h2>
+                <h2 className='component-title'>💸 Transaction</h2>
                 <img src={agrandir} id="imgAgrandir" alt="agrandir" />
             </div>
             <div className='transaction-container'>
