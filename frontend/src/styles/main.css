@@ -1168,11 +1168,18 @@ select {
 .left-container-incident .delete-button {
     margin: 5px;
     padding: 5px 10px;
-    background-color: #ebebeb;
+    /* background-color: #ebebeb; */
     color: rgb(24, 24, 24);
     border: none;
     border-radius: 5px;
     cursor: pointer;
+}
+.confirm-button {
+    background-color: #308e46;
+}
+
+.delete-button {
+    background-color: #e74c3c;
 }
 
 .left-container-incident .confirm-button:hover,
@@ -1681,7 +1688,7 @@ ul li {
 .left-container-incident .delete-button {
     margin: 5px;
     padding: 5px 10px;
-    background-color: #ebebeb;
+    /* background-color: #ebebeb; */
     color: rgb(24, 24, 24);
     border: none;
     border-radius: 5px;
@@ -3098,12 +3105,6 @@ select[name="niveau"] {
     margin: 10px;
     color: rgba(0, 0, 0, 0);
     float: left;
-}
-
-
-
-#enregistrerI {
-    font-size: 5%;
 }
 
 /* Styles pour la barre de défilement */  
