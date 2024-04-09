@@ -1506,7 +1506,7 @@ th {
 .right-container form button {
     width: 50%;
     align-self: center;
-    font-size: 150%;
+    font-size: 80%;
     padding: 10px 20px;
     border-radius: 5px;
     background-color: #edf4fc;
@@ -2943,4 +2943,8 @@ input[name="nameProduit"] {
 
 .ListeTransactionAConfirmer {
     margin-right: 2%;
+}
+
+#enregistrerI {
+    font-size: 5%;
 }

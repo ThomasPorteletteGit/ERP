@@ -2,10 +2,10 @@ import React, { useState } from "react";
 
 // Données de transaction à récupérer dans la base de données
 const transactionsData = [
-    { id_transaction: 1, date: '2024-03-01', quantité: 'Problème de pompe', prix: 20, statut: "En cours..." },
-    { id_transaction: 2, date: '2024-03-02', quantité: 'Fuite de carburant', prix: 1, statut: "Terminé" },
-    { id_transaction: 3, date: '2024-03-02', quantité: 'Fuite de carburant', prix: 1, statut: "Terminé" },
-    { id_transaction: 3, date: '2024-03-02', quantité: 'Fuite de carburant', prix: 1, statut: "Terminé" },
+    { id_transaction: 1, date: '2024-03-01', quantité: '5 L', prix: 20, statut: "En cours..." },
+    { id_transaction: 2, date: '2024-03-02', quantité: '70 L', prix: 1, statut: "Terminé" },
+    { id_transaction: 3, date: '2024-03-02', quantité: '30 L', prix: 1, statut: "Terminé" },
+    { id_transaction: 3, date: '2024-03-02', quantité: '20 kg', prix: 1, statut: "Terminé" },
     { id_transaction: 3, date: '2024-03-02', quantité: 'Fuite de carburant', prix: 1, statut: "Terminé" },
     
 ];

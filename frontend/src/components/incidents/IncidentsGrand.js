@@ -97,7 +97,7 @@ const IncidentsGrand = () => {
                                 <label className="texte-description">Description:</label>
                                 <textarea name="description" value={newIncident.description} onChange={handleChange}></textarea>
                             </div>
-                            <button className="button_style" type="submit">Enregistrer</button>
+                            <button className="button_style" id="enregistrerI" type="submit">Enregistrer</button>
                         </form>
                     </div>
                 </div>
