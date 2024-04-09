@@ -37,10 +37,14 @@
     margin-top: 10px;
 }
 
-#header .container .buttons-user img {
+#header .container .buttons-user img, #header .container .buttons-user a {
     width: 4vh;
     padding: 10px;
     margin-right: 4%;
+}
+
+#header .container .buttons-user img:hover{
+    cursor: pointer;
 }
 
 .user #tomdelacote {
