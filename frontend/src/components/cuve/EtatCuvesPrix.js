@@ -1,5 +1,6 @@
 import React from "react";
-
+import ReactDOMServer from 'react-dom/server'
+import SmallIcons from "../SmallIcons";
 const EtatCuvesPrix = () => {
     return (
         <div id="cuvesPrix">
@@ -43,5 +44,7 @@ const EtatCuvesPrix = () => {
         </div>
     );
 }
+
+
 
 export default EtatCuvesPrix;

@@ -56,7 +56,7 @@ const Transaction = () => {
     return (
         <section id="transaction">
             <div className="top_container">
-                <h2 className='component-title'>💸 Transactions</h2>
+                <h2 className='component-title'>💸 Transaction</h2>
                 <img src={agrandir} id="imgAgrandir" alt="agrandir" />
             </div>
             <div className='transaction-container'>
@@ -64,8 +64,6 @@ const Transaction = () => {
                     <p>Dernière transaction</p>
 
                     <div className='input-select-container'>
-                        <input type="date" id="datePicker" name="datePicker" onChange={handleTransactionDateChange} />
-
                         <select id="typeTransaction" name="typeTransaction" onChange={handleTransactionTypeChange}>
                             <option value="">Tous</option>
                             <option value="CB">CB</option>

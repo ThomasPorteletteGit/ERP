@@ -26,7 +26,7 @@ const Header = () => {
     };
 
     useEffect(() => {
-        const homeButton = document.getElementById('homeButton');
+        const homeButton = document.getElementById('exit');
         if (homeButton) {
             homeButton.addEventListener('click', function() {
                 const status = document.cookie.split('=')[1];
