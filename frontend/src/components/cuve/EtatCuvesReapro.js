@@ -1,32 +1,53 @@
 import React from "react";
 
-const EtatCuvesReapro = () => {
-    return (
+const EtatCuvesReapro = ({energies}) => {
+
+    const handleValiderReapro = async () => {
+        let energiesReapro = [];
+        const energieDivs = document.getElementsByClassName("defautreaprodiv");
+        for (let i = 0; i < energieDivs.length; i++) {
+            const energieDiv = energieDivs[i];
+            const checkbox = energieDiv.getElementsByTagName("input")[0];
+            if (checkbox.checked) {
+                energiesReapro.push({nom: energieDiv.id});
+            }
+        }   
+        console.log(energiesReapro);
+        
+
+        const options = {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(energiesReapro)
+        }
+        await fetch("/stockEnergie/reapprovisionner", options).then(response => response.json()).then(data => {
+            window.location.reload();
+        });
+    }
+
+    document.addEventListener("click", (e) => {
+        if (e.target.id === "btnValiderReapro") {
+            console.log("Valider");
+            handleValiderReapro();
+        }
+    });
+
+    return(
         <div id="cuvesPrix">
             <h3>Demande de réaprovisionnement</h3>
             <div className="Etatcuvediv">
                 <div id="divPrixEtat">
-                    <div className="defautreaprodiv">
-                        <input type="checkbox" id="ReaproEsp-97" name="ReaproEsp-97" />
-                        <label for="ReaproEsp-97"> ESP-97</label>
-                    </div>
-                    <div className="defautreaprodiv">
-                        <input type="checkbox" id="ReaproGazole" name="ReaproGazole" />
-                        <label for="ReaproGazole"> GAZOLE</label>
-                    </div>
-                    <div className="defautreaprodiv">
-                        <input type="checkbox" id="ReaproDiesel" name="ReaproDiesel" />
-                        <label for="ReaproDiesel"> DIESEL</label>
-                    </div>
-                    <div className="defautreaprodiv">
-                        <input type="checkbox" id="ReaproGPL" name="ReaproGPL" />
-                        <label for="ReaproGPL"> GPL</label>
-                    </div>
-                    <div className="defautreaprodiv">
-                        <input type="checkbox" id="ReaproE85" name="ReaproE85" />
-                        <label for="ReaproE85"> E85</label>
-                    </div>
-
+                    {
+                        energies.map((energie) => {
+                            return (
+                                <div className="defautreaprodiv" id={energie.nom}>
+                                    <input type="checkbox" id={energie} name={energie}/>
+                                    <label htmlFor={energie}>{energie.nom}</label>
+                                </div>
+                            );
+                    })}
                 </div>
                 <div className="btnEtat">
                     <button id="btnValiderReapro">Valider</button>

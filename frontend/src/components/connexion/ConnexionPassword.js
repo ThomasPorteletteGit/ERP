@@ -36,6 +36,7 @@ const ConnexionPassword = () => {
                 alert('Mot de passe incorrect');
                 setPassword('');
             }
+            window.location.reload();
         });
 
     };

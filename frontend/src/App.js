@@ -20,6 +20,9 @@ function App() {
 
   useEffect(() => {
     const cookieValue = document.cookie.split('=')[1];
+    if (cookieValue === undefined) {
+      return;
+    }
     const userType = cookieValue === 'Gerant' ? 'gerant' : 'employe';
     setUserType(userType);
   }, []);
@@ -27,7 +30,7 @@ function App() {
   let dashboardElement;
   if (userType === "gerant") {
     dashboardElement = <Dashboard userType="gerant" />;
-  } else {
+  } else if(userType === "employe") {
     dashboardElement = <Dashboard userType="employe" />;
   }
 
@@ -35,7 +38,7 @@ function App() {
     <Router>
       <div className="App">
         <Routes>
-          <Route path="/" element={<ConnexionId />} />
+          <Route path="/" element={<ConnexionId userType={userType}/>} />
           <Route path="/choixpaiement" element={<ChoixPaiement />} />
           <Route path="/montant-a-payer" element={<MontantAPayer />} />
           <Route path="/panier" element={<Panier />} />

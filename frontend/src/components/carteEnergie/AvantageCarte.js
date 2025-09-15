@@ -3,7 +3,24 @@ import ReactDOMServer from 'react-dom/server'
 import SmallIcons from "../SmallIcons";
 import CarteEnergie from "./CarteEnergie";
 
-const AvantageCarte = () => {
+const AvantageCarte = ({liste_cartes_energies}) => {
+
+    
+    document.addEventListener("click", function (event) {
+        if (event.target.classList.contains("buttonCarte") && event.target.classList.contains("Energie")) {
+            const buttonText = event.target.textContent;
+            switch (buttonText) {
+                case "Modifier":
+                    break;
+                case "Retour":
+                    returnHome();
+                default:
+                    break;
+            }
+            event.preventDefault();
+        }
+    });
+        
     const avantagesCarte = () => {
         return (
                 <div className="avantages">
@@ -20,7 +37,7 @@ const AvantageCarte = () => {
                         <hr></hr>
                         <p className="avantage">BLA bla bla</p>
                     </div>
-                    <button id="buttonCarteEM" className="buttonCarte">Modifier</button>
+                    <button id="buttonCarteEM" className="buttonCarte Energie">Modifier</button>
                 </div>
         );
     };
@@ -34,6 +51,8 @@ const AvantageCarte = () => {
                         <h2 className="component_title">Avantage</h2>
                         <hr></hr>
                     </div>
+                    <button id="buttonCarteEM" className="buttonCarte Energie">Voir liste clients</button>
+                    <button id="buttonCarteEM" className="buttonCarte Energie">Ajouter une carte</button>
                     <div className="energie">
                         {avantagesCarte()}
                     </div>
@@ -44,24 +63,6 @@ const AvantageCarte = () => {
 
 };
 
-document.addEventListener("click", function (event) {
-    if (event.target.classList.contains("buttonCarte")) {
-        const buttonText = event.target.textContent;
-        switch (buttonText) {
-            case "Modifier":
-                console.log("Bouton modifer cliqué");
-                break;
-            case "Retour":
-                console.log("Bouton retour cliqué");
-                returnHome();
-                break;
-            default:
-                console.log("Bouton inconnu cliqué" + buttonText);
-                break;
-        }
-        event.preventDefault();
-    }
-});
 
 function returnHome() {
     const divGeneral = document.getElementsByClassName("dashboard-right")[0];

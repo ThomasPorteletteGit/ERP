@@ -1,11 +1,11 @@
 const express = require('express');
 const router = express.Router();
 
-const {getAllTransactions, getToValidateTransactions, validateTransaction, getNewId, addTransaction, deleteTransaction} = require('./transactionFunctions');
+const {getAllTransactions, getToValidateTransactions, validateTransaction, getNewId, addTransaction, deleteTransaction, getAllTransactionsJoin} = require('./transactionFunctions');
 
 
 router.get('/get', (req, res) => {
-    getAllTransactions(req, res);
+    getAllTransactionsJoin(req, res);
 });
 
 router.get('/toValidate', (req, res) => {

@@ -26,7 +26,7 @@ const ChoixduPaiementCompAnim = () => {
             });
 
             setTimeout(() => {
-                divGeneral.innerHTML = ReactDOMServer.renderToString(<SmallIcons iconClicked={componentId} />) + ReactDOMServer.renderToString(componentsGrand[cpdboutton.indexOf(componentId)]);
+                divGeneral.innerHTML = ReactDOMServer.renderToString(componentsGrand[cpdboutton.indexOf(componentId)]);
                 divGeneral.style.display = "block";
 
                 cpdboutton.forEach((compId) => {
@@ -42,9 +42,9 @@ const ChoixduPaiementCompAnim = () => {
 
         const cdpBoutons = document.querySelectorAll(".cdpbouton");
 
-        cdpBoutons.forEach((btn) => {
-            btn.addEventListener("click", handleClick(btn.id));
-        });
+        // cdpBoutons.forEach((btn) => {
+        //     btn.addEventListener("click", handleClick(btn.id));
+        // });
 
 
     }, []);

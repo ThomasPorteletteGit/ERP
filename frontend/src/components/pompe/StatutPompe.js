@@ -1,12 +1,28 @@
 import React, { useState } from 'react';
 import pump from '../../assets/img/gas-pump.png';
 
-const StatutPompe = ({ numeroPompe, carburant, quantite, prix }) => {
-    const [sliderValue, setSliderValue] = useState(false); 
+
+
+const StatutPompe = ({ numeroPompe, carburant, quantite, prix, statut}) => {
+    const [sliderValue, setSliderValue] = useState(statut); 
 
     // pour modifier le statut de la pompe à l'affichage (rond de couleur)
-    const handleSliderChange = () => {
+    const handleSliderChange = async () => {
         setSliderValue(!sliderValue); 
+        let boolean = !sliderValue;
+        console.log(boolean);
+        const options = {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({id: numeroPompe, statut: boolean})
+        }
+        await fetch("/pompes/setState", options)
+            .then(response => response.json())
+            .then(data => {
+                console.log(data);
+            });
     };
 
     return (
@@ -26,7 +42,7 @@ const StatutPompe = ({ numeroPompe, carburant, quantite, prix }) => {
                 </div>
                 <div className="slider_Button">
                     <label className="switch">
-                        <input className="chk" type="checkbox" onChange={handleSliderChange} />
+                        <input className="chk" type="checkbox" onChange={handleSliderChange} checked={sliderValue} />
                         <span className="slider"></span>
                     </label>
                 </div>

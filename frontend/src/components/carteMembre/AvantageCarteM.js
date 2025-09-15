@@ -4,7 +4,25 @@ import SmallIcons from "../SmallIcons";
 import CarteMembre from "./CarteMembre";
 
 
-const AvantageCarteM = () => {
+const AvantageCarteM = ({liste_cartes_membres}) => {
+
+    document.addEventListener("click", function (event) {
+        if (event.target.classList.contains("buttonCarte") && event.target.classList.contains("Membre")) {
+            const buttonText = event.target.textContent;
+            switch (buttonText) {
+                case "Modifier":
+                    break;
+                case "Retour":
+                    returnHome();
+                    break;
+                default:
+                    break;
+            }
+            event.preventDefault();
+        }
+    });
+
+
     const avantagesCarte = () => {
         return (
                 <div className="avantages">
@@ -21,7 +39,7 @@ const AvantageCarteM = () => {
                         <hr></hr>
                         <p className="avantage">BLA bla bla</p>
                     </div>
-                    <button id="buttonCarteEM" className="buttonAction">Modifier</button>
+                    <button id="buttonCarteEM" className="buttonCarte Membre">Modifier</button>
                 </div>
         );
     };
@@ -35,6 +53,8 @@ const AvantageCarteM = () => {
                         <h2 className="component_title">Avantage</h2>
                         <hr></hr>
                     </div>
+                    <button id="buttonCarteEM" className="buttonCarte Membre">Voir liste clients</button>
+                    <button id="buttonCarteEM" className="buttonCarte Membre" >Ajouter une carte</button>
                     <div className="energie">
                         {avantagesCarte()}
                     </div>
@@ -44,25 +64,6 @@ const AvantageCarteM = () => {
     );
 
 };
-
-document.addEventListener("click", function (event) {
-    if (event.target.classList.contains("buttonAction")) {
-        const buttonText = event.target.textContent;
-        switch (buttonText) {
-            case "Retour":
-                console.log("Bouton retour cliqué");
-                returnHome();
-                break;
-            case "Modifier":
-                console.log("Bouton modifer cliqué");
-                break;
-            default:
-                console.log("Bouton inconnu cliqué" + buttonText);
-                break;
-        }
-        event.preventDefault();
-    }
-});
 
 
 function returnHome() {

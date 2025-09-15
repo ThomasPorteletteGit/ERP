@@ -1,69 +1,52 @@
 import React, { useState } from 'react';
 
-const StockProduitAjouter = () => {
-    const [productDetails, setProductDetails] = useState({
-        image: '',
-        name: '',
-        description: '',
-        quantity: '',
-        price: ''
+const StockProduitAjouter = ({stocks}) => {
+
+    document.addEventListener("submit", function (event) {
+        event.preventDefault();
     });
 
-    const handleChange = (event) => {
-        const { name, value } = event.target;
-        setProductDetails({ ...productDetails, [name]: value });
-    };
+    document.addEventListener("click", function (event) {
+        if(event.target.id === "validerCreationProduit") {
+            handleAddProduct();
+        }
+    });
+    const handleAddProduct = async () => {
+        const nom = document.querySelector("input[name='nameProduit']").value;
+        const description = document.querySelector("textarea[name='descriptionProduit']").value;
+        const quantite = document.querySelector("input[name='quantityProduit']").value;
+        const prix = document.querySelector("input[name='priceProduit']").value;
 
-    const handleSubmit = (event) => {
-        event.preventDefault();
-        console.log(productDetails);
-        setProductDetails({
-            image: '',
-            name: '',
-            description: '',
-            quantity: '',
-            price: ''
+        const newProduct = {
+            nom: nom,
+            prix: prix,
+            quantite_stock: quantite,
+            description: description
+        }
+
+        const options =  {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(newProduct)
+        }
+        await fetch("/stockProduits/add", options).then(response => response.json()).then(data => {
+            window.location.reload();
         });
     };
-
-    const handleImageChange = (event) => {
-        const file = event.target.files[0];
-        if (file && file.type === 'image/png') {
-            // Process the file (you might want to upload it to a server or display it)
-            setProductDetails({ ...productDetails, image: URL.createObjectURL(file) });
-        } else {
-            // Provide feedback to the user about selecting a PNG file
-            console.log("Veuillez sélectionner un fichier PNG.");
-        }
-    };
-    
 
     return (
         <div className="StockProduitAjouter">
             <h2>Ajouter un nouveau produit</h2>
             <button className="annulerProduitButton">Retour</button>
-            <form onSubmit={handleSubmit}>
-                <div>
-                    <label htmlFor="imageProduit">Image :</label>
-                    <div className="custom-file-upload">
-                        <input
-                            type="file"
-                            id="imageProduit"
-                            accept=".png" 
-                            name="imageProduit"
-                            onChange={handleImageChange} 
-                        />
-                        <label htmlFor="imageProduit">Choisir un fichier</label>
-                    </div>
-                </div>
+            <form>
                 <div>
                     <label htmlFor="nameProduit">Nom :</label>
                     <input
                         type="text"
                         id="nameProduit"
                         name="nameProduit"
-                        value={productDetails.name}
-                        onChange={handleChange}
                     />
                 </div>
                 <div>
@@ -71,8 +54,6 @@ const StockProduitAjouter = () => {
                     <textarea
                         id="descriptionProduit"
                         name="descriptionProduit"
-                        value={productDetails.description}
-                        onChange={handleChange}
                     />
                 </div>
                 <div>
@@ -81,22 +62,19 @@ const StockProduitAjouter = () => {
                         type="number"
                         id="quantityProduit"
                         name="quantityProduit"
-                        value={productDetails.quantity}
-                        onChange={handleChange}
                     />
                 </div>
                 <div>
                     <label htmlFor="priceProduit">Prix :</label>
                     <input
                         type="number"
+                        step={0.1}
                         id="priceProduit"
                         name="priceProduit"
-                        value={productDetails.price}
-                        onChange={handleChange}
                     />
                 </div>
                 <div className="submit-container">
-                    <button type="submit">Ajouter</button>
+                    <button type="submit" id='validerCreationProduit'>Ajouter</button>
                 </div>
             </form>
         </div>

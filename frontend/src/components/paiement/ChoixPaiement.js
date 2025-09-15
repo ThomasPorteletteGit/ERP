@@ -2,6 +2,7 @@ import React from 'react';
 import energies from '../../assets/img/bgcarteenergie.png';
 import cash from '../../assets/img/cash.png';
 import creditCard from '../../assets/img/cb.png';
+import instance from '../misc/Singleton';
 
 const ChoixPaiement = () => {
     return (

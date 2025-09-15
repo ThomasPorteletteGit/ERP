@@ -12,37 +12,36 @@ const ComponentsAnimation = () => {
         const components = ['etat-cuves', 'direction', 'incidents', 'transaction', 'stocks', 'services', 'horaires', 'releve', "choixpaiement", 'esp', 'cb', 'carteEnergie'];
 
         function attachEventListeners() {
+            const btnesp = document.querySelector('#esp');
+            const btncb = document.querySelector('#cb');
+            const btnce = document.querySelector('#carteEnergie');
+            if (btnesp) {
+                
+                btnesp.addEventListener("click", handleClick(btnesp.id));
+            }
+            if (btncb) {
+                
+                btncb.addEventListener("click", handleClick(btncb.id));
+            }
+            if (btnce) {
+                
+                btnce.addEventListener("click", handleClick(btnce.id));
+            }
             components.forEach((componentId) => {
                 const component = document.getElementById(componentId);
                 if (component) {
                     const img = component.querySelector('#imgAgrandir');
-                    const btnesp = document.querySelector('#esp');
-                    const btncb = document.querySelector('#cb');
-                    const btnce = document.querySelector('#carteEnergie');
-                    console.log(btncb);
-                    console.log(btnesp);
+                    
                     if (img) {
-                        console.log('add event listener for ' + componentId);
+                        console.log(component);
                         img.addEventListener("click", handleClick(componentId));
-                    }
-                    if (btnesp) {
-                        console.log('add event listener for ' + componentId);
-                        btnesp.addEventListener("click", handleClick(componentId));
-                    }
-                    if (btncb) {
-                        console.log('add event listener for ' + componentId);
-                        btncb.addEventListener("click", handleClick(componentId));
-                    }
-                    if (btnce) {
-                        console.log('add event listener for ' + componentId);
-                        btnce.addEventListener("click", handleClick(componentId));
                     }
                 }
             });
         }
+        
 
         const handleClick = (componentId) => () => {
-            console.log('click test ' + componentId);
             setClickedComponent(componentId)
             const divGeneral = document.getElementsByClassName("dashboard-right")[0];
             saveDiv = divGeneral.innerHTML;

@@ -1,50 +1,102 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
-function SelectHeure({ onChange, valeurInitiale }) {
-    const [heure, setHeure] = useState(valeurInitiale);
+function SelectHeure({onChange, jour, horaire}) {
+
 
     const handleChange = (e) => {
         const nouvelleHeure = e.target.value;
-        setHeure(nouvelleHeure);
         onChange(nouvelleHeure);
     };
+    
 
+  
     return (
-        <select className='heures' onChange={handleChange} value={heure}>
-            {[...Array(24).keys()].map(i =>
-                [0, 30].map(j => {
-                    let heureFormat = (i < 10 ? '0' + i : i) + ':' + (j < 10 ? '0' + j : j);
-                    return <option value={heureFormat} key={heureFormat}>{heureFormat}</option>
-                })
-            )}
+        <select className='horaires' onChange={(e) => handleChange(e)}>
+            {
+                [...Array(24).keys()].map(i =>
+                    [0, 30].map(j => {
+                        let heureFormat = (i < 10 ? '0' + i : i) + ':' + (j < 10 ? '0' + j : j);
+                        
+                        if (heureFormat === horaire.substring(0,5) || heureFormat === horaire.substring(0,5)) {
+                            return <option value={heureFormat} key={heureFormat} selected>{heureFormat}</option>
+                        }
+                        else {
+                            return <option value={heureFormat} key={heureFormat}>{heureFormat}</option>
+                        }
+                    })
+                )      
+            }       
         </select>
     );
 }
 
-const HoraireGrand = ({ }) => {
-    const [heureOuverture, setHeureOuverture] = useState("06:00");
-    const [heureFermeture, setHeureFermeture] = useState("22:00");
+const HoraireGrand = ({horaires}) => {
+   
 
-    const handleHeureOuverture = (nouvelleHeure) => {
-        console.log("Nouvelle heure d'ouverture : " + nouvelleHeure);
-        setHeureOuverture(nouvelleHeure);
+    const handleValider = async () => {
+        let newHoraires = [];
+        let horaires = document.querySelectorAll('.horaires');
+        let i = 0;
+        for (let horaire of horaires) {
+            if (i % 2 === 0) {
+                newHoraires.push({
+                    jour: horaire.parentElement.parentElement.firstChild.textContent,
+                    horaire_ouverture: horaire.value,
+                    horaire_fermeture: horaires[i + 1].value
+                });
+            }
+            i++;
+        }
+        for(let horaire of newHoraires) {
+            const dataOuverture = {jour: horaire.jour, heure: horaire.horaire_ouverture};
+            const dataFermeture = {jour: horaire.jour, heure: horaire.horaire_fermeture};
+            const optionsOuverture = {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(dataOuverture)
+            };
+            const optionsFermeture = {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(dataFermeture)
+            };
+
+            await fetch('/horaires/ouverture/set', optionsOuverture)
+            await fetch('/horaires/fermeture/set', optionsFermeture).then(response => response.json()).then(data => {
+                window.location.reload();
+            });
+        }
+
+      
+        
     };
 
-    const handleHeureFermeture = (nouvelleHeure) => {
-        console.log("Nouvelle heure de fermeture : " + nouvelleHeure);
-        setHeureFermeture(nouvelleHeure);
-    };
-
-    const handleValider = () => {
-        //pour enregistrer dans la bd
-        console.log("Nouvelles valeurs sauvegardées :", heureOuverture, heureFermeture);
-
-    };
 
     const handleAnnuler = () => {
         console.log("Annulation des modifications");
         //a remet comme avant les modifs
     };
+
+    document.addEventListener("click", function (event) {
+        if (event.target.classList.contains("btnHoraireGrandClick")) {
+            const buttonText = event.target.textContent;
+            switch (buttonText) {
+                case "Valider":
+                    handleValider();
+                    break;
+                case "Annuler":
+                    handleAnnuler();
+                    break;
+                default:
+                    break;
+            }
+        }
+    });
+
 
     return (
         <section id="modifHoraire">
@@ -65,79 +117,25 @@ const HoraireGrand = ({ }) => {
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>Lundi</td>
-                                <td><SelectHeure
-                                    onChange={handleHeureOuverture}
-                                    valeurInitiale={heureOuverture} />
-                                </td>
-                                <td><SelectHeure
-                                    onChange={handleHeureFermeture}
-                                    valeurInitiale={heureFermeture} /></td>
-                            </tr>
-                            <tr>
-                                <td>Mardi</td>
-                                <td><SelectHeure
-                                    onChange={handleHeureOuverture}
-                                    valeurInitiale={heureOuverture}
-                                />
-                                </td>
-                                <td>
-                                    <SelectHeure
-                                        onChange={handleHeureFermeture}
-                                        valeurInitiale={heureFermeture}
-                                    />
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Mercredi</td>
-                                <td><SelectHeure
-                                    onChange={handleHeureOuverture}
-                                    valeurInitiale={heureOuverture} /></td>
-                                <td><SelectHeure
-                                    onChange={handleHeureFermeture}
-                                    valeurInitiale={heureFermeture} /></td>
-                            </tr>
-                            <tr>
-                                <td>Jeudi</td>
-                                <td><SelectHeure
-                                    onChange={handleHeureOuverture}
-                                    valeurInitiale={heureOuverture} /></td>
-                                <td><SelectHeure
-                                    onChange={handleHeureFermeture}
-                                    valeurInitiale={heureFermeture} /></td>
-                            </tr>
-                            <tr>
-                                <td>Vendredi</td>
-                                <td><SelectHeure
-                                    onChange={handleHeureOuverture}
-                                    valeurInitiale={heureOuverture} /></td>
-                                <td><SelectHeure
-                                    onChange={handleHeureFermeture}
-                                    valeurInitiale={heureFermeture} /></td>
-                            </tr>
-                            <tr>
-                                <td>Samedi</td>
-                                <td><SelectHeure
-                                    onChange={handleHeureOuverture}
-                                    valeurInitiale={heureOuverture} /></td>
-                                <td><SelectHeure
-                                    onChange={handleHeureFermeture}
-                                    valeurInitiale={heureFermeture} /></td>
-                            </tr>
-                            <tr>
-                                <td>Dimanche</td>
-                                <td><SelectHeure
-                                    onChange={handleHeureOuverture}
-                                    valeurInitiale={heureOuverture} /></td>
-                                <td><SelectHeure
-                                    onChange={handleHeureFermeture}
-                                    valeurInitiale={heureFermeture} /></td>
-                            </tr>
+                            {
+                                horaires.map(jour => {
+                                    return (
+                                        <tr>
+                                            <td>{jour.jour}</td>
+                                            <td>
+                                                <SelectHeure className="ouverture" jour={jour.jour} horaire={jour.horaire_ouverture}/>
+                                            </td>
+                                            <td>
+                                                <SelectHeure className="fermeture" jour={jour.jour} horaire={jour.horaire_fermeture}/>
+                                            </td>
+                                        </tr>
+                                    );
+                                })
+                            }
                         </tbody>
                     </table>
-                    <button className='buttonAnnuler button_style' onClick={handleAnnuler}>Annuler</button>
-                    <button className='buttonValider button_style' onClick={handleValider}>Valider</button>
+                    <button className='btnHoraireGrandClick buttonAnnuler button_style'>Annuler</button>
+                    <button className='btnHoraireGrandClick buttonValider button_style'>Valider</button>
                 </div>
             </div>
         </section>

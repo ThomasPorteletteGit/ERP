@@ -12,10 +12,46 @@ import ChoixPaiementCarteEnergie from "./paiement/ChoixPaiementCarteEnergie";
 import EtatStockGrand from "./stocks/EtatStocksGrand";
 import TransactionGrand from "./transaction/TransactionGrand";
 
+let energies, horaires, incidents, transactions, produits;
+await fetch('/stockEnergie/get')
+    .then(response => response.json())
+    .then(data => {
+        energies = data;
+    });
+
+await fetch('/stockProduits/get')
+    .then(response => response.json())
+    .then(data => {
+        produits = data;
+    }
+);
+
+const stocks = produits.concat(energies);
+
+
+await fetch('/horaires/get')
+    .then(response => response.json())
+    .then(data => {
+        horaires = data;
+    });
+
+await fetch('/incidents/get')
+    .then(response => response.json())
+    .then(data => {
+        incidents = data;
+    });
+
+await fetch('/transaction/get')
+    .then(response => response.json())
+    .then(data => {
+        transactions = data;
+    });
+
+
+
 const SmallIcons = ({ iconClicked }) => {
-    console.log(iconClicked);
     const components = ['etat-cuves', 'direction', 'incidents', 'transaction', 'stocks', 'services', 'horaires', 'esp', 'cb', 'carteEnergie'];
-    const componentsGrand = [<EtatCuvesGrand />, <DirectionGrand />, <IncidentsGrand />, <TransactionGrand />, <EtatStockGrand />, <ServicesGrand />, <HoraireGrand />, <Especes />, <CarteBancaire />, <ChoixPaiementCarteEnergie />];
+    const componentsGrand = [<EtatCuvesGrand energies={energies}/>, <DirectionGrand />, <IncidentsGrand incidents={incidents}/>, <TransactionGrand transactions={transactions}/>, <EtatStockGrand stocks={stocks}/>, <ServicesGrand />, <HoraireGrand horaires={horaires}/>, <Especes />, <CarteBancaire />, <ChoixPaiementCarteEnergie />];
 
     const emojis = {
         'etat-cuves': '🛢️',
@@ -56,6 +92,7 @@ const SmallIcons = ({ iconClicked }) => {
             event.preventDefault();
         }
     });
+
 
     return (
         <>

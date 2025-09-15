@@ -28,7 +28,7 @@ class DAO
     select(attributes, table, condition, callback)
     {
         let selectQuery = "SELECT " + attributes + " FROM " + table;
-        if (condition != "") {
+        if (condition !== '') {
             selectQuery += " WHERE " + condition;
         }
         this.dbConnection.query(selectQuery, (err, result) => {
@@ -36,6 +36,40 @@ class DAO
             callback(result);
         });
     }
+    /**
+     * 
+     * @param {*} attributes  Les attributs à sélectionner sous la forme "attribut1, attribut2, ..."
+     * @param {*} table  La table à sélectionner
+     * @param {*} condition  La condition de sélection sous la forme "attribut1 = valeur1 AND attribut2 = valeur2 ..."
+     * @param {*} order  L'ordre de sélection sous la forme "attribut1 ASC/DESC, attribut2 ASC/DESC, ..."
+     * @param {*} callback  La fonction à appeler une fois la requête exécutée
+     */
+    
+    selectOrderBy(attributes, table, condition, order, callback)
+    {
+        let selectQuery = "SELECT " + attributes + " FROM " + table;
+        if (condition !== '') {
+            selectQuery += " WHERE " + condition;
+        }
+        selectQuery += " ORDER BY " + order;
+        this.dbConnection.query(selectQuery, (err, result) => {
+            if (err) throw err;
+            callback(result);
+        });
+    }
+
+    selectWithJoin(attributes, tables, condition, joinCondition, callback)
+    {
+        let selectQuery = "SELECT " + attributes + " FROM " + tables + " "+ joinCondition;
+        if (condition !== '') {
+            selectQuery += " WHERE " + condition;
+        }
+        this.dbConnection.query(selectQuery, (err, result) => {
+            if (err) throw err;
+            callback(result);
+        });
+    }
+    
 
     /**
      * @param {*} table La table dans laquelle insérer les valeurs
@@ -51,15 +85,34 @@ class DAO
         });
     }
 
+    /**
+     * 
+     * @param {*} table  La table dans laquelle insérer les valeurs
+     * @param {*} values  Les valeurs à insérer sous la forme "attribut1 = valeur1, attribut2 = valeur2, ..."
+     * @param {*} callback  La fonction à appeler une fois la requête exécutée
+     */
+
+    insertWithoutId(table, champs, values, callback)
+    {
+        let insertQuery = "INSERT INTO " + table + "("
+        insertQuery += champs + ") VALUES (" + values + ")";
+        console.log(insertQuery);
+        this.dbConnection.query(insertQuery, (err, result) => {
+            if (err) throw err;
+            callback(result);
+        });
+    }
+
     /** 
-     * @param {*} attributes Les attributs à mettre à jour sous la forme "attribut1 = valeur1, attribut2 = valeur2, ..."
+     *
      * @param {*} table La table à mettre à jour
+     * @param {*} attributes Les attributs à mettre à jour sous la forme "attribut1 = valeur1, attribut2 = valeur2, ..."
      * @param {*} condition La condition de mise à jour sous la forme "attribut1 = valeur1 AND attribut2 = valeur2 ..."
      * @param {*} callback La fonction à appeler une fois la requête exécutée
      * 
      */
 
-    update(attributes, table, condition, callback)
+    update(table, attributes, condition, callback)
     {
         let updateQuery = "UPDATE " + table + " SET " + attributes + " WHERE " + condition;
         this.dbConnection.query(updateQuery, (err, result) => {
@@ -86,6 +139,23 @@ class DAO
     }
 
     /**
+     * 
+     * @param {*} queries Tableau de requêtes à exécuter
+     */
+    mutliUpdate(queries, callback)
+    {
+        let queryString = "";
+        queries.forEach(query => {
+            queryString += query + ";";
+        });
+        this.dbConnection.query(queryString, (err, result) => {
+            if (err) throw err;
+            callback(result);
+        });
+
+    }
+
+    /**
      * Ferme la connexion à la base de données
      */
     
@@ -95,4 +165,5 @@ class DAO
     }
 
 }
-module.exports = DAO;
+const dao = new DAO();
+module.exports = dao;

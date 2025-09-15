@@ -5,28 +5,57 @@ import SmallIcons from "../SmallIcons";
 
 
 //faire logique bouton supprimer
-const ListeClient = () => {
-    const [clients, setClients] = useState([
-        { id: 1, nom: "Truc", prenom: " Jean", adresse:" 1 rue de la paix"},
-        { id: 2, nom: "Bidule", prenom: " Jean", adresse:" 2 rue de la paix"},
-        { id: 3, nom: "Machin", prenom: " Jean", adresse:" 3 rue de la paix"},
-        { id: 4, nom: "Chose", prenom: " Jean", adresse:" 4 rue de la paix"},
-        { id: 5, nom: "Truc", prenom: " Gertrude", adresse:" 5 rue de la paix"},
-        { id: 6, nom: "Bidule", prenom: " Gertrude", adresse:" 6 rue de la paix"},
-        { id: 7, nom: "Machin", prenom: " Gertrude", adresse:" 7 rue de la paix"},
-    ]);
+const ListeClient = ({liste_cartes_energies}) => {
 
-    const liste = () => {
-        return  clients.map((element) => (
-            <div key={element.id} className="client">
+    const liste = ({liste_cartes_energies}) => {
+        if(liste_cartes_energies.length === 0){
+            return <h2>Aucun client</h2>
+        }
+        return liste_cartes_energies.map((element) => (
+            <div id={element.id_carte+"carteEnergie"} className="client">
                 <div className="infoClient">
-                    <h4>{element.nom}{element.prenom}{element.adresse}</h4>
+                    <h4>{element.nom} {element.prenom} {element.adresse_mail}</h4>
                 </div>
-                <button id="buttonCarteEM" className="buttonCarte">Supprimer</button>
+                <button id="buttonCarteEM Energie" className="buttonCarte">Supprimer</button>
             </div>
         ));
     };
 
+    const supprimerClient = async (button) => {
+        const id_carte = button.parentElement.id.split('carteEnergie')[0];
+        const data = {id_carte: id_carte};
+        const options = {
+            method: 'DELETE',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        };
+        await fetch("/cartesEnergie/delete", options).then(response => response.json()).then(data => {
+            window.location.reload();
+        });
+    }
+
+    document.addEventListener("click", function (event) {
+        if (event.target.classList.contains("buttonCarte")) {
+            const buttonText = event.target.textContent;
+            switch (buttonText) {
+                case "Supprimer":
+                    supprimerClient(event.target);
+                    console.log("Bouton supprimer cliqué");
+                    break;
+                case "Retour":
+                    console.log("Bouton retour cliqué");
+                    returnHome();
+                    break;
+                default:
+                    console.log("Bouton inconnu cliqué" + buttonText);
+                    break;
+            }
+            event.preventDefault();
+        }
+    });
+    
     return (
         <section id='carte'>
             <div className="composantGrand">
@@ -38,7 +67,7 @@ const ListeClient = () => {
                     </div>
                     
                     <div className="energie">
-                        {liste()}
+                        {liste({liste_cartes_energies})}
                     </div>
                 </div>
             </div>
@@ -47,24 +76,6 @@ const ListeClient = () => {
 
 };
 
-document.addEventListener("click", function (event) {
-    if (event.target.classList.contains("buttonCarte")) {
-        const buttonText = event.target.textContent;
-        switch (buttonText) {
-            case "Supprimer":
-                console.log("Bouton supprimer cliqué");
-                break;
-            case "Retour":
-                console.log("Bouton retour cliqué");
-                returnHome();
-                break;
-            default:
-                console.log("Bouton inconnu cliqué" + buttonText);
-                break;
-        }
-        event.preventDefault();
-    }
-});
 
 function returnHome() {
     const divGeneral = document.getElementsByClassName("dashboard-right")[0];

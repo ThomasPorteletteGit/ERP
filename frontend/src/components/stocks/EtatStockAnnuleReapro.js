@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const EtatStockAnnuleReapro = () => {
+const EtatStockAnnuleReapro = ({stocks}) => {
     const [products, setProducts] = useState([
         { id: 1, name: "Produit A", quantity: 10, price: "$10.00", date: "2024-04-07" },
         { id: 2, name: "Produit B", quantity: 5, price: "$15.00", date: "2024-04-08" },

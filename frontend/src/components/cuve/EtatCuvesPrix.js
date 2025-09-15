@@ -1,42 +1,62 @@
 import React from "react";
-import ReactDOMServer from 'react-dom/server'
-import SmallIcons from "../SmallIcons";
-const EtatCuvesPrix = () => {
+
+const EtatCuvesPrix = ({energies}) => {
+    const energiesObject= energies.map((array) => {
+        return { nom: array[0], prix: array[1] };
+    });
+    const handleValiderPrix = async () => {
+        let prix = [];
+        console.log(energiesObject);
+        energiesObject.forEach((energie) => {
+            let prixEnergie = document.getElementById("prix" + energie.nom).value;
+            prix.push({ nom: energie.nom, prix: prixEnergie });
+        });
+
+        const options = {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(prix)
+        }
+        await fetch("/stockEnergie/modifierPrix", options).then(response => response.json()).then(data => {
+            window.location.reload();
+        });
+    }
+
+    document.addEventListener("click", function (event) {
+        if (event.target.id === "btnValiderPrix") {
+            handleValiderPrix();
+        }
+        else if (event.target.id === "btnAnnulerPrix") {
+            console.log("Annulation des modifications");
+        }
+    });
+
     return (
         <div id="cuvesPrix">
             <h3>Modification du prix</h3>
             <div className="Etatcuvediv">
-                <div id="divPrixEtat">
-                    <div className="defautcuvediv">
-                        <label htmlFor="prixESP-97"> ● Prix de l'ESP-97 : </label>
-                    </div>
-                    <div className="defautcuvediv">
-                        <label htmlFor="prixGAZOLE"> ● Prix du GAZOLE : </label>
-                    </div>
-                    <div className="defautcuvediv">
-                        <label htmlFor="prixDIESEL"> ● Prix du DIESEL : </label>
-                    </div>
-                    <div className="defautcuvediv">
-                        <label htmlFor="prixGPL"> ● Prix du GPL : </label>
-                    </div>
-                    <div className="defautcuvediv">
-                        <label htmlFor="prixElec"> ● Prix de l'électique : </label>
-                    </div>
-                    <div className="defautcuvediv">
-                        <label htmlFor="prixE85"> ● Prix de l'E85 : </label>
-                    </div>
-                    
+                <div id="divPrix">
+                    {
+                        energies.map((array) => {
+                            return (
+                                <div className="defautcuvediv" key={array[0]}>
+                                    <label for={array[0]}>{array[0]}</label>
+                                    
+                                </div>
+                            );
+                    })}
                 </div>
                 <div className="defautcuveinput">
-                <input type="number" id="prixESP-97" name="prixESP-97" min="0" max="10" step="0.001" value="1.857" />
-                <input type="number" id="prixGAZOLE" name="prixGAZOLE" min="0" max="10" step="0.001" value="1.857" />
-                <input type="number" id="prixDIESEL" name="prixDIESEL" min="0" max="10" step="0.001" value="1.857" />
-                <input type="number" id="prixGPL" name="prixGPL" min="0" max="10" step="0.001" value="1.857" />
-                <input type="number" id="prixElec" name="prixElec" min="0" max="10" step="0.001" value="1.857" />
-                <input type="number" id="prixE85" name="prixE85" min="0" max="10" step="0.001" value="1.857" />
+                    {
+                        energies.map((array) => {
+                            return (
+                                <input type="number" id={"prix" + array[0]} name={"prix" + array[0]} min="0" max="10" step="0.1" value={array[1]} />
+                            );
+                    })}
                 </div>
-
-                <div className="btnEtat">
+                <div className="DivBlock">
                     <button id="btnValiderPrix" className="button_style">Valider</button>
                     <button id="btnAnnulerPrix" className="button_style">Annuler</button>
                 </div>
